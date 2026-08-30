@@ -1,0 +1,25 @@
+name,district,block,themes,source,notes
+FORWARD,Rayagada,,"Education, Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 10),Multi-state org; row lists Rayagada and Mayurbhanj
+FORWARD,Mayurbhanj,,"Education, Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 10),Multi-state org; row lists Rayagada and Mayurbhanj
+SPREAD,Khordha,,"Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 29),Source lists HQ as "Bhubaneswar" -- mapped to Khordha district; verify
+VIEWS,Ganjam,,"Education, Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 34),
+NIRMAN,Nayagarh,Daspalla,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence (Common Ground-style source)
+NIRMAN,Kandhamal,Tumuribandha,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
+NIRMAN,Rayagada,Kalyansinghpur,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
+NIRMAN,Deogarh,Barkote,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
+SEWAK,Sundargarh,"Hemgir, Lephripada, Tangarpalli, Sundargarh, Balishankara",,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence; 5 blocks
+SEBAJAGAT,Kalahandi,"M. Rampur, Norla, Bhabanipatna, Lanjhigarh, Golamunda",,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence; 5 blocks
+WOSCA & WASSAN,Kendujhar,"Telkui, Harichandanpur, Gatgaon, Patna, Saharpada, Jhumpara, Banspal",,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence; sheet spells district "Keonjhar" -> mapped to canon Kendujhar; 7 blocks
+WASSAN & its partners,Koraput,Boipariguda,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
+Goonj,Gajapati,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),Village-level rows only; description tag "GramSwabhimaan"
+Goonj,Mayurbhanj,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),Village-level rows (Bangriposi, Kuliana blocks); description tag "GramSwabhimaan"
+Gram Vikas,Gajapati,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),Some rows say "8 districts" generally -- district list not fully itemised in source; verify
+Gram Vikas,Ganjam,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),See note above
+Gram Vikas,Kandhamal,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),See note above
+Gram Vikas,Kalahandi,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),See note above
+Gram Vikas,Khordha,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),Source spells "Khurdha"
+PRADAN,Kalahandi,Lanjigarh,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block name (source left District column blank); verify
+PRADAN,Kandhamal,Phulbani,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block name; verify
+PRADAN,Mayurbhanj,"Thakurmunda, Karanjia, Jashipur",,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block names; verify
+PRADAN,Rayagada,Kolnara,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block name; verify
+PRADAN,Koraput,"Nandapur, Lamtaput",,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block names; verify

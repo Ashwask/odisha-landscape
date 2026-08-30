@@ -1,0 +1,490 @@
+{
+ "state_name": "ODISHA",
+ "state_id": 36,
+ "fpo_count": 2234,
+ "number_of_farmers": 480146,
+ "district_wise": [
+  {
+   "state_name": "ODISHA",
+   "district_name": "GAJAPATI",
+   "district_id": 4310,
+   "state_id": 36,
+   "fpo_count": 51,
+   "number_of_farmers": 3249
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BHADRAK",
+   "district_id": 4672,
+   "state_id": 36,
+   "fpo_count": 34,
+   "number_of_farmers": 2295
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "DHENKANAL",
+   "district_id": 4673,
+   "state_id": 36,
+   "fpo_count": 82,
+   "number_of_farmers": 9236
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "JAJAPUR",
+   "district_id": 4674,
+   "state_id": 36,
+   "fpo_count": 61,
+   "number_of_farmers": 4150
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "SUBARNAPUR",
+   "district_id": 4675,
+   "state_id": 36,
+   "fpo_count": 20,
+   "number_of_farmers": 4064
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "NUAPARHA",
+   "district_id": 4676,
+   "state_id": 36,
+   "fpo_count": 39,
+   "number_of_farmers": 8088
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BALANGIR",
+   "district_id": 4677,
+   "state_id": 36,
+   "fpo_count": 104,
+   "number_of_farmers": 26189
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BOUDH",
+   "district_id": 4678,
+   "state_id": 36,
+   "fpo_count": 18,
+   "number_of_farmers": 4403
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "CUTTACK",
+   "district_id": 4679,
+   "state_id": 36,
+   "fpo_count": 87,
+   "number_of_farmers": 3766
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KANDHAMAL",
+   "district_id": 4680,
+   "state_id": 36,
+   "fpo_count": 70,
+   "number_of_farmers": 10391
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "NAYAGARH",
+   "district_id": 4681,
+   "state_id": 36,
+   "fpo_count": 54,
+   "number_of_farmers": 24225
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KHORDHA",
+   "district_id": 4682,
+   "state_id": 36,
+   "fpo_count": 98,
+   "number_of_farmers": 96510
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KALAHANDI",
+   "district_id": 4683,
+   "state_id": 36,
+   "fpo_count": 181,
+   "number_of_farmers": 21268
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "JAGATSINGHPUR",
+   "district_id": 4684,
+   "state_id": 36,
+   "fpo_count": 43,
+   "number_of_farmers": 2912
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "PURI",
+   "district_id": 4685,
+   "state_id": 36,
+   "fpo_count": 102,
+   "number_of_farmers": 5715
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "NABARANGAPUR",
+   "district_id": 4686,
+   "state_id": 36,
+   "fpo_count": 68,
+   "number_of_farmers": 10930
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "RAYAGARHA",
+   "district_id": 4687,
+   "state_id": 36,
+   "fpo_count": 72,
+   "number_of_farmers": 15096
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KORAPUT",
+   "district_id": 4688,
+   "state_id": 36,
+   "fpo_count": 119,
+   "number_of_farmers": 45006
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "MALKANGIRI",
+   "district_id": 4689,
+   "state_id": 36,
+   "fpo_count": 37,
+   "number_of_farmers": 5143
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "ANUGUL",
+   "district_id": 4690,
+   "state_id": 36,
+   "fpo_count": 46,
+   "number_of_farmers": 4485
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KENDRAPARA",
+   "district_id": 4691,
+   "state_id": 36,
+   "fpo_count": 82,
+   "number_of_farmers": 6100
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "GANJAM",
+   "district_id": 4692,
+   "state_id": 36,
+   "fpo_count": 106,
+   "number_of_farmers": 10630
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "MAYURBHANJ",
+   "district_id": 4693,
+   "state_id": 36,
+   "fpo_count": 136,
+   "number_of_farmers": 31761
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "SUNDARGARH",
+   "district_id": 4694,
+   "state_id": 36,
+   "fpo_count": 113,
+   "number_of_farmers": 49995
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KENDUJHAR",
+   "district_id": 4695,
+   "state_id": 36,
+   "fpo_count": 132,
+   "number_of_farmers": 40105
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BALASORE",
+   "district_id": 4696,
+   "state_id": 36,
+   "fpo_count": 38,
+   "number_of_farmers": 5629
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "JHARSUGUDA",
+   "district_id": 4697,
+   "state_id": 36,
+   "fpo_count": 29,
+   "number_of_farmers": 6495
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BARGARH",
+   "district_id": 4698,
+   "state_id": 36,
+   "fpo_count": 128,
+   "number_of_farmers": 9584
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "DEOGARH",
+   "district_id": 4699,
+   "state_id": 36,
+   "fpo_count": 24,
+   "number_of_farmers": 2282
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "SAMBALPUR",
+   "district_id": 4700,
+   "state_id": 36,
+   "fpo_count": 60,
+   "number_of_farmers": 10444
+  }
+ ],
+ "all_district_wise": [
+  {
+   "state_name": "ODISHA",
+   "district_name": "GAJAPATI",
+   "district_id": 4310,
+   "state_id": 36,
+   "fpo_count": 51,
+   "number_of_farmers": 3249
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BHADRAK",
+   "district_id": 4672,
+   "state_id": 36,
+   "fpo_count": 34,
+   "number_of_farmers": 2295
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "DHENKANAL",
+   "district_id": 4673,
+   "state_id": 36,
+   "fpo_count": 82,
+   "number_of_farmers": 9236
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "JAJAPUR",
+   "district_id": 4674,
+   "state_id": 36,
+   "fpo_count": 61,
+   "number_of_farmers": 4150
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "SUBARNAPUR",
+   "district_id": 4675,
+   "state_id": 36,
+   "fpo_count": 20,
+   "number_of_farmers": 4064
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "NUAPARHA",
+   "district_id": 4676,
+   "state_id": 36,
+   "fpo_count": 39,
+   "number_of_farmers": 8088
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BALANGIR",
+   "district_id": 4677,
+   "state_id": 36,
+   "fpo_count": 104,
+   "number_of_farmers": 26189
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BOUDH",
+   "district_id": 4678,
+   "state_id": 36,
+   "fpo_count": 18,
+   "number_of_farmers": 4403
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "CUTTACK",
+   "district_id": 4679,
+   "state_id": 36,
+   "fpo_count": 87,
+   "number_of_farmers": 3766
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KANDHAMAL",
+   "district_id": 4680,
+   "state_id": 36,
+   "fpo_count": 70,
+   "number_of_farmers": 10391
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "NAYAGARH",
+   "district_id": 4681,
+   "state_id": 36,
+   "fpo_count": 54,
+   "number_of_farmers": 24225
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KHORDHA",
+   "district_id": 4682,
+   "state_id": 36,
+   "fpo_count": 98,
+   "number_of_farmers": 96510
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KALAHANDI",
+   "district_id": 4683,
+   "state_id": 36,
+   "fpo_count": 181,
+   "number_of_farmers": 21268
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "JAGATSINGHPUR",
+   "district_id": 4684,
+   "state_id": 36,
+   "fpo_count": 43,
+   "number_of_farmers": 2912
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "PURI",
+   "district_id": 4685,
+   "state_id": 36,
+   "fpo_count": 102,
+   "number_of_farmers": 5715
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "NABARANGAPUR",
+   "district_id": 4686,
+   "state_id": 36,
+   "fpo_count": 68,
+   "number_of_farmers": 10930
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "RAYAGARHA",
+   "district_id": 4687,
+   "state_id": 36,
+   "fpo_count": 72,
+   "number_of_farmers": 15096
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KORAPUT",
+   "district_id": 4688,
+   "state_id": 36,
+   "fpo_count": 119,
+   "number_of_farmers": 45006
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "MALKANGIRI",
+   "district_id": 4689,
+   "state_id": 36,
+   "fpo_count": 37,
+   "number_of_farmers": 5143
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "ANUGUL",
+   "district_id": 4690,
+   "state_id": 36,
+   "fpo_count": 46,
+   "number_of_farmers": 4485
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KENDRAPARA",
+   "district_id": 4691,
+   "state_id": 36,
+   "fpo_count": 82,
+   "number_of_farmers": 6100
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "GANJAM",
+   "district_id": 4692,
+   "state_id": 36,
+   "fpo_count": 106,
+   "number_of_farmers": 10630
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "MAYURBHANJ",
+   "district_id": 4693,
+   "state_id": 36,
+   "fpo_count": 136,
+   "number_of_farmers": 31761
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "SUNDARGARH",
+   "district_id": 4694,
+   "state_id": 36,
+   "fpo_count": 113,
+   "number_of_farmers": 49995
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "KENDUJHAR",
+   "district_id": 4695,
+   "state_id": 36,
+   "fpo_count": 132,
+   "number_of_farmers": 40105
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BALASORE",
+   "district_id": 4696,
+   "state_id": 36,
+   "fpo_count": 38,
+   "number_of_farmers": 5629
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "JHARSUGUDA",
+   "district_id": 4697,
+   "state_id": 36,
+   "fpo_count": 29,
+   "number_of_farmers": 6495
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "BARGARH",
+   "district_id": 4698,
+   "state_id": 36,
+   "fpo_count": 128,
+   "number_of_farmers": 9584
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "DEOGARH",
+   "district_id": 4699,
+   "state_id": 36,
+   "fpo_count": 24,
+   "number_of_farmers": 2282
+  },
+  {
+   "state_name": "ODISHA",
+   "district_name": "SAMBALPUR",
+   "district_id": 4700,
+   "state_id": 36,
+   "fpo_count": 60,
+   "number_of_farmers": 10444
+  }
+ ]
+}
