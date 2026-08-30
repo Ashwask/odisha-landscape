@@ -9,13 +9,19 @@ anchors / districts), with two intentional differences documented in the README:
     so it gets a proper field here.
   - "fpo" only has {fpos, farmers} (no shareholders / complete_financials -- see fetch_fpo.py
     docstring for why).
-  - "partners" / per-district "partners" and "cg" are seeded (not empty) from
+  - "partners" / per-district "partners" and "blockcov" are seeded (not empty) from
     data/odisha_partners_seed.csv -- a small set of organisations incidentally named as
     active in Odisha inside jharkhand-landscape's own (multi-state) source spreadsheets.
     This is NOT a systematic Odisha partner survey -- see README "What's not automated".
-  - "themes" (per-district), "tri", "csr", "blockcov" are left EMPTY -- there is no public
-    source for these. They're present so the schema matches Jharkhand's and downstream
-    tooling (e.g. an adapted build.py) has somewhere to read from once filled in.
+  - "aspirational" is real, not a stub: it's Odisha's 10 districts under NITI Aayog's
+    Aspirational Districts Programme (official list, verified against niti.gov.in's
+    List-of-112-Aspirational-Districts PDF), unlike Jharkhand's build which infers
+    "aspirational" from whether TRI is present in a district (a proxy, not the actual
+    government designation).
+  - "themes" (per-district), "tri", "csr", "cg" are left EMPTY -- there is no public
+    source for these (csr is blocked by a captcha, see README). They're present so the
+    schema matches Jharkhand's and downstream tooling has somewhere to read from once
+    filled in.
 
 Run from the scripts/ directory: python3 build_model.py
 """
@@ -81,16 +87,28 @@ FPO_MAP = {
     "SUBARNAPUR": "Sonepur", "BOUDH": "Boudh",
 }
 
+# NITI Aayog Aspirational Districts Programme, Odisha's 10 districts, verified against
+# niti.gov.in/sites/default/files/2023-07/List-of-112-Aspirational-Districts%20(1).pdf
+ASPIRATIONAL_DISTRICTS = [
+    "Balangir", "Dhenkanal", "Gajapati", "Kalahandi", "Kandhamal",
+    "Koraput", "Malkangiri", "Nabarangpur", "Nuapada", "Rayagada",
+]
+
 
 def money_to_float(s):
     return float(s.replace(",", ""))
 
 
 def load_partners_seed():
-    """Read data/odisha_partners_seed.csv -> (partners list, {district: [{org, block}]})."""
+    """Read data/odisha_partners_seed.csv -> (partners list, {district: [blockcov entries]}).
+
+    blockcov entries match jharkhand-landscape's shape: {name, by: [orgs], villages: []}.
+    One entry per individual block; if two seed rows name the same block string in the
+    same district (exact match only -- no fuzzy spelling merge), their "by" lists combine.
+    """
     rows = list(csv.DictReader(open("../data/odisha_partners_seed.csv")))
     partners_by_name = {}
-    cg_by_district = {}
+    blocks_by_district = {}  # dist -> {block_name: {orgs...}}
     for r in rows:
         name, dist = r["name"], r["district"]
         if dist not in CANON:
@@ -104,15 +122,25 @@ def load_partners_seed():
             if t not in p["themes"]:
                 p["themes"].append(t)
         if r["block"]:
-            cg_by_district.setdefault(dist, []).append({"org": name, "blocks": r["block"]})
-    return list(partners_by_name.values()), cg_by_district
+            bmap = blocks_by_district.setdefault(dist, {})
+            for b in r["block"].split(","):
+                b = b.strip()
+                if not b:
+                    continue
+                bmap.setdefault(b, set()).add(name)
+
+    blockcov_by_district = {
+        dist: [{"name": b, "by": sorted(orgs), "villages": []} for b, orgs in sorted(bmap.items())]
+        for dist, bmap in blocks_by_district.items()
+    }
+    return list(partners_by_name.values()), blockcov_by_district
 
 
 def build():
     shg_raw = json.load(open("../data/odisha_shg_data.json"))
     dmf_raw = json.load(open("../data/odisha_dmf_data.json"))
     fpo_raw = json.load(open("../data/odisha_fpo_data.json"))
-    partners, cg_by_district = load_partners_seed()
+    partners, blockcov_by_district = load_partners_seed()
 
     districts = {}
     for d in CANON:
@@ -122,8 +150,8 @@ def build():
             "tri": {"blocks": "", "aspirational": False},
             "cg": None,
             "csr": {},
-            "aspirational": False,
-            "blockcov": [],
+            "aspirational": d in ASPIRATIONAL_DISTRICTS,
+            "blockcov": blockcov_by_district.get(d, []),
             "shg": {"total": 0, "members": 0, "new": 0, "revived": 0, "prenrlm": 0, "blocks": []},
             "fpo": {"fpos": 0, "farmers": 0},
             "dmf": {},
@@ -170,17 +198,6 @@ def build():
             if p["name"] not in districts[dist]["partners"]:
                 districts[dist]["partners"].append(p["name"])
 
-    # -- Common Ground-style block coverage (seed) --
-    # NOTE: schema deviation from jharkhand-landscape here. JH's "cg" is a single
-    # {blocks, n} object because its Common Ground source is one org. Odisha's seed has
-    # multiple distinct orgs with block-level data in the same district (e.g. Kalahandi has
-    # both SEBAJAGAT and PRADAN) -- so "cg" is a LIST of {org, blocks, n} per district.
-    for dist, entries in cg_by_district.items():
-        districts[dist]["cg"] = [
-            {"org": e["org"], "blocks": e["blocks"], "n": len(e["blocks"].split(","))}
-            for e in entries
-        ]
-
     model = {
         "canon": CANON,
         "themes": THEMES,
@@ -193,8 +210,10 @@ def build():
 
     tot_shg = sum(d["shg"]["total"] for d in districts.values())
     tot_fpo = sum(d["fpo"]["fpos"] for d in districts.values())
+    tot_blocks = sum(len(d["blockcov"]) for d in districts.values())
     print(f"model.json written: {len(CANON)} districts, {tot_shg} SHGs, {tot_fpo} FPOs, "
-          f"{len(partners)} seed partners, {len(cg_by_district)} districts with block coverage")
+          f"{len(partners)} seed partners, {tot_blocks} blocks with known coverage across "
+          f"{len(blockcov_by_district)} districts")
 
 
 if __name__ == "__main__":

@@ -1,15 +1,16 @@
-# Odisha Landscape — data foundation
+# Odisha Landscape — Who Does What Where
 
-A data foundation for doing the same "who does what where" exercise as
+The same "who does what where" exercise as
 [jharkhand-landscape](https://github.com/sidd-1995/jharkhand-landscape) — a
-development-partner ecosystem map (partners × districts × themes) — for **Odisha**.
+development-partner ecosystem map (partners × districts) — for **Odisha**.
+`index.html` is a self-contained, offline, single-file interactive map (choropleth lenses,
+Ecosystem/Place Health scorecards, partner × theme matrix, DMF spend table) — open it
+directly in a browser.
 
-This repo is **not yet the interactive map**. It's the data-gathering stage: everything
-that could be pulled from public sources has been fetched, normalised to a single
-`model.json`, and organised for reuse. What jharkhand-landscape's `build.py` does with
-`model.json` (turn it into a self-contained `index.html` with a choropleth map,
-Ecosystem/Place Health scorecards, and tables) is the natural next step here, once the
-manual partner-research gap below is closed enough to be worth visualising.
+**Read it as a data foundation with a working viewer, not a finished partner survey.**
+SHG, DMF and FPO layers are complete, live-fetched data across all 30 districts. The
+**partner layer is a seed of 11 organisations**, not a systematic canvass — see "What's
+not automated" below before treating the health scores as a verdict on Odisha's ecosystem.
 
 ## What's in `model.json`
 
@@ -20,8 +21,9 @@ manual partner-research gap below is closed enough to be worth visualising.
 | `shg` (Self Help Groups: total, members, new/revived/pre-NRLM, block breakdown) | ✅ Complete — all 30 districts | DAY-NRLM public MIS (`preprodmis.lokos.in`), live fetch |
 | `dmf` (District Mineral Fund collection, **year-wise**, FY2015-16 → FY2025-26) | ✅ Complete — all 30 districts × 11 years | Odisha's own DMF portal (`dmf.odisha.gov.in`), live fetch |
 | `fpo` (Farmer Producer Orgs: count + farmer count) | ✅ Complete — all 30 districts | FPO Platform's public dashboard data (backed by Cornell TCI's FPO API) |
-| `partners` / `cg` (org names, themes, block-level presence) | ⚠️ Seed only — 11 orgs, 9 districts with block detail | See "What's not automated" below |
-| `themes` (per-district), `tri`, `csr`, `blockcov` | ❌ Empty | No public source found / blocked — see below |
+| `aspirational` | ✅ Real — 10 districts | NITI Aayog's Aspirational Districts Programme (official list), *not* inferred from a proxy like Jharkhand's TRI-presence heuristic |
+| `partners` / `blockcov` (org names, themes, block-level presence) | ⚠️ Seed only — 11 orgs, 9 districts / 30 blocks with detail | See "What's not automated" below |
+| `themes` (per-district), `tri`, `csr` | ❌ Empty | No public source found / blocked — see below |
 
 District boundaries: `data/odisha_districts.geojson` — Odisha's 30 districts, filtered out
 of [Bharatlas](https://bharatlas.com)'s all-India LGD (Local Government Directory, 2024)
@@ -63,9 +65,12 @@ anchor org in Odisha, that's original research too.
 
 ```
 odisha-landscape/
-├── model.json                        # assembled output — the one file downstream tooling reads
+├── index.html                        # the map — open this in a browser
+├── build.py                          # model.json + odisha_enriched.geojson -> index.html
+├── model.json                        # assembled data — what build.py reads
+├── odisha_enriched.geojson           # simplified boundaries with {district: <canon name>}
 ├── data/
-│   ├── odisha_districts.geojson      # 30 district boundaries (Bharatlas / LGD 2024)
+│   ├── odisha_districts.geojson      # 30 district boundaries, raw (Bharatlas / LGD 2024)
 │   ├── odisha_shg_data.json          # raw SHG fetch, block-level, all 30 districts
 │   ├── odisha_dmf_data.json          # raw DMF fetch, district × FY, 2015-16 to 2025-26
 │   ├── odisha_fpo_data.json          # raw FPO fetch, district-level count + farmers
@@ -75,7 +80,8 @@ odisha-landscape/
     ├── fetch_shg.py                  # DAY-NRLM MIS -> data/odisha_shg_data.json
     ├── fetch_dmf.py                  # dmf.odisha.gov.in -> data/odisha_dmf_data.json
     ├── fetch_fpo.py                  # fpoplatform.com -> data/odisha_fpo_data.json
-    └── build_model.py                # merges all of the above -> ../model.json
+    ├── enrich_geojson.py             # data/odisha_districts.geojson -> ../odisha_enriched.geojson
+    └── build_model.py                # merges all fetches -> ../model.json
 ```
 
 ## Rebuilding
@@ -89,9 +95,35 @@ python3 fetch_shg.py          # ~30 districts, a few seconds each, polite 0.3s d
 python3 fetch_dmf.py          # 11 financial years
 python3 fetch_fpo.py          # one request, all-India asset filtered to Odisha
 python3 build_model.py        # merges everything into ../model.json
+python3 enrich_geojson.py     # simplifies + relabels boundaries for the map
+cd .. && python3 build.py     # model.json + odisha_enriched.geojson -> index.html
 ```
 
 Only Python 3 stdlib + `curl` on PATH are needed — no dependencies to install.
+
+## What build.py deliberately drops or changes vs. jharkhand-landscape's
+
+Rather than transplant Jharkhand's `build.py` wholesale, sections with no real Odisha data
+behind them were removed instead of left showing empty/misleading numbers:
+
+- **No ✳ indicative-org toggle.** Jharkhand's build separates "source-file partners" from
+  a wider hand-compiled "indicative" layer (PRADAN, CInI, etc.) with a scoring toggle.
+  Odisha's 11 seed partners already *are* that kind of incidental/indicative data (see
+  below) — there's no second, cleaner tier to toggle against, so the toggle, `EXT_IMPL`,
+  `EXT_FUND`, and the Funders & Philanthropies table are gone entirely.
+- **No CSR anywhere** (lens, strip stat, sparkline, "Resource alignment" health dimension) —
+  blocked by a captcha, see below. Ecosystem Health's weights are renormalised across the
+  remaining 6 dimensions instead of 7.
+- **DMF is real and year-wise**, not a 6-district static snapshot cumulative to 2018. It's
+  computed at runtime from `model.json`'s per-district, per-FY figures, and the district
+  detail panel's CSR sparkline is replaced with a genuine DMF-collection-by-year sparkline.
+  No "Major schemes & outlays" table — that was hand-researched for Jharkhand and has no
+  Odisha equivalent yet.
+- **No TRI badge/column.** Jharkhand's `tri` field is populated for every district (used as
+  an aspirational-status proxy); Odisha's `tri` is an unpopulated stub since no TRI-like
+  source covers Odisha, so showing the badge would be meaningless. `aspirational` uses the
+  real NITI Aayog list instead of a TRI proxy.
+- District count is `CANON.length` everywhere instead of a hardcoded `24`.
 
 ## District name normalisation
 

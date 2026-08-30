@@ -280,7 +280,7 @@
    },
    "cg": null,
    "csr": {},
-   "aspirational": false,
+   "aspirational": true,
    "blockcov": [],
    "shg": {
     "total": 22269,
@@ -1004,16 +1004,18 @@
     "blocks": "",
     "aspirational": false
    },
-   "cg": [
-    {
-     "org": "NIRMAN",
-     "blocks": "Barkote",
-     "n": 1
-    }
-   ],
+   "cg": null,
    "csr": {},
    "aspirational": false,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Barkote",
+     "by": [
+      "NIRMAN"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 5788,
     "members": 62756,
@@ -1074,7 +1076,7 @@
    },
    "cg": null,
    "csr": {},
-   "aspirational": false,
+   "aspirational": true,
    "blockcov": [],
    "shg": {
     "total": 17946,
@@ -1179,7 +1181,7 @@
    },
    "cg": null,
    "csr": {},
-   "aspirational": false,
+   "aspirational": true,
    "blockcov": [],
    "shg": {
     "total": 9033,
@@ -1790,21 +1792,53 @@
     "blocks": "",
     "aspirational": false
    },
-   "cg": [
+   "cg": null,
+   "csr": {},
+   "aspirational": true,
+   "blockcov": [
     {
-     "org": "SEBAJAGAT",
-     "blocks": "M. Rampur, Norla, Bhabanipatna, Lanjhigarh, Golamunda",
-     "n": 5
+     "name": "Bhabanipatna",
+     "by": [
+      "SEBAJAGAT"
+     ],
+     "villages": []
     },
     {
-     "org": "PRADAN",
-     "blocks": "Lanjigarh",
-     "n": 1
+     "name": "Golamunda",
+     "by": [
+      "SEBAJAGAT"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Lanjhigarh",
+     "by": [
+      "SEBAJAGAT"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Lanjigarh",
+     "by": [
+      "PRADAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "M. Rampur",
+     "by": [
+      "SEBAJAGAT"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Norla",
+     "by": [
+      "SEBAJAGAT"
+     ],
+     "villages": []
     }
    ],
-   "csr": {},
-   "aspirational": false,
-   "blockcov": [],
    "shg": {
     "total": 21128,
     "members": 214987,
@@ -1947,21 +1981,25 @@
     "blocks": "",
     "aspirational": false
    },
-   "cg": [
+   "cg": null,
+   "csr": {},
+   "aspirational": true,
+   "blockcov": [
     {
-     "org": "NIRMAN",
-     "blocks": "Tumuribandha",
-     "n": 1
+     "name": "Phulbani",
+     "by": [
+      "PRADAN"
+     ],
+     "villages": []
     },
     {
-     "org": "PRADAN",
-     "blocks": "Phulbani",
-     "n": 1
+     "name": "Tumuribandha",
+     "by": [
+      "NIRMAN"
+     ],
+     "villages": []
     }
    ],
-   "csr": {},
-   "aspirational": false,
-   "blockcov": [],
    "shg": {
     "total": 12759,
     "members": 130057,
@@ -2204,16 +2242,60 @@
     "blocks": "",
     "aspirational": false
    },
-   "cg": [
-    {
-     "org": "WOSCA & WASSAN",
-     "blocks": "Telkui, Harichandanpur, Gatgaon, Patna, Saharpada, Jhumpara, Banspal",
-     "n": 7
-    }
-   ],
+   "cg": null,
    "csr": {},
    "aspirational": false,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Banspal",
+     "by": [
+      "WOSCA & WASSAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Gatgaon",
+     "by": [
+      "WOSCA & WASSAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Harichandanpur",
+     "by": [
+      "WOSCA & WASSAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Jhumpara",
+     "by": [
+      "WOSCA & WASSAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Patna",
+     "by": [
+      "WOSCA & WASSAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Saharpada",
+     "by": [
+      "WOSCA & WASSAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Telkui",
+     "by": [
+      "WOSCA & WASSAN"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 25189,
     "members": 265347,
@@ -2476,21 +2558,32 @@
     "blocks": "",
     "aspirational": false
    },
-   "cg": [
+   "cg": null,
+   "csr": {},
+   "aspirational": true,
+   "blockcov": [
     {
-     "org": "WASSAN & its partners",
-     "blocks": "Boipariguda",
-     "n": 1
+     "name": "Boipariguda",
+     "by": [
+      "WASSAN & its partners"
+     ],
+     "villages": []
     },
     {
-     "org": "PRADAN",
-     "blocks": "Nandapur, Lamtaput",
-     "n": 2
+     "name": "Lamtaput",
+     "by": [
+      "PRADAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Nandapur",
+     "by": [
+      "PRADAN"
+     ],
+     "villages": []
     }
    ],
-   "csr": {},
-   "aspirational": false,
-   "blockcov": [],
    "shg": {
     "total": 17234,
     "members": 168383,
@@ -2639,7 +2732,7 @@
    },
    "cg": null,
    "csr": {},
-   "aspirational": false,
+   "aspirational": true,
    "blockcov": [],
    "shg": {
     "total": 8445,
@@ -2735,16 +2828,32 @@
     "blocks": "",
     "aspirational": false
    },
-   "cg": [
-    {
-     "org": "PRADAN",
-     "blocks": "Thakurmunda, Karanjia, Jashipur",
-     "n": 3
-    }
-   ],
+   "cg": null,
    "csr": {},
    "aspirational": false,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Jashipur",
+     "by": [
+      "PRADAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Karanjia",
+     "by": [
+      "PRADAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Thakurmunda",
+     "by": [
+      "PRADAN"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 36000,
     "members": 363812,
@@ -2989,7 +3098,7 @@
    },
    "cg": null,
    "csr": {},
-   "aspirational": false,
+   "aspirational": true,
    "blockcov": [],
    "shg": {
     "total": 13640,
@@ -3107,16 +3216,18 @@
     "blocks": "",
     "aspirational": false
    },
-   "cg": [
-    {
-     "org": "NIRMAN",
-     "blocks": "Daspalla",
-     "n": 1
-    }
-   ],
+   "cg": null,
    "csr": {},
    "aspirational": false,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Daspalla",
+     "by": [
+      "NIRMAN"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 15603,
     "members": 159504,
@@ -3217,7 +3328,7 @@
    },
    "cg": null,
    "csr": {},
-   "aspirational": false,
+   "aspirational": true,
    "blockcov": [],
    "shg": {
     "total": 8781,
@@ -3423,21 +3534,25 @@
     "blocks": "",
     "aspirational": false
    },
-   "cg": [
+   "cg": null,
+   "csr": {},
+   "aspirational": true,
+   "blockcov": [
     {
-     "org": "NIRMAN",
-     "blocks": "Kalyansinghpur",
-     "n": 1
+     "name": "Kalyansinghpur",
+     "by": [
+      "NIRMAN"
+     ],
+     "villages": []
     },
     {
-     "org": "PRADAN",
-     "blocks": "Kolnara",
-     "n": 1
+     "name": "Kolnara",
+     "by": [
+      "PRADAN"
+     ],
+     "villages": []
     }
    ],
-   "csr": {},
-   "aspirational": false,
-   "blockcov": [],
    "shg": {
     "total": 12029,
     "members": 122686,
@@ -3758,16 +3873,46 @@
     "blocks": "",
     "aspirational": false
    },
-   "cg": [
-    {
-     "org": "SEWAK",
-     "blocks": "Hemgir, Lephripada, Tangarpalli, Sundargarh, Balishankara",
-     "n": 5
-    }
-   ],
+   "cg": null,
    "csr": {},
    "aspirational": false,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Balishankara",
+     "by": [
+      "SEWAK"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Hemgir",
+     "by": [
+      "SEWAK"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Lephripada",
+     "by": [
+      "SEWAK"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Sundargarh",
+     "by": [
+      "SEWAK"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Tangarpalli",
+     "by": [
+      "SEWAK"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 23320,
     "members": 237203,
