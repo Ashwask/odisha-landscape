@@ -164,8 +164,8 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 
 <div class="intro card cardpad">
  <p class="intro-lead">A first pass at mapping the development-partner ecosystem in Odisha — <b>who's known to work where</b>, alongside the public infrastructure (SHGs, FPOs) and public money (DMF) already on the ground.</p>
- <p class="intro-body"><b>Read this as a data foundation, not a survey.</b> SHG, DMF and FPO layers are complete, live-fetched government/platform data across all 30 districts. The <b>partner layer is a seed of 11 organisations</b> — pulled from incidental Odisha mentions inside a Jharkhand-focused research project's own source files, not a systematic canvass of who works in Odisha. Treat partner density, theme breadth and the health scores below as illustrative of the method, not as a claim about the real state of the ecosystem, until that research gets done properly.</p>
- <p class="intro-src">Sources: Bharatlas (district boundaries, LGD 2024) · DAY-NRLM public MIS (SHG) · Odisha's own DMF portal (dmf.odisha.gov.in) · FPO Platform / Cornell TCI (FPO) · NITI Aayog Aspirational Districts Programme · seed partner data via jharkhand-landscape's source spreadsheets. CSR data is blocked by a captcha on the national CSR portal — see Sources below. Fully offline &amp; self-contained.</p>
+ <p class="intro-body"><b>Read this as a research pass, not a verified census.</b> SHG, DMF and FPO layers are complete, live-fetched government/platform data across all 30 districts. The <b>partner layer is a 46-organisation research pass reaching all 30 districts</b> — compiled via targeted searches across livelihoods/agriculture/NRM, health/nutrition/women/child, education/WASH/governance, and coastal &amp; northern Odisha, with every row backed by a source link (an org's own site, an annual report, a CSR filing, or a directory listing). It is still mostly self-reported and has <b>not been independently field-verified</b> — a handful of rows are explicitly flagged low-confidence in the underlying data (see the Partner directory's source column). Treat it as a strong first pass, not a finished partner survey.</p>
+ <p class="intro-src">Sources: Bharatlas (district boundaries, LGD 2024) · DAY-NRLM public MIS (SHG) · Odisha's own DMF portal (dmf.odisha.gov.in) · FPO Platform / Cornell TCI (FPO) · NITI Aayog Aspirational Districts Programme · partner data compiled from org websites, annual reports, CSR filings &amp; NGO directories, one source URL per row. CSR data is blocked by a captcha on the national CSR portal — see Sources below. Fully offline &amp; self-contained.</p>
 </div>
 
 <div class="grid hero">
@@ -184,11 +184,11 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 <div class="strip" id="strip"></div>
 
 <div class="section-title">Ecosystem health</div>
-<p class="section-sub">A funder-facing read on the state of the (seed) partner ecosystem — coverage, reach into aspirational districts, resilience, thematic balance, network depth and SHG co-location. Built on 11 seed partner orgs — read the bands as illustrative, not definitive, until the partner layer is properly researched.</p>
+<p class="section-sub">A funder-facing read on the state of the partner ecosystem — coverage, reach into aspirational districts, resilience, thematic balance, network depth and SHG co-location. Built on the 46-org research pass — still not independently field-verified, so read the bands as a strong first read, not a definitive verdict.</p>
 <div class="card cardpad"><div class="health"><div class="hindex" id="hindex"></div><div class="hcards" id="hcards"></div></div></div>
 
 <div class="section-title">Partner × Theme matrix</div>
-<p class="section-sub">Where thematic energy concentrates among the 11 seed partners. Several block-level orgs (NIRMAN, SEWAK, SEBAJAGAT, WOSCA &amp; WASSAN, WASSAN &amp; its partners, PRADAN) have no theme data in the source and show no cells — that's a gap in the source, not a claim they cover no themes.</p>
+<p class="section-sub">Where thematic energy concentrates among the 46 researched partners. 8 orgs (Goonj, Gram Vikas, NIRMAN, PRADAN, SEBAJAGAT, SEWAK, WASSAN &amp; its partners, WOSCA &amp; WASSAN) have no theme data in the source and show no cells — that's a gap in the source, not a claim they cover no themes.</p>
 <div class="card cardpad mtx" id="matrix"></div>
 
 <div class="section-title">Government spend — DMF (District Mineral Foundation)</div>
@@ -197,13 +197,13 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 
 <div class="section-title collapser closed" id="dirToggle" data-wrap="dirwrap">Partner directory <span class="caret">▾</span> <span class="mini" style="font-weight:400" id="dircount"></span></div>
 <div id="dirwrap" class="collapsed">
-<p class="section-sub">All 11 seed partner organisations. Click a column header to sort; click a district tag to focus the map. See the Sources section for exactly where each row came from.</p>
+<p class="section-sub">All 46 researched partner organisations. Click a column header to sort; click a district tag to focus the map. Each row's source URL and confidence notes live in <code>data/odisha_partners_seed.csv</code> in the repo — a few rows are flagged low-confidence there and worth independent verification before relying on them.</p>
 <div class="card tbl" id="dirtbl"></div>
 </div>
 
 <div class="section-title collapser closed" data-wrap="phwrap">Place health — where attention is needed <span class="caret">▾</span></div>
 <div id="phwrap" class="collapsed">
-<p class="section-sub">Each district scored 0–100 on how well it is served (partner presence 45% · thematic breadth 30% · resilience/no single-point-of-failure 25%), ranked neediest-first, using the 11-org seed dataset. Priority = aspirational (NITI Aayog) &amp; weakly served.</p>
+<p class="section-sub">Each district scored 0–100 on how well it is served (partner presence 45% · thematic breadth 30% · resilience/no single-point-of-failure 25%), ranked neediest-first, using the 46-org research pass. Priority = aspirational (NITI Aayog) &amp; weakly served.</p>
 <div class="card">
  <div class="phhead"><span>District</span><span>Coverage strength</span><span style="text-align:right">Score</span></div>
  <div class="ph" id="placehealth"></div>
@@ -232,8 +232,8 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
    <ul><li><a href="https://www.fpoplatform.com/dashboard" target="_blank" rel="noopener">FPO Platform</a> (backed by Cornell TCI's FPO API) — district count &amp; farmers</li></ul></div>
   <div><div class="srch">Aspirational districts</div>
    <ul><li><a href="https://www.niti.gov.in/" target="_blank" rel="noopener">NITI Aayog</a> — Aspirational Districts Programme, official list</li></ul></div>
-  <div><div class="srch">Seed partner data</div>
-   <ul><li><a href="https://github.com/sidd-1995/jharkhand-landscape" target="_blank" rel="noopener">jharkhand-landscape</a> — incidental Odisha rows in its own multi-state source files</li></ul></div>
+  <div><div class="srch">Partner research pass</div>
+   <ul><li>Org websites, annual reports, CSR filings &amp; NGO directories, one source URL per row — see the Partner directory · 11 of the 46 orgs via <a href="https://github.com/sidd-1995/jharkhand-landscape" target="_blank" rel="noopener">jharkhand-landscape</a>'s incidental Odisha mentions</li></ul></div>
  </div>
 </div>
 </div>
@@ -272,7 +272,7 @@ function renderStrip(){const strip=document.getElementById('strip'); strip.inner
  const covered=coveredList().length, white=whiteList().length;
  const stats=[
   [NDIST,'Districts'],
-  [PARTNERS.length,'Partners mapped (seed)'],
+  [PARTNERS.length,'Partners mapped (researched)'],
   [covered,'Districts covered'],
   [white,'Whitespace (0 orgs)','warn'],
   [CANON.filter(d=>D[d].aspirational).length,'Aspirational (NITI Aayog)'],
@@ -315,8 +315,8 @@ refreshScales();
 const lenses={
  placehealth:{label:'Place health score',fill:d=>{const pal=['#c2410c','#e0762f','#e6b84d','#8bbf5a','#2b8a3e'];return pal[Math.min(4,Math.floor(placeScore(d)/20.0001))];},
    legend:()=>gradLegendC('Place health 0 → 100',['#c2410c','#e0762f','#e6b84d','#8bbf5a','#2b8a3e'],'weak → strong')},
- partners:{label:'Partner density (seed)',fill:d=>seqColor(effP(d),maxP),
-   legend:()=>gradLegend('# seed partners',maxP)},
+ partners:{label:'Partner density',fill:d=>seqColor(effP(d),maxP),
+   legend:()=>gradLegend('# partners',maxP)},
  themes:{label:'Theme breadth',fill:d=>seqColor(effT(d),maxT),
    legend:()=>gradLegend('# themes',maxT)},
  dom:{label:'Dominant theme',fill:d=>{const t=domTheme(d);return t?themePalette[t]:'#f1f5fa';},
@@ -325,7 +325,7 @@ const lenses={
      if(n===0)return '#e79a6a'; if(a&&n<=1)return '#f0c088'; return '#cfe0d8';},
    legend:()=>gapLegend()},
  blockcov:{label:'Block presence (beta)',fill:d=>{const n=blockN(d);if(!n)return '#f1f5fa';const p=['#dcefe6','#a6ddc4','#6ec6a4','#3aa987','#1f7d63'];return p[Math.min(p.length-1,Math.ceil(n/Math.max(maxBlk,1)*(p.length-1)))];},
-   legend:()=>gradLegendC('Known block-level presence — seed data only',['#f1f5fa','#a6ddc4','#6ec6a4','#3aa987','#1f7d63'],'0 → '+maxBlk+' blocks')},
+   legend:()=>gradLegendC('Known block-level presence — from the research pass only',['#f1f5fa','#a6ddc4','#6ec6a4','#3aa987','#1f7d63'],'0 → '+maxBlk+' blocks')},
  shg:{label:'SHG density',fill:d=>{const n=shgN(d);if(!n)return '#faf3e8';const p=['#faf3e8','#f0dcae','#e0b968','#c98e2e','#9c6512'];return p[Math.min(p.length-1,Math.ceil(n/Math.max(maxSHG,1)*(p.length-1)))];},
    legend:()=>gradLegendC('Self Help Groups (DAY-NRLM MIS)',['#faf3e8','#f0dcae','#e0b968','#c98e2e','#9c6512'],'0 → '+maxSHG.toLocaleString()+' SHGs')},
  fpo:{label:'FPO density',fill:d=>{const n=fpoN(d);if(!n)return '#eef3ea';const p=['#eef3ea','#c9dfba','#9ec98a','#6fae5c','#3d8730'];return p[Math.min(p.length-1,Math.ceil(n/Math.max(maxFPO,1)*(p.length-1)))];},
@@ -416,7 +416,7 @@ function selectDist(name){selD=name;
  let h='<div class="dh"><span class="name">'+name+'</span><span>';
  if(v.aspirational)h+='<span class="badge asp">Aspirational</span>';
  h+='</span></div>';
- h+='<div class="kv"><div><div class="k">Partners (seed)</div><div class="v">'+effP(name)+'</div></div>'
+ h+='<div class="kv"><div><div class="k">Partners</div><div class="v">'+effP(name)+'</div></div>'
    +'<div><div class="k">Themes</div><div class="v">'+effT(name)+'</div></div>'
    +'<div><div class="k">DMF (FY16→FY26)</div><div class="v">'+fmtDmf(Math.round(DMF_TOTAL[name]||0))+'</div></div></div>';
  // place health readout
@@ -428,17 +428,17 @@ function selectDist(name){selD=name;
   +'<span class="mini">'+pb[2]+'</span></div>'
   +'<div class="track" style="height:8px;background:var(--line2);border-radius:5px;overflow:hidden;margin-top:7px"><i style="display:block;height:100%;width:'+Math.max(ps,2)+'%;background:'+pb[0]+'"></i></div>'
   +'<div class="mini" style="margin-top:5px">'+effP(name)+' org'+(effP(name)!=1?'s':'')+' (45%) · '+effT(name)+' themes (30%) · resilience (25%)</div></div>';
- h+='<div class="sec"><div class="t">Partners here (seed)</div>';
+ h+='<div class="sec"><div class="t">Partners here</div>';
  if(dp.length){h+='<ul class="plist">';dp.forEach(p=>{h+='<li><b>'+p.name+'</b><br><span class="mini">'+(p.themes.length?p.themes.join(' · '):'no theme data in source')+'</span></li>';});h+='</ul>';}
- else h+='<div class="mini">No mapped partner in the seed data. '+(v.aspirational?'Aspirational district — whitespace.':'')+'</div>';
+ else h+='<div class="mini">No mapped partner found in this research pass. '+(v.aspirational?'Aspirational district — whitespace.':'')+'</div>';
  h+='</div>';
  if(v.themes.length){h+='<div class="sec"><div class="t">Themes active</div><div class="chips">'+v.themes.map(t=>'<span class="chip" style="border-left:3px solid '+(themePalette[t]||'#ccc')+'">'+t+'</span>').join('')+'</div></div>';}
- // block coverage (beta) — seed data only
+ // block coverage (beta) — from the research pass only
  const bc=v.blockcov||[];
  if(bc.length){
   const srcs=[...new Set(bc.flatMap(b=>b.by))].sort();
   h+='<div class="sec"><details class="bcov"><summary><b>Block coverage</b> <span class="beta">beta</span> · <b>'+bc.length+'</b> block(s) with known partner presence</summary>';
-  h+='<div class="mini" style="margin:5px 0 8px">Block-level presence known for <b>'+srcs.join(', ')+'</b> only, from the seed dataset — this is <b>known presence, not total coverage</b>.</div>';
+  h+='<div class="mini" style="margin:5px 0 8px">Block-level presence known for <b>'+srcs.join(', ')+'</b> only, from the research pass — this is <b>known presence, not total coverage</b>.</div>';
   h+='<ul class="blist">';
   bc.forEach(b=>{h+='<li><b>'+b.name+'</b> '+b.by.map(s=>'<span class="tag">'+s+'</span>').join('')
     +(b.villages&&b.villages.length?'<br><span class="mini">villages: '+b.villages.join(', ')+'</span>':'')+'</li>';});
@@ -528,7 +528,7 @@ function buildDisTbl(){
  box.querySelectorAll('.pill').forEach(s=>s.onclick=()=>{selectDist(s.dataset.d);document.getElementById('mapbox').scrollIntoView({behavior:'smooth',block:'center'});});
 }
 
-function updateFoot(){const wl=whiteList();document.getElementById('foot').innerHTML='Fully self-contained (offline) · '+PARTNERS.length+' seed partners across '+coveredList().length+'/'+NDIST+' districts · Whitespace: <b>'+(wl.length?wl.join(', '):'none')+'</b>.<br>MIT licensed · source &amp; issues: <a href="https://github.com/sidd-1995/odisha-landscape" target="_blank" rel="noopener">github.com/sidd-1995/odisha-landscape</a>';}
+function updateFoot(){const wl=whiteList();document.getElementById('foot').innerHTML='Fully self-contained (offline) · '+PARTNERS.length+' researched partners across '+coveredList().length+'/'+NDIST+' districts · Whitespace: <b>'+(wl.length?wl.join(', '):'none')+'</b>.<br>MIT licensed · source &amp; issues: <a href="https://github.com/sidd-1995/odisha-landscape" target="_blank" rel="noopener">github.com/sidd-1995/odisha-landscape</a>';}
 
 /* ---------- ecosystem + place health ---------- */
 const BAND={strong:['#2b8a3e','#e7f3ea','Strong'],mod:['#b45309','#fdf0e2','Moderate'],weak:['#c2410c','#fdece3','Weak']};
@@ -550,12 +550,12 @@ function buildHealth(){
  const shgMemCov=CANON.reduce((s,d)=>s+(effP(d)?((D[d].shg||{}).members||0):0),0);
  const shgCov=shgTot?shgMemCov/shgTot*100:0;
  const dims=[
-  {n:'Geographic coverage',v:cov.length+'/'+NDIST,s:cov.length/NDIST*100,d:Math.round(cov.length/NDIST*100)+'% of districts have ≥1 '+lbl+' (seed data).'},
-  {n:'Aspirational reach',v:aspCov.length+'/'+asp.length,s:asp.length?aspCov.length/asp.length*100:0,d:(asp.length-aspCov.length)+' NITI Aayog aspirational districts still unserved in the seed: '+(asp.filter(d=>!effP(d)).join(', ')||'none')+'.'},
+  {n:'Geographic coverage',v:cov.length+'/'+NDIST,s:cov.length/NDIST*100,d:Math.round(cov.length/NDIST*100)+'% of districts have ≥1 '+lbl+' (research pass).'},
+  {n:'Aspirational reach',v:aspCov.length+'/'+asp.length,s:asp.length?aspCov.length/asp.length*100:0,d:(asp.length-aspCov.length)+' NITI Aayog aspirational districts still unserved: '+(asp.filter(d=>!effP(d)).join(', ')||'none')+'.'},
   {n:'Resilience',v:(NDIST-wht.length-single.length)+'/'+NDIST,s:(NDIST-wht.length-single.length)/NDIST*100,d:single.length+' single-'+lbl+' + '+wht.length+' zero-'+lbl+' districts = key-person risk.'},
   {n:'Thematic balance',v:(THEMES.length-fragile.length)+'/'+THEMES.length,s:(THEMES.length-fragile.length)/THEMES.length*100,d:'Thin themes (≤2 '+lbl+'s): '+(fragile.join(', ')||'none')+'.'},
   {n:'Network depth',v:hubs.length+' hubs',s:hubs.length/NDIST*100,d:hubs.length+' districts with ≥3 '+lbl+'s; avg '+avgP.toFixed(1)+' where present.'},
-  {n:'SHG reach',v:Math.round(shgCov)+'% of SHG base',s:shgCov,d:Math.round(shgCov)+'% of the '+(shgTot/1e6).toFixed(1)+'M SHG members statewide (DAY-NRLM) sit in districts with a mapped '+lbl+' — how much existing grassroots infrastructure the seed ecosystem already touches.'}
+  {n:'SHG reach',v:Math.round(shgCov)+'% of SHG base',s:shgCov,d:Math.round(shgCov)+'% of the '+(shgTot/1e6).toFixed(1)+'M SHG members statewide (DAY-NRLM) sit in districts with a mapped '+lbl+' — how much existing grassroots infrastructure the mapped ecosystem already touches.'}
  ];
  // weights renormalised from jharkhand-landscape's 7-dimension set after dropping
  // "Resource alignment" (needs CSR, which is blocked for Odisha -- see Sources)
@@ -563,9 +563,9 @@ function buildHealth(){
  const idx=Math.round(dims.reduce((s,dm,i)=>s+dm.s*W[i],0));
  const b=BAND[band(idx)];
  document.getElementById('hindex').innerHTML=
-  '<div class="big">'+idx+'<small>/100</small></div><div class="lbl">Ecosystem Health Index (seed data)</div>'
+  '<div class="big">'+idx+'<small>/100</small></div><div class="lbl">Ecosystem Health Index (research pass)</div>'
   +'<span class="band" style="background:'+b[1]+';color:'+b[0]+'">'+b[2]+'</span>'
-  +'<div class="desc">'+cov.length+'/'+NDIST+' districts covered, '+aspCov.length+'/'+asp.length+' aspirational districts reached, '+hubs.length+' hubs — all against an 11-org seed set. This score will move a lot once the partner layer is properly researched; read it as a placeholder for the method, not a verdict on Odisha\'s ecosystem.</div>';
+  +'<div class="desc">'+cov.length+'/'+NDIST+' districts covered, '+aspCov.length+'/'+asp.length+' aspirational districts reached, '+hubs.length+' hubs — against a 46-org research pass that is sourced but not independently field-verified. Read it as a strong first read, not a verdict on Odisha\'s ecosystem.</div>';
  document.getElementById('hcards').innerHTML=dims.map(dm=>{const bb=BAND[band(dm.s)];
   return '<div class="hc"><span class="band" style="background:'+bb[1]+';color:'+bb[0]+'">'+bb[2]+'</span>'
    +'<div class="m">'+dm.v+'</div><div class="nm">'+dm.n+'</div>'

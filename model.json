@@ -60,10 +60,164 @@
  ],
  "partners": [
   {
+   "name": "AFPRO (Action for Food Production)",
+   "districts": [
+    "Jharsuguda"
+   ],
+   "themes": [
+    "Agriculture",
+    "Livelihoods & Rural Dev",
+    "Water & Sanitation",
+    "Natural Resource Mgmt",
+    "Climate Action"
+   ]
+  },
+  {
+   "name": "ActionAid Association",
+   "districts": [
+    "Bargarh",
+    "Ganjam",
+    "Jagatsinghapur",
+    "Khordha",
+    "Puri",
+    "Sundargarh"
+   ],
+   "themes": [
+    "Governance",
+    "Women & Gender",
+    "Child Protection"
+   ]
+  },
+  {
+   "name": "Adhikar",
+   "districts": [
+    "Baleshwar",
+    "Kalahandi",
+    "Khordha",
+    "Mayurbhanj"
+   ],
+   "themes": [
+    "Skill Development",
+    "Livelihoods & Rural Dev",
+    "Water & Sanitation"
+   ]
+  },
+  {
+   "name": "Agragamee",
+   "districts": [
+    "Kalahandi",
+    "Koraput",
+    "Rayagada"
+   ],
+   "themes": [
+    "Agriculture",
+    "Natural Resource Mgmt",
+    "Women & Gender",
+    "Education"
+   ]
+  },
+  {
+   "name": "Asha Kiran Society",
+   "districts": [
+    "Koraput"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev"
+   ]
+  },
+  {
+   "name": "Ashakiran Institute for Integrated Developmental Actions (AIIDA)",
+   "districts": [
+    "Kandhamal"
+   ],
+   "themes": [
+    "Agriculture",
+    "Skill Development",
+    "Women & Gender"
+   ]
+  },
+  {
+   "name": "Atmashakti Trust",
+   "districts": [
+    "Deogarh",
+    "Kalahandi",
+    "Kandhamal",
+    "Koraput",
+    "Mayurbhanj",
+    "Nuapada",
+    "Rayagada",
+    "Sambalpur",
+    "Sundargarh"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Agriculture",
+    "Health & Nutrition",
+    "Women & Gender",
+    "Education"
+   ]
+  },
+  {
+   "name": "CINI (Child In Need Institute)",
+   "districts": [
+    "Koraput",
+    "Nabarangpur",
+    "Rayagada"
+   ],
+   "themes": [
+    "Health & Nutrition",
+    "Child Protection"
+   ]
+  },
+  {
+   "name": "CYSD (Centre for Youth and Social Development)",
+   "districts": [
+    "Balangir",
+    "Kalahandi",
+    "Kendujhar",
+    "Koraput",
+    "Malkangiri",
+    "Mayurbhanj",
+    "Nabarangpur",
+    "Puri",
+    "Rayagada"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Education",
+    "Climate Action",
+    "Skill Development",
+    "Governance"
+   ]
+  },
+  {
+   "name": "DAPTA",
+   "districts": [
+    "Deogarh",
+    "Kalahandi",
+    "Kandhamal"
+   ],
+   "themes": [
+    "Women & Gender",
+    "Livelihoods & Rural Dev"
+   ]
+  },
+  {
+   "name": "Deepika Mahila Sanghati",
+   "districts": [
+    "Sundargarh"
+   ],
+   "themes": [
+    "Women & Gender",
+    "Skill Development",
+    "Livelihoods & Rural Dev"
+   ]
+  },
+  {
    "name": "FORWARD",
    "districts": [
-    "Rayagada",
-    "Mayurbhanj"
+    "Mayurbhanj",
+    "Rayagada"
    ],
    "themes": [
     "Education",
@@ -71,6 +225,236 @@
     "Climate Action",
     "Livelihoods and Rural Development",
     "Gender Integration"
+   ]
+  },
+  {
+   "name": "Foundation for Ecological Security (FES)",
+   "districts": [
+    "Anugul",
+    "Dhenkanal",
+    "Kendujhar",
+    "Koraput"
+   ],
+   "themes": [
+    "Natural Resource Mgmt",
+    "Livelihoods & Rural Dev",
+    "Governance"
+   ]
+  },
+  {
+   "name": "Goonj",
+   "districts": [
+    "Gajapati",
+    "Mayurbhanj"
+   ],
+   "themes": []
+  },
+  {
+   "name": "Gram Vikas",
+   "districts": [
+    "Gajapati",
+    "Ganjam",
+    "Kalahandi",
+    "Kandhamal",
+    "Khordha"
+   ],
+   "themes": []
+  },
+  {
+   "name": "Harsha Trust",
+   "districts": [
+    "Kalahandi",
+    "Koraput",
+    "Malkangiri",
+    "Nabarangpur",
+    "Rayagada"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Agriculture",
+    "Natural Resource Mgmt",
+    "Health & Nutrition"
+   ]
+  },
+  {
+   "name": "ISWAR (Integrated Social Welfare And Research Centre)",
+   "districts": [
+    "Dhenkanal"
+   ],
+   "themes": [
+    "Education",
+    "Health & Nutrition",
+    "Water & Sanitation",
+    "Agriculture",
+    "Livelihoods & Rural Dev"
+   ]
+  },
+  {
+   "name": "Kalinga Institute of Social Sciences (KISS)",
+   "districts": [
+    "Khordha"
+   ],
+   "themes": [
+    "Education",
+    "Skill Development",
+    "Child Protection"
+   ]
+  },
+  {
+   "name": "Kandhamal Jilla Sabuja Baidya Sangatha",
+   "districts": [
+    "Kandhamal"
+   ],
+   "themes": [
+    "Health & Nutrition"
+   ]
+  },
+  {
+   "name": "Lokadrusti",
+   "districts": [
+    "Nuapada"
+   ],
+   "themes": [
+    "Governance",
+    "Health & Nutrition",
+    "Education",
+    "Women & Gender",
+    "Natural Resource Mgmt",
+    "Child Protection",
+    "Livelihoods & Rural Dev"
+   ]
+  },
+  {
+   "name": "Mahashakti Foundation",
+   "districts": [
+    "Balangir",
+    "Kalahandi"
+   ],
+   "themes": [
+    "Agriculture",
+    "Women & Gender",
+    "Education",
+    "Health & Nutrition",
+    "Livelihoods & Rural Dev"
+   ]
+  },
+  {
+   "name": "NIRMAN",
+   "districts": [
+    "Deogarh",
+    "Kandhamal",
+    "Nayagarh",
+    "Rayagada"
+   ],
+   "themes": []
+  },
+  {
+   "name": "Niyatee Foundation",
+   "districts": [
+    "Anugul",
+    "Bargarh",
+    "Bhadrak",
+    "Cuttack",
+    "Deogarh",
+    "Ganjam",
+    "Jagatsinghapur",
+    "Jajapur",
+    "Jharsuguda",
+    "Kendrapara",
+    "Khordha",
+    "Nayagarh",
+    "Puri",
+    "Sambalpur",
+    "Sundargarh"
+   ],
+   "themes": [
+    "Child Protection",
+    "Skill Development",
+    "Women & Gender",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action"
+   ]
+  },
+  {
+   "name": "OVARR (Orissa Voluntary Association For Rural Reconstruction)",
+   "districts": [
+    "Puri"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev"
+   ]
+  },
+  {
+   "name": "PRADAN",
+   "districts": [
+    "Kalahandi",
+    "Kandhamal",
+    "Koraput",
+    "Mayurbhanj",
+    "Rayagada"
+   ],
+   "themes": []
+  },
+  {
+   "name": "Pragati",
+   "districts": [
+    "Koraput",
+    "Malkangiri",
+    "Nabarangpur",
+    "Rayagada"
+   ],
+   "themes": [
+    "Agriculture",
+    "Livelihoods & Rural Dev",
+    "Climate Action",
+    "Skill Development",
+    "Women & Gender"
+   ]
+  },
+  {
+   "name": "Pratham",
+   "districts": [
+    "Cuttack",
+    "Rayagada"
+   ],
+   "themes": [
+    "Education"
+   ]
+  },
+  {
+   "name": "SAMBHAV",
+   "districts": [
+    "Nayagarh"
+   ],
+   "themes": [
+    "Agriculture"
+   ]
+  },
+  {
+   "name": "SEBAJAGAT",
+   "districts": [
+    "Kalahandi"
+   ],
+   "themes": []
+  },
+  {
+   "name": "SEWAK",
+   "districts": [
+    "Sundargarh"
+   ],
+   "themes": []
+  },
+  {
+   "name": "SOS Children's Villages",
+   "districts": [
+    "Khordha",
+    "Sundargarh"
+   ],
+   "themes": [
+    "Child Protection",
+    "Education"
    ]
   },
   {
@@ -83,6 +467,59 @@
     "Climate Action",
     "Livelihoods and Rural Development",
     "Gender Integration"
+   ]
+  },
+  {
+   "name": "Save the Children",
+   "districts": [
+    "Boudh",
+    "Kandhamal",
+    "Kendrapara",
+    "Khordha",
+    "Koraput"
+   ],
+   "themes": [
+    "Education",
+    "Health & Nutrition",
+    "Child Protection"
+   ]
+  },
+  {
+   "name": "Tata Steel Foundation",
+   "districts": [
+    "Ganjam",
+    "Jajapur"
+   ],
+   "themes": [
+    "Health & Nutrition",
+    "Livelihoods & Rural Dev",
+    "Agriculture",
+    "Skill Development"
+   ]
+  },
+  {
+   "name": "United Artists' Association (UAA)",
+   "districts": [
+    "Ganjam",
+    "Puri"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Health & Nutrition",
+    "Water & Sanitation",
+    "Governance",
+    "Climate Action",
+    "Education",
+    "Agriculture"
+   ]
+  },
+  {
+   "name": "VARD (Voluntary Association For Rural Development)",
+   "districts": [
+    "Baleshwar"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev"
    ]
   },
   {
@@ -99,26 +536,55 @@
    ]
   },
   {
-   "name": "NIRMAN",
+   "name": "VJSS (Viswa Jeevan Seva Sangh)",
    "districts": [
+    "Khordha",
     "Nayagarh",
-    "Kandhamal",
-    "Rayagada",
+    "Puri",
+    "Sonepur"
+   ],
+   "themes": [
+    "Education",
+    "Health & Nutrition",
+    "Women & Gender",
+    "Child Protection",
+    "Agriculture",
+    "Livelihoods & Rural Dev",
+    "Skill Development"
+   ]
+  },
+  {
+   "name": "VORSA",
+   "districts": [
+    "Kendrapara"
+   ],
+   "themes": [
+    "Education",
+    "Livelihoods & Rural Dev",
+    "Health & Nutrition"
+   ]
+  },
+  {
+   "name": "Voluntary Institute For Rural Development (VIRD)",
+   "districts": [
+    "Anugul",
     "Deogarh"
    ],
-   "themes": []
+   "themes": [
+    "Women & Gender",
+    "Agriculture",
+    "Livelihoods & Rural Dev",
+    "Health & Nutrition",
+    "Education",
+    "Skill Development",
+    "Water & Sanitation",
+    "Child Protection"
+   ]
   },
   {
-   "name": "SEWAK",
+   "name": "WASSAN & its partners",
    "districts": [
-    "Sundargarh"
-   ],
-   "themes": []
-  },
-  {
-   "name": "SEBAJAGAT",
-   "districts": [
-    "Kalahandi"
+    "Koraput"
    ],
    "themes": []
   },
@@ -130,47 +596,56 @@
    "themes": []
   },
   {
-   "name": "WASSAN & its partners",
+   "name": "Water For People India",
    "districts": [
-    "Koraput"
+    "Ganjam"
    ],
-   "themes": []
+   "themes": [
+    "Water & Sanitation"
+   ]
   },
   {
-   "name": "Goonj",
+   "name": "WaterAid India",
    "districts": [
-    "Gajapati",
-    "Mayurbhanj"
+    "Bhadrak",
+    "Nuapada"
    ],
-   "themes": []
+   "themes": [
+    "Water & Sanitation"
+   ]
   },
   {
-   "name": "Gram Vikas",
+   "name": "Western Odisha NREGA Consortium (WONC)",
    "districts": [
-    "Gajapati",
-    "Ganjam",
-    "Kandhamal",
-    "Kalahandi",
-    "Khordha"
+    "Balangir",
+    "Nuapada"
    ],
-   "themes": []
+   "themes": [
+    "Governance",
+    "Livelihoods & Rural Dev"
+   ]
   },
   {
-   "name": "PRADAN",
+   "name": "Women Wings",
    "districts": [
-    "Kalahandi",
-    "Kandhamal",
-    "Mayurbhanj",
-    "Rayagada",
-    "Koraput"
+    "Puri"
    ],
-   "themes": []
+   "themes": [
+    "Education",
+    "Women & Gender",
+    "Health & Nutrition",
+    "Skill Development"
+   ]
   }
  ],
  "anchors": [],
  "districts": {
   "Anugul": {
-   "partners": [],
+   "partners": [
+    "Foundation for Ecological Security (FES)",
+    "Niyatee Foundation",
+    "Voluntary Institute For Rural Development (VIRD)"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -272,7 +747,11 @@
    }
   },
   "Balangir": {
-   "partners": [],
+   "partners": [
+    "CYSD (Centre for Youth and Social Development)",
+    "Mahashakti Foundation",
+    "Western Odisha NREGA Consortium (WONC)"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -281,7 +760,36 @@
    "cg": null,
    "csr": {},
    "aspirational": true,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Deogaon",
+     "by": [
+      "Mahashakti Foundation"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Gudvella",
+     "by": [
+      "Mahashakti Foundation"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Sindhekela",
+     "by": [
+      "Mahashakti Foundation"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Titlagarh",
+     "by": [
+      "CYSD (Centre for Youth and Social Development)"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 22269,
     "members": 228388,
@@ -422,7 +930,10 @@
    }
   },
   "Baleshwar": {
-   "partners": [],
+   "partners": [
+    "Adhikar",
+    "VARD (Voluntary Association For Rural Development)"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -556,7 +1067,10 @@
    }
   },
   "Bargarh": {
-   "partners": [],
+   "partners": [
+    "ActionAid Association",
+    "Niyatee Foundation"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -690,7 +1204,10 @@
    }
   },
   "Bhadrak": {
-   "partners": [],
+   "partners": [
+    "Niyatee Foundation",
+    "WaterAid India"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -784,7 +1301,9 @@
    }
   },
   "Boudh": {
-   "partners": [],
+   "partners": [
+    "Save the Children"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -846,7 +1365,10 @@
    }
   },
   "Cuttack": {
-   "partners": [],
+   "partners": [
+    "Niyatee Foundation",
+    "Pratham"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -997,7 +1519,11 @@
   },
   "Deogarh": {
    "partners": [
-    "NIRMAN"
+    "Atmashakti Trust",
+    "DAPTA",
+    "NIRMAN",
+    "Niyatee Foundation",
+    "Voluntary Institute For Rural Development (VIRD)"
    ],
    "themes": [],
    "tri": {
@@ -1068,7 +1594,10 @@
    }
   },
   "Dhenkanal": {
-   "partners": [],
+   "partners": [
+    "Foundation for Ecological Security (FES)",
+    "ISWAR (Integrated Social Welfare And Research Centre)"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -1268,8 +1797,13 @@
   },
   "Ganjam": {
    "partners": [
+    "ActionAid Association",
+    "Gram Vikas",
+    "Niyatee Foundation",
+    "Tata Steel Foundation",
+    "United Artists' Association (UAA)",
     "VIEWS",
-    "Gram Vikas"
+    "Water For People India"
    ],
    "themes": [],
    "tri": {
@@ -1279,7 +1813,15 @@
    "cg": null,
    "csr": {},
    "aspirational": false,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Hinjilicut",
+     "by": [
+      "Water For People India"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 39846,
     "members": 414167,
@@ -1484,7 +2026,10 @@
    }
   },
   "Jagatsinghapur": {
-   "partners": [],
+   "partners": [
+    "ActionAid Association",
+    "Niyatee Foundation"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -1586,7 +2131,10 @@
    }
   },
   "Jajapur": {
-   "partners": [],
+   "partners": [
+    "Niyatee Foundation",
+    "Tata Steel Foundation"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -1704,7 +2252,10 @@
    }
   },
   "Jharsuguda": {
-   "partners": [],
+   "partners": [
+    "AFPRO (Action for Food Production)",
+    "Niyatee Foundation"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -1783,9 +2334,16 @@
   },
   "Kalahandi": {
    "partners": [
-    "SEBAJAGAT",
+    "Adhikar",
+    "Agragamee",
+    "Atmashakti Trust",
+    "CYSD (Centre for Youth and Social Development)",
+    "DAPTA",
     "Gram Vikas",
-    "PRADAN"
+    "Harsha Trust",
+    "Mahashakti Foundation",
+    "PRADAN",
+    "SEBAJAGAT"
    ],
    "themes": [],
    "tri": {
@@ -1804,9 +2362,24 @@
      "villages": []
     },
     {
+     "name": "Bhawanipatna",
+     "by": [
+      "Mahashakti Foundation"
+     ],
+     "villages": []
+    },
+    {
      "name": "Golamunda",
      "by": [
+      "Harsha Trust",
       "SEBAJAGAT"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Kesinga",
+     "by": [
+      "CYSD (Centre for Youth and Social Development)"
      ],
      "villages": []
     },
@@ -1820,6 +2393,7 @@
     {
      "name": "Lanjigarh",
      "by": [
+      "Mahashakti Foundation",
       "PRADAN"
      ],
      "villages": []
@@ -1832,9 +2406,23 @@
      "villages": []
     },
     {
+     "name": "Madanpur Rampur",
+     "by": [
+      "Mahashakti Foundation"
+     ],
+     "villages": []
+    },
+    {
      "name": "Norla",
      "by": [
       "SEBAJAGAT"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Th. Rampur",
+     "by": [
+      "Agragamee"
      ],
      "villages": []
     }
@@ -1972,9 +2560,14 @@
   },
   "Kandhamal": {
    "partners": [
-    "NIRMAN",
+    "Ashakiran Institute for Integrated Developmental Actions (AIIDA)",
+    "Atmashakti Trust",
+    "DAPTA",
     "Gram Vikas",
-    "PRADAN"
+    "Kandhamal Jilla Sabuja Baidya Sangatha",
+    "NIRMAN",
+    "PRADAN",
+    "Save the Children"
    ],
    "themes": [],
    "tri": {
@@ -2124,7 +2717,11 @@
    }
   },
   "Kendrapara": {
-   "partners": [],
+   "partners": [
+    "Niyatee Foundation",
+    "Save the Children",
+    "VORSA"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -2133,7 +2730,15 @@
    "cg": null,
    "csr": {},
    "aspirational": false,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Mahakalpada",
+     "by": [
+      "VORSA"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 23450,
     "members": 256304,
@@ -2235,6 +2840,8 @@
   },
   "Kendujhar": {
    "partners": [
+    "CYSD (Centre for Youth and Social Development)",
+    "Foundation for Ecological Security (FES)",
     "WOSCA & WASSAN"
    ],
    "themes": [],
@@ -2278,6 +2885,13 @@
      "name": "Patna",
      "by": [
       "WOSCA & WASSAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Saharapada",
+     "by": [
+      "CYSD (Centre for Youth and Social Development)"
      ],
      "villages": []
     },
@@ -2429,8 +3043,15 @@
   },
   "Khordha": {
    "partners": [
+    "ActionAid Association",
+    "Adhikar",
+    "Gram Vikas",
+    "Kalinga Institute of Social Sciences (KISS)",
+    "Niyatee Foundation",
+    "SOS Children's Villages",
     "SPREAD",
-    "Gram Vikas"
+    "Save the Children",
+    "VJSS (Viswa Jeevan Seva Sangh)"
    ],
    "themes": [],
    "tri": {
@@ -2440,7 +3061,15 @@
    "cg": null,
    "csr": {},
    "aspirational": false,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Tangi",
+     "by": [
+      "Adhikar"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 19610,
     "members": 204785,
@@ -2550,8 +3179,17 @@
   },
   "Koraput": {
    "partners": [
-    "WASSAN & its partners",
-    "PRADAN"
+    "Agragamee",
+    "Asha Kiran Society",
+    "Atmashakti Trust",
+    "CINI (Child In Need Institute)",
+    "CYSD (Centre for Youth and Social Development)",
+    "Foundation for Ecological Security (FES)",
+    "Harsha Trust",
+    "PRADAN",
+    "Pragati",
+    "Save the Children",
+    "WASSAN & its partners"
    ],
    "themes": [],
    "tri": {
@@ -2570,6 +3208,13 @@
      "villages": []
     },
     {
+     "name": "Dasmantpur",
+     "by": [
+      "Agragamee"
+     ],
+     "villages": []
+    },
+    {
      "name": "Lamtaput",
      "by": [
       "PRADAN"
@@ -2580,6 +3225,13 @@
      "name": "Nandapur",
      "by": [
       "PRADAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Narayanpatna",
+     "by": [
+      "Atmashakti Trust"
      ],
      "villages": []
     }
@@ -2724,7 +3376,11 @@
    }
   },
   "Malkangiri": {
-   "partners": [],
+   "partners": [
+    "CYSD (Centre for Youth and Social Development)",
+    "Harsha Trust",
+    "Pragati"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -2819,6 +3475,9 @@
   },
   "Mayurbhanj": {
    "partners": [
+    "Adhikar",
+    "Atmashakti Trust",
+    "CYSD (Centre for Youth and Social Development)",
     "FORWARD",
     "Goonj",
     "PRADAN"
@@ -2849,6 +3508,7 @@
     {
      "name": "Thakurmunda",
      "by": [
+      "CYSD (Centre for Youth and Social Development)",
       "PRADAN"
      ],
      "villages": []
@@ -3090,7 +3750,12 @@
    }
   },
   "Nabarangpur": {
-   "partners": [],
+   "partners": [
+    "CINI (Child In Need Institute)",
+    "CYSD (Centre for Youth and Social Development)",
+    "Harsha Trust",
+    "Pragati"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -3209,7 +3874,10 @@
   },
   "Nayagarh": {
    "partners": [
-    "NIRMAN"
+    "NIRMAN",
+    "Niyatee Foundation",
+    "SAMBHAV",
+    "VJSS (Viswa Jeevan Seva Sangh)"
    ],
    "themes": [],
    "tri": {
@@ -3224,6 +3892,13 @@
      "name": "Daspalla",
      "by": [
       "NIRMAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Rohibank area",
+     "by": [
+      "SAMBHAV"
      ],
      "villages": []
     }
@@ -3320,7 +3995,12 @@
    }
   },
   "Nuapada": {
-   "partners": [],
+   "partners": [
+    "Atmashakti Trust",
+    "Lokadrusti",
+    "WaterAid India",
+    "Western Odisha NREGA Consortium (WONC)"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -3329,7 +4009,15 @@
    "cg": null,
    "csr": {},
    "aspirational": true,
-   "blockcov": [],
+   "blockcov": [
+    {
+     "name": "Khariar",
+     "by": [
+      "Atmashakti Trust"
+     ],
+     "villages": []
+    }
+   ],
    "shg": {
     "total": 8781,
     "members": 87808,
@@ -3398,7 +4086,15 @@
    }
   },
   "Puri": {
-   "partners": [],
+   "partners": [
+    "ActionAid Association",
+    "CYSD (Centre for Youth and Social Development)",
+    "Niyatee Foundation",
+    "OVARR (Orissa Voluntary Association For Rural Reconstruction)",
+    "United Artists' Association (UAA)",
+    "VJSS (Viswa Jeevan Seva Sangh)",
+    "Women Wings"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -3525,9 +4221,16 @@
   },
   "Rayagada": {
    "partners": [
+    "Agragamee",
+    "Atmashakti Trust",
+    "CINI (Child In Need Institute)",
+    "CYSD (Centre for Youth and Social Development)",
     "FORWARD",
+    "Harsha Trust",
     "NIRMAN",
-    "PRADAN"
+    "PRADAN",
+    "Pragati",
+    "Pratham"
    ],
    "themes": [],
    "tri": {
@@ -3546,9 +4249,24 @@
      "villages": []
     },
     {
+     "name": "Kashipur",
+     "by": [
+      "Agragamee"
+     ],
+     "villages": []
+    },
+    {
      "name": "Kolnara",
      "by": [
+      "Atmashakti Trust",
       "PRADAN"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Muniguda",
+     "by": [
+      "Pratham"
      ],
      "villages": []
     }
@@ -3669,7 +4387,10 @@
    }
   },
   "Sambalpur": {
-   "partners": [],
+   "partners": [
+    "Atmashakti Trust",
+    "Niyatee Foundation"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -3779,7 +4500,9 @@
    }
   },
   "Sonepur": {
-   "partners": [],
+   "partners": [
+    "VJSS (Viswa Jeevan Seva Sangh)"
+   ],
    "themes": [],
    "tri": {
     "blocks": "",
@@ -3866,7 +4589,12 @@
   },
   "Sundargarh": {
    "partners": [
-    "SEWAK"
+    "ActionAid Association",
+    "Atmashakti Trust",
+    "Deepika Mahila Sanghati",
+    "Niyatee Foundation",
+    "SEWAK",
+    "SOS Children's Villages"
    ],
    "themes": [],
    "tri": {
@@ -3888,6 +4616,13 @@
      "name": "Hemgir",
      "by": [
       "SEWAK"
+     ],
+     "villages": []
+    },
+    {
+     "name": "Kuarmunda",
+     "by": [
+      "Niyatee Foundation"
      ],
      "villages": []
     },

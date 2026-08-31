@@ -1,25 +1,133 @@
 name,district,block,themes,source,notes
-FORWARD,Rayagada,,"Education, Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 10),Multi-state org; row lists Rayagada and Mayurbhanj
-FORWARD,Mayurbhanj,,"Education, Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 10),Multi-state org; row lists Rayagada and Mayurbhanj
-SPREAD,Khordha,,"Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 29),Source lists HQ as "Bhubaneswar" -- mapped to Khordha district; verify
-VIEWS,Ganjam,,"Education, Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 34),
-NIRMAN,Nayagarh,Daspalla,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence (Common Ground-style source)
-NIRMAN,Kandhamal,Tumuribandha,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
-NIRMAN,Rayagada,Kalyansinghpur,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
-NIRMAN,Deogarh,Barkote,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
-SEWAK,Sundargarh,"Hemgir, Lephripada, Tangarpalli, Sundargarh, Balishankara",,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence; 5 blocks
-SEBAJAGAT,Kalahandi,"M. Rampur, Norla, Bhabanipatna, Lanjhigarh, Golamunda",,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence; 5 blocks
-WOSCA & WASSAN,Kendujhar,"Telkui, Harichandanpur, Gatgaon, Patna, Saharpada, Jhumpara, Banspal",,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence; sheet spells district "Keonjhar" -> mapped to canon Kendujhar; 7 blocks
-WASSAN & its partners,Koraput,Boipariguda,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
-Goonj,Gajapati,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),Village-level rows only; description tag "GramSwabhimaan"
-Goonj,Mayurbhanj,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),Village-level rows (Bangriposi, Kuliana blocks); description tag "GramSwabhimaan"
-Gram Vikas,Gajapati,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),Some rows say "8 districts" generally -- district list not fully itemised in source; verify
+AFPRO (Action for Food Production),Jharsuguda,,"Agriculture, Livelihoods & Rural Dev, Water & Sanitation, Natural Resource Mgmt, Climate Action",https://csrbox.org/Impact-stories_full_Elevating-Communities--Vedanta-Aluminium's-Impactful-CSR-Endeavors-with-NGO-Partnerships_673,"Jeevika Samridhhi project, Vedanta Aluminium CSR partnership"
+ActionAid Association,Bargarh,,"Governance, Women & Gender, Child Protection",https://www.actionaidindia.org/event-location/odisha/,7 long-term initiatives listed across named districts; verify current activity
+ActionAid Association,Ganjam,,"Governance, Women & Gender, Child Protection",https://www.actionaidindia.org/event-location/odisha/,
+ActionAid Association,Jagatsinghapur,,"Governance, Women & Gender, Child Protection",https://www.actionaidindia.org/event-location/odisha/,
+ActionAid Association,Khordha,,"Governance, Women & Gender, Child Protection",https://www.actionaidindia.org/project_category/bhubaneshwar/,Bhubaneswar Urban Initiative
+ActionAid Association,Puri,,"Governance, Women & Gender, Child Protection",https://www.actionaidindia.org/event-location/odisha/,
+ActionAid Association,Sundargarh,,"Governance, Women & Gender, Child Protection",https://www.actionaidindia.org/event-location/odisha/,
+Adhikar,Baleshwar,,"Skill Development, Livelihoods & Rural Dev",http://adhikarindia.org/,"Source spells ""Balasore""; aspirational-district migrant-worker programme"
+Adhikar,Kalahandi,,"Skill Development, Livelihoods & Rural Dev",http://adhikarindia.org/,Aspirational-district migrant-worker programme
+Adhikar,Khordha,Tangi,"Skill Development, Water & Sanitation, Livelihoods & Rural Dev",http://adhikarindia.org/,HQ Bhubaneswar; Shramik Sahajog Kendra in Tangi block
+Adhikar,Mayurbhanj,,"Skill Development, Livelihoods & Rural Dev",http://adhikarindia.org/,Aspirational-district migrant-worker programme
+Agragamee,Kalahandi,Th. Rampur,"Agriculture, Natural Resource Mgmt",https://www.leisaindia.org/agroecology-conserving-biodiversity-nurturing-ecology/,Eco-Village Development programme block
+Agragamee,Koraput,Dasmantpur,"Agriculture, Natural Resource Mgmt",https://www.leisaindia.org/agroecology-conserving-biodiversity-nurturing-ecology/,Eco-Village Development programme block
+Agragamee,Rayagada,Kashipur,"Agriculture, Natural Resource Mgmt, Women & Gender, Education",https://give.do/discover/5JY/agragamee/,25 villages in Kashipur block per give.do; women's agro-ecology programme (AFPSS)
+Asha Kiran Society,Koraput,,Livelihoods & Rural Dev,https://www.indiadonates.org/ngos/asha-kiran-society,"Registered 1991, Koraput district; general ""holistic development"" org, theme detail thin"
+Ashakiran Institute for Integrated Developmental Actions (AIIDA),Kandhamal,,"Agriculture, Skill Development, Women & Gender",https://ashakiranseva.1ngo.in/about-us,"LOW CONFIDENCE: org name/URL pairing from search synthesis, not independently opened and confirmed -- verify before using this row, and distinguish from the unrelated ""Asha Kiran Society"" (Koraput) and ""Asha Kiran Seva Sansthan"" above"
+Atmashakti Trust,Deogarh,,"Livelihoods & Rural Dev, Agriculture, Health & Nutrition, Women & Gender, Education",https://atmashaktitrust.com/area-of-operations/odisha/district-profile/deogarh/,
+Atmashakti Trust,Kalahandi,,"Livelihoods & Rural Dev, Agriculture, Health & Nutrition, Women & Gender, Education",https://atmashaktitrust.com/area-of-operations/odisha/district-profile/kalahandi/,
+Atmashakti Trust,Kandhamal,,"Health & Nutrition, Agriculture",https://yourstory.com/herstory/2024/04/tribal-women-in-odisha-are-fighting-malnutrition-nourishment,nutritional kitchen-garden project in 267 villages across 2 blocks of Kandhamal
+Atmashakti Trust,Koraput,Narayanpatna,"Livelihoods & Rural Dev, Agriculture, Health & Nutrition, Women & Gender, Education",https://atmashaktitrust.com/area-of-operations/odisha/district-profile/koraput/narayanpatna/,
+Atmashakti Trust,Mayurbhanj,,"Livelihoods & Rural Dev, Agriculture, Health & Nutrition, Women & Gender, Education",https://atmashaktitrust.com/area-of-operations/odisha/district-profile/mayurbhanj/,
+Atmashakti Trust,Nuapada,Khariar,"Livelihoods & Rural Dev, Agriculture, Health & Nutrition, Women & Gender, Education",https://atmashaktitrust.com/area-of-operations/odisha/district-profile/nuapada/khariar/,
+Atmashakti Trust,Rayagada,Kolnara,"Livelihoods & Rural Dev, Agriculture, Health & Nutrition, Women & Gender, Education",https://atmashaktitrust.com/area-of-operations/odisha/district-profile/rayagada/kolnara/,
+Atmashakti Trust,Sambalpur,,"Livelihoods & Rural Dev, Women & Gender, Health & Nutrition",,from a search-engine summary of a household-mobilisation project across Sambalpur and Sundargarh; not independently verified on the org's own site
+Atmashakti Trust,Sundargarh,,"Livelihoods & Rural Dev, Women & Gender, Health & Nutrition",,from a search-engine summary of a household-mobilisation project across Sambalpur and Sundargarh; not independently verified on the org's own site
+CINI (Child In Need Institute),Koraput,,"Health & Nutrition, Child Protection",https://cini-india.org/the-field/,
+CINI (Child In Need Institute),Nabarangpur,,"Health & Nutrition, Child Protection",https://cini-india.org/the-field/,
+CINI (Child In Need Institute),Rayagada,,"Health & Nutrition, Child Protection",https://cini-india.org/the-field/,
+CYSD (Centre for Youth and Social Development),Balangir,,"Livelihoods & Rural Dev, Education, Climate Action, Skill Development",https://www.cysd.org/about-us/where-we-work,"Source spells ""Bolangir"""
+CYSD (Centre for Youth and Social Development),Balangir,Titlagarh,Governance,https://www.cysd.org/,"Surakshya Project; district inferred from block (Titlagarh is in Balangir) since source names blocks/GPs, not district directly"
+CYSD (Centre for Youth and Social Development),Kalahandi,,"Livelihoods & Rural Dev, Education, Climate Action, Skill Development",https://www.cysd.org/about-us/where-we-work,
+CYSD (Centre for Youth and Social Development),Kalahandi,Kesinga,Governance,https://www.cysd.org/,"Surakshya Project; district inferred from block (Kesinga is in Kalahandi) since source names blocks/GPs, not district directly"
+CYSD (Centre for Youth and Social Development),Kendujhar,,"Livelihoods & Rural Dev, Education, Climate Action, Skill Development",https://www.cysd.org/about-us/where-we-work,"Source spells ""Keonjhar"""
+CYSD (Centre for Youth and Social Development),Kendujhar,Saharapada,Governance,https://www.cysd.org/,Gram Panchayat governance strengthening
+CYSD (Centre for Youth and Social Development),Koraput,,"Livelihoods & Rural Dev, Education, Climate Action, Skill Development",https://www.cysd.org/about-us/where-we-work,"Official ""Where We Work"" page lists 9 focus districts statewide"
+CYSD (Centre for Youth and Social Development),Malkangiri,,"Livelihoods & Rural Dev, Education, Climate Action, Skill Development",https://www.cysd.org/about-us/where-we-work,
+CYSD (Centre for Youth and Social Development),Mayurbhanj,,"Livelihoods & Rural Dev, Education, Climate Action, Skill Development",https://www.cysd.org/about-us/where-we-work,
+CYSD (Centre for Youth and Social Development),Mayurbhanj,Thakurmunda,Governance,https://www.cysd.org/,Gram Panchayat governance strengthening
+CYSD (Centre for Youth and Social Development),Nabarangpur,,"Livelihoods & Rural Dev, Education, Climate Action, Skill Development",https://www.cysd.org/about-us/where-we-work,
+CYSD (Centre for Youth and Social Development),Puri,,"Livelihoods & Rural Dev, Education, Climate Action, Skill Development",https://www.cysd.org/about-us/where-we-work,
+CYSD (Centre for Youth and Social Development),Rayagada,,"Livelihoods & Rural Dev, Education, Climate Action, Skill Development",https://www.cysd.org/about-us/where-we-work,
+DAPTA,Deogarh,,"Women & Gender, Livelihoods & Rural Dev",http://www.dapta.org/,Network partner presence for women's empowerment
+DAPTA,Kalahandi,,"Women & Gender, Livelihoods & Rural Dev",http://www.dapta.org/,HQ in Bhawanipatna
+DAPTA,Kandhamal,,"Women & Gender, Livelihoods & Rural Dev",http://www.dapta.org/,Network partner presence for women's empowerment
+Deepika Mahila Sanghati,Sundargarh,,"Women & Gender, Skill Development, Livelihoods & Rural Dev",https://en.wikipedia.org/wiki/Deepika_Mahila_Sanghati,Runs handloom/sanitary-napkin/phenyl units under SAIL Rourkela Steel Plant CSR patronage
+FORWARD,Mayurbhanj,,"Education, Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 10)
+FORWARD,Rayagada,,"Education, Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 10)
+Foundation for Ecological Security (FES),Anugul,,"Natural Resource Mgmt, Livelihoods & Rural Dev",https://fes.org.in/impact/odisha,Rain-fed small/marginal farmer commons work
+Foundation for Ecological Security (FES),Dhenkanal,,"Natural Resource Mgmt, Governance, Livelihoods & Rural Dev",https://hub.decadeonrestoration.org/initiatives/community-led-conservation-restoration-forest-commons-dhenkanal-odisha-india,884 villages
+Foundation for Ecological Security (FES),Kendujhar,,"Natural Resource Mgmt, Governance",https://fes.org.in/impact/odisha,"Baitarni river basin catchment communities; source spells ""Keonjhar"""
+Foundation for Ecological Security (FES),Koraput,,"Natural Resource Mgmt, Governance",https://fes.org.in/impact/odisha,Kolab river basin catchment communities
+Goonj,Gajapati,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),"Village-level rows only; description tag ""GramSwabhimaan"""
+Goonj,Mayurbhanj,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),Village-level rows (Bangriposi
+Gram Vikas,Gajapati,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),"Some rows say ""8 districts"" generally -- district list not fully itemised in source; verify"
 Gram Vikas,Ganjam,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),See note above
-Gram Vikas,Kandhamal,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),See note above
 Gram Vikas,Kalahandi,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),See note above
-Gram Vikas,Khordha,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),Source spells "Khurdha"
+Gram Vikas,Kandhamal,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),See note above
+Gram Vikas,Khordha,,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),"Source spells ""Khurdha"""
+Harsha Trust,Kalahandi,Golamunda,"Livelihoods & Rural Dev, Agriculture, Natural Resource Mgmt",https://kalahandi.nic.in/public-utility/harsha-trust/,Govt of Odisha district site confirms presence + HQ location
+Harsha Trust,Koraput,,"Livelihoods & Rural Dev, Agriculture, Natural Resource Mgmt",https://www.axisbankfoundation.org/partners/harsha-trust.html,
+Harsha Trust,Malkangiri,,"Livelihoods & Rural Dev, Agriculture, Health & Nutrition, Natural Resource Mgmt",https://harshatrust.org/outreach-area/malkangiri/,All 7 blocks; 5880 households
+Harsha Trust,Nabarangpur,,"Livelihoods & Rural Dev, Agriculture, Natural Resource Mgmt",https://www.axisbankfoundation.org/partners/harsha-trust.html,"Source spells ""Nawrangpur"""
+Harsha Trust,Rayagada,,"Livelihoods & Rural Dev, Agriculture, Natural Resource Mgmt",https://www.axisbankfoundation.org/partners/harsha-trust.html,
+ISWAR (Integrated Social Welfare And Research Centre),Dhenkanal,,"Education, Health & Nutrition, Water & Sanitation, Agriculture, Livelihoods & Rural Dev",https://give.do/discover/5V4/integrated-social-welfare-and-research-centre-iswar/,HQ Chirulei
+Kalinga Institute of Social Sciences (KISS),Khordha,,"Education, Skill Development, Child Protection",https://kiss.ac.in/,HQ/main campus Bhubaneswar (Khordha). Org states satellite centres/outreach across ~20 districts of Odisha but does not name them individually in sources checked -- only Khordha (HQ) included as a verified row.
+Kandhamal Jilla Sabuja Baidya Sangatha,Kandhamal,,Health & Nutrition,https://yourstory.com/herstory/2024/04/tribal-women-in-odisha-are-fighting-malnutrition-nourishment,small local/grassroots org; partnered with Vitamin Angels India on a nutrition-recipe survey
+Lokadrusti,Nuapada,,"Governance, Health & Nutrition, Education, Women & Gender, Natural Resource Mgmt, Child Protection, Livelihoods & Rural Dev",https://www.lokadrusti.org/,Founded 1988 for Nuapada district development; seasonal hostels program against child labour/migration
+Mahashakti Foundation,Balangir,"Sindhekela, Deogaon, Gudvella","Agriculture, Women & Gender, Education, Health & Nutrition, Livelihoods & Rural Dev",https://www.globalgiving.org/pfil/17057/projdoc.pdf,
+Mahashakti Foundation,Kalahandi,"Bhawanipatna, Lanjigarh, Madanpur Rampur","Agriculture, Women & Gender, Education, Health & Nutrition, Livelihoods & Rural Dev",https://kalahandi.nic.in/public-utility/mahashakti-foundation-2/,Founded 2004 in Kalahandi; Govt of Odisha district site confirms
+NIRMAN,Deogarh,Barkote,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
+NIRMAN,Kandhamal,Tumuribandha,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
+NIRMAN,Nayagarh,Daspalla,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence (Common Ground-style source)
+NIRMAN,Rayagada,Kalyansinghpur,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
+Niyatee Foundation,Anugul,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Bargarh,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Bhadrak,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Cuttack,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Deogarh,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Ganjam,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Jagatsinghapur,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Jajapur,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Jharsuguda,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Kendrapara,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Khordha,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Nayagarh,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Puri,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,Self-reported 20+ district org; disaster mgmt mapped to Climate Action; verify per-district activity independently
+Niyatee Foundation,Sambalpur,,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,
+Niyatee Foundation,Sundargarh,Kuarmunda,"Child Protection, Skill Development, Women & Gender, Water & Sanitation, Health & Nutrition, Natural Resource Mgmt, Climate Action",https://www.niyateefoundation.org/ourproject,50 creches in Kuarmunda block specifically
+OVARR (Orissa Voluntary Association For Rural Reconstruction),Puri,,Livelihoods & Rural Dev,https://www.searchdonation.com/ngo/orissa-voluntary-association-for-rural-reconstruction.php,"Small local NGO, thin sourcing (directory listing only) -- verify"
 PRADAN,Kalahandi,Lanjigarh,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block name (source left District column blank); verify
 PRADAN,Kandhamal,Phulbani,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block name; verify
+PRADAN,Koraput,"Nandapur, Lamtaput",,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block names; verify
 PRADAN,Mayurbhanj,"Thakurmunda, Karanjia, Jashipur",,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block names; verify
 PRADAN,Rayagada,Kolnara,,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block name; verify
-PRADAN,Koraput,"Nandapur, Lamtaput",,jharkhand-landscape/SOTH places list.xlsx (Place list sheet),District inferred from block names; verify
+Pragati,Koraput,,"Agriculture, Livelihoods & Rural Dev, Climate Action, Skill Development, Women & Gender",https://pragatikoraput.org/,14 blocks of Koraput; National NGO of the Year 2008
+Pragati,Malkangiri,,"Agriculture, Livelihoods & Rural Dev, Women & Gender",https://aesanetwork.org/good-practices-47-empowering-youth-in-agriculture-pragatis-experiences-with-tribal-youth-in-koraput-district-of-odisha-india/,Via MKSP programme
+Pragati,Nabarangpur,,"Agriculture, Livelihoods & Rural Dev, Women & Gender",https://aesanetwork.org/good-practices-47-empowering-youth-in-agriculture-pragatis-experiences-with-tribal-youth-in-koraput-district-of-odisha-india/,Via MKSP programme
+Pragati,Rayagada,,"Agriculture, Livelihoods & Rural Dev, Women & Gender",https://aesanetwork.org/good-practices-47-empowering-youth-in-agriculture-pragatis-experiences-with-tribal-youth-in-koraput-district-of-odisha-india/,Via MKSP programme (13200 women farmers across 4 districts)
+Pratham,Cuttack,,Education,https://www.facebook.com/prathamodisha1/,State office location (Pratham Odisha
+Pratham,Rayagada,Muniguda,Education,https://pratham.org.uk/a-second-chance-at-education-in-odisha-the-pratham-programme-empowers-women-and-girls/,Second Chance Programme for girls/women's secondary education
+SAMBHAV,Nayagarh,Rohibank area,Agriculture,https://ofai.org/wp-content/uploads/2011/04/Orissa.pdf,"Small org, single-source (Organic Farming Association of India directory listing) -- verify before relying on this row"
+SEBAJAGAT,Kalahandi,"M. Rampur, Norla, Bhabanipatna, Lanjhigarh, Golamunda",,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence; 5 blocks
+SEWAK,Sundargarh,"Hemgir, Lephripada, Tangarpalli, Sundargarh, Balishankara",,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence; 5 blocks
+SOS Children's Villages,Khordha,,"Child Protection, Education",https://www.soschildrensvillages.in/sos-children-s-village-bhubaneswar/,operating since 1996
+SOS Children's Villages,Sundargarh,,"Child Protection, Education",https://www.sos-childrensvillages.org/where-we-help/asia/india/rourkela,operating since 2003 in Rourkela
+SPREAD,Khordha,,"Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 29)
+Save the Children,Boudh,,"Education, Health & Nutrition, Child Protection",https://www.savethechildren.in/odisha-projects/,"200 anganwadi centres plus 100 schools, shared with Kandhamal"
+Save the Children,Kandhamal,,"Education, Health & Nutrition, Child Protection",https://www.savethechildren.in/odisha-projects/,"200 anganwadi centres plus 100 schools, shared with Boudh"
+Save the Children,Kendrapara,,"Education, Health & Nutrition, Child Protection",https://www.savethechildren.in/odisha-projects/,"education/anganwadi project across 29 panchayats, shared with Koraput"
+Save the Children,Khordha,,"Education, Health & Nutrition, Child Protection",https://www.savethechildren.in/odisha-projects/,245 anganwadi centres
+Save the Children,Koraput,,"Education, Health & Nutrition, Child Protection",https://www.savethechildren.in/odisha-projects/,"education/anganwadi project across 29 panchayats, shared with Kendrapara"
+Tata Steel Foundation,Ganjam,,Health & Nutrition,https://www.tata.com/newsroom/community/tata-steel-foundation,500-bed multi-speciality hospital plus eye hospital at Gopalpur
+Tata Steel Foundation,Jajapur,,"Livelihoods & Rural Dev, Agriculture, Skill Development, Health & Nutrition",https://www.tata.com/newsroom/community/tata-steel-foundation,Kalinganagar plant CSR footprint; also runs Tata Steel Rural Development Society (TSRDS) skilling programmes
+United Artists' Association (UAA),Ganjam,,"Livelihoods & Rural Dev, Health & Nutrition, Water & Sanitation, Governance, Climate Action, Education, Agriculture",https://uaaodisha.org/,HQ district; est. 1964/1967 (source inconsistent on year)
+United Artists' Association (UAA),Puri,,"Livelihoods & Rural Dev, Health & Nutrition, Water & Sanitation, Governance, Climate Action, Education, Agriculture",https://uaaodisha.org/,Works with coastal fishing communities; cyclone Phailin response
+VARD (Voluntary Association For Rural Development),Baleshwar,,Livelihoods & Rural Dev,https://www.searchdonation.com/ngo/voluntary-association-for-rural-development-vard.php,"Small local NGO, thin sourcing (directory listing only) -- verify"
+VIEWS,Ganjam,,"Education, Women Empowerment, Climate Action, Livelihoods and Rural Development, Gender Integration",jharkhand-landscape/Partners data - Geography & Thematic focus.xlsx (Partners sheet, row 34)
+VJSS (Viswa Jeevan Seva Sangh),Khordha,,"Education, Health & Nutrition, Women & Gender, Child Protection, Agriculture, Livelihoods & Rural Dev, Skill Development",https://vishwajeevan.org/program.php?name=Livelihood,36-year-old Bhubaneswar-based org
+VJSS (Viswa Jeevan Seva Sangh),Nayagarh,,"Education, Health & Nutrition, Women & Gender, Child Protection, Agriculture, Livelihoods & Rural Dev, Skill Development",https://vishwajeevan.org/program.php?name=Livelihood,
+VJSS (Viswa Jeevan Seva Sangh),Puri,,"Education, Health & Nutrition, Women & Gender, Child Protection, Agriculture, Livelihoods & Rural Dev, Skill Development",https://vishwajeevan.org/program.php?name=Livelihood,
+VJSS (Viswa Jeevan Seva Sangh),Sonepur,,"Education, Health & Nutrition, Women & Gender, Child Protection, Agriculture, Livelihoods & Rural Dev, Skill Development",https://vishwajeevan.org/program.php?name=Livelihood,Sonepur NAC urban livelihood mission work
+VORSA,Kendrapara,Mahakalpada,"Education, Livelihoods & Rural Dev, Health & Nutrition",https://www.searchdonation.com/ngo/ (VORSA listing) + https://vorsafoundation.in/about-us/,Small local NGO; possible naming overlap between Kendrapara-registered VORSA and 'VORSA Foundation' -- verify these are the same entity before treating as confirmed
+Voluntary Institute For Rural Development (VIRD),Anugul,,"Women & Gender, Agriculture, Livelihoods & Rural Dev, Health & Nutrition, Education, Skill Development, Water & Sanitation, Child Protection",https://virdngo.org/skill-development/,Multi-theme org; cellphone-repair skill training cited separately for Angul
+Voluntary Institute For Rural Development (VIRD),Deogarh,,"Women & Gender, Agriculture, Livelihoods & Rural Dev, Health & Nutrition, Education, Skill Development, Water & Sanitation, Child Protection",https://virdngo.org/skill-development/,Multi-theme org
+WASSAN & its partners,Koraput,Boipariguda,,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)",Block-level presence
+WOSCA & WASSAN,Kendujhar,"Telkui, Harichandanpur, Gatgaon, Patna, Saharpada, Jhumpara, Banspal",,"jharkhand-landscape/Common Ground - List of blocks (1).xlsx (Odisha sheet, as of May 2025)","Block-level presence; sheet spells district ""Keonjhar"" -> mapped to canon Kendujhar; 7 blocks"
+Water For People India,Ganjam,Hinjilicut,Water & Sanitation,https://waterforpeopleindia.org/category/odisha/,"ITC Mission Sunehra Kal initiative, reviving SHGs to promote sanitation"
+WaterAid India,Bhadrak,,Water & Sanitation,https://www.wateraid.org/in/our-history,Renovated 9 public water sources serving 1473 people
+WaterAid India,Nuapada,,Water & Sanitation,https://www.ircwash.org/sites/default/files/working_paper_odisha_final.pdf,Fluoride-affected villages; Village Water and Sanitation Committees
+Western Odisha NREGA Consortium (WONC),Balangir,,"Governance, Livelihoods & Rural Dev",https://www.nregaconsortium.in/wptabs/osm/,8-org consortium anchored by Lokadrusti; BRLF-funded
+Western Odisha NREGA Consortium (WONC),Nuapada,,"Governance, Livelihoods & Rural Dev",https://www.nregaconsortium.in/wptabs/osm/,8-org consortium anchored by Lokadrusti; BRLF-funded
+Women Wings,Puri,,"Education, Women & Gender, Health & Nutrition, Skill Development",https://womenwings.net/,
