@@ -362,6 +362,9 @@ const svgNS='http://www.w3.org/2000/svg';
 const svg=document.createElementNS(svgNS,'svg');
 svg.setAttribute('viewBox','0 0 '+W+' '+H); svg.setAttribute('class','map');
 const paths={},labels={};
+/* two passes: all fills first, then all labels on top -- otherwise a later district's
+   fill (appended after an earlier district's label, in the same single-pass loop) paints
+   over that label whenever their bounding boxes overlap near a shared border. */
 GEO.features.forEach(f=>{const name=f.properties.district;
  const p=document.createElementNS(svgNS,'path');
  p.setAttribute('d',pathFor(f.geometry)); p.setAttribute('class','dist'); p.dataset.d=name;
@@ -369,6 +372,8 @@ GEO.features.forEach(f=>{const name=f.properties.district;
  p.addEventListener('mousemove',ev=>showTip(ev,name));
  p.addEventListener('mouseleave',hideTip);
  svg.appendChild(p); paths[name]=p;
+});
+GEO.features.forEach(f=>{const name=f.properties.district;
  const [cx,cy]=centroid(f.geometry);
  const tx=document.createElementNS(svgNS,'text'); tx.setAttribute('x',cx); tx.setAttribute('y',cy);
  tx.setAttribute('class','dlabel'); tx.dataset.base=name; tx.textContent=name;
