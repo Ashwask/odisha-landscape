@@ -1,0 +1,550 @@
+<title>Landscape Confluence Board</title>
+<style>
+:root{
+  --ground:#f2f4f1; --card:#ffffff; --ink:#1c2321; --ink2:#3d4640; --mut:#6d766e;
+  --line:#dde2dc; --line2:#eceee9; --accent:#3a5a6b; --accent-ink:#ffffff;
+  --warn:#a1344b; --warn-bg:#faeaee;
+  --a-orch:#6b4fa0; --a-infl:#b45309; --a-fund:#1f6f5c; --a-govt:#2b5a8f; --a-mkt:#3d8730; --a-grass:#a1344b;
+  --shadow:0 1px 2px rgba(20,25,20,.05),0 8px 24px rgba(20,25,20,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#181b17; --card:#20241f; --ink:#eef0ea; --ink2:#c7cdc3; --mut:#8d968a;
+    --line:#333a31; --line2:#282e26; --accent:#7fa6b8; --accent-ink:#10181b;
+    --warn:#e08298; --warn-bg:#3a2027;
+    --a-orch:#a68bd6; --a-infl:#e0a458; --a-fund:#5fb89e; --a-govt:#7ba7d6; --a-mkt:#8fce78; --a-grass:#e0899c;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#181b17; --card:#20241f; --ink:#eef0ea; --ink2:#c7cdc3; --mut:#8d968a;
+  --line:#333a31; --line2:#282e26; --accent:#7fa6b8; --accent-ink:#10181b;
+  --warn:#e08298; --warn-bg:#3a2027;
+  --a-orch:#a68bd6; --a-infl:#e0a458; --a-fund:#5fb89e; --a-govt:#7ba7d6; --a-mkt:#8fce78; --a-grass:#e0899c;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:340 620;src:local('Fraunces');}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:'Public Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:14.5px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.wrap{max-width:1240px;margin:0 auto;padding:30px 22px 90px}
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:6px}
+.backlink{font-size:12px;color:var(--mut);text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 0}
+.backlink:hover{color:var(--accent)}
+h1{
+  font-family:'Fraunces',Georgia,'Times New Roman',serif; font-weight:560;
+  font-size:34px; letter-spacing:-.01em; margin:10px 0 6px; text-wrap:balance;
+}
+.sub{color:var(--ink2);font-size:14.5px;max-width:62ch;margin:0 0 4px;line-height:1.55}
+.note{color:var(--mut);font-size:12px;max-width:62ch;margin:10px 0 0}
+.readonly-banner{
+  background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn);border-radius:10px;
+  padding:9px 14px;font-size:12.5px;margin:18px 0;display:none;font-weight:600;
+}
+.landscape-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:22px 0 4px}
+.landscape-row .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);font-weight:700;margin-right:2px}
+.chip{
+  font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--card);color:var(--ink2);
+  padding:6px 13px;border-radius:20px;cursor:pointer;transition:.12s;white-space:nowrap;
+}
+.chip:hover{border-color:var(--accent)}
+.chip.on{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.gapstrip{
+  margin:22px 0 4px;padding:14px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);
+  box-shadow:var(--shadow);display:none;
+}
+.gapstrip.show{display:block}
+.gapstrip .t{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);font-weight:700;margin-bottom:8px}
+.gapstrip .n{font-family:'Fraunces';font-weight:560;font-size:22px;margin-right:6px}
+.gaplist{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.gaptag{font-size:11.5px;padding:4px 10px;border-radius:7px;background:var(--warn-bg);color:var(--warn);border:1px dashed var(--warn)}
+.board{margin-top:24px;display:flex;flex-direction:column;gap:2px}
+.lens-head{display:grid;grid-template-columns:190px 1fr;gap:2px;margin-bottom:2px}
+.lens-head .corner{display:flex;align-items:flex-end;padding:0 4px 8px}
+.lens-head .corner span{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);font-weight:700}
+.lens-cols{display:grid;gap:2px;grid-auto-flow:column;grid-auto-columns:minmax(190px,1fr)}
+.lens-col-h{
+  font-size:12.5px;font-weight:700;color:var(--ink2);padding:0 10px 8px;border-bottom:2px solid var(--line);
+  display:flex;align-items:flex-end;min-height:34px;
+}
+.arow{display:grid;grid-template-columns:190px 1fr;gap:2px;align-items:stretch}
+.arow-label{
+  display:flex;align-items:center;gap:9px;padding:12px 12px;border-radius:10px 0 0 10px;background:var(--card);
+  border:1px solid var(--line);border-right:none;
+}
+.arow-label .sw{width:9px;height:9px;border-radius:50%;flex:none}
+.arow-label .nm{font-size:13px;font-weight:700;line-height:1.25}
+.arow-cells{display:grid;gap:2px;grid-auto-flow:column;grid-auto-columns:minmax(190px,1fr)}
+.cell{
+  background:var(--card);border:1px solid var(--line);padding:8px;min-height:74px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.cell.empty{
+  align-items:center;justify-content:center;border-style:dashed;background:transparent;
+}
+.cell.empty span{font-size:11px;color:var(--mut);text-align:center}
+.entry{
+  background:var(--line2);border-radius:8px;padding:7px 9px;font-size:12px;line-height:1.4;
+  border-left:3px solid var(--accent);
+}
+.entry .org{font-weight:700;color:var(--ink);display:block}
+.entry .tag{font-size:10.5px;color:var(--mut);display:block;margin-top:1px}
+.entry .note{font-size:11px;color:var(--ink2);margin-top:3px;display:block}
+.empty-board{
+  margin-top:26px;padding:44px 20px;text-align:center;border:1.5px dashed var(--line);border-radius:14px;color:var(--mut);
+}
+.empty-board b{color:var(--ink)}
+.addbar{position:sticky;bottom:18px;display:flex;justify-content:center;margin-top:30px;z-index:5}
+.addbtn{
+  font:inherit;font-weight:700;font-size:14px;background:var(--ink);color:var(--ground);border:none;
+  padding:13px 26px;border-radius:30px;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.22);
+}
+.addbtn:hover{opacity:.92}
+.overlay{
+  position:fixed;inset:0;background:rgba(15,20,15,.45);display:none;align-items:center;justify-content:center;
+  padding:20px;z-index:20;
+}
+.overlay.show{display:flex}
+.modal{
+  background:var(--card);border-radius:16px;max-width:460px;width:100%;padding:24px;box-shadow:var(--shadow);
+  max-height:88vh;overflow-y:auto;
+}
+.modal h2{font-family:'Fraunces';font-weight:560;font-size:21px;margin:0 0 4px}
+.modal .mdesc{font-size:12.5px;color:var(--mut);margin:0 0 18px}
+.field{margin-bottom:14px}
+.field label{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);font-weight:700;display:block;margin-bottom:6px}
+.field input[type=text], .field textarea{
+  width:100%;font:inherit;font-size:13.5px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;
+  background:var(--ground);color:var(--ink);
+}
+.field textarea{resize:vertical;min-height:52px}
+.pickrow{display:flex;flex-wrap:wrap;gap:6px}
+.pick{
+  font:inherit;font-size:12px;border:1px solid var(--line);background:var(--ground);color:var(--ink2);
+  padding:6px 11px;border-radius:8px;cursor:pointer;
+}
+.pick.on{color:#fff;border-color:transparent}
+.pick.addnew{border-style:dashed}
+.modalbtns{display:flex;gap:10px;margin-top:20px}
+.btn{font:inherit;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:9px;border:1px solid var(--line);background:var(--ground);color:var(--ink2);cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.err{font-size:12px;color:var(--warn);margin-top:4px;display:none}
+.err.show{display:block}
+.toast{
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--ground);
+  padding:10px 18px;border-radius:24px;font-size:12.5px;box-shadow:var(--shadow);opacity:0;pointer-events:none;
+  transition:opacity .2s,transform .2s;z-index:30;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);color:var(--mut);font-size:11.5px;line-height:1.6}
+footer a{color:var(--accent)}
+@media(max-width:760px){
+  .lens-head,.arow{grid-template-columns:1fr}
+  .lens-head .corner{display:none}
+  .arow-label{border-radius:10px;border-right:1px solid var(--line);margin-bottom:2px}
+}
+</style>
+
+<div class="wrap">
+  <div class="topbar">
+    <div>
+      <a class="backlink" href="https://sidd-1995.github.io/odisha-landscape/" target="_blank" rel="noopener">&larr; Odisha Landscape map</a>
+      <h1>Landscape Confluence Board</h1>
+      <p class="sub">Convening on Landscape of the Future — a live board for the room. Add your organisation under an archetype and the outcome lens(es) you work on; the empty cells are the gaps and complementarities worth discussing.</p>
+      <p class="note">No lens is pre-set — every column on this board, ecological or otherwise, was added live by someone in the room, as a peer to every other.</p>
+    </div>
+  </div>
+
+  <div class="readonly-banner" id="roBanner">You're viewing a read-only copy — entries here won't be saved to the shared board.</div>
+
+  <div class="landscape-row" id="landscapeRow"></div>
+
+  <div class="gapstrip" id="gapstrip">
+    <div class="t">Still empty</div>
+    <span class="n" id="gapCount">0</span><span style="color:var(--mut);font-size:12.5px">archetype &times; lens combinations with nobody in them yet</span>
+    <div class="gaplist" id="gapList"></div>
+  </div>
+
+  <div id="boardWrap"></div>
+
+  <div class="addbar">
+    <button class="addbtn" id="openAdd">+ Add your organisation</button>
+  </div>
+
+  <footer>
+    Seeded empty for the LoTF convening &middot; part of the
+    <a href="https://github.com/sidd-1995/odisha-landscape" target="_blank" rel="noopener">odisha-landscape</a> project &middot;
+    shared, live &mdash; anyone with this link can add an entry.
+  </footer>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <h2>Add your organisation</h2>
+    <p class="mdesc">One card per org &middot; pick or add an archetype, lens and landscape.</p>
+    <div class="field">
+      <label for="fOrg">Organisation</label>
+      <input type="text" id="fOrg" maxlength="80" placeholder="e.g. Gram Vikas">
+    </div>
+    <div class="field">
+      <label>Archetype</label>
+      <div class="pickrow" id="archPick"></div>
+    </div>
+    <div class="field">
+      <label>Outcome lens</label>
+      <div class="pickrow" id="lensPick"></div>
+    </div>
+    <div class="field">
+      <label>Landscape / geography</label>
+      <div class="pickrow" id="landPick"></div>
+    </div>
+    <div class="field">
+      <label for="fNote">What you do here (optional, one line)</label>
+      <textarea id="fNote" maxlength="140" placeholder="e.g. Water collectives feeding into school WASH programmes"></textarea>
+    </div>
+    <div class="err" id="formErr"></div>
+    <div class="modalbtns">
+      <button class="btn" id="cancelAdd">Cancel</button>
+      <button class="btn primary" id="submitAdd">Add to board</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script id="initial-state" type="application/json">{"entries":[],"customArchetypes":[],"lenses":[],"landscapes":[]}</script>
+<script id="app-script">
+(function(){
+"use strict";
+var SCRIPT_SRC = document.getElementById('app-script').textContent;
+
+var ARCHETYPES = [
+  {id:'orch', name:'Orchestrators', color:'var(--a-orch)'},
+  {id:'infl', name:'Influencers', color:'var(--a-infl)'},
+  {id:'fund', name:'Funders', color:'var(--a-fund)'},
+  {id:'govt', name:'Government', color:'var(--a-govt)'},
+  {id:'mkt',  name:'Eco / Market', color:'var(--a-mkt)'},
+  {id:'grass',name:'Grassroots Orgs', color:'var(--a-grass)'}
+];
+
+var raw = document.getElementById('initial-state').textContent;
+var STATE;
+try { STATE = JSON.parse(raw); } catch(e) { STATE = null; }
+if (!STATE || !STATE.entries) STATE = {entries: [], customArchetypes: [], lenses: [], landscapes: []};
+if (!STATE.customArchetypes) STATE.customArchetypes = [];
+if (!STATE.lenses) STATE.lenses = [];
+if (!STATE.landscapes) STATE.landscapes = [];
+
+var allArchetypes = ARCHETYPES.concat(STATE.customArchetypes.map(function(n){return {id:'c_'+slug(n), name:n, color:'var(--mut)'};}));
+
+var curLandscape = 'All';
+var writable = true; // flipped false on first not_writer/not_granted
+
+function slug(s){ return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,40) || 'x'; }
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function el(t,c,h){ var e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e; }
+
+function allLandscapes(){
+  var set = {};
+  STATE.landscapes.forEach(function(l){set[l]=1;});
+  STATE.entries.forEach(function(e){ if(e.landscape) set[e.landscape]=1; });
+  return Object.keys(set).sort();
+}
+function allLenses(){
+  var set = {};
+  STATE.lenses.forEach(function(l){set[l]=1;});
+  STATE.entries.forEach(function(e){ (e.lenses||[]).forEach(function(l){set[l]=1;}); });
+  return Object.keys(set);
+}
+function visibleEntries(){
+  if (curLandscape === 'All') return STATE.entries;
+  return STATE.entries.filter(function(e){ return e.landscape === curLandscape; });
+}
+
+function renderLandscapeRow(){
+  var box = document.getElementById('landscapeRow');
+  var lands = allLandscapes();
+  var h = '<span class="lbl">Landscape</span>';
+  var chips = ['All'].concat(lands);
+  box.innerHTML = '';
+  var lbl = el('span','lbl','Landscape');
+  box.appendChild(lbl);
+  chips.forEach(function(l){
+    var b = el('button','chip'+(curLandscape===l?' on':''), esc(l));
+    b.onclick = function(){ curLandscape = l; renderAll(); };
+    box.appendChild(b);
+  });
+}
+
+function renderGapStrip(){
+  var lenses = allLenses();
+  var strip = document.getElementById('gapstrip');
+  if (lenses.length < 2) { strip.classList.remove('show'); return; }
+  var ventries = visibleEntries();
+  var present = {};
+  ventries.forEach(function(e){
+    (e.lenses||[]).forEach(function(l){ present[e.archetype+'|'+l] = 1; });
+  });
+  var gaps = [];
+  allArchetypes.forEach(function(a){
+    lenses.forEach(function(l){
+      if (!present[a.id+'|'+l]) gaps.push(a.name+' × '+l);
+    });
+  });
+  document.getElementById('gapCount').textContent = gaps.length;
+  var list = document.getElementById('gapList');
+  list.innerHTML = '';
+  gaps.slice(0,24).forEach(function(g){
+    list.appendChild(el('span','gaptag', esc(g)));
+  });
+  if (gaps.length > 24) list.appendChild(el('span','gaptag','+'+(gaps.length-24)+' more'));
+  strip.classList.toggle('show', gaps.length > 0);
+}
+
+function renderBoard(){
+  var wrap = document.getElementById('boardWrap');
+  var lenses = allLenses();
+  var ventries = visibleEntries();
+
+  if (STATE.entries.length === 0) {
+    wrap.innerHTML = '';
+    wrap.appendChild(el('div','empty-board',
+      '<b>Board is empty.</b><br>Be the first &mdash; click &ldquo;+ Add your organisation&rdquo; below to start populating archetypes and outcome lenses.'));
+    return;
+  }
+  if (lenses.length === 0) {
+    wrap.innerHTML = '';
+    wrap.appendChild(el('div','empty-board',
+      '<b>No outcome lenses yet.</b><br>Entries exist but nobody has added a lens (Health, Ecological, Education, Livelihoods…) &mdash; add yours to open the first column.'));
+    return;
+  }
+
+  wrap.innerHTML = '';
+
+  var head = el('div','lens-head');
+  head.appendChild(el('div','corner','<span>Archetype →</span>'));
+  var lensCols = el('div','lens-cols');
+  lensCols.style.gridTemplateColumns = 'repeat('+lenses.length+', minmax(190px,1fr))';
+  lenses.forEach(function(l){ lensCols.appendChild(el('div','lens-col-h', esc(l))); });
+  head.appendChild(lensCols);
+  wrap.appendChild(head);
+
+  allArchetypes.forEach(function(a){
+    var row = el('div','arow');
+    var lab = el('div','arow-label');
+    var sw = el('span','sw'); sw.style.background = a.color;
+    lab.appendChild(sw);
+    lab.appendChild(el('span','nm', esc(a.name)));
+    row.appendChild(lab);
+
+    var cells = el('div','arow-cells');
+    cells.style.gridTemplateColumns = 'repeat('+lenses.length+', minmax(190px,1fr))';
+    lenses.forEach(function(lens){
+      var matches = ventries.filter(function(e){ return e.archetype===a.id && (e.lenses||[]).indexOf(lens)>-1; });
+      var cell;
+      if (matches.length === 0) {
+        cell = el('div','cell empty','<span>no one here yet</span>');
+      } else {
+        cell = el('div','cell');
+        matches.forEach(function(m){
+          var c = el('div','entry');
+          c.innerHTML = '<span class="org">'+esc(m.org)+'</span>'
+            + '<span class="tag">'+esc(m.landscape||'statewide')+'</span>'
+            + (m.note ? '<span class="note">'+esc(m.note)+'</span>' : '');
+          cell.appendChild(c);
+        });
+      }
+      cells.appendChild(cell);
+    });
+    row.appendChild(cells);
+    wrap.appendChild(row);
+  });
+}
+
+function renderAll(){
+  renderLandscapeRow();
+  renderGapStrip();
+  renderBoard();
+}
+
+/* ---- add-org modal ---- */
+var pickedArch = null, pickedLenses = [], pickedLand = null;
+/* lenses/landscapes typed via "+ add new" this session, before the entry is submitted --
+   allLenses()/allLandscapes() only know about values already in STATE, so a brand-new
+   name needs to be merged into the options list here or it has nothing to render as a
+   selected chip even though it's already in pickedLenses/pickedLand. */
+var sessionLenses = [], sessionLandscapes = [];
+function withSession(base, extra){
+  var out = base.slice();
+  extra.forEach(function(x){ if (out.indexOf(x)===-1) out.push(x); });
+  return out;
+}
+
+function buildPickRow(containerId, options, multi, current, onPick, allowAdd){
+  var box = document.getElementById(containerId);
+  box.innerHTML = '';
+  options.forEach(function(o){
+    var name = typeof o === 'string' ? o : o.name;
+    var id = typeof o === 'string' ? o : o.id;
+    var isOn = multi ? current.indexOf(id) > -1 : current === id;
+    var b = el('button','pick'+(isOn?' on':''), esc(name));
+    if (isOn && typeof o !== 'string') b.style.background = o.color, b.style.borderColor='transparent';
+    else if (isOn) b.style.background = 'var(--accent)', b.style.borderColor='transparent';
+    b.onclick = function(){ onPick(id); };
+    box.appendChild(b);
+  });
+  if (allowAdd) {
+    var addBtn = el('button','pick addnew','+ add new');
+    addBtn.onclick = function(){
+      var v = prompt('Name it:');
+      if (v && v.trim()) allowAdd(v.trim());
+    };
+    box.appendChild(addBtn);
+  }
+}
+
+function refreshPickers(){
+  buildPickRow('archPick', allArchetypes, false, pickedArch, function(id){ pickedArch = (pickedArch===id?null:id); refreshPickers(); },
+    function(name){
+      var id = 'c_'+slug(name);
+      if (!allArchetypes.some(function(a){return a.id===id;})) {
+        allArchetypes.push({id:id, name:name, color:'var(--mut)'});
+        if (STATE.customArchetypes.indexOf(name)===-1) STATE.customArchetypes.push(name);
+      }
+      pickedArch = id; refreshPickers();
+    });
+  buildPickRow('lensPick', withSession(allLenses(), sessionLenses), true, pickedLenses, function(id){
+      var i = pickedLenses.indexOf(id);
+      if (i>-1) pickedLenses.splice(i,1); else pickedLenses.push(id);
+      refreshPickers();
+    },
+    function(name){
+      if (sessionLenses.indexOf(name)===-1) sessionLenses.push(name);
+      if (pickedLenses.indexOf(name)===-1) pickedLenses.push(name);
+      refreshPickers();
+    });
+  buildPickRow('landPick', withSession(allLandscapes(), sessionLandscapes), false, pickedLand, function(id){ pickedLand = (pickedLand===id?null:id); refreshPickers(); },
+    function(name){
+      if (sessionLandscapes.indexOf(name)===-1) sessionLandscapes.push(name);
+      pickedLand = name; refreshPickers();
+    });
+}
+
+function openModal(){
+  pickedArch = null; pickedLenses = []; pickedLand = null;
+  sessionLenses = []; sessionLandscapes = [];
+  document.getElementById('fOrg').value = '';
+  document.getElementById('fNote').value = '';
+  document.getElementById('formErr').classList.remove('show');
+  refreshPickers();
+  document.getElementById('overlay').classList.add('show');
+}
+function closeModal(){ document.getElementById('overlay').classList.remove('show'); }
+
+function showToast(msg){
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 2600);
+}
+
+function setReadOnly(){
+  writable = false;
+  document.getElementById('roBanner').style.display = 'block';
+  document.getElementById('openAdd').disabled = true;
+  document.getElementById('openAdd').style.opacity = '.5';
+  document.getElementById('openAdd').style.cursor = 'not-allowed';
+}
+
+/* Static shell -- captured ONCE from the style tag (never mutates at runtime) plus a
+   hand-written copy of the body's static markup. Dynamic containers (#landscapeRow,
+   #gapstrip, #boardWrap) are left EMPTY here on purpose: renderAll() fills them from
+   `state` the moment the republished page's own script runs, on every fresh load. This
+   deliberately avoids reading the live (already-rendered, filter-dependent) DOM. */
+var STYLE_HTML = document.querySelector('style').outerHTML;
+var STATIC_BODY =
+  '<div class="wrap">'
+  + '<div class="topbar"><div>'
+  + '<a class="backlink" href="https://sidd-1995.github.io/odisha-landscape/" target="_blank" rel="noopener">&larr; Odisha Landscape map</a>'
+  + '<h1>Landscape Confluence Board</h1>'
+  + '<p class="sub">Convening on Landscape of the Future — a live board for the room. Add your organisation under an archetype and the outcome lens(es) you work on; the empty cells are the gaps and complementarities worth discussing.</p>'
+  + '<p class="note">No lens is pre-set — every column on this board, ecological or otherwise, was added live by someone in the room, as a peer to every other.</p>'
+  + '</div></div>'
+  + '<div class="readonly-banner" id="roBanner">You\'re viewing a read-only copy — entries here won\'t be saved to the shared board.</div>'
+  + '<div class="landscape-row" id="landscapeRow"></div>'
+  + '<div class="gapstrip" id="gapstrip"><div class="t">Still empty</div><span class="n" id="gapCount">0</span><span style="color:var(--mut);font-size:12.5px">archetype &times; lens combinations with nobody in them yet</span><div class="gaplist" id="gapList"></div></div>'
+  + '<div id="boardWrap"></div>'
+  + '<div class="addbar"><button class="addbtn" id="openAdd">+ Add your organisation</button></div>'
+  + '<footer>Seeded empty for the LoTF convening &middot; part of the <a href="https://github.com/sidd-1995/odisha-landscape" target="_blank" rel="noopener">odisha-landscape</a> project &middot; shared, live &mdash; anyone with this link can add an entry.</footer>'
+  + '</div>'
+  + '<div class="overlay" id="overlay"><div class="modal">'
+  + '<h2>Add your organisation</h2><p class="mdesc">One card per org &middot; pick or add an archetype, lens and landscape.</p>'
+  + '<div class="field"><label for="fOrg">Organisation</label><input type="text" id="fOrg" maxlength="80" placeholder="e.g. Gram Vikas"></div>'
+  + '<div class="field"><label>Archetype</label><div class="pickrow" id="archPick"></div></div>'
+  + '<div class="field"><label>Outcome lens</label><div class="pickrow" id="lensPick"></div></div>'
+  + '<div class="field"><label>Landscape / geography</label><div class="pickrow" id="landPick"></div></div>'
+  + '<div class="field"><label for="fNote">What you do here (optional, one line)</label><textarea id="fNote" maxlength="140" placeholder="e.g. Water collectives feeding into school WASH programmes"></textarea></div>'
+  + '<div class="err" id="formErr"></div>'
+  + '<div class="modalbtns"><button class="btn" id="cancelAdd">Cancel</button><button class="btn primary" id="submitAdd">Add to board</button></div>'
+  + '</div></div>'
+  + '<div class="toast" id="toast"></div>';
+
+function pageHTML(state){
+  return '<!doctype html><html lang="en"><head>'
+    + '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+    + '<title>Landscape Confluence Board<\/title>'
+    + STYLE_HTML
+    + '</head><body>'
+    + STATIC_BODY
+    + '<script id="initial-state" type="application/json">' + JSON.stringify(state).replace(/<\/script/g,'<\\/script') + '<\/script>'
+    + '<script id="app-script">' + SCRIPT_SRC.replace(/<\/script/g,'<\\/script') + '<\/script>'
+    + '</body></html>';
+}
+
+async function submitEntry(){
+  var org = document.getElementById('fOrg').value.trim();
+  var note = document.getElementById('fNote').value.trim();
+  var errBox = document.getElementById('formErr');
+  if (!org || !pickedArch || pickedLenses.length===0 || !pickedLand) {
+    errBox.textContent = 'Organisation name, archetype, at least one lens, and a landscape are all required.';
+    errBox.classList.add('show');
+    return;
+  }
+  errBox.classList.remove('show');
+  var entry = {org: org, archetype: pickedArch, lenses: pickedLenses.slice(), landscape: pickedLand, note: note, ts: Date.now()};
+  STATE.entries.push(entry);
+  closeModal();
+  renderAll();
+  showToast('Added — saving to the shared board…');
+
+  if (!writable) return;
+  try {
+    var artifact = await claude.use('artifact');
+    if (!artifact) { showToast('Saved on your screen only — live sharing isn’t available in this view.'); return; }
+    await artifact.publish(pageHTML(STATE));
+  } catch (e) {
+    var code = e && e.code;
+    if (code === 'not_writer' || code === 'not_granted') { setReadOnly(); showToast('This view is read-only — your entry stayed local only.'); }
+    else if (code === 'conflict') { /* the view reloads to the winning version */ }
+    else { showToast('Could not save to the shared board — your entry stayed on this screen only.'); }
+  }
+}
+
+document.getElementById('openAdd').addEventListener('click', openModal);
+document.getElementById('cancelAdd').addEventListener('click', closeModal);
+document.getElementById('overlay').addEventListener('click', function(e){ if (e.target.id==='overlay') closeModal(); });
+document.getElementById('submitAdd').addEventListener('click', submitEntry);
+
+renderAll();
+
+if (window.claude && window.claude.use) {
+  claude.use('artifact').then(function(a){ if (!a) writable = false; }).catch(function(){});
+}
+})();
+</script>

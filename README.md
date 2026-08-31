@@ -91,6 +91,27 @@ lead list for the next pass, not a finished Funders table like Jharkhand's.
 **Districts with only one mapped partner** (thinnest coverage, worth prioritising in a
 follow-up pass): Boudh (Save the Children only) and Sonepur (VJSS only).
 
+## LoTF workshop board
+
+`lotf-workshop/gap-board.html` is a separate, standalone tool for the **Convening on
+Landscape of the Future (LoTF)** — a live, shared "Landscape Confluence Board" where
+convening attendees add their own organisation under an archetype (Orchestrators,
+Influencers, Funders, Government, Eco/Market, Grassroots Orgs) and an outcome lens
+(Health, Education, Ecological, or whatever they name), so the empty archetype × lens
+cells surface as visible gaps for the room to discuss.
+
+It's deliberately **not pre-populated** — no lens, including the ecological outcomes
+(Air/Water/Soil/Energy/Biodiversity/Materials) any one funder in the room cares about
+most, is hardcoded or given visual priority. Every column exists only because someone
+added it live, as a peer to every other column. This was a specific ask: the board
+needed to avoid privileging any single funder's framework over the others attending.
+
+The file in this repo is the **seed** (an empty board) — the live, filled-in version
+lives at its published Artifact URL (linked from the main site's intro and from the
+board's own back-link) and updates itself via `claude.use('artifact').publish(...)` each
+time someone adds an entry; pulling a fresh copy back into this repo after the workshop,
+if wanted, is a manual step (open the live URL, save its source).
+
 ## Files
 
 ```
@@ -106,13 +127,15 @@ odisha-landscape/
 │   ├── odisha_fpo_data.json          # raw FPO fetch, district-level count + farmers
 │   ├── odisha_partners_seed.csv      # 46-org partner research pass (see "Partner research pass")
 │   └── odisha_research_funders.csv   # 5-lead funders list, not yet wired into model.json
-└── scripts/
-    ├── fetch_boundaries.py           # bharatlas.com -> data/odisha_districts.geojson
-    ├── fetch_shg.py                  # DAY-NRLM MIS -> data/odisha_shg_data.json
-    ├── fetch_dmf.py                  # dmf.odisha.gov.in -> data/odisha_dmf_data.json
-    ├── fetch_fpo.py                  # fpoplatform.com -> data/odisha_fpo_data.json
-    ├── enrich_geojson.py             # data/odisha_districts.geojson -> ../odisha_enriched.geojson
-    └── build_model.py                # merges all fetches -> ../model.json
+├── scripts/
+│   ├── fetch_boundaries.py           # bharatlas.com -> data/odisha_districts.geojson
+│   ├── fetch_shg.py                  # DAY-NRLM MIS -> data/odisha_shg_data.json
+│   ├── fetch_dmf.py                  # dmf.odisha.gov.in -> data/odisha_dmf_data.json
+│   ├── fetch_fpo.py                  # fpoplatform.com -> data/odisha_fpo_data.json
+│   ├── enrich_geojson.py             # data/odisha_districts.geojson -> ../odisha_enriched.geojson
+│   └── build_model.py                # merges all fetches -> ../model.json
+└── lotf-workshop/
+    └── gap-board.html                # standalone live workshop tool (see "LoTF workshop board")
 ```
 
 ## Rebuilding
