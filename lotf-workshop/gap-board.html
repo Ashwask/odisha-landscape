@@ -130,6 +130,11 @@ h1{
 }
 .pick.on{color:#fff;border-color:transparent}
 .pick.addnew{border-style:dashed}
+.addinput{
+  font:inherit;font-size:12px;padding:6px 11px;border:1px solid var(--accent);border-radius:8px;
+  background:var(--ground);color:var(--ink);min-width:140px;
+}
+.addinput:focus{outline:2px solid var(--accent);outline-offset:1px}
 .modalbtns{display:flex;gap:10px;margin-top:20px}
 .btn{font:inherit;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:9px;border:1px solid var(--line);background:var(--ground);color:var(--ink2);cursor:pointer}
 .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
@@ -400,10 +405,27 @@ function buildPickRow(containerId, options, multi, current, onPick, allowAdd){
     box.appendChild(b);
   });
   if (allowAdd) {
+    // an inline text input, not window.prompt() -- prompt() is unreliable inside a
+    // sandboxed artifact viewer (silently no-ops in some), which is exactly what made
+    // "add new" appear broken.
     var addBtn = el('button','pick addnew','+ add new');
     addBtn.onclick = function(){
-      var v = prompt('Name it:');
-      if (v && v.trim()) allowAdd(v.trim());
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.className = 'addinput'; inp.placeholder = 'Type & press Enter'; inp.maxLength = 40;
+      box.replaceChild(inp, addBtn);
+      inp.focus();
+      var done = false;
+      function commit(){
+        if (done) return; done = true;
+        var v = inp.value.trim();
+        if (v) allowAdd(v);
+        else if (inp.parentNode === box) box.replaceChild(addBtn, inp);
+      }
+      inp.addEventListener('keydown', function(e){
+        if (e.key === 'Enter') { e.preventDefault(); commit(); }
+        else if (e.key === 'Escape') { done = true; if (inp.parentNode === box) box.replaceChild(addBtn, inp); }
+      });
+      inp.addEventListener('blur', function(){ setTimeout(commit, 150); });
     };
     box.appendChild(addBtn);
   }
