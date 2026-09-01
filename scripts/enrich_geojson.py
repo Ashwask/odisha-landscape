@@ -6,8 +6,8 @@ matches CANON exactly for all 30 districts, so this is a straight rename.
 
 Also simplifies ring geometry (Douglas-Peucker, ~150k points total in the raw Bharatlas
 LGD file -- far more detail than a 760x560px inline SVG map needs or can render smoothly)
-and rounds coordinates to 5 decimal places (~1m precision, still far finer than pixel
-resolution at this map size).
+and rounds coordinates to 3 decimal places (~110m, still sub-pixel at this map size)
+with consecutive-duplicate removal, to keep the inlined GeoJSON small.
 
 Run from scripts/: python3 enrich_geojson.py
 """
@@ -56,19 +56,29 @@ def simplify_ring(ring, tol):
     return pts
 
 
-def round_pt(pt):
-    return [round(pt[0], 5), round(pt[1], 5)]
+DECIMALS = 3  # ~110m; sub-pixel at 760x560 over Odisha's extent
+
+
+def finish_ring(ring, tol):
+    """Simplify, round to DECIMALS, and drop consecutive duplicate points."""
+    pts = simplify_ring(ring, tol)
+    out, last = [], None
+    for p in pts:
+        r = [round(p[0], DECIMALS), round(p[1], DECIMALS)]
+        if r != last:
+            out.append(r)
+            last = r
+    if len(out) >= 4 and out[0] != out[-1]:
+        out.append(out[0])
+    return out if len(out) >= 4 else [[round(p[0], DECIMALS), round(p[1], DECIMALS)] for p in ring]
 
 
 def simplify_geometry(geom, tol):
     if geom["type"] == "Polygon":
-        geom["coordinates"] = [
-            [round_pt(p) for p in simplify_ring(ring, tol)] for ring in geom["coordinates"]
-        ]
+        geom["coordinates"] = [finish_ring(ring, tol) for ring in geom["coordinates"]]
     elif geom["type"] == "MultiPolygon":
         geom["coordinates"] = [
-            [[round_pt(p) for p in simplify_ring(ring, tol)] for ring in poly]
-            for poly in geom["coordinates"]
+            [finish_ring(ring, tol) for ring in poly] for poly in geom["coordinates"]
         ]
     return geom
 
@@ -95,6 +105,7 @@ if __name__ == "__main__":
         f["properties"] = {"district": f["properties"]["dtname"]}
         simplify_geometry(f["geometry"], TOLERANCE_DEG)
     after = sum(count_points(f["geometry"]) for f in d["features"])
+    d.pop("name", None)  # drop unused top-level label to trim the inlined payload
     json.dump(d, open("../odisha_enriched.geojson", "w"), separators=(",", ":"))
     print(f"wrote odisha_enriched.geojson: {len(d['features'])} features, "
           f"{before} -> {after} coordinate points")
