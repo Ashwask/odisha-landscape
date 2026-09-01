@@ -190,14 +190,7 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 </div>
 
 <div id="viewMain">
-<div class="intro card cardpad">
- <p class="intro-lead">A first pass at mapping the development-partner ecosystem in Odisha — <b>who's known to work where</b>, alongside the public infrastructure (SHGs, FPOs) and public money (DMF) already on the ground.</p>
- <p class="intro-body"><b>Read this as a research pass, not a verified census.</b> SHG, DMF and FPO layers are complete, live-fetched government/platform data across all 30 districts. The <b>partner layer is a 46-organisation research pass reaching all 30 districts</b> — compiled via targeted searches across livelihoods/agriculture/NRM, health/nutrition/women/child, education/WASH/governance, and coastal &amp; northern Odisha, with every row backed by a source link (an org's own site, an annual report, a CSR filing, or a directory listing). It is still mostly self-reported and has <b>not been independently field-verified</b> — a handful of rows are explicitly flagged low-confidence in the underlying data (see the Partner directory's source column). Treat it as a strong first pass, not a finished partner survey.</p>
- <p class="intro-src">Sources: Bharatlas (district boundaries, LGD 2024) · DAY-NRLM public MIS (SHG) · Odisha's own DMF portal (dmf.odisha.gov.in) · FPO Platform / Cornell TCI (FPO) · NITI Aayog Aspirational Districts Programme · partner data compiled from org websites, annual reports, CSR filings &amp; NGO directories, one source URL per row. CSR data is blocked by a captcha on the national CSR portal — see Sources below. Fully offline &amp; self-contained.</p>
-</div>
-
-<p style="margin:14px 0 0;font-size:12.5px;color:var(--mut)">Attending the <b>Landscape of the Future convening</b>? Add your organisation to the <a href="https://claude.ai/code/artifact/23ca2417-b0a9-43dd-8b2d-dfc0d1aac9d9" target="_blank" rel="noopener">Landscape Confluence Board</a> — a live board mapping who's in the room against archetype and outcome lens, so the empty cells are visible to everyone.</p>
-
+<!-- HERO: district map + detail -->
 <div class="grid hero">
  <div class="card">
    <h2>District map</h2>
@@ -220,26 +213,44 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 
 <div class="strip" id="strip"></div>
 
-<div class="section-title">Ecosystem health</div>
+<div class="section-title collapser closed" data-wrap="aboutwrap">About this dashboard &amp; how to read it <span class="caret">▾</span></div>
+<div id="aboutwrap" class="collapsed">
+<div class="intro card cardpad">
+ <p class="intro-lead">A first pass at mapping the development-partner ecosystem in Odisha — <b>who's known to work where</b>, alongside the public infrastructure (SHGs, FPOs) and public money (DMF) already on the ground.</p>
+ <p class="intro-body"><b>Read this as a research pass, not a verified census.</b> SHG, DMF and FPO layers are complete, live-fetched government/platform data across all 30 districts. The <b>partner layer is a 46-organisation research pass reaching all 30 districts</b> — compiled via targeted searches across livelihoods/agriculture/NRM, health/nutrition/women/child, education/WASH/governance, and coastal &amp; northern Odisha, with every row backed by a source link (an org's own site, an annual report, a CSR filing, or a directory listing). It is still mostly self-reported and has <b>not been independently field-verified</b> — a handful of rows are explicitly flagged low-confidence in the underlying data (see the Partner directory's source column). Treat it as a strong first pass, not a finished partner survey.</p>
+ <p class="intro-src">Sources: Bharatlas (district boundaries, LGD 2024) · DAY-NRLM public MIS (SHG) · Odisha's own DMF portal (dmf.odisha.gov.in) · FPO Platform / Cornell TCI (FPO) · NITI Aayog Aspirational Districts Programme · GO CARE (statewide CSR) · Odisha budget (schemes) · org sites for funders &amp; anchors, one source URL per row. Fully offline &amp; self-contained.</p>
+</div>
+<p style="margin:14px 0 0;font-size:12.5px;color:var(--mut)">Attending the <b>Landscape of the Future convening</b>? Add your organisation to the <a href="https://claude.ai/code/artifact/23ca2417-b0a9-43dd-8b2d-dfc0d1aac9d9" target="_blank" rel="noopener">Landscape Confluence Board</a> — a live board mapping who's in the room against archetype and outcome lens, so the empty cells are visible to everyone.</p>
+</div>
+
+<div class="section-title collapser" data-wrap="healthwrap">Ecosystem health <span class="caret">▾</span></div>
+<div id="healthwrap">
 <p class="section-sub">A funder-facing read on the state of the partner ecosystem — coverage, reach into aspirational districts, resilience, thematic balance, network depth and SHG co-location. Built on the 46-org research pass — still not independently field-verified, so read the bands as a strong first read, not a definitive verdict.</p>
 <div class="card cardpad"><div class="health"><div class="hindex" id="hindex"></div><div class="hcards" id="hcards"></div></div></div>
+</div>
 
-<div class="section-title">Partner × Theme matrix</div>
+<div class="section-title collapser" data-wrap="mtxwrap">Partner × Theme matrix <span class="caret">▾</span></div>
+<div id="mtxwrap">
 <p class="section-sub">Where thematic energy concentrates among the 46 researched partners. 8 orgs (Goonj, Gram Vikas, NIRMAN, PRADAN, SEBAJAGAT, SEWAK, WASSAN &amp; its partners, WOSCA &amp; WASSAN) have no theme data in the source and show no cells — that's a gap in the source, not a claim they cover no themes.</p>
 <div class="card cardpad mtx" id="matrix"></div>
+</div>
 
-<div class="section-title">Government spend &amp; allocation</div>
+<div class="section-title collapser" data-wrap="govtwrap">Government spend &amp; allocation <span class="caret">▾</span></div>
+<div id="govtwrap">
 <p class="section-sub">The largest place-based public money in Odisha. <b>DMF (District Mineral Foundation)</b> is district-specific and live from Odisha's own portal (dmf.odisha.gov.in), FY2015-16 → FY2025-26 — see the <b>"DMF mining fund"</b> map lens. Major state/central schemes are largely state-wide; figures are from the Odisha 2025-26 budget (finance.odisha.gov.in &amp; press).</p>
 <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">
  <div class="card"><h2>DMF collection by district (cumulative, FY16 → FY26)</h2><div class="tbl" id="govtdmf"></div></div>
  <div class="card"><h2>Major schemes &amp; allocations (Odisha budget FY2025-26)</h2><div class="tbl" id="schemes"></div></div>
 </div>
+</div>
 
-<div class="section-title">CSR &amp; funders</div>
+<div class="section-title collapser" data-wrap="csrwrap">CSR &amp; funders <span class="caret">▾</span></div>
+<div id="csrwrap">
 <p class="section-sub">Who funds development work in Odisha. <b>Statewide CSR</b> and the <b>funder universe</b> come from Odisha's GO CARE portal (MCA-fed) — <b>district-total CSR is login/captcha-gated, so there is no CSR choropleth</b>; the "CSR flagship ✳" map lens shows only the portal's geocoded flagship projects (a subset, not total spend). The Funders table links each funder to the org(s) it backs in Odisha where public; amounts are org-wide unless noted, and rows carry a confidence flag.</p>
 <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">
  <div class="card"><h2>CSR filed in Odisha — statewide trend &amp; sectors (GO CARE / MCA)</h2><div id="csrstate"></div></div>
  <div class="card"><h2>Funders &amp; philanthropies → who they back in Odisha</h2><div class="tbl" id="funders"></div></div>
+</div>
 </div>
 
 <div class="section-title collapser closed" id="dirToggle" data-wrap="dirwrap">Partner directory <span class="caret">▾</span> <span class="mini" style="font-weight:400" id="dircount"></span></div>
@@ -286,7 +297,7 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
   <div><div class="srch">Anchor / indicative orgs</div>
    <ul><li>Multi-district anchors from org sites: <a href="https://www.cysd.org/about-us/where-we-work" target="_blank" rel="noopener">CYSD</a>, <a href="https://www.gramvikas.org/" target="_blank" rel="noopener">Gram Vikas</a>, <a href="https://harshatrust.org/" target="_blank" rel="noopener">Harsha Trust</a>, Niyatee, PRADAN, FES — indicative district sets, kept out of scoring unless toggled</li></ul></div>
   <div><div class="srch">Partner research pass</div>
-   <ul><li>Org websites, annual reports, CSR filings &amp; NGO directories, one source URL per row — see the Partner directory · 11 of the 46 orgs via <a href="https://github.com/Ashwask/jharkhand-landscape" target="_blank" rel="noopener">jharkhand-landscape</a>'s incidental Odisha mentions</li></ul></div>
+   <ul><li>Org websites, annual reports, CSR filings &amp; NGO directories, one source URL per row — see the Partner directory</li></ul></div>
  </div>
 </div>
 </div>
@@ -658,7 +669,7 @@ function buildHealth(){
  const shgCov=shgTot?shgMemCov/shgTot*100:0;
  // Resource alignment — share of the state's place-based public money (DMF) sitting in
  // partner-covered districts. Odisha lacks district-level CSR (blocked), so DMF stands in
- // for the "do resources track effort?" dimension jharkhand-landscape scored on CSR.
+ // for the "do resources track effort?" resource-alignment dimension.
  const dmfCov=CANON.reduce((s,d)=>s+(effP(d)?(DMF_TOTAL[d]||0):0),0);
  const resAlign=stateDMF?dmfCov/stateDMF*100:0;
  const dims=[
