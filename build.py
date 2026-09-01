@@ -187,6 +187,7 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 <div class="tabbar" id="tabbar">
  <button class="on" data-view="main">Ecosystem landscape</button>
  <button data-view="vision">Odisha Vision 2036</button>
+ <button data-view="align">2036 Alignment</button>
 </div>
 
 <div id="viewMain">
@@ -306,6 +307,7 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 </div><!-- /viewMain -->
 
 <div id="viewVision" style="display:none"></div>
+<div id="viewAlign" style="display:none"></div>
 </div>
 
 <script>
@@ -787,13 +789,121 @@ function buildVision(){
  h+='<p class="vnote">'+(VISION._note||'')+'</p>';
  document.getElementById('viewVision').innerHTML=h;
 }
+/* ---------- 2036 Alignment tab ---------- */
+let alignBuilt=false;
+const ALIGN_BAND={Strong:['#2b8a3e','#e7f3ea'],Emerging:['#b45309','#fdf0e2'],Thin:['#c2410c','#fdece3'],Gap:['#7a2312','#f6dcd4']};
+function pillarSignals(theme){
+ const partners=PARTNERS.filter(p=>p.themes.includes(theme)).length;
+ const indic=INDICATIVE.filter(o=>(o.themes||[]).includes(theme)).length;
+ const funders=FUNDERS.filter(f=>(f.domains||[]).includes(theme));
+ const schemeCr=(SCHEMES.items||[]).filter(s=>s.theme===theme).reduce((a,s)=>a+(s.outlayCr||0),0);
+ const dists=CANON.filter(d=>D[d].themes.includes(theme)).length;
+ return {partners,indic,funders,schemeCr,dists,orgs:partners+indic};
+}
+function alignBand(s){
+ if(s.orgs>=15&&s.funders.length>=3)return 'Strong';
+ if(s.orgs>=6||s.funders.length>=2)return 'Emerging';
+ if(s.orgs>=1)return 'Thin';
+ return 'Gap';
+}
+function buildAlignment(){
+ if(alignBuilt)return; alignBuilt=true;
+ const cov=coveredList().length, asp=CANON.filter(d=>D[d].aspirational), aspCov=asp.filter(d=>effP(d)>0).length;
+ const shgTot=CANON.reduce((s,d)=>s+((D[d].shg||{}).total||0),0);
+ const fpoTot=CANON.reduce((s,d)=>s+((D[d].fpo||{}).fpos||0),0);
+ // priority districts: aspirational & weakly served (Whitespace/Priority/Fragile)
+ const prio=asp.map(d=>({d,s:placeScore(d),t:placeTag(d)})).filter(x=>x.t.need<=3).sort((a,b)=>a.s-b.s);
+
+ let h='<div class="vhero" style="background:linear-gradient(155deg,#0f2440,#5b2a86)"><div class="big">How aligned is today’s ecosystem to Vision 2036?</div>'
+  +'<div class="meta">Cross-reads the mapped ecosystem (partners, funders, government money, public infrastructure) against the seven Vision 2036 pillars — to surface where effort already lines up with the state’s stated priorities, and where the gaps and missing links are. Alignment is inferred from a sourced research pass, not an audit.</div></div>';
+
+ // --- pillar scorecard ---
+ h+='<div class="section-title">Pillar alignment scorecard</div>';
+ h+='<p class="section-sub">Each Vision 2036 pillar scored by the ecosystem behind it right now: mapped organisations on that theme (source + ✳ indicative), funders backing that domain, and government scheme money tagged to it. Bands: <b style="color:#2b8a3e">Strong</b> · <b style="color:#b45309">Emerging</b> · <b style="color:#c2410c">Thin</b> · <b style="color:#7a2312">Gap</b>.</p>';
+ h+='<div class="vgrid">';
+ (VISION.pillars||[]).forEach(p=>{
+  const s=pillarSignals(p.theme);
+  const band=p.growth?'Gap':alignBand(s), bc=ALIGN_BAND[band];
+  const col=themePalette[p.theme]||'#0d6e8c';
+  h+='<div class="vcard"><div class="vh"><span class="vth" style="background:'+col+'"></span>'+p.name
+    +'<span class="badge" style="margin-left:auto;background:'+bc[1]+';color:'+bc[0]+'">'+band+(p.growth?'*':'')+'</span></div>';
+  h+='<div class="kv" style="margin:11px 0 4px;gap:14px">'
+    +'<div><div class="k">Orgs</div><div class="v">'+s.orgs+'</div></div>'
+    +'<div><div class="k">Funders</div><div class="v">'+s.funders.length+'</div></div>'
+    +'<div><div class="k">Govt ₹Cr</div><div class="v">'+(s.schemeCr?s.schemeCr.toLocaleString('en-IN'):'–')+'</div></div>'
+    +'<div><div class="k">Districts</div><div class="v">'+s.dists+'</div></div></div>';
+  if(p.growth){h+='<div class="mini" style="margin-top:6px;color:#7a2312">*Growth pillar — the ecosystem theme shown is a <b>rural proxy</b>; the vision’s industry / urban / digital ambition is largely off-map, so the org count overstates true alignment.</div>';}
+  h+='<div class="mini" style="margin-top:6px">Theme: <span class="tag" style="border-left:3px solid '+col+'">'+p.theme+'</span>'
+    +(s.funders.length?' · funders: '+s.funders.slice(0,3).map(f=>f.name.split(' (')[0].split(' —')[0]).join(', ')+(s.funders.length>3?'…':''):'')+'</div>';
+  h+='</div>';
+ });
+ h+='</div>';
+
+ // --- structural gap callout ---
+ const humanThemes=['Women & Gender','Health & Nutrition','Education','Agriculture','Livelihoods & Rural Dev'];
+ const humanOrgs=[...new Set(PARTNERS.filter(p=>p.themes.some(t=>humanThemes.includes(t))).map(p=>p.name))].length;
+ h+='<div class="section-title">The structural gap: human development vs economic transformation</div>';
+ h+='<div class="card cardpad" style="border-left:4px solid #7a2312">'
+   +'<p style="margin:0 0 8px">The mapped ecosystem is overwhelmingly a <b>human-development</b> ecosystem — women &amp; SHGs, health, education, agriculture and rural livelihoods (~'+humanOrgs+' of the '+PARTNERS.length+' partners work on at least one of these). That aligns tightly with the vision’s social pillars.</p>'
+   +'<p style="margin:0 0 8px">But Vision 2036’s <b>headline ambition is economic transformation</b>: a $500B economy, manufacturing mega-parks, port-based SEZs, digital services, tourism and urbanisation from 17% to 40%. <b>Almost no mapped development partner, and few philanthropies, work on these</b> — the ecosystem has no theme for industry, digital, urban development or tourism at all. The rural "Livelihoods &amp; Rural Dev" theme is the closest proxy, and it is not the same thing.</p>'
+   +'<p style="margin:0"><b>Implication:</b> the civil-society + philanthropy ecosystem can help the vision deliver <i>inclusion</i> (who benefits), but the <i>growth engine</i> (industry, jobs, cities) currently sits almost entirely with government + corporates, largely outside this map. That is the single biggest alignment gap.</p></div>';
+
+ // --- headline target vs today ---
+ h+='<div class="section-title">Headline target vs where it stands today</div>';
+ h+='<p class="section-sub">Vision 2036 target next to a real current signal from this dashboard. "Distance" is the honest gap to close in ~10 years.</p>';
+ const rows=[
+  ['Economy','$500B GSDP by 2036 ($1.5T by 2047)','No partner/funder theme for industry or digital in the ecosystem','Growth engine largely off-map — biggest gap'],
+  ['Urbanisation','17% → 40% urban; ANKUR resilient cities','Ecosystem is district/rural; ~0 mapped urban-development partners','Missing link'],
+  ['Jobs &amp; skills','1.1 cr jobs by 2047; Skilled in Odisha','Skilling partners + HDFC Parivartan (₹24 Cr, Bhubaneswar)','Emerging — narrow'],
+  ['Women','Employment, entrepreneurship, leadership','~'+(shgTot/1e5|0)+' lakh SHGs (Mission Shakti ₹1,107 Cr, Subhadra ₹10,145 Cr) + Gates/WFP','Strong alignment'],
+  ['Agriculture','All cultivable land irrigated; higher incomes','~'+fpoTot.toLocaleString('en-IN')+' FPOs + Gates ADAPT + many NRM/agri partners','Emerging → strong'],
+  ['Inclusion','Equitable growth across all districts','Aspirational districts served: '+aspCov+'/'+asp.length+'; overall coverage '+cov+'/'+NDIST,'Partial — see priority gaps'],
+ ];
+ h+='<div class="card tbl"><table><thead><tr><th>Pillar</th><th>2036 target</th><th>Where it stands today</th><th>Read</th></tr></thead><tbody>';
+ rows.forEach(r=>{h+='<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td>'+r[2]+'</td><td class="mini">'+r[3]+'</td></tr>';});
+ h+='</tbody></table></div>';
+
+ // --- geographic priority gaps ---
+ h+='<div class="section-title">Geographic priority gaps</div>';
+ h+='<p class="section-sub">Vision 2036 promises inclusive growth across all districts. These <b>aspirational (NITI Aayog) districts</b> are the weakest-served in the mapped ecosystem — the clearest place-based priorities.</p>';
+ h+='<div class="card"><div class="ph">';
+ prio.forEach(x=>{const bc=BAND[band(x.s)][0];
+  h+='<div class="phrow" style="grid-template-columns:158px 1fr 120px"><span class="pn" data-d="'+x.d+'"><span class="dot" style="background:#c2410c"></span>'+x.d+'</span>'
+   +'<span class="track"><i style="width:'+Math.max(x.s,3)+'%;background:'+bc+'"></i></span>'
+   +'<span class="right"><span class="tagp" style="background:'+x.t.tb+';color:'+x.t.tc+'">'+x.t.tag+'</span><span class="sc">'+x.s+'</span></span></div>';});
+ if(!prio.length)h+='<div class="mini" style="padding:12px 16px">All aspirational districts have adequate mapped coverage.</div>';
+ h+='</div></div>';
+
+ // --- missing links + priorities ---
+ h+='<div class="grid" style="grid-template-columns:1fr 1fr;align-items:start;margin-top:18px">';
+ h+='<div class="card cardpad"><div class="section-title" style="margin-top:0">Missing links</div><ul class="vt" style="margin-top:4px">'
+   +'<li>No mapped ecosystem for <b>industry, manufacturing, digital services or tourism</b> — the vision’s growth engine.</li>'
+   +'<li><b>Urban development</b> (ANKUR, 40% urbanisation) has virtually no mapped civil-society partner.</li>'
+   +'<li><b>Clean energy / just transition</b> rests on a single anchor (SELCO) despite Odisha’s coal-belt exposure.</li>'
+   +'<li><b>Skilling for the industrial belt</b> (Jajapur, Anugul, Jharsuguda, Sundargarh) is thin vs the jobs target.</li>'
+   +'<li>Aspirational districts still under-served: '+(prio.filter(x=>x.t.need<=1).map(x=>x.d).join(', ')||'none in the whitespace band')+'.</li></ul></div>';
+ h+='<div class="card cardpad"><div class="section-title" style="margin-top:0">Where to point partnerships &amp; funding</div><ul class="vt" style="margin-top:4px">'
+   +'<li><b>Convene the growth pillars:</b> bring industry/skilling/urban actors onto the map so inclusion and growth are planned together.</li>'
+   +'<li><b>Back a clean-energy / just-transition anchor</b> in the coal &amp; mining belt (Anugul, Jharsuguda, Sundargarh, Kendujhar).</li>'
+   +'<li><b>Fund the weakest aspirational districts</b> first (top of the list at left) to honour the inclusive-growth promise.</li>'
+   +'<li><b>Channel DMF + CSR</b> in mining districts toward vision-aligned skilling &amp; urban resilience, not only welfare.</li>'
+   +'<li><b>Deepen agriculture-to-market</b> (FPOs + Gates ADAPT + Model Mandi) toward the productivity/income target.</li></ul></div>';
+ h+='</div>';
+
+ h+='<p class="vnote">Alignment bands and reads are inferred by cross-referencing the mapped ecosystem with the Vision 2036 pillars; both sides are sourced but not independently audited. Treat as a planning lens, not a scorecard of government performance.</p>';
+ const box=document.getElementById('viewAlign'); box.innerHTML=h;
+ box.querySelectorAll('.pn[data-d]').forEach(s=>s.onclick=()=>{const b=document.querySelector('#tabbar button[data-view=main]');if(b)b.click();selectDist(s.dataset.d);document.getElementById('mapbox').scrollIntoView({behavior:'smooth',block:'center'});});
+}
+
+const VIEWS={main:'viewMain',vision:'viewVision',align:'viewAlign'};
 const tabbar=document.getElementById('tabbar');
 tabbar.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
  [...tabbar.children].forEach(x=>x.classList.toggle('on',x===b));
  const v=b.dataset.view;
- document.getElementById('viewMain').style.display=(v==='main')?'':'none';
- document.getElementById('viewVision').style.display=(v==='vision')?'':'none';
- if(v==='vision'){buildVision();window.scrollTo({top:0,behavior:'smooth'});}
+ Object.entries(VIEWS).forEach(([k,id])=>{document.getElementById(id).style.display=(k===v)?'':'none';});
+ if(v==='vision')buildVision();
+ if(v==='align')buildAlignment();
+ if(v!=='main')window.scrollTo({top:0,behavior:'smooth'});
 });
 
 /* ---------- indicative-org toggle: recompute everything on the wider org set ---------- */
@@ -813,6 +923,7 @@ if(extCb){extCb.addEventListener('change',()=>{INCLUDE_EXT=extCb.checked;recompu
 if(location.hash.includes('ext')&&extCb){extCb.checked=true;INCLUDE_EXT=true;recompute();}
 const hl=location.hash.match(/lens=(\w+)/); if(hl&&lenses[hl[1]]){curLens=hl[1];paint();}
 if(location.hash.includes('vision')){const vb=document.querySelector('#tabbar button[data-view=vision]');if(vb)vb.click();}
+if(location.hash.includes('align')){const ab=document.querySelector('#tabbar button[data-view=align]');if(ab)ab.click();}
 </script></body></html>'''
 
 HTML = HTML.replace('__MODEL__', MODEL).replace('__GEO__', GEO)

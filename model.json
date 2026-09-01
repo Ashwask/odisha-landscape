@@ -1500,6 +1500,7 @@
    {
     "name": "Economy & Industry",
     "theme": "Livelihoods & Rural Dev",
+    "growth": true,
     "targets": [
      "$500B GSDP by 2036; $1.5T by 2047",
      "Growth engines: manufacturing, tourism, digital services, green energy"
@@ -1524,6 +1525,7 @@
    {
     "name": "Urbanisation & Infrastructure",
     "theme": "Water & Sanitation",
+    "growth": true,
     "targets": [
      "Urbanisation from 17% to 40% by 2036",
      "100% pucca housing, piped water, sanitation & electricity"
