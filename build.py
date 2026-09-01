@@ -811,8 +811,10 @@ function buildAlignment(){
  const cov=coveredList().length, asp=CANON.filter(d=>D[d].aspirational), aspCov=asp.filter(d=>effP(d)>0).length;
  const shgTot=CANON.reduce((s,d)=>s+((D[d].shg||{}).total||0),0);
  const fpoTot=CANON.reduce((s,d)=>s+((D[d].fpo||{}).fpos||0),0);
- // priority districts: aspirational & weakly served (Whitespace/Priority/Fragile)
- const prio=asp.map(d=>({d,s:placeScore(d),t:placeTag(d)})).filter(x=>x.t.need<=3).sort((a,b)=>a.s-b.s);
+ // priority districts: the weakest-served across ALL 30 (the aspirational belt is saturated
+ // by the research pass, so the genuine gaps are thin non-aspirational districts).
+ const singles=CANON.filter(d=>effP(d)===1), white=whiteList();
+ const prio=CANON.map(d=>({d,s:placeScore(d),t:placeTag(d),asp:D[d].aspirational})).sort((a,b)=>a.s-b.s).slice(0,8);
 
  let h='<div class="vhero" style="background:linear-gradient(155deg,#0f2440,#5b2a86)"><div class="big">How aligned is today’s ecosystem to Vision 2036?</div>'
   +'<div class="meta">Cross-reads the mapped ecosystem (partners, funders, government money, public infrastructure) against the seven Vision 2036 pillars — to surface where effort already lines up with the state’s stated priorities, and where the gaps and missing links are. Alignment is inferred from a sourced research pass, not an audit.</div></div>';
@@ -865,13 +867,14 @@ function buildAlignment(){
 
  // --- geographic priority gaps ---
  h+='<div class="section-title">Geographic priority gaps</div>';
- h+='<p class="section-sub">Vision 2036 promises inclusive growth across all districts. These <b>aspirational (NITI Aayog) districts</b> are the weakest-served in the mapped ecosystem — the clearest place-based priorities.</p>';
- h+='<div class="card"><div class="ph">';
+ h+='<p class="section-sub">Vision 2036 promises inclusive growth across all districts. The 8 <b>weakest-served</b> districts in the mapped ecosystem (lowest place-health) are the clearest place-based priorities — a ● marks NITI Aayog <b>aspirational</b> districts. Note the twist: the aspirational/KBK belt is actually <b>well covered</b> by the research pass, so the real thin spots are mostly <b>non-aspirational</b> districts.</p>';
+ h+='<div class="card"><div class="phhead" style="grid-template-columns:170px 1fr 120px"><span>District</span><span>Coverage strength</span><span style="text-align:right">Score</span></div><div class="ph">';
  prio.forEach(x=>{const bc=BAND[band(x.s)][0];
-  h+='<div class="phrow" style="grid-template-columns:158px 1fr 120px"><span class="pn" data-d="'+x.d+'"><span class="dot" style="background:#c2410c"></span>'+x.d+'</span>'
+  h+='<div class="phrow" style="grid-template-columns:170px 1fr 120px"><span class="pn" data-d="'+x.d+'">'
+   +(x.asp?'<span class="dot" style="background:#c2410c" title="Aspirational (NITI Aayog)"></span>':'<span class="dot" style="background:#cdd7e6"></span>')+x.d
+   +' <span class="mini">'+effP(x.d)+' org'+(effP(x.d)!=1?'s':'')+'</span></span>'
    +'<span class="track"><i style="width:'+Math.max(x.s,3)+'%;background:'+bc+'"></i></span>'
    +'<span class="right"><span class="tagp" style="background:'+x.t.tb+';color:'+x.t.tc+'">'+x.t.tag+'</span><span class="sc">'+x.s+'</span></span></div>';});
- if(!prio.length)h+='<div class="mini" style="padding:12px 16px">All aspirational districts have adequate mapped coverage.</div>';
  h+='</div></div>';
 
  // --- missing links + priorities ---
@@ -881,7 +884,7 @@ function buildAlignment(){
    +'<li><b>Urban development</b> (ANKUR, 40% urbanisation) has virtually no mapped civil-society partner.</li>'
    +'<li><b>Clean energy / just transition</b> rests on a single anchor (SELCO) despite Odisha’s coal-belt exposure.</li>'
    +'<li><b>Skilling for the industrial belt</b> (Jajapur, Anugul, Jharsuguda, Sundargarh) is thin vs the jobs target.</li>'
-   +'<li>Aspirational districts still under-served: '+(prio.filter(x=>x.t.need<=1).map(x=>x.d).join(', ')||'none in the whitespace band')+'.</li></ul></div>';
+   +'<li>Thinnest coverage is in <b>non-aspirational</b> districts — '+(singles.join(', ')||'none')+' have a single mapped partner'+(white.length?'; '+white.join(', ')+' have none':' (no zero-partner districts)')+'. The aspirational/KBK belt is comparatively well-served.</li></ul></div>';
  h+='<div class="card cardpad"><div class="section-title" style="margin-top:0">Where to point partnerships &amp; funding</div><ul class="vt" style="margin-top:4px">'
    +'<li><b>Convene the growth pillars:</b> bring industry/skilling/urban actors onto the map so inclusion and growth are planned together.</li>'
    +'<li><b>Back a clean-energy / just-transition anchor</b> in the coal &amp; mining belt (Anugul, Jharsuguda, Sundargarh, Kendujhar).</li>'
