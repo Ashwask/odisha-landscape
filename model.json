@@ -221,10 +221,9 @@
    ],
    "themes": [
     "Education",
-    "Women Empowerment",
+    "Women & Gender",
     "Climate Action",
-    "Livelihoods and Rural Development",
-    "Gender Integration"
+    "Livelihoods & Rural Dev"
    ]
   },
   {
@@ -463,10 +462,9 @@
     "Khordha"
    ],
    "themes": [
-    "Women Empowerment",
+    "Women & Gender",
     "Climate Action",
-    "Livelihoods and Rural Development",
-    "Gender Integration"
+    "Livelihoods & Rural Dev"
    ]
   },
   {
@@ -529,10 +527,9 @@
    ],
    "themes": [
     "Education",
-    "Women Empowerment",
+    "Women & Gender",
     "Climate Action",
-    "Livelihoods and Rural Development",
-    "Gender Integration"
+    "Livelihoods & Rural Dev"
    ]
   },
   {
@@ -638,7 +635,1041 @@
    ]
   }
  ],
- "anchors": [],
+ "anchors": [
+  {
+   "name": "CYSD (Centre for Youth & Social Development)",
+   "districts": [
+    "Koraput",
+    "Malkangiri",
+    "Nabarangpur",
+    "Rayagada",
+    "Mayurbhanj",
+    "Kendujhar",
+    "Balangir",
+    "Kalahandi",
+    "Puri",
+    "Khordha"
+   ],
+   "districtCount": 10,
+   "focus": "Tribal development, livelihoods, governance, GO-NGO coordination",
+   "confidence": "high",
+   "source": "https://www.cysd.org/about-us/where-we-work",
+   "note": "Named field offices across S/N/W/coastal Odisha; claims statewide reach via partners. Paints as the anchor layer."
+  },
+  {
+   "name": "Gram Vikas",
+   "districts": [],
+   "districtCount": 27,
+   "focus": "Rural WASH, piped water, habitation development, tribal education",
+   "confidence": "med",
+   "source": "https://www.gramvikas.org/",
+   "note": "1,700 habitations, 174 blocks, 27 districts across Odisha + Jharkhand; per-district split not published, so no paint."
+  },
+  {
+   "name": "Harsha Trust",
+   "districts": [],
+   "districtCount": 17,
+   "focus": "Livelihoods, agriculture, tribal household incomes",
+   "confidence": "med",
+   "source": "https://harshatrust.org/",
+   "note": "17 districts / 70 blocks / 4,273 villages (Sept 2025); district names not enumerated on site."
+  },
+  {
+   "name": "Niyatee Foundation",
+   "districts": [],
+   "districtCount": 16,
+   "focus": "Disaster management, SHGs, WASH, health, early-childhood creches",
+   "confidence": "low",
+   "source": "https://www.niyateefoundation.org/ourproject",
+   "note": "783 Village Disaster Management Plans across 196 GPs in 14-16 districts; flagged low-confidence in README; also present in partner seed CSV."
+  }
+ ],
+ "indicative": [
+  {
+   "name": "CYSD (Centre for Youth & Social Development)",
+   "districts": [
+    "Koraput",
+    "Malkangiri",
+    "Nabarangpur",
+    "Rayagada",
+    "Mayurbhanj",
+    "Kendujhar",
+    "Balangir",
+    "Kalahandi",
+    "Puri",
+    "Khordha"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Governance"
+   ],
+   "focus": "Tribal development, livelihoods, governance",
+   "source": "https://www.cysd.org/about-us/where-we-work",
+   "note": ""
+  },
+  {
+   "name": "Gram Vikas",
+   "districts": [
+    "Ganjam",
+    "Gajapati",
+    "Kalahandi",
+    "Kandhamal",
+    "Koraput",
+    "Rayagada",
+    "Mayurbhanj",
+    "Kendujhar"
+   ],
+   "themes": [
+    "Water & Sanitation"
+   ],
+   "focus": "Rural WASH, piped water, habitation development",
+   "source": "https://www.gramvikas.org/",
+   "note": "indicative district set from programme history; org reports 27 districts OD+JH"
+  },
+  {
+   "name": "Harsha Trust",
+   "districts": [
+    "Koraput",
+    "Rayagada",
+    "Kalahandi",
+    "Nuapada",
+    "Balangir",
+    "Kandhamal",
+    "Gajapati",
+    "Kendujhar",
+    "Mayurbhanj",
+    "Sundargarh"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Agriculture"
+   ],
+   "focus": "Livelihoods, agriculture, tribal incomes",
+   "source": "https://harshatrust.org/",
+   "note": "indicative set; org reports 17 districts, names not enumerated"
+  },
+  {
+   "name": "PRADAN",
+   "districts": [
+    "Koraput",
+    "Rayagada",
+    "Kalahandi",
+    "Kandhamal",
+    "Kendujhar",
+    "Mayurbhanj"
+   ],
+   "themes": [
+    "Women & Gender",
+    "Livelihoods & Rural Dev",
+    "Natural Resource Mgmt"
+   ],
+   "focus": "SHG livelihoods, NRM, women collectives",
+   "source": "https://www.pradan.net/",
+   "note": ""
+  },
+  {
+   "name": "Foundation for Ecological Security (FES)",
+   "districts": [
+    "Anugul",
+    "Dhenkanal",
+    "Nayagarh",
+    "Ganjam",
+    "Gajapati"
+   ],
+   "themes": [
+    "Natural Resource Mgmt"
+   ],
+   "focus": "Commons, NRM, ecological restoration",
+   "source": "https://fes.org.in/",
+   "note": ""
+  },
+  {
+   "name": "Landesa",
+   "districts": [
+    "Ganjam",
+    "Mayurbhanj",
+    "Kendujhar",
+    "Sundargarh"
+   ],
+   "themes": [
+    "Women & Gender",
+    "Governance"
+   ],
+   "focus": "Land rights, women's land access",
+   "source": "https://www.landesa.org/where-we-work/india/",
+   "note": ""
+  },
+  {
+   "name": "SPREAD",
+   "districts": [
+    "Rayagada",
+    "Koraput",
+    "Kalahandi"
+   ],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Agriculture"
+   ],
+   "focus": "Tribal livelihoods, NTFP, agriculture",
+   "source": "https://give.do/",
+   "note": ""
+  },
+  {
+   "name": "Lokadrusti",
+   "districts": [
+    "Nuapada",
+    "Kalahandi",
+    "Balangir"
+   ],
+   "themes": [
+    "Education",
+    "Livelihoods & Rural Dev",
+    "Governance",
+    "Child Protection"
+   ],
+   "focus": "Education, child rights, livelihoods (KBK)",
+   "source": "https://give.do/",
+   "note": ""
+  },
+  {
+   "name": "Socratus Foundation",
+   "districts": [
+    "Kendrapara",
+    "Puri",
+    "Ganjam"
+   ],
+   "themes": [
+    "Climate Action",
+    "Natural Resource Mgmt"
+   ],
+   "focus": "Climate resilience, mangrove commons, place-based collective wisdom, FPOs; Bhitarkanika climate panchayats",
+   "source": "https://socratusfoundation.in/",
+   "note": "Odisha Lab since 2020 — coastal (mangroves), agri (FPOs) & tribal verticals; coalition with Sambad, Bakul, Goonj, SELCO, XIM"
+  },
+  {
+   "name": "SELCO Foundation",
+   "districts": [
+    "Khordha",
+    "Koraput",
+    "Rayagada"
+   ],
+   "themes": [
+    "Health & Nutrition",
+    "Livelihoods & Rural Dev",
+    "Clean Energy"
+   ],
+   "focus": "Decentralised renewable energy for health, livelihoods & habitats",
+   "source": "https://selcofoundation.org/",
+   "note": ""
+  },
+  {
+   "name": "Bakul Foundation",
+   "districts": [
+    "Khordha"
+   ],
+   "themes": [
+    "Education"
+   ],
+   "focus": "Libraries, education, volunteering, urban greening (Bhubaneswar)",
+   "source": "https://www.bakulfoundation.org/",
+   "note": ""
+  },
+  {
+   "name": "Nature Conservation Foundation (NCF)",
+   "districts": [
+    "Kendrapara",
+    "Ganjam"
+   ],
+   "themes": [
+    "Governance"
+   ],
+   "focus": "Biodiversity, coastal & landscape conservation, community practice",
+   "source": "https://www.ncf-india.org/",
+   "note": ""
+  },
+  {
+   "name": "WellLabs",
+   "districts": [
+    "Kendrapara"
+   ],
+   "themes": [
+    "Natural Resource Mgmt",
+    "Water & Sanitation"
+   ],
+   "focus": "Water, commons & rural economy research-practice",
+   "source": "https://welllabs.org/",
+   "note": ""
+  }
+ ],
+ "funders": [
+  {
+   "name": "Bill & Melinda Gates Foundation",
+   "supports": "ADAPT climate-smart agriculture (with Govt of Odisha + Samagra) · BONI Bihar-Odisha Nutrition Initiative · women's economic empowerment, infectious diseases, foundational literacy — one of BMGF's deepest state partnerships",
+   "orgs": [],
+   "domains": [
+    "Agriculture",
+    "Health & Nutrition",
+    "Women & Gender",
+    "Education"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "statewide, with state govt",
+   "confidence": "high",
+   "source": "https://www.gatesfoundation.org/our-work/places/india"
+  },
+  {
+   "name": "Piramal Foundation",
+   "supports": "Aspirational Districts Collaborative with NITI Aayog (health/nutrition/education) · Aashwasan TB (drone logistics, Kalahandi) · Piramal Swasthya mobile health",
+   "orgs": [],
+   "domains": [
+    "Health & Nutrition",
+    "Education",
+    "Governance"
+   ],
+   "districts": [
+    "Balangir",
+    "Dhenkanal",
+    "Gajapati",
+    "Kalahandi",
+    "Kandhamal",
+    "Koraput",
+    "Malkangiri",
+    "Nabarangpur",
+    "Nuapada",
+    "Rayagada"
+   ],
+   "amt": "",
+   "amtNote": "aspirational-districts programme",
+   "confidence": "med",
+   "source": "https://www.piramalswasthya.org/"
+  },
+  {
+   "name": "Tata Steel Foundation",
+   "supports": "MANSI maternal & newborn survival (tribal, Home-Based Newborn Care) · Samvaad tribal identity · education & livelihoods around Kalinganagar (Jajapur), Gopalpur (Ganjam) & Joda (Kendujhar)",
+   "orgs": [],
+   "domains": [
+    "Health & Nutrition",
+    "Education",
+    "Livelihoods & Rural Dev"
+   ],
+   "districts": [
+    "Jajapur",
+    "Ganjam",
+    "Kendujhar"
+   ],
+   "amt": "",
+   "amtNote": "Odisha + Jharkhand programmes",
+   "confidence": "high",
+   "source": "https://www.tatasteel.com/corporate/our-organisation/csr/tata-steel-foundation"
+  },
+  {
+   "name": "Tata Trusts",
+   "supports": "Thousand Schools Programme — primary education in tribal Odisha (infrastructure, digital learning, community)",
+   "orgs": [],
+   "domains": [
+    "Education"
+   ],
+   "districts": [
+    "Koraput",
+    "Rayagada",
+    "Kandhamal",
+    "Kendujhar"
+   ],
+   "amt": "",
+   "amtNote": "tribal-education programme",
+   "confidence": "med",
+   "source": "https://www.tatatrusts.org/"
+  },
+  {
+   "name": "Rainmatter Foundation",
+   "supports": "Climate resilience & place-based commons — Kendrapada Sandbox; funds a coalition across coastal, agri & tribal Odisha",
+   "orgs": [
+    "Gram Vikas",
+    "Socratus Foundation",
+    "Goonj",
+    "Nature's Club",
+    "WellLabs",
+    "Nature Conservation Foundation (NCF)"
+   ],
+   "domains": [
+    "Climate Action",
+    "Natural Resource Mgmt",
+    "Livelihoods & Rural Dev"
+   ],
+   "districts": [
+    "Kendrapara"
+   ],
+   "amt": "",
+   "amtNote": "core support, multi-year",
+   "confidence": "high",
+   "source": "https://rainmatter.org/partners/"
+  },
+  {
+   "name": "HDFC Bank Parivartan",
+   "supports": "Youth skilling (hospitality, telecom, retail, healthcare, agri) from the Bhubaneswar training centre; 1,272 youth placed",
+   "orgs": [
+    "PARFI",
+    "Pratham Education Foundation",
+    "Antarang Foundation"
+   ],
+   "domains": [
+    "Skill Development"
+   ],
+   "districts": [
+    "Khordha"
+   ],
+   "amt": "₹24.19 Cr",
+   "amtNote": "project budget, Odisha",
+   "confidence": "high",
+   "source": "https://csrbox.org/India_CSR_Project_HDFC-Bank-Ltd-Project-Parivartan-Odisha_10440"
+  },
+  {
+   "name": "Axis Bank Foundation",
+   "supports": "Harsha Trust — rural / sustainable livelihoods programme",
+   "orgs": [
+    "Harsha Trust"
+   ],
+   "domains": [
+    "Livelihoods & Rural Dev"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "via implementing partner",
+   "confidence": "high",
+   "source": "https://www.axisbankfoundation.org/partners/harsha-trust.html"
+  },
+  {
+   "name": "Vedanta Aluminium (CSR)",
+   "supports": "AFPRO — 'Jeevika Samridhhi' agri-livelihoods; direct CSR around Jharsuguda & Kalahandi smelters",
+   "orgs": [
+    "AFPRO (Action for Food Production)"
+   ],
+   "domains": [
+    "Agriculture",
+    "Livelihoods & Rural Dev",
+    "Water & Sanitation"
+   ],
+   "districts": [
+    "Jharsuguda",
+    "Kalahandi"
+   ],
+   "amt": "",
+   "amtNote": "Odisha CSR partnership",
+   "confidence": "med",
+   "source": "https://csrbox.org/Impact-stories_full_Elevating-Communities--Vedanta-Aluminium's-Impactful-CSR-Endeavors-with-NGO-Partnerships_673"
+  },
+  {
+   "name": "Bansidhar & Ila Panda Foundation (IMFA)",
+   "supports": "Direct CSR — health, education, livelihoods around IMFA operations",
+   "orgs": [],
+   "domains": [
+    "Health & Nutrition",
+    "Education",
+    "Livelihoods & Rural Dev"
+   ],
+   "districts": [
+    "Kendujhar",
+    "Jajapur"
+   ],
+   "amt": "",
+   "amtNote": "direct implementer",
+   "confidence": "med",
+   "source": "https://www.bipf.in/"
+  },
+  {
+   "name": "SAIL — Rourkela Steel Plant (CSR)",
+   "supports": "Largest mapped CSR implementer on the state portal — schools, health, WASH in Sundargarh",
+   "orgs": [],
+   "domains": [
+    "Education",
+    "Health & Nutrition",
+    "Water & Sanitation"
+   ],
+   "districts": [
+    "Sundargarh"
+   ],
+   "amt": "",
+   "amtNote": "top GO CARE CSR spender",
+   "confidence": "high",
+   "source": "https://csr.odisha.gov.in/"
+  },
+  {
+   "name": "JSPL / Jindal Steel & Power (CSR)",
+   "supports": "Direct CSR around Angul operations",
+   "orgs": [],
+   "domains": [
+    "Education",
+    "Health & Nutrition",
+    "Skill Development"
+   ],
+   "districts": [
+    "Anugul"
+   ],
+   "amt": "",
+   "amtNote": "GO CARE CSR spender",
+   "confidence": "med",
+   "source": "https://csr.odisha.gov.in/"
+  },
+  {
+   "name": "NALCO (CSR)",
+   "supports": "Direct CSR around Angul & Damanjodi (Koraput)",
+   "orgs": [],
+   "domains": [
+    "Livelihoods & Rural Dev",
+    "Health & Nutrition"
+   ],
+   "districts": [
+    "Anugul",
+    "Koraput"
+   ],
+   "amt": "",
+   "amtNote": "PSU CSR spender",
+   "confidence": "med",
+   "source": "https://nalcoindia.com/"
+  },
+  {
+   "name": "Azim Premji Foundation",
+   "supports": "Child nutrition & hygiene work with state government + NGO groups in a few districts",
+   "orgs": [],
+   "domains": [
+    "Health & Nutrition",
+    "Education"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "programme, not Odisha grant total",
+   "confidence": "low",
+   "source": "https://azimpremjifoundation.org/"
+  },
+  {
+   "name": "BRLF (Bharat Rural Livelihoods Foundation)",
+   "supports": "Co-funds tribal-belt livelihoods CSOs across the KBK region",
+   "orgs": [],
+   "domains": [
+    "Livelihoods & Rural Dev",
+    "Natural Resource Mgmt"
+   ],
+   "districts": [
+    "Koraput",
+    "Rayagada",
+    "Kalahandi",
+    "Nuapada",
+    "Balangir"
+   ],
+   "amt": "",
+   "amtNote": "central grant-maker",
+   "confidence": "low",
+   "source": "https://www.brlf.in/"
+  },
+  {
+   "name": "Reliance Foundation",
+   "supports": "Rural transformation, health, environment & education",
+   "orgs": [],
+   "domains": [
+    "Livelihoods & Rural Dev",
+    "Health & Nutrition",
+    "Education"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "programme, not Odisha grant total",
+   "confidence": "low",
+   "source": "https://www.reliancefoundation.org/"
+  },
+  {
+   "name": "SELCO Foundation",
+   "supports": "Decentralised renewable energy for health, livelihoods & habitats; Socratus coalition member",
+   "orgs": [],
+   "domains": [
+    "Clean Energy",
+    "Health & Nutrition"
+   ],
+   "districts": [
+    "Khordha",
+    "Koraput",
+    "Rayagada"
+   ],
+   "amt": "",
+   "amtNote": "energy-access implementer/funder",
+   "confidence": "med",
+   "source": "https://selcofoundation.org/"
+  },
+  {
+   "name": "UNICEF Odisha",
+   "supports": "Child health, nutrition, WASH, education & child protection with the state government; Odisha field office",
+   "orgs": [],
+   "domains": [
+    "Health & Nutrition",
+    "Water & Sanitation",
+    "Education",
+    "Child Protection"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "technical partner to state govt",
+   "confidence": "high",
+   "source": "https://www.unicef.org/india/"
+  },
+  {
+   "name": "World Food Programme (WFP)",
+   "supports": "Nutrition security via women's SHGs (rice fortification, Mission Shakti federations) with Govt of Odisha",
+   "orgs": [],
+   "domains": [
+    "Health & Nutrition",
+    "Women & Gender"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "state govt partnership",
+   "confidence": "high",
+   "source": "https://www.wfp.org/news/wfp-and-odisha-govt-join-hands-improve-nutrition-security-among-womens-groups"
+  },
+  {
+   "name": "UNDP India",
+   "supports": "Governance, disaster resilience & livelihoods support to the state",
+   "orgs": [],
+   "domains": [
+    "Governance",
+    "Climate Action",
+    "Livelihoods & Rural Dev"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "UN technical partner",
+   "confidence": "med",
+   "source": "https://www.undp.org/india"
+  },
+  {
+   "name": "CIFF (Children's Investment Fund Foundation)",
+   "supports": "Child health, nutrition & adolescent programmes; climate — India portfolio incl. nutrition states",
+   "orgs": [],
+   "domains": [
+    "Health & Nutrition",
+    "Child Protection",
+    "Climate Action"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "India programme; Odisha via partners",
+   "confidence": "low",
+   "source": "https://ciff.org/"
+  },
+  {
+   "name": "Shakti Sustainable Energy Foundation",
+   "supports": "Clean-energy & sustainable-mobility policy support (national; state-level RE/e-mobility work)",
+   "orgs": [],
+   "domains": [
+    "Clean Energy",
+    "Climate Action"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "energy-policy funder, national",
+   "confidence": "low",
+   "source": "https://shaktifoundation.in/"
+  },
+  {
+   "name": "EdelGive Foundation",
+   "supports": "GROW Fund — core-support grants to small/mid grassroots NGOs (education, women, resilience) across states incl. Odisha",
+   "orgs": [],
+   "domains": [
+    "Education",
+    "Women & Gender",
+    "Livelihoods & Rural Dev"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "grassroots grant-maker",
+   "confidence": "med",
+   "source": "https://www.edelgive.org/"
+  },
+  {
+   "name": "Rohini Nilekani Philanthropies",
+   "supports": "Environment, gender, governance & active-citizenship grants (India-wide; Odisha via grantees)",
+   "orgs": [],
+   "domains": [
+    "Natural Resource Mgmt",
+    "Women & Gender",
+    "Governance"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "national grant-maker",
+   "confidence": "low",
+   "source": "https://rohininilekaniphilanthropies.org/"
+  },
+  {
+   "name": "ITC — Mission Sunehra Kal",
+   "supports": "Watershed, agriculture, livelihoods & education around ITC's agri & operational footprint",
+   "orgs": [],
+   "domains": [
+    "Agriculture",
+    "Natural Resource Mgmt",
+    "Livelihoods & Rural Dev"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "corporate CSR",
+   "confidence": "med",
+   "source": "https://www.itcportal.com/sustainability/mission-sunehra-kal.aspx"
+  },
+  {
+   "name": "Adani Foundation",
+   "supports": "Education, health & livelihoods around Dhamra port operations",
+   "orgs": [],
+   "domains": [
+    "Education",
+    "Health & Nutrition",
+    "Livelihoods & Rural Dev"
+   ],
+   "districts": [
+    "Bhadrak"
+   ],
+   "amt": "",
+   "amtNote": "corporate CSR (Dhamra)",
+   "confidence": "med",
+   "source": "https://www.adanifoundation.org/"
+  },
+  {
+   "name": "JSW Foundation",
+   "supports": "Community development around JSW Utkal steel (Paradip belt)",
+   "orgs": [],
+   "domains": [
+    "Education",
+    "Health & Nutrition",
+    "Skill Development"
+   ],
+   "districts": [
+    "Jagatsinghapur"
+   ],
+   "amt": "",
+   "amtNote": "corporate CSR (JSW Utkal)",
+   "confidence": "med",
+   "source": "https://www.jsw.in/foundation"
+  },
+  {
+   "name": "LTIMindtree Foundation",
+   "supports": "Shelter-to-Habitation — new homes for tribal villages (with CUTM)",
+   "orgs": [],
+   "domains": [
+    "Livelihoods & Rural Dev",
+    "Education"
+   ],
+   "districts": [],
+   "amt": "",
+   "amtNote": "corporate CSR",
+   "confidence": "low",
+   "source": "https://www.ltimindtree.com/"
+  }
+ ],
+ "schemes": {
+  "_note": "Odisha 2025-26 budget schemes, ₹ crore, largely state-wide (not district-split). Total state budget FY2025-26 ≈ ₹2.9 lakh crore.",
+  "stateBudgetCr": 290000,
+  "fy": "2025-26",
+  "items": [
+   {
+    "name": "Subhadra Yojana",
+    "theme": "Women & Gender",
+    "outlayCr": 10145,
+    "level": "state",
+    "source": "https://finance.odisha.gov.in/ (People Budget 2025-26)",
+    "note": "Women's cash transfer / entrepreneurship"
+   },
+   {
+    "name": "Antyodaya Gruha Yojana",
+    "theme": "Livelihoods & Rural Dev",
+    "outlayCr": 2603,
+    "level": "state",
+    "source": "https://pragativadi.com/odisha-budget-2025-26-check-key-highlights/",
+    "note": "Housing for the poor"
+   },
+   {
+    "name": "Mission Shakti",
+    "theme": "Women & Gender",
+    "outlayCr": 1107,
+    "level": "state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "Women SHG federation (₹17,998 Cr W&CD umbrella)"
+   },
+   {
+    "name": "National Rural Livelihood Mission (NRLM)",
+    "theme": "Livelihoods & Rural Dev",
+    "outlayCr": 1095,
+    "level": "central-state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "SHG-based livelihoods"
+   },
+   {
+    "name": "Samrudha Sahara",
+    "theme": "Livelihoods & Rural Dev",
+    "outlayCr": 400,
+    "level": "state",
+    "source": "https://pragativadi.com/odisha-budget-2025-26-check-key-highlights/",
+    "note": "Poverty alleviation / economic support"
+   },
+   {
+    "name": "MAMATA",
+    "theme": "Health & Nutrition",
+    "outlayCr": 284,
+    "level": "state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "Conditional cash transfer, pregnant women"
+   },
+   {
+    "name": "Swachha Odisha",
+    "theme": "Water & Sanitation",
+    "outlayCr": 261,
+    "level": "state",
+    "source": "https://pragativadi.com/odisha-budget-2025-26-check-key-highlights/",
+    "note": "Sanitation & cleanliness"
+   },
+   {
+    "name": "Northern Odisha Development Council",
+    "theme": "Governance",
+    "outlayCr": 200,
+    "level": "state",
+    "source": "https://pragativadi.com/odisha-budget-2025-26-check-key-highlights/",
+    "note": "Regional development (N Odisha)"
+   },
+   {
+    "name": "Southern Odisha Development Council",
+    "theme": "Governance",
+    "outlayCr": 200,
+    "level": "state",
+    "source": "https://pragativadi.com/odisha-budget-2025-26-check-key-highlights/",
+    "note": "Regional development (S Odisha / KBK)"
+   },
+   {
+    "name": "Odisha Pusti Mission",
+    "theme": "Health & Nutrition",
+    "outlayCr": 100,
+    "level": "state",
+    "source": "https://pragativadi.com/odisha-budget-2025-26-check-key-highlights/",
+    "note": "Nutrition support"
+   },
+   {
+    "name": "Ama Similipal Yojana",
+    "theme": "Natural Resource Mgmt",
+    "outlayCr": 50,
+    "level": "state",
+    "source": "https://pragativadi.com/odisha-budget-2025-26-check-key-highlights/",
+    "note": "Similipal biosphere conservation"
+   },
+   {
+    "name": "Model Mandi",
+    "theme": "Agriculture",
+    "outlayCr": 50,
+    "level": "state",
+    "source": "https://pragativadi.com/odisha-budget-2025-26-check-key-highlights/",
+    "note": "Agri-market infrastructure"
+   },
+   {
+    "name": "Gopabandhu Jana Arogya Yojana",
+    "theme": "Health & Nutrition",
+    "outlayCr": 40,
+    "level": "state",
+    "source": "https://finance.odisha.gov.in/ (Supplementary 2025-26)",
+    "note": "Health insurance top-up (supplementary)"
+   }
+  ]
+ },
+ "vision2036": {
+  "_note": "Odisha Vision 2036 (state centenary) + 2047 horizon, unveiled by the PM on 12 Jun 2025 (BJP govt first anniversary) alongside 105 projects worth ~₹18,600 Cr. Odisha is the first state to use an AI-assisted, 3.2-lakh-citizen-suggestion vision process. 36 flagship 'Developed Odisha by 2036' programmes across 36 areas. Figures from govt announcements & press; treat as stated targets, not audited outcomes.",
+  "headline": "A $500 billion economy by 2036, $1.5 trillion by 2047",
+  "launch": "Unveiled 12 Jun 2025 · 105 projects, ~₹18,600 Cr · 36 flagship programmes",
+  "sources": [
+   {
+    "label": "PM unveils Odisha Vision 2036 (Tribune)",
+    "url": "https://www.tribuneindia.com/news/india/pm-modi-launches-105-projects-worth-over-rs-18600-crore-unveils-odisha-vision-document"
+   },
+   {
+    "label": "Vision 2036 & 2047 (Sambad)",
+    "url": "https://sambadenglish.com/latest-news/bjp-govts-first-anniv-pm-unveils-odisha-vision-2036-launches-projects-worth-over-18000-crore-9381580"
+   },
+   {
+    "label": "36 initiatives for a Developed Odisha (Odisha Plus)",
+    "url": "https://odisha.plus/2025/05/odisha-government-launching-36-initiatives-to-achieve-a-developed-odisha-by-2036/"
+   },
+   {
+    "label": "Vision doc executive summary",
+    "url": "https://www.scribd.com/document/884233755/Odisha-Vision-Document-Excutive-Summary-English"
+   }
+  ],
+  "pillars": [
+   {
+    "name": "Economy & Industry",
+    "theme": "Livelihoods & Rural Dev",
+    "targets": [
+     "$500B GSDP by 2036; $1.5T by 2047",
+     "Growth engines: manufacturing, tourism, digital services, green energy"
+    ],
+    "programs": [
+     "Industrial mega-parks",
+     "Port-based Special Economic Zones (SEZs) on the coastline",
+     "Integrate into global value chains"
+    ]
+   },
+   {
+    "name": "Employment & Skills",
+    "theme": "Skill Development",
+    "targets": [
+     "1.1 crore additional jobs by 2047 (~5 lakh/year)",
+     "100% Gross Enrolment Ratio; zero dropouts"
+    ],
+    "programs": [
+     "'Skilled in Odisha' employability mission"
+    ]
+   },
+   {
+    "name": "Urbanisation & Infrastructure",
+    "theme": "Water & Sanitation",
+    "targets": [
+     "Urbanisation from 17% to 40% by 2036",
+     "100% pucca housing, piped water, sanitation & electricity"
+    ],
+    "programs": [
+     "World-class roads, railways & air connectivity",
+     "ANKUR — resilient, citizen-centric cities by 2036"
+    ]
+   },
+   {
+    "name": "Agriculture & Rural",
+    "theme": "Agriculture",
+    "targets": [
+     "All cultivable land under irrigation",
+     "Raise agricultural productivity & farmer incomes"
+    ],
+    "programs": [
+     "FPO-led rural economy",
+     "Rural development & tribal welfare focus"
+    ]
+   },
+   {
+    "name": "Education & Health",
+    "theme": "Education",
+    "targets": [
+     "100% literacy",
+     "Universal, quality health access"
+    ],
+    "programs": [
+     "School & higher-education transformation",
+     "Strengthened public health system"
+    ]
+   },
+   {
+    "name": "Women's Empowerment",
+    "theme": "Women & Gender",
+    "targets": [
+     "Women in employment, entrepreneurship & leadership"
+    ],
+    "programs": [
+     "Lakhpati Didi",
+     "Subhadra Plus"
+    ]
+   },
+   {
+    "name": "Governance & Asmita",
+    "theme": "Governance",
+    "targets": [
+     "Whole-of-government delivery",
+     "First AI-assisted state vision; 3.2 lakh+ citizen suggestions"
+    ],
+    "programs": [
+     "Odia language, culture & 'Odia Asmita'",
+     "Regional consultations (Sambalpur, Balasore, Jeypore)"
+    ]
+   }
+  ]
+ },
+ "csrState": {
+  "yearTotals": {
+   "2014-15": {
+    "projects": 1996,
+    "amountLakh": 44511.51,
+    "amountCr": 445.12
+   },
+   "2015-16": {
+    "projects": 1653,
+    "amountLakh": 61742.49,
+    "amountCr": 617.42
+   },
+   "2016-17": {
+    "projects": 1683,
+    "amountLakh": 49633.1,
+    "amountCr": 496.33
+   },
+   "2017-18": {
+    "projects": 1687,
+    "amountLakh": 55407.33,
+    "amountCr": 554.07
+   },
+   "2018-19": {
+    "projects": 1627,
+    "amountLakh": 39658.24,
+    "amountCr": 396.58
+   },
+   "2019-20": {
+    "projects": 1109,
+    "amountLakh": 40475.29,
+    "amountCr": 404.75
+   },
+   "2020-21": {
+    "projects": 980,
+    "amountLakh": 49254.59,
+    "amountCr": 492.55
+   },
+   "2021-22": {
+    "projects": 1129,
+    "amountLakh": 38392.24,
+    "amountCr": 383.92
+   },
+   "2022-23": {
+    "projects": 1269,
+    "amountLakh": 56127.79,
+    "amountCr": 561.28
+   },
+   "2023-24": {
+    "projects": 970,
+    "amountLakh": 47516.16,
+    "amountCr": 475.16
+   },
+   "2024-25": {
+    "projects": 746,
+    "amountLakh": 42580.32,
+    "amountCr": 425.8
+   },
+   "2025-26": {
+    "projects": 475,
+    "amountLakh": 7806.39,
+    "amountCr": 78.06
+   },
+   "2026-27": {
+    "projects": 38,
+    "amountLakh": 210.59,
+    "amountCr": 2.11
+   }
+  },
+  "sectorCounts": {
+   "Armed Forces": 70,
+   "Disaster Management": 61,
+   "Education & Skill Development": 2662,
+   "Environment": 769,
+   "Gender Equality and Empowerment": 475,
+   "Healthcare": 2877,
+   "National Heritage": 528,
+   "Relief Fund": 71,
+   "Rural Development": 3318,
+   "Slum Area Development": 66,
+   "Sports": 673,
+   "Swachh Bharat": 411,
+   "Technology Incubators": 9
+  },
+  "companies": 300,
+  "totalCr": 5333.1,
+  "source": "csr.odisha.gov.in (GO CARE, Govt of Odisha CSR portal; MCA-fed)",
+  "note": "Statewide totals + sector counts + company (funder) list + geocoded flagship projects are openly served. District-wise TOTAL spend is login-gated on GO CARE and CAPTCHA-gated on csr.gov.in, so it is NOT included. Amounts in Rupees Lakh (amountCr = /100)."
+ },
  "districts": {
   "Anugul": {
    "partners": [
@@ -646,7 +1677,19 @@
     "Niyatee Foundation",
     "Voluntary Institute For Rural Development (VIRD)"
    ],
-   "themes": [],
+   "themes": [
+    "Natural Resource Mgmt",
+    "Livelihoods & Rural Dev",
+    "Governance",
+    "Child Protection",
+    "Skill Development",
+    "Women & Gender",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Climate Action",
+    "Agriculture",
+    "Education"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -744,6 +1787,56 @@
     "2023-2024": 232.82,
     "2024-2025": 163.79,
     "2025-2026": 128.8
+   },
+   "csrFlagship": {
+    "count": 5,
+    "amountLakh": 0.0,
+    "projects": [
+     {
+      "company": "ARYAN ENERGY PVT LTD",
+      "project": "Renovation of Anganwadi Kendra for safe  and better education to the kids.",
+      "amountLakh": 0.0,
+      "status": "Completed",
+      "location": "Talacher",
+      "agencyType": "Company on its own"
+     },
+     {
+      "company": "ARYAN ENERGY PVT LTD",
+      "project": "Provide anganwadi students to school bag, toys, study material etc.",
+      "amountLakh": 0.0,
+      "status": "Completed",
+      "location": "Talacher",
+      "agencyType": "Company on its own"
+     },
+     {
+      "company": "JINDAL STEEL AND POWER LTD",
+      "project": "KISHORI EXPRESS",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Anugul,Anugul MPL,Athamallik NAC,Athmallik,Banarpal,Chhendipada,Kaniha,Kishorenagar,Palalahada,Talacher,Talcher MPL",
+      "agencyType": "Company on its own"
+     },
+     {
+      "company": "JINDAL STEEL AND POWER LTD",
+      "project": "Shubhangi",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Anugul,Anugul MPL,Athamallik NAC,Athmallik,Banarpal,Chhendipada,Kaniha,Kishorenagar,Palalahada,Talacher,Talcher MPL",
+      "agencyType": "Company on its own"
+     },
+     {
+      "company": "JINDAL STEEL AND POWER LTD",
+      "project": "VATSALYA",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Anugul,Anugul MPL,Athamallik NAC,Athmallik,Banarpal,Chhendipada,Kaniha,Kishorenagar,Palalahada,Talacher,Talcher MPL",
+      "agencyType": "Company on its own"
+     }
+    ]
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Balangir": {
@@ -752,7 +1845,16 @@
     "Mahashakti Foundation",
     "Western Odisha NREGA Consortium (WONC)"
    ],
-   "themes": [],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Education",
+    "Climate Action",
+    "Skill Development",
+    "Governance",
+    "Agriculture",
+    "Women & Gender",
+    "Health & Nutrition"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -927,6 +2029,17 @@
     "2023-2024": 0.52,
     "2024-2025": 0.62,
     "2025-2026": 0.37
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Baleshwar": {
@@ -934,7 +2047,11 @@
     "Adhikar",
     "VARD (Voluntary Association For Rural Development)"
    ],
-   "themes": [],
+   "themes": [
+    "Skill Development",
+    "Livelihoods & Rural Dev",
+    "Water & Sanitation"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -1064,6 +2181,15 @@
     "2023-2024": 0.58,
     "2024-2025": 0.48,
     "2025-2026": 0.09
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Bargarh": {
@@ -1071,7 +2197,16 @@
     "ActionAid Association",
     "Niyatee Foundation"
    ],
-   "themes": [],
+   "themes": [
+    "Governance",
+    "Women & Gender",
+    "Child Protection",
+    "Skill Development",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -1201,6 +2336,15 @@
     "2023-2024": 1.21,
     "2024-2025": 0.07,
     "2025-2026": 0.03
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Bhadrak": {
@@ -1208,7 +2352,15 @@
     "Niyatee Foundation",
     "WaterAid India"
    ],
-   "themes": [],
+   "themes": [
+    "Child Protection",
+    "Skill Development",
+    "Women & Gender",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -1298,13 +2450,26 @@
     "2023-2024": 0.12,
     "2024-2025": 0.03,
     "2025-2026": 0.01
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Boudh": {
    "partners": [
     "Save the Children"
    ],
-   "themes": [],
+   "themes": [
+    "Education",
+    "Health & Nutrition",
+    "Child Protection"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -1362,6 +2527,15 @@
     "2023-2024": 0.17,
     "2024-2025": 0.03,
     "2025-2026": 0.1
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Cuttack": {
@@ -1369,7 +2543,16 @@
     "Niyatee Foundation",
     "Pratham"
    ],
-   "themes": [],
+   "themes": [
+    "Child Protection",
+    "Skill Development",
+    "Women & Gender",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action",
+    "Education"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -1515,6 +2698,15 @@
     "2023-2024": 1.78,
     "2024-2025": 0.48,
     "2025-2026": 0.58
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Deogarh": {
@@ -1525,7 +2717,18 @@
     "Niyatee Foundation",
     "Voluntary Institute For Rural Development (VIRD)"
    ],
-   "themes": [],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Agriculture",
+    "Health & Nutrition",
+    "Women & Gender",
+    "Education",
+    "Child Protection",
+    "Skill Development",
+    "Water & Sanitation",
+    "Natural Resource Mgmt",
+    "Climate Action"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -1591,6 +2794,15 @@
     "2023-2024": 0.01,
     "2024-2025": 0.0,
     "2025-2026": 0.02
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Dhenkanal": {
@@ -1598,7 +2810,15 @@
     "Foundation for Ecological Security (FES)",
     "ISWAR (Integrated Social Welfare And Research Centre)"
    ],
-   "themes": [],
+   "themes": [
+    "Natural Resource Mgmt",
+    "Livelihoods & Rural Dev",
+    "Governance",
+    "Education",
+    "Health & Nutrition",
+    "Water & Sanitation",
+    "Agriculture"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -1696,6 +2916,15 @@
     "2023-2024": 2.3,
     "2024-2025": 1.56,
     "2025-2026": 0.67
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Gajapati": {
@@ -1793,6 +3022,15 @@
     "2023-2024": 0.67,
     "2024-2025": 0.26,
     "2025-2026": 0.24
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Ganjam": {
@@ -1805,7 +3043,19 @@
     "VIEWS",
     "Water For People India"
    ],
-   "themes": [],
+   "themes": [
+    "Governance",
+    "Women & Gender",
+    "Child Protection",
+    "Skill Development",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action",
+    "Livelihoods & Rural Dev",
+    "Agriculture",
+    "Education"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -2023,6 +3273,15 @@
     "2023-2024": 15.45,
     "2024-2025": 13.75,
     "2025-2026": 14.54
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Jagatsinghapur": {
@@ -2030,7 +3289,16 @@
     "ActionAid Association",
     "Niyatee Foundation"
    ],
-   "themes": [],
+   "themes": [
+    "Governance",
+    "Women & Gender",
+    "Child Protection",
+    "Skill Development",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -2128,6 +3396,40 @@
     "2023-2024": 0.28,
     "2024-2025": 0.03,
     "2025-2026": 0.01
+   },
+   "csrFlagship": {
+    "count": 3,
+    "amountLakh": 0.0,
+    "projects": [
+     {
+      "company": "JSW UTKAL STEEL LTD",
+      "project": "Hamara Gaon Education Program",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Erasama",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "JSW UTKAL STEEL LTD",
+      "project": "Project Samarth - Youth Development center (Competitive Exam Preparation at Paradip)",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Erasama",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "JSW UTKAL STEEL LTD",
+      "project": "Early Childhood Care and Education Program (ECCE)",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Erasama",
+      "agencyType": "Independently registered non-profit organisations"
+     }
+    ]
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Jajapur": {
@@ -2135,7 +3437,17 @@
     "Niyatee Foundation",
     "Tata Steel Foundation"
    ],
-   "themes": [],
+   "themes": [
+    "Child Protection",
+    "Skill Development",
+    "Women & Gender",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action",
+    "Livelihoods & Rural Dev",
+    "Agriculture"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -2249,6 +3561,24 @@
     "2023-2024": 365.12,
     "2024-2025": 382.85,
     "2025-2026": 422.06
+   },
+   "csrFlagship": {
+    "count": 1,
+    "amountLakh": 0.0,
+    "projects": [
+     {
+      "company": "YAZDANI STEEL AND POWER LIMITED.",
+      "project": "Project Proponent Sukinda shilpa Mahastav",
+      "amountLakh": 0.0,
+      "status": "Completed",
+      "location": "Danagadi",
+      "agencyType": "Company on its own"
+     }
+    ]
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Jharsuguda": {
@@ -2256,7 +3586,17 @@
     "AFPRO (Action for Food Production)",
     "Niyatee Foundation"
    ],
-   "themes": [],
+   "themes": [
+    "Agriculture",
+    "Livelihoods & Rural Dev",
+    "Water & Sanitation",
+    "Natural Resource Mgmt",
+    "Climate Action",
+    "Child Protection",
+    "Skill Development",
+    "Women & Gender",
+    "Health & Nutrition"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -2330,6 +3670,48 @@
     "2023-2024": 46.68,
     "2024-2025": 48.3,
     "2025-2026": 42.34
+   },
+   "csrFlagship": {
+    "count": 4,
+    "amountLakh": 0.0,
+    "projects": [
+     {
+      "company": "VEDANTA LIMITED",
+      "project": "Vidyagraha Digital Education Initiative",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Jharsuguda",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "VEDANTA LIMITED",
+      "project": "Vedanta Computer Literacy program",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Jharsuguda",
+      "agencyType": "Company’s non-profit foundation"
+     },
+     {
+      "company": "VEDANTA LIMITED",
+      "project": "Vedakshata",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Jharsuguda",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "VEDANTA LIMITED",
+      "project": "Mobile Health Unit",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Jharsuguda",
+      "agencyType": "Independently registered non-profit organisations"
+     }
+    ]
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Kalahandi": {
@@ -2345,7 +3727,18 @@
     "PRADAN",
     "SEBAJAGAT"
    ],
-   "themes": [],
+   "themes": [
+    "Skill Development",
+    "Livelihoods & Rural Dev",
+    "Water & Sanitation",
+    "Agriculture",
+    "Natural Resource Mgmt",
+    "Women & Gender",
+    "Education",
+    "Health & Nutrition",
+    "Climate Action",
+    "Governance"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -2556,6 +3949,17 @@
     "2023-2024": 0.77,
     "2024-2025": 0.41,
     "2025-2026": 0.4
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Kandhamal": {
@@ -2569,7 +3973,15 @@
     "PRADAN",
     "Save the Children"
    ],
-   "themes": [],
+   "themes": [
+    "Agriculture",
+    "Skill Development",
+    "Women & Gender",
+    "Livelihoods & Rural Dev",
+    "Health & Nutrition",
+    "Education",
+    "Child Protection"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -2714,6 +4126,15 @@
     "2023-2024": 0.0,
     "2024-2025": 0.02,
     "2025-2026": 0.31
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Kendrapara": {
@@ -2722,7 +4143,17 @@
     "Save the Children",
     "VORSA"
    ],
-   "themes": [],
+   "themes": [
+    "Child Protection",
+    "Skill Development",
+    "Women & Gender",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action",
+    "Education",
+    "Livelihoods & Rural Dev"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -2836,6 +4267,15 @@
     "2023-2024": 0.15,
     "2024-2025": 0.03,
     "2025-2026": 0.04
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Kendujhar": {
@@ -2844,7 +4284,14 @@
     "Foundation for Ecological Security (FES)",
     "WOSCA & WASSAN"
    ],
-   "themes": [],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Education",
+    "Climate Action",
+    "Skill Development",
+    "Governance",
+    "Natural Resource Mgmt"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -3039,6 +4486,26 @@
     "2023-2024": 1769.54,
     "2024-2025": 1743.83,
     "2025-2026": 2050.69
+   },
+   "csrFlagship": {
+    "count": 1,
+    "amountLakh": 0.0,
+    "projects": [
+     {
+      "company": "JSW STEEL LIMITED",
+      "project": "Ambulance Services for the Publicq",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Barbil MPL,Joda",
+      "agencyType": "Company’s non-profit foundation"
+     }
+    ]
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Khordha": {
@@ -3053,7 +4520,19 @@
     "Save the Children",
     "VJSS (Viswa Jeevan Seva Sangh)"
    ],
-   "themes": [],
+   "themes": [
+    "Governance",
+    "Women & Gender",
+    "Child Protection",
+    "Skill Development",
+    "Livelihoods & Rural Dev",
+    "Water & Sanitation",
+    "Education",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action",
+    "Agriculture"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -3175,6 +4654,17 @@
     "2023-2024": 0.54,
     "2024-2025": 0.14,
     "2025-2026": 0.31
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Koraput": {
@@ -3191,7 +4681,18 @@
     "Save the Children",
     "WASSAN & its partners"
    ],
-   "themes": [],
+   "themes": [
+    "Agriculture",
+    "Natural Resource Mgmt",
+    "Women & Gender",
+    "Education",
+    "Livelihoods & Rural Dev",
+    "Health & Nutrition",
+    "Child Protection",
+    "Climate Action",
+    "Skill Development",
+    "Governance"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -3373,6 +4874,17 @@
     "2023-2024": 1.48,
     "2024-2025": 3.72,
     "2025-2026": 1.41
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Malkangiri": {
@@ -3381,7 +4893,17 @@
     "Harsha Trust",
     "Pragati"
    ],
-   "themes": [],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Education",
+    "Climate Action",
+    "Skill Development",
+    "Governance",
+    "Agriculture",
+    "Natural Resource Mgmt",
+    "Health & Nutrition",
+    "Women & Gender"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -3471,6 +4993,17 @@
     "2023-2024": 1.09,
     "2024-2025": 0.46,
     "2025-2026": 0.56
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Mayurbhanj": {
@@ -3482,7 +5015,17 @@
     "Goonj",
     "PRADAN"
    ],
-   "themes": [],
+   "themes": [
+    "Skill Development",
+    "Livelihoods & Rural Dev",
+    "Water & Sanitation",
+    "Agriculture",
+    "Health & Nutrition",
+    "Women & Gender",
+    "Education",
+    "Climate Action",
+    "Governance"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -3747,6 +5290,26 @@
     "2023-2024": 4.62,
     "2024-2025": 3.65,
     "2025-2026": 4.29
+   },
+   "csrFlagship": {
+    "count": 1,
+    "amountLakh": 71.23,
+    "projects": [
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Expansion of school infrastructure of SLS Memorial residential school",
+      "amountLakh": 71.23,
+      "status": "Ongoing",
+      "location": "Rairangpur",
+      "agencyType": "Independently registered non-profit organisations"
+     }
+    ]
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Nabarangpur": {
@@ -3756,7 +5319,18 @@
     "Harsha Trust",
     "Pragati"
    ],
-   "themes": [],
+   "themes": [
+    "Health & Nutrition",
+    "Child Protection",
+    "Livelihoods & Rural Dev",
+    "Education",
+    "Climate Action",
+    "Skill Development",
+    "Governance",
+    "Agriculture",
+    "Natural Resource Mgmt",
+    "Women & Gender"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -3870,6 +5444,17 @@
     "2023-2024": 0.67,
     "2024-2025": 0.5,
     "2025-2026": 0.35
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Nayagarh": {
@@ -3879,7 +5464,18 @@
     "SAMBHAV",
     "VJSS (Viswa Jeevan Seva Sangh)"
    ],
-   "themes": [],
+   "themes": [
+    "Child Protection",
+    "Skill Development",
+    "Women & Gender",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Climate Action",
+    "Agriculture",
+    "Education",
+    "Livelihoods & Rural Dev"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -3992,6 +5588,15 @@
     "2023-2024": 0.07,
     "2024-2025": 0.02,
     "2025-2026": 0.05
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Nuapada": {
@@ -4001,7 +5606,17 @@
     "WaterAid India",
     "Western Odisha NREGA Consortium (WONC)"
    ],
-   "themes": [],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Agriculture",
+    "Health & Nutrition",
+    "Women & Gender",
+    "Education",
+    "Governance",
+    "Natural Resource Mgmt",
+    "Child Protection",
+    "Water & Sanitation"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -4083,6 +5698,15 @@
     "2023-2024": 0.36,
     "2024-2025": 0.14,
     "2025-2026": 0.1
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Puri": {
@@ -4095,7 +5719,19 @@
     "VJSS (Viswa Jeevan Seva Sangh)",
     "Women Wings"
    ],
-   "themes": [],
+   "themes": [
+    "Governance",
+    "Women & Gender",
+    "Child Protection",
+    "Livelihoods & Rural Dev",
+    "Education",
+    "Climate Action",
+    "Skill Development",
+    "Water & Sanitation",
+    "Health & Nutrition",
+    "Natural Resource Mgmt",
+    "Agriculture"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -4217,6 +5853,17 @@
     "2023-2024": 0.11,
     "2024-2025": 0.35,
     "2025-2026": 0.27
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Rayagada": {
@@ -4232,7 +5879,18 @@
     "Pragati",
     "Pratham"
    ],
-   "themes": [],
+   "themes": [
+    "Agriculture",
+    "Natural Resource Mgmt",
+    "Women & Gender",
+    "Education",
+    "Livelihoods & Rural Dev",
+    "Health & Nutrition",
+    "Child Protection",
+    "Climate Action",
+    "Skill Development",
+    "Governance"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -4384,6 +6042,17 @@
     "2023-2024": 0.47,
     "2024-2025": 5.69,
     "2025-2026": 0.43
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": true,
+    "orgs": [
+     "CYSD (Centre for Youth & Social Development)"
+    ]
    }
   },
   "Sambalpur": {
@@ -4391,7 +6060,18 @@
     "Atmashakti Trust",
     "Niyatee Foundation"
    ],
-   "themes": [],
+   "themes": [
+    "Livelihoods & Rural Dev",
+    "Agriculture",
+    "Health & Nutrition",
+    "Women & Gender",
+    "Education",
+    "Child Protection",
+    "Skill Development",
+    "Water & Sanitation",
+    "Natural Resource Mgmt",
+    "Climate Action"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -4497,13 +6177,87 @@
     "2023-2024": 2.0,
     "2024-2025": 0.77,
     "2025-2026": 0.77
+   },
+   "csrFlagship": {
+    "count": 7,
+    "amountLakh": 0.0,
+    "projects": [
+     {
+      "company": "BHUSHAN POWER AND STEEL LIMITED",
+      "project": "Provision of Waste Management in DIZ area of JSW BPSL",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Rengali",
+      "agencyType": "Company’s non-profit foundation"
+     },
+     {
+      "company": "BHUSHAN POWER AND STEEL LIMITED",
+      "project": "Community Dispensary Programme at Thelkoloi",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Rengali",
+      "agencyType": "Company’s non-profit foundation"
+     },
+     {
+      "company": "BHUSHAN POWER AND STEEL LIMITED",
+      "project": "Agri-based Water Linked Livelihood Programme",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Rengali",
+      "agencyType": "Company’s non-profit foundation"
+     },
+     {
+      "company": "BHUSHAN POWER AND STEEL LIMITED",
+      "project": "Support to Thelkoloi High School  Construction of New High School Building & Teachers Support.",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Rengali",
+      "agencyType": "Company’s non-profit foundation"
+     },
+     {
+      "company": "BHUSHAN POWER AND STEEL LIMITED",
+      "project": "JSW Udaan Scholarship Programme for Sambalpur & Jharsuguda district of Odisha.",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Rengali",
+      "agencyType": "Company’s non-profit foundation"
+     },
+     {
+      "company": "BHUSHAN POWER AND STEEL LIMITED",
+      "project": "Promotion of Sports in DIZ & IIZ Area of JSW BPSL Sambalpur Works.",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Rengali,Sambalpur MC",
+      "agencyType": "Company’s non-profit foundation"
+     },
+     {
+      "company": "BHUSHAN POWER AND STEEL LIMITED",
+      "project": "Provision of Drinking water supply in DIZ Villages of JSW BPSL",
+      "amountLakh": 0.0,
+      "status": "Ongoing",
+      "location": "Rengali",
+      "agencyType": "Company’s non-profit foundation"
+     }
+    ]
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Sonepur": {
    "partners": [
     "VJSS (Viswa Jeevan Seva Sangh)"
    ],
-   "themes": [],
+   "themes": [
+    "Education",
+    "Health & Nutrition",
+    "Women & Gender",
+    "Child Protection",
+    "Agriculture",
+    "Livelihoods & Rural Dev",
+    "Skill Development"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -4585,6 +6339,15 @@
     "2023-2024": 0.08,
     "2024-2025": 0.04,
     "2025-2026": 0.06
+   },
+   "csrFlagship": {
+    "count": 0,
+    "amountLakh": 0.0,
+    "projects": []
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   },
   "Sundargarh": {
@@ -4596,7 +6359,19 @@
     "SEWAK",
     "SOS Children's Villages"
    ],
-   "themes": [],
+   "themes": [
+    "Governance",
+    "Women & Gender",
+    "Child Protection",
+    "Livelihoods & Rural Dev",
+    "Agriculture",
+    "Health & Nutrition",
+    "Education",
+    "Skill Development",
+    "Water & Sanitation",
+    "Natural Resource Mgmt",
+    "Climate Action"
+   ],
    "tri": {
     "blocks": "",
     "aspirational": false
@@ -4809,6 +6584,144 @@
     "2023-2024": 1357.39,
     "2024-2025": 1417.81,
     "2025-2026": 1430.3
+   },
+   "csrFlagship": {
+    "count": 16,
+    "amountLakh": 139.35999999999999,
+    "projects": [
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Midday Meals though TAPF",
+      "amountLakh": 43.55,
+      "status": "Ongoing",
+      "location": "Bisra,Lathikata",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Training at IGH for various training programs.",
+      "amountLakh": 24.11,
+      "status": "Ongoing",
+      "location": "Bisra,Kuanramunda,Lathikata,Nuagaon",
+      "agencyType": "Company on its own"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Nutritional support project for malnutrition through NFN/ other agencies.",
+      "amountLakh": 15.0,
+      "status": "Ongoing",
+      "location": "Bisra,Kuanramunda,Lathikata,Nuagaon",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Merit based cash award.",
+      "amountLakh": 13.0,
+      "status": "Completed",
+      "location": "Bisra,Kuanramunda,Lathikata,Nuagaon",
+      "agencyType": "Company on its own"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Mobile Medical Unit operation at slum areas of  Rourkela steel township area.",
+      "amountLakh": 6.28,
+      "status": "Ongoing",
+      "location": "Raurkela MC",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Development activities in Modern steel villages",
+      "amountLakh": 5.07,
+      "status": "Ongoing",
+      "location": "Bisra,Kuanramunda,Lathikata,Nuagaon",
+      "agencyType": "Company on its own"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Vocational training of deaf and dumb youth from Sundargarh district.",
+      "amountLakh": 5.0,
+      "status": "Ongoing",
+      "location": "Balisankara,Baneigarh,Bargaon,Biramitrapur MPL,Bisra,Gurundia,Hemgiri,Koida,Kuanramunda,Kutra,Lahunipara,Lathikata,Lephripara,Nuagaon,Rajagangapur MPL,Rajgangpur,Raurkela MC,Subdega,Sundargarh MPL,Sundergarh,Tangarpalli",
+      "agencyType": "Others (to be specified)"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Mid day meals for students of Deepika Ispat Sikhya Sadan",
+      "amountLakh": 5.0,
+      "status": "Ongoing",
+      "location": "Lathikata",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Training and Livelihood promotion related programs by CSR for Underprivileged Women/ ShGs at Ipd/ village location including sewing training.",
+      "amountLakh": 4.21,
+      "status": "Ongoing",
+      "location": "Bisra,Kuanramunda,Lathikata,Nuagaon",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Free Health Centre at Jalda and Chikatmati.",
+      "amountLakh": 3.29,
+      "status": "Ongoing",
+      "location": "Lathikata",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Promotion of Handloom Centre by DMS and its self sustenance.",
+      "amountLakh": 3.25,
+      "status": "Ongoing",
+      "location": "Lathikata",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Provision of meals for Old Age Home",
+      "amountLakh": 3.2,
+      "status": "Ongoing",
+      "location": "Raurkela MC",
+      "agencyType": "Others (to be specified)"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Mid day meals for students of Home and hope",
+      "amountLakh": 2.93,
+      "status": "Ongoing",
+      "location": "Raurkela MC",
+      "agencyType": "Independently registered non-profit organisations"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Financial support for operation expense of Home and hope",
+      "amountLakh": 2.4,
+      "status": "Ongoing",
+      "location": "Raurkela MC",
+      "agencyType": "Company on its own"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "Development of green house in CSR campus for training of beneficiaries.",
+      "amountLakh": 2.32,
+      "status": "Ongoing",
+      "location": "Bisra,Kuanramunda,Lathikata,Nuagaon",
+      "agencyType": "Company on its own"
+     },
+     {
+      "company": "M/S SAILROURKELA STEEL PLANT",
+      "project": "PM internship program",
+      "amountLakh": 0.75,
+      "status": "Ongoing",
+      "location": "Bisra,Kuanramunda,Lathikata,Nuagaon",
+      "agencyType": "Company on its own"
+     }
+    ]
+   },
+   "anchor": {
+    "present": false,
+    "orgs": []
    }
   }
  }
