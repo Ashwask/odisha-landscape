@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "what": "Hand-compiled Odisha ecosystem layers analogous to jharkhand-landscape's indicative/funder/government tables. Every row traces to a public source. NOT independently field-verified; treat as leads. District names use model.json canon spelling.",
+    "what": "Hand-compiled Odisha ecosystem layers: indicative orgs, funders, government schemes and the Vision 2036 pillars. Every row traces to a public source. NOT independently field-verified; treat as leads. District names use model.json canon spelling.",
     "compiled": "2026-09-01",
     "confidence_legend": "high = enumerated on the org's own site/report; med = count/partial or third-party; low = single directory/search-synthesis"
   },
 
   "anchors": {
-    "_note": "TRI-equivalent multi-district anchor orgs. Jharkhand paints districts by TRI presence; Odisha has no TRI, so CYSD's named field-office districts are used as the concrete anchor-presence set. Gram Vikas / Harsha Trust / Niyatee are large multi-district anchors whose per-district lists aren't cleanly enumerated publicly, so they're listed as anchors without per-district paint.",
+    "_note": "Multi-district anchor orgs. CYSD's named field-office districts are used as the concrete anchor-presence set. Gram Vikas / Harsha Trust / Niyatee are large multi-district anchors whose per-district lists aren't cleanly enumerated publicly, so they're listed as anchors without per-district paint.",
     "primary": "CYSD",
     "orgs": [
       {"name": "CYSD (Centre for Youth & Social Development)", "districts": ["Koraput", "Malkangiri", "Nabarangpur", "Rayagada", "Mayurbhanj", "Kendujhar", "Balangir", "Kalahandi", "Puri", "Khordha"], "districtCount": 10, "focus": "Tribal development, livelihoods, governance, GO-NGO coordination", "confidence": "high", "source": "https://www.cysd.org/about-us/where-we-work", "note": "Named field offices across S/N/W/coastal Odisha; claims statewide reach via partners. Paints as the anchor layer."},

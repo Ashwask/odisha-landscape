@@ -1,9 +1,7 @@
 # Odisha Landscape — Who Does What Where
 
-The same "who does what where" exercise as
-[jharkhand-landscape](https://github.com/Ashwask/jharkhand-landscape) — a
-development-partner ecosystem map (partners × districts × themes) — for **Odisha**, now at
-**full feature parity** with the Jharkhand build plus an **Odisha Vision 2036** tab.
+A "who does what where" view of Odisha's development-partner ecosystem
+(partners × districts × themes), with an **Odisha Vision 2036** tab.
 `index.html` is a self-contained, offline, single-file interactive dashboard (choropleth
 lenses, Ecosystem/Place Health scorecards, partner × theme matrix, funders, government
 schemes, DMF spend, CSR context and a Vision 2036 view) — open it directly in a browser.
@@ -84,14 +82,13 @@ you tick *"Include ✳ indicative orgs in scoring"* (or open with `#ext`), which
 the strip, health index, place health, map lenses and tables on the wider set. In the
 matrix and directory these orgs are gold-flagged with keyword-mapped themes.
 
-## Anchor (TRI-equivalent) layer
+## Anchor layer
 
-Jharkhand paints districts by TRI presence; TRI does not operate in Odisha, so **CYSD**
-(Centre for Youth & Social Development) — with named field offices in 10 districts — is used
-as the concrete anchor-presence layer ("Anchor org ✳" lens + district badge/column). Gram
-Vikas (27 districts OD+JH), Harsha Trust (17 districts) and Niyatee (14-16 districts) are
-large anchors too, but their per-district lists aren't cleanly published, so they're listed
-without per-district paint.
+**CYSD** (Centre for Youth & Social Development) — with named field offices in 10 districts —
+is used as the concrete multi-district anchor-presence layer ("Anchor org ✳" lens + district
+badge/column). Gram Vikas (27 districts), Harsha Trust (17 districts) and Niyatee (14-16
+districts) are large anchors too, but their per-district lists aren't cleanly published, so
+they're listed without per-district paint.
 
 ## Government spend & schemes
 
@@ -103,7 +100,7 @@ without per-district paint.
 
 ## Ecosystem Health
 
-A 7-dimension composite (matching Jharkhand's set): coverage, aspirational reach,
+A 7-dimension composite: coverage, aspirational reach,
 resilience, thematic balance, network depth, SHG reach and **resource alignment**. Because
 Odisha has no open district CSR, the resource-alignment dimension uses **DMF** (share of
 the state's place-based public money sitting in partner-covered districts) instead of CSR.
