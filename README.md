@@ -1,29 +1,35 @@
 # Odisha Landscape — Who Does What Where
 
 A "who does what where" view of Odisha's development-partner ecosystem
-(partners × districts × themes), with an **Odisha Vision 2036** tab.
-`index.html` is a self-contained, offline, single-file interactive dashboard (choropleth
-lenses, Ecosystem/Place Health scorecards, partner × theme matrix, funders, government
-schemes, DMF spend, CSR context and a Vision 2036 view) — open it directly in a browser.
+(partners × districts × themes), with an **Odisha Vision 2036** tab and a **2036 Alignment**
+tab. `index.html` is a self-contained, offline, single-file interactive dashboard
+(choropleth lenses, Ecosystem/Place Health scorecards, partner × theme matrix, funders,
+government schemes, DMF spend, CSR context, a Vision 2036 view and an alignment read) —
+open it directly in a browser. One request, no external dependencies, ~83 KB gzipped.
 
 **Live:** https://ashwask.github.io/odisha-landscape/
 
 **Read it as a research pass with a working viewer, not a verified census.** SHG, DMF and
 FPO layers are complete, live-fetched government data across all 30 districts. The partner
-layer is a **46-organisation research pass** reaching all 30 districts, plus a **13-org
-indicative ✳ tier** (large multi-district anchors and networks) kept out of the health
-scores unless you toggle it on. Funders, CSR, anchors and schemes are sourced but not
-independently field-verified — see the honesty notes below.
+layer is a **46-organisation research pass** reaching all 30 districts, plus a **14-org
+indicative ✳ tier** (large multi-district anchors, networks and BCKIC) kept out of the
+health scores unless you toggle it on. Funders, CSR, anchors and schemes are sourced but
+not independently field-verified — see the honesty notes below.
 
-## Two tabs
+## Three tabs
 
-- **Ecosystem landscape** — the map (11 lenses), Ecosystem & Place Health scorecards,
-  partner × theme matrix, government spend (DMF + schemes), CSR & funders, and the
-  partner / district tables.
+- **Ecosystem landscape** — the district map is the hero (11 lenses), then Ecosystem &
+  Place Health scorecards, partner × theme matrix, government spend (DMF + 25 schemes),
+  CSR & funders, and the partner / district tables. Major sections are collapsible.
 - **Odisha Vision 2036** — the state government's official centenary vision (with a 2047
   horizon), as seven pillar cards (economy, skills, urban/infra, agriculture, education &
   health, women, governance) with stated targets and flagship programmes, each mapped to
   the themes this dashboard tracks. These are **government targets, not audited outcomes**.
+- **2036 Alignment** — cross-reads the mapped ecosystem against the Vision pillars:
+  a pillar alignment scorecard (banded, with **trajectory** badges), the human-development-
+  vs-economic-transformation structural gap, a **velocity** table (pace 2036 demands vs
+  current drift), headline target-vs-today, geographic priority gaps, and an **unlocks**
+  table (lever → what it unblocks → who holds the key).
 
 ## Map lenses (11)
 
@@ -31,7 +37,7 @@ Place health · Partner density · Theme breadth · Dominant theme · Coverage g
 Block presence (beta) · SHG density · FPO density · DMF mining fund ·
 **CSR flagship ✳** · **Anchor org ✳**. Click a district for partners, themes, block
 coverage, anchor orgs, CSR flagship projects, SHG/FPO and a DMF trend; hover for a readout.
-Deep-links: `#vision`, `#ext` (indicative scoring on), `#lens=<key>`.
+Deep-links: `#vision`, `#align`, `#ext` (indicative scoring on), `#lens=<key>`.
 
 ## What's in `model.json`
 
@@ -75,12 +81,15 @@ noted, and district attributions are approximate — **treat as leads, not audit
 
 ## Indicative ✳ tier + scoring toggle
 
-A second tier of **13 large multi-district orgs/networks** (CYSD, Gram Vikas, Harsha Trust,
-Niyatee, PRADAN, FES, Landesa, SPREAD, Lokadrusti, Socratus, SELCO, Bakul, NCF, WellLabs)
-sits alongside the 46 source-file partners. It is **kept out of the health scores** unless
-you tick *"Include ✳ indicative orgs in scoring"* (or open with `#ext`), which recomputes
-the strip, health index, place health, map lenses and tables on the wider set. In the
-matrix and directory these orgs are gold-flagged with keyword-mapped themes.
+A second tier of **14 large multi-district orgs/networks** (CYSD, Gram Vikas, Harsha Trust,
+Niyatee, PRADAN, FES, Landesa, SPREAD, Lokadrusti, Socratus, SELCO, Bakul, NCF, WellLabs and
+**BCKIC**) sits alongside the 46 source-file partners. It is **kept out of the health
+scores** unless you tick *"Include ✳ indicative orgs in scoring"* (or open with `#ext`),
+which recomputes the strip, health index, place health, map lenses and tables on the wider
+set. In the matrix and directory these orgs are gold-flagged with keyword-mapped themes.
+**BCKIC** (Bhubaneswar City Knowledge Innovation Cluster, PSA/PM-STIAC) is the one growth/
+innovation-pillar actor — flagged in the Alignment tab as the bridge to the vision's
+economic engine.
 
 ## Anchor layer
 
@@ -94,9 +103,12 @@ they're listed without per-district paint.
 
 - **DMF** — real, district-wise, year-wise (FY2015-16 → FY2025-26), live from Odisha's
   portal. Odisha is India's top DMF-collecting state.
-- **Major schemes & allocations** — 13 flagship state/central schemes from the Odisha
-  2025-26 budget (Subhadra ₹10,145 Cr, Antyodaya Gruha ₹2,603 Cr, Mission Shakti ₹1,107 Cr,
-  NRLM, MAMATA, Swachha Odisha, Pusti Mission, and more), mapped to themes.
+- **Major schemes & allocations** — **25 schemes across centrally-sponsored + state**
+  (level-tagged) from the Odisha 2025-26 budget: state (Subhadra ₹10,145 Cr, Antyodaya
+  Gruha ₹2,603 Cr, CM-KISAN ₹2,020 Cr, Mission Shakti ₹1,107 Cr, Shree Anna ₹600 Cr, BSKY,
+  Adarsha Vidyalaya…) and central-sponsored (MGNREGS ₹1,450 Cr, AB-PMJAY ₹711 Cr, PM POSHAN
+  ₹392 Cr, Samagra Shiksha ₹307 Cr, Jal Jeevan Mission, PMAY-G, PM-KISAN…), each mapped to a
+  theme. "–" where the Odisha-specific amount isn't separately published.
 
 ## Ecosystem Health
 
@@ -119,11 +131,22 @@ a second look. Thinnest coverage: Boudh, Sonepur.
 Odisha turns 100 as a state in 2036. The government's official Vision 2036 (with a 2047
 horizon) was unveiled by the PM on 12 Jun 2025 alongside 105 projects (~₹18,600 Cr) and 36
 flagship programmes; it is the first AI-assisted state vision (3.2 lakh+ citizen inputs).
-Headline: a **$500B economy by 2036, $1.5T by 2047**. Pillars/targets in
-`data/odisha_ecosystem_layers.json → vision2036`, sourced to the vision document and press
+Headline: a **$500B economy by 2036, $1.5T by 2047**. Pillars/targets — plus the
+per-pillar **trajectory**, **velocity** (required pace) and **unlocks** used by the 2036
+Alignment tab — live in `data/odisha_ecosystem_layers.json → vision2036`, sourced to the
+vision document and press
 ([Tribune](https://www.tribuneindia.com/news/india/pm-modi-launches-105-projects-worth-over-rs-18600-crore-unveils-odisha-vision-document),
 [Sambad](https://sambadenglish.com/latest-news/bjp-govts-first-anniv-pm-unveils-odisha-vision-2036-launches-projects-worth-over-18000-crore-9381580),
 [Odisha Plus](https://odisha.plus/2025/05/odisha-government-launching-36-initiatives-to-achieve-a-developed-odisha-by-2036/)).
+
+## 2036 Alignment tab
+
+Connects the two: for each Vision pillar it reads the ecosystem behind it (orgs + funders +
+scheme ₹) into a **Strong/Emerging/Thin/Gap** band, flags growth pillars where the theme is
+a rural proxy, and calls out the **structural gap** (a human-development ecosystem vs the
+vision's economic-transformation ambition), **velocity** (e.g. urbanisation needs ~+2.3 pp/yr
+vs ~0.3 historically), **trajectory** per pillar, **geographic priority gaps** (weakest 8
+districts — Boudh & Sonepur lead), and **unlocks** (levers → what they unblock → who).
 
 ## LoTF workshop board
 
@@ -147,7 +170,7 @@ odisha-landscape/
 │   ├── odisha_fpo_data.json            # raw FPO fetch, district-level count + farmers
 │   ├── odisha_csr_data.json            # GO CARE CSR: year totals, sectors, 300 companies, flagship projects
 │   ├── odisha_partners_seed.csv        # 46-org partner research pass
-│   ├── odisha_ecosystem_layers.json    # funders, anchors, schemes, indicative orgs, Vision 2036
+│   ├── odisha_ecosystem_layers.json    # 27 funders, anchors, 25 schemes, 14 indicative orgs, Vision 2036 (pillars/trajectory/velocity/unlocks)
 │   └── odisha_research_funders.csv     # earlier 5-lead funders list (superseded by ecosystem_layers)
 ├── scripts/
 │   ├── fetch_boundaries.py             # bharatlas.com -> data/odisha_districts.geojson
