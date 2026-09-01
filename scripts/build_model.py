@@ -94,6 +94,57 @@ ASPIRATIONAL_DISTRICTS = [
     "Koraput", "Malkangiri", "Nabarangpur", "Nuapada", "Rayagada",
 ]
 
+# Partner-seed CSV uses a few near-duplicate theme labels; fold them into the THEMES
+# taxonomy so per-district theme sets stay clean.
+THEME_NORM = {
+    "Women Empowerment": "Women & Gender",
+    "Gender Integration": "Women & Gender",
+    "Livelihoods and Rural Development": "Livelihoods & Rural Dev",
+}
+
+# GO CARE portal (csr.odisha.gov.in) district spellings -> CANON. Covers the flagship
+# CSR project rows in data/odisha_csr_data.json.
+CSR_DIST_MAP = {
+    "Angul": "Anugul", "Balangir": "Balangir", "Bolangir": "Balangir",
+    "Balasore": "Baleshwar", "Bargarh": "Bargarh", "Bhadrak": "Bhadrak",
+    "Boudh": "Boudh", "Cuttack": "Cuttack", "Deogarh": "Deogarh",
+    "Dhenkanal": "Dhenkanal", "Gajapati": "Gajapati", "Ganjam": "Ganjam",
+    "Jagatsinghpur": "Jagatsinghapur", "Jajpur": "Jajapur", "Jharsuguda": "Jharsuguda",
+    "Kalahandi": "Kalahandi", "Kandhamal": "Kandhamal", "Kondhamal": "Kandhamal",
+    "Kendrapara": "Kendrapara", "Keonjhar": "Kendujhar", "Khordha": "Khordha",
+    "Koraput": "Koraput", "Malkangiri": "Malkangiri", "Mayurbhanj": "Mayurbhanj",
+    "Nabarangpur": "Nabarangpur", "Nawarangpur": "Nabarangpur", "Nayagarh": "Nayagarh",
+    "Nuapada": "Nuapada", "Puri": "Puri", "Rayagada": "Rayagada",
+    "Sambalpur": "Sambalpur", "Sonepur": "Sonepur", "Subarnapur": "Sonepur",
+    "Sundergarh": "Sundargarh", "Sundargarh": "Sundargarh",
+}
+
+# Keyword -> theme, for mapping an indicative org's free-text "focus" to THEMES
+# (mirrors jharkhand-landscape's build.py extThemesOf()).
+FOCUS_KEYWORDS = [
+    (("education", "school", "learning"), "Education"),
+    (("health", "nutrition", "arogya", "maternal", "creche"), "Health & Nutrition"),
+    (("women", "gender", "shg", "self-help"), "Women & Gender"),
+    (("climate", "disaster", "resilience"), "Climate Action"),
+    (("livelihood", "income", "household"), "Livelihoods & Rural Dev"),
+    (("agri", "farm", "ntfp", "crop"), "Agriculture"),
+    (("nrm", "natural resource", "commons", "watershed", "forest", "ecolog", "biosphere"), "Natural Resource Mgmt"),
+    (("wash", "water", "sanitation", "piped"), "Water & Sanitation"),
+    (("governance", "rights", "coordination", "land"), "Governance"),
+    (("skill", "vocational"), "Skill Development"),
+    (("energy", "solar"), "Clean Energy"),
+    (("child", "creche"), "Child Protection"),
+]
+
+
+def themes_from_focus(focus):
+    f = (focus or "").lower()
+    out = []
+    for kws, theme in FOCUS_KEYWORDS:
+        if any(k in f for k in kws) and theme not in out:
+            out.append(theme)
+    return out
+
 
 def money_to_float(s):
     return float(s.replace(",", ""))
@@ -117,7 +168,7 @@ def load_partners_seed():
         p = partners_by_name.setdefault(name, {"name": name, "districts": [], "themes": []})
         if dist not in p["districts"]:
             p["districts"].append(dist)
-        themes = [t.strip() for t in r["themes"].split(",") if t.strip()]
+        themes = [THEME_NORM.get(t.strip(), t.strip()) for t in r["themes"].split(",") if t.strip()]
         for t in themes:
             if t not in p["themes"]:
                 p["themes"].append(t)
@@ -192,18 +243,80 @@ def build():
             "fpos": row["fpo_count"], "farmers": row["number_of_farmers"],
         }
 
-    # -- Partners (seed) --
+    # -- Partners (seed) + per-district theme aggregation --
+    partner_by_name = {p["name"]: p for p in partners}
     for p in partners:
         for dist in p["districts"]:
             if p["name"] not in districts[dist]["partners"]:
                 districts[dist]["partners"].append(p["name"])
+            for t in p["themes"]:
+                if t not in districts[dist]["themes"]:
+                    districts[dist]["themes"].append(t)
+
+    # -- CSR (GO CARE flagship projects, per district) --
+    csr_raw = json.load(open("../data/odisha_csr_data.json"))
+    for row in csr_raw.get("flagship", []):
+        canon = CSR_DIST_MAP.get(row["district"])
+        if canon is None:
+            print(f"WARNING: unmapped CSR district {row['district']!r}")
+            continue
+        cf = districts[canon].setdefault(
+            "csrFlagship", {"count": 0, "amountLakh": 0.0, "projects": []})
+        cf["count"] += 1
+        cf["amountLakh"] += row.get("amountLakh", 0) or 0
+        cf["projects"].append({
+            "company": row["company"], "project": row["project"],
+            "amountLakh": row.get("amountLakh", 0), "status": row["status"],
+            "location": row["location"], "agencyType": row["agencyType"],
+        })
+    for d in districts.values():
+        d.setdefault("csrFlagship", {"count": 0, "amountLakh": 0.0, "projects": []})
+
+    csr_state = {
+        "yearTotals": csr_raw.get("yearTotals", {}),
+        "sectorCounts": csr_raw.get("sectorCounts", {}),
+        "companies": len(csr_raw.get("companies", [])),
+        "totalCr": round(sum(v["amountCr"] for v in csr_raw.get("yearTotals", {}).values()), 1),
+        "source": csr_raw.get("meta", {}).get("source", ""),
+        "note": csr_raw.get("meta", {}).get("note", ""),
+    }
+
+    # -- Ecosystem layers: anchors (TRI-equivalent), funders, schemes, indicative orgs --
+    layers = json.load(open("../data/odisha_ecosystem_layers.json"))
+    anchor_orgs = layers["anchors"]["orgs"]
+    primary_anchor = layers["anchors"]["primary"]
+    # paint the primary anchor's districts as the anchor-presence layer
+    for a in anchor_orgs:
+        for dist in a.get("districts", []):
+            if dist in districts:
+                districts[dist].setdefault("anchor", {"present": False, "orgs": []})
+                districts[dist]["anchor"]["orgs"].append(a["name"])
+                if a["name"].startswith(primary_anchor) or primary_anchor in a["name"]:
+                    districts[dist]["anchor"]["present"] = True
+    for d in districts.values():
+        d.setdefault("anchor", {"present": False, "orgs": []})
+
+    # indicative ✳ orgs: keyword-map focus -> themes (kept out of health scores by default)
+    indicative = []
+    for o in layers.get("indicative", []):
+        indicative.append({
+            "name": o["name"], "districts": o.get("districts", []),
+            "themes": themes_from_focus(o.get("focus", "")),
+            "focus": o.get("focus", ""), "source": o.get("source", ""),
+            "note": o.get("note", ""),
+        })
 
     model = {
         "canon": CANON,
         "themes": THEMES,
         "years": sorted(dmf_raw.keys(), reverse=True),
         "partners": partners,
-        "anchors": [],
+        "anchors": anchor_orgs,
+        "indicative": indicative,
+        "funders": layers.get("funders", []),
+        "schemes": layers.get("schemes", {}),
+        "vision2036": layers.get("vision2036", {}),
+        "csrState": csr_state,
         "districts": districts,
     }
     json.dump(model, open("../model.json", "w"), ensure_ascii=False, indent=1)
@@ -211,9 +324,17 @@ def build():
     tot_shg = sum(d["shg"]["total"] for d in districts.values())
     tot_fpo = sum(d["fpo"]["fpos"] for d in districts.values())
     tot_blocks = sum(len(d["blockcov"]) for d in districts.values())
+    tot_csr = sum(d["csrFlagship"]["count"] for d in districts.values())
+    anchor_n = sum(1 for d in districts.values() if d["anchor"]["present"])
+    with_themes = sum(1 for d in districts.values() if d["themes"])
     print(f"model.json written: {len(CANON)} districts, {tot_shg} SHGs, {tot_fpo} FPOs, "
           f"{len(partners)} seed partners, {tot_blocks} blocks with known coverage across "
           f"{len(blockcov_by_district)} districts")
+    print(f"  themes populated for {with_themes} districts; {tot_csr} flagship CSR projects; "
+          f"anchor ({primary_anchor}) in {anchor_n} districts; "
+          f"{len(indicative)} indicative orgs; {len(model['funders'])} funders; "
+          f"{len(model['schemes'].get('items', []))} schemes; "
+          f"CSR state total ~₹{csr_state['totalCr']} Cr, {csr_state['companies']} companies")
 
 
 if __name__ == "__main__":
