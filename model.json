@@ -899,6 +899,20 @@
    "focus": "Water, commons & rural economy research-practice",
    "source": "https://welllabs.org/",
    "note": ""
+  },
+  {
+   "name": "BCKIC (Bhubaneswar City Knowledge Innovation Cluster)",
+   "districts": [
+    "Khordha"
+   ],
+   "themes": [
+    "Education",
+    "Health & Nutrition",
+    "Livelihoods & Rural Dev"
+   ],
+   "focus": "Innovation cluster (Office of PSA / PM-STIAC): future/blue-green economy, critical minerals & polymers, STEM education, affordable healthcare, waste-to-value, sustainable tribal livelihoods; industry-academia-startup hub (NALCO, JSW, BPCL, IIT-BBSR, KIIT, NIT-RKL, DST, BIRAC)",
+   "source": "https://bckic.in/",
+   "note": "Rare growth/innovation-pillar actor — the bridge to Vision 2036's economy/industry ambition; Bhubaneswar-anchored, statewide + NE reach"
   }
  ],
  "funders": [
@@ -1364,7 +1378,7 @@
   }
  ],
  "schemes": {
-  "_note": "Odisha 2025-26 budget schemes, ₹ crore, largely state-wide (not district-split). Total state budget FY2025-26 ≈ ₹2.9 lakh crore.",
+  "_note": "Major schemes applied in Odisha, FY2025-26, ₹ crore — both state schemes and centrally-sponsored schemes (level tag). Largely state-wide, not district-split. Total state budget ≈ ₹2.9 lakh crore. outlayCr = 0 means the Odisha-specific amount isn't separately published (shown as –).",
   "stateBudgetCr": 290000,
   "fy": "2025-26",
   "items": [
@@ -1471,6 +1485,102 @@
     "level": "state",
     "source": "https://finance.odisha.gov.in/ (Supplementary 2025-26)",
     "note": "Health insurance top-up (supplementary)"
+   },
+   {
+    "name": "CM-KISAN (ex-KALIA)",
+    "theme": "Agriculture",
+    "outlayCr": 2020,
+    "level": "state",
+    "source": "https://www.newsonair.gov.in/cm-odisha-mohan-charan-majhi-presents-rs-2-90-lakh-crore-state-budget-for-2025-26",
+    "note": "Farmer income support, rechristened KALIA; ~1 cr farmers with PM-KISAN"
+   },
+   {
+    "name": "Shree Anna Abhiyan",
+    "theme": "Agriculture",
+    "outlayCr": 600,
+    "level": "state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "Millet promotion"
+   },
+   {
+    "name": "Biju / Gopabandhu Swasthya Kalyan Yojana (BSKY)",
+    "theme": "Health & Nutrition",
+    "outlayCr": 0,
+    "level": "state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "State health assurance, 70 lakh families / 3.5 cr people"
+   },
+   {
+    "name": "Odisha Adarsha Vidyalaya",
+    "theme": "Education",
+    "outlayCr": 320,
+    "level": "state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "Model schools"
+   },
+   {
+    "name": "MGNREGS (state support + wage revolving fund)",
+    "theme": "Livelihoods & Rural Dev",
+    "outlayCr": 1450,
+    "level": "central-state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "₹700 Cr state support to arrest distress migration + ₹750 Cr wage revolving fund"
+   },
+   {
+    "name": "Ayushman Bharat — PM-JAY",
+    "theme": "Health & Nutrition",
+    "outlayCr": 711,
+    "level": "central-state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "AB-PMJAY, converged with Gopabandhu/BSKY"
+   },
+   {
+    "name": "PM POSHAN",
+    "theme": "Health & Nutrition",
+    "outlayCr": 392,
+    "level": "central-state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "State support; mid-day meal / school nutrition"
+   },
+   {
+    "name": "Samagra Shiksha",
+    "theme": "Education",
+    "outlayCr": 307,
+    "level": "central-state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "State support; school education mission"
+   },
+   {
+    "name": "Jal Jeevan Mission",
+    "theme": "Water & Sanitation",
+    "outlayCr": 0,
+    "level": "central-state",
+    "source": "https://prsindia.org/budgets/states/odisha-budget-analysis-2025-26",
+    "note": "Piped water to households; FY25-26 allocation reported declining"
+   },
+   {
+    "name": "PMAY (Gramin + Awaas Plus)",
+    "theme": "Livelihoods & Rural Dev",
+    "outlayCr": 0,
+    "level": "central-state",
+    "source": "https://finance.odisha.gov.in/",
+    "note": "Rural housing; complements state Antyodaya Gruha Yojana"
+   },
+   {
+    "name": "PM-KISAN",
+    "theme": "Agriculture",
+    "outlayCr": 0,
+    "level": "central",
+    "source": "https://pmkisan.gov.in/",
+    "note": "Central DBT to farmers; paired with CM-KISAN"
+   },
+   {
+    "name": "PM Dhan-Dhaanya Krishi Yojana",
+    "theme": "Agriculture",
+    "outlayCr": 0,
+    "level": "central",
+    "source": "https://www.prameyanews.com/union-budget-2025-delivers-rs-6k-cr-boost-to-odisha-budget-state-biggest-beneficiary-of-pm-dhandhanyaa-scheme-exclusive",
+    "note": "Odisha among biggest beneficiaries (Union Budget 2025)"
    }
   ]
  },
@@ -1581,6 +1691,101 @@
      "Odia language, culture & 'Odia Asmita'",
      "Regional consultations (Sambalpur, Balasore, Jeypore)"
     ]
+   }
+  ],
+  "trajectory": {
+   "_note": "Direction of travel of the ecosystem + public money behind each pillar (a read, not a time series): Accelerating / Steady / Emerging / Lagging.",
+   "Economy & Industry": {
+    "dir": "Emerging",
+    "why": "BCKIC innovation cluster + industrial CSR (JSW, NALCO, BPCL) are early green shoots, but no broad development-partner base yet."
+   },
+   "Employment & Skills": {
+    "dir": "Steady",
+    "why": "Samagra Shiksha + HDFC Parivartan + BCKIC STEM; still narrow vs the 5-lakh-jobs/yr pace."
+   },
+   "Urbanisation & Infrastructure": {
+    "dir": "Lagging",
+    "why": "ANKUR announced, but almost no mapped civil-society/urban partner; the toughest velocity gap (17%→40%)."
+   },
+   "Agriculture & Rural": {
+    "dir": "Accelerating",
+    "why": "CM-KISAN ₹2,020 Cr + Shree Anna ₹600 Cr + Gates ADAPT + FPOs + Model Mandi converging."
+   },
+   "Education & Health": {
+    "dir": "Accelerating",
+    "why": "AB-PMJAY ₹711 Cr + BSKY + PM POSHAN + Piramal/Gates/UNICEF; dense partner base."
+   },
+   "Women's Empowerment": {
+    "dir": "Accelerating",
+    "why": "Subhadra ₹10,145 Cr + Mission Shakti + ~5.6L SHGs + Gates/WFP — the fastest-moving pillar."
+   },
+   "Governance & Asmita": {
+    "dir": "Steady",
+    "why": "AI-assisted vision process + regional councils; ecosystem role thin."
+   }
+  },
+  "velocity": [
+   {
+    "metric": "GSDP",
+    "target": "$500B by 2036",
+    "pace": "≈5x in ~10 years (roughly mid-teens % nominal/yr)",
+    "now": "Growth engine largely off the development map"
+   },
+   {
+    "metric": "Urbanisation",
+    "target": "17% → 40% by 2036",
+    "pace": "≈ +2.3 percentage points / year",
+    "now": "Historically ~+0.3 pp/yr — an ~8x acceleration required"
+   },
+   {
+    "metric": "Jobs",
+    "target": "1.1 crore by 2047",
+    "pace": "≈ 5 lakh jobs / year",
+    "now": "Skilling ecosystem thin outside HDFC / BCKIC"
+   },
+   {
+    "metric": "Farmer incomes",
+    "target": "All cultivable land irrigated; higher incomes",
+    "pace": "Irrigation + productivity every year",
+    "now": "CM-KISAN + Gates ADAPT + FPOs building momentum"
+   },
+   {
+    "metric": "Literacy",
+    "target": "100% literacy; zero dropout",
+    "pace": "Close the last ~20-25 pp",
+    "now": "Samagra Shiksha + PM POSHAN + dense education partners"
+   }
+  ],
+  "unlocks": [
+   {
+    "lever": "Open district-level CSR & scheme spend data",
+    "unblocks": "Lets funders target the weakest districts/pillars instead of guessing",
+    "who": "State (GO CARE login export) / MCA (clear the csr.gov.in captcha)"
+   },
+   {
+    "lever": "Wire BCKIC into the district ecosystem",
+    "unblocks": "Bridges the growth/innovation pillars to livelihoods & skilling on the ground",
+    "who": "BCKIC + district NGOs + industry (JSW/NALCO/BPCL)"
+   },
+   {
+    "lever": "Redirect DMF in mining districts to vision-aligned skilling & urban resilience",
+    "unblocks": "Turns ₹-heavy mining funds (Kendujhar, Sundargarh, Angul, Jajapur) into jobs/cities outcomes",
+    "who": "State DMF trusts + district administration"
+   },
+   {
+    "lever": "Converge funders on the two growth pillars",
+    "unblocks": "Fills the near-zero philanthropic presence on economy & urbanisation",
+    "who": "Rainmatter, Gates, corporates, BCKIC"
+   },
+   {
+    "lever": "Activate the thin non-aspirational districts (Boudh, Sonepur)",
+    "unblocks": "Delivers the inclusive-growth promise where coverage is weakest",
+    "who": "Anchor orgs (CYSD, Gram Vikas, Harsha Trust) + funders"
+   },
+   {
+    "lever": "Blend CM-KISAN + FPOs + Gates ADAPT + Model Mandi",
+    "unblocks": "Moves agriculture from support payments to productivity & market income",
+    "who": "Agriculture dept + FPOs + Gates/ITC"
    }
   ]
  },
