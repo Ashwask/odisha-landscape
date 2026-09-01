@@ -762,7 +762,9 @@ function buildFunders(){
 function buildSchemes(){
  const items=(SCHEMES.items||[]).slice().sort((a,b)=>b.outlayCr-a.outlayCr);
  let h='<table><thead><tr><th>Scheme</th><th>Theme</th><th class="num">Outlay ₹Cr</th><th>Level</th></tr></thead><tbody>';
- items.forEach(s=>{h+='<tr><td><b>'+(s.source?'<a href="'+s.source+'" target="_blank" rel="noopener">'+s.name+'</a>':s.name)+'</b>'+(s.note?'<div class="mini">'+s.note+'</div>':'')+'</td><td><span class="tag">'+s.theme+'</span></td><td class="num">'+s.outlayCr.toLocaleString('en-IN')+'</td><td class="mini">'+s.level+'</td></tr>';});
+ const LVL={'central':'#1f5a8f','state':'#0e8074','central-state':'#7c3a86'};
+ items.forEach(s=>{const amt=s.outlayCr?s.outlayCr.toLocaleString('en-IN'):'–';
+   h+='<tr><td><b>'+(s.source?'<a href="'+s.source+'" target="_blank" rel="noopener">'+s.name+'</a>':s.name)+'</b>'+(s.note?'<div class="mini">'+s.note+'</div>':'')+'</td><td><span class="tag">'+s.theme+'</span></td><td class="num">'+amt+'</td><td class="mini"><span class="dot" style="background:'+(LVL[s.level]||'#888')+'"></span>'+s.level+'</td></tr>';});
  h+='</tbody></table>';
  document.getElementById('schemes').innerHTML=h;
 }
@@ -792,6 +794,8 @@ function buildVision(){
 /* ---------- 2036 Alignment tab ---------- */
 let alignBuilt=false;
 const ALIGN_BAND={Strong:['#2b8a3e','#e7f3ea'],Emerging:['#b45309','#fdf0e2'],Thin:['#c2410c','#fdece3'],Gap:['#7a2312','#f6dcd4']};
+const TRAJ={Accelerating:['#2b8a3e','#e7f3ea'],Steady:['#1f5a8f','#e7eef7'],Emerging:['#b45309','#fdf0e2'],Lagging:['#c2410c','#fdece3']};
+const TRAJ_ARROW={Accelerating:'▲▲',Steady:'▲',Emerging:'◇',Lagging:'▼'};
 function pillarSignals(theme){
  const partners=PARTNERS.filter(p=>p.themes.includes(theme)).length;
  const indic=INDICATIVE.filter(o=>(o.themes||[]).includes(theme)).length;
@@ -834,6 +838,9 @@ function buildAlignment(){
     +'<div><div class="k">Funders</div><div class="v">'+s.funders.length+'</div></div>'
     +'<div><div class="k">Govt ₹Cr</div><div class="v">'+(s.schemeCr?s.schemeCr.toLocaleString('en-IN'):'–')+'</div></div>'
     +'<div><div class="k">Districts</div><div class="v">'+s.dists+'</div></div></div>';
+  const tj=(VISION.trajectory||{})[p.name];
+  if(tj){const tc=TRAJ[tj.dir]||['#6b7a93','#eef2f8'];
+    h+='<div class="mini" style="margin-top:8px"><span class="badge" style="background:'+tc[1]+';color:'+tc[0]+'">'+TRAJ_ARROW[tj.dir]+' '+tj.dir+'</span> <span style="color:var(--mut)">'+tj.why+'</span></div>';}
   if(p.growth){h+='<div class="mini" style="margin-top:6px;color:#7a2312">*Growth pillar — the ecosystem theme shown is a <b>rural proxy</b>; the vision’s industry / urban / digital ambition is largely off-map, so the org count overstates true alignment.</div>';}
   h+='<div class="mini" style="margin-top:6px">Theme: <span class="tag" style="border-left:3px solid '+col+'">'+p.theme+'</span>'
     +(s.funders.length?' · funders: '+s.funders.slice(0,3).map(f=>f.name.split(' (')[0].split(' —')[0]).join(', ')+(s.funders.length>3?'…':''):'')+'</div>';
@@ -848,7 +855,18 @@ function buildAlignment(){
  h+='<div class="card cardpad" style="border-left:4px solid #7a2312">'
    +'<p style="margin:0 0 8px">The mapped ecosystem is overwhelmingly a <b>human-development</b> ecosystem — women &amp; SHGs, health, education, agriculture and rural livelihoods (~'+humanOrgs+' of the '+PARTNERS.length+' partners work on at least one of these). That aligns tightly with the vision’s social pillars.</p>'
    +'<p style="margin:0 0 8px">But Vision 2036’s <b>headline ambition is economic transformation</b>: a $500B economy, manufacturing mega-parks, port-based SEZs, digital services, tourism and urbanisation from 17% to 40%. <b>Almost no mapped development partner, and few philanthropies, work on these</b> — the ecosystem has no theme for industry, digital, urban development or tourism at all. The rural "Livelihoods &amp; Rural Dev" theme is the closest proxy, and it is not the same thing.</p>'
-   +'<p style="margin:0"><b>Implication:</b> the civil-society + philanthropy ecosystem can help the vision deliver <i>inclusion</i> (who benefits), but the <i>growth engine</i> (industry, jobs, cities) currently sits almost entirely with government + corporates, largely outside this map. That is the single biggest alignment gap.</p></div>';
+   +'<p style="margin:0 0 8px"><b>Implication:</b> the civil-society + philanthropy ecosystem can help the vision deliver <i>inclusion</i> (who benefits), but the <i>growth engine</i> (industry, jobs, cities) currently sits almost entirely with government + corporates, largely outside this map. That is the single biggest alignment gap.</p>'
+   +'<p style="margin:0"><b>The green shoot:</b> <a href="https://bckic.in/" target="_blank" rel="noopener">BCKIC</a> (Bhubaneswar City Knowledge Innovation Cluster, PSA/PM-STIAC) is the one mapped actor squarely on the growth side — future/blue-green economy, critical minerals, STEM and startups, with NALCO/JSW/BPCL/IIT-BBSR/KIIT. It is the natural bridge from this ecosystem to the vision’s economic engine, but today it is a single node in Khordha, not a statewide network.</p></div>';
+
+ // --- velocity to 2036 ---
+ const V=VISION.velocity||[];
+ if(V.length){
+  h+='<div class="section-title">Velocity: the pace 2036 demands</div>';
+  h+='<p class="section-sub">Odisha is ~10 years from its centenary. For the quantified targets, this is the annual pace required — and how far today’s drift is from it.</p>';
+  h+='<div class="card tbl"><table><thead><tr><th>Target</th><th>2036/47 goal</th><th>Required pace</th><th>Where the drift is today</th></tr></thead><tbody>';
+  V.forEach(v=>{h+='<tr><td><b>'+v.metric+'</b></td><td>'+v.target+'</td><td><b style="color:#7c3a86">'+v.pace+'</b></td><td class="mini">'+v.now+'</td></tr>';});
+  h+='</tbody></table></div>';
+ }
 
  // --- headline target vs today ---
  h+='<div class="section-title">Headline target vs where it stands today</div>';
@@ -893,7 +911,17 @@ function buildAlignment(){
    +'<li><b>Deepen agriculture-to-market</b> (FPOs + Gates ADAPT + Model Mandi) toward the productivity/income target.</li></ul></div>';
  h+='</div>';
 
- h+='<p class="vnote">Alignment bands and reads are inferred by cross-referencing the mapped ecosystem with the Vision 2036 pillars; both sides are sourced but not independently audited. Treat as a planning lens, not a scorecard of government performance.</p>';
+ // --- unlocks: what could shift the alignment ---
+ const U=VISION.unlocks||[];
+ if(U.length){
+  h+='<div class="section-title">Unlocks: what could shift the alignment</div>';
+  h+='<p class="section-sub">Concrete levers that would unblock movement — each with what it releases and who holds the key.</p>';
+  h+='<div class="card tbl"><table><thead><tr><th>Lever</th><th>What it unblocks</th><th>Who can unlock it</th></tr></thead><tbody>';
+  U.forEach((u,i)=>{h+='<tr><td><b>'+(i+1)+'. '+u.lever+'</b></td><td>'+u.unblocks+'</td><td class="mini">'+u.who+'</td></tr>';});
+  h+='</tbody></table></div>';
+ }
+
+ h+='<p class="vnote">Trajectory, velocity and unlocks are a planning read inferred by cross-referencing the mapped ecosystem with the Vision 2036 pillars; both sides are sourced but not independently audited. Not a scorecard of government performance.</p>';
  const box=document.getElementById('viewAlign'); box.innerHTML=h;
  box.querySelectorAll('.pn[data-d]').forEach(s=>s.onclick=()=>{const b=document.querySelector('#tabbar button[data-view=main]');if(b)b.click();selectDist(s.dataset.d);document.getElementById('mapbox').scrollIntoView({behavior:'smooth',block:'center'});});
 }
