@@ -548,7 +548,17 @@ function hideTip(){tip.style.display='none';}
 
 /* lens buttons */
 const lensBox=document.getElementById('lens');
-Object.entries(lenses).forEach(([k,v])=>{const b=el('button',k===curLens?'on':'',v.label);b.onclick=()=>{curLens=k;paint();};lensBox.appendChild(b);});
+/* Partial-coverage / beta lenses: shown only when the ✳ indicative toggle is on, so their
+   many blank districts aren't misread as "no activity" by default. */
+const GATED_LENSES=['blockcov'];
+function buildLensButtons(){
+ if(GATED_LENSES.includes(curLens)&&!INCLUDE_EXT)curLens='placehealth';
+ lensBox.innerHTML='';
+ Object.entries(lenses).forEach(([k,v])=>{
+  if(GATED_LENSES.includes(k)&&!INCLUDE_EXT)return;
+  const b=el('button',k===curLens?'on':'',v.label);b.onclick=()=>{curLens=k;paint();};lensBox.appendChild(b);});
+}
+buildLensButtons();
 /* CSR domain filter -- only shown while the "CSR spend (real ₹)" lens is active */
 const csrDomainSel=document.getElementById('csrDomainSel');
 csrDomainSel.innerHTML='<option value="__all__">All domains (total)</option>'
@@ -834,7 +844,7 @@ function buildGovt(){
 
 /* ---------- CSR state panel: trend & sectors / by district / by domain ---------- */
 let csrTab='trend';
-const CSR_TABS=[['trend','Trend & sectors'],['district','By district'],['domain','By domain']];
+const CSR_TABS=[['trend','Trend (₹/yr)'],['district','By district'],['domain','By domain']];
 const csrTabsBox=document.getElementById('csrTabs');
 CSR_TABS.forEach(([k,label])=>{const b=el('button',k===csrTab?'on':'',label);b.onclick=()=>{csrTab=k;buildCsrTabs();buildCsrState();};csrTabsBox.appendChild(b);});
 function buildCsrTabs(){[...csrTabsBox.children].forEach((b,i)=>b.classList.toggle('on',CSR_TABS[i][0]===csrTab));
@@ -849,15 +859,17 @@ csrFySel.onchange=()=>{curCsrFy=csrFySel.value;buildCsrState();};
 const fyLabel=()=>curCsrFy==='__all__'?'FY2014-15→FY2024-25':'FY'+curCsrFy;
 
 function renderCsrTrend(){
- const yt=CSR.yearTotals||{}; const yrs=Object.keys(yt).sort();
+ const yt=CSR.yearTotals||{}; let yrs=Object.keys(yt).sort();
+ // CSR filings lag ~6-18 months, so the most recent FY(s) are still coming in. Trim any
+ // trailing year whose spend cliffs to <50% of the prior year, so a partial year doesn't
+ // read as a real collapse. (Was showing FY25-26 ₹78 Cr / FY26-27 ₹2 Cr next to ~₹450 Cr years.)
+ while(yrs.length>2){const n=yrs.length,last=yt[yrs[n-1]].amountCr||0,prev=yt[yrs[n-2]].amountCr||0;if(prev>0&&last<prev*0.5)yrs.pop();else break;}
  const vals=yrs.map(y=>yt[y].amountCr||0); const mx=Math.max(...vals,1);
- let h='<div class="cardpad"><div class="mini" style="margin-bottom:6px">Statewide CSR filed on Odisha’s GO CARE portal (MCA-fed), ₹ crore per FY. FY25-27 are still filling in. For the real district × domain breakdown, see the "By district" and "By domain" tabs.</div>';
+ const lastY=yrs[yrs.length-1]||'';
+ let h='<div class="cardpad"><div class="mini" style="margin-bottom:6px">Statewide CSR filed on Odisha’s GO CARE portal (MCA-fed), ₹ crore per FY, shown through FY'+lastY.slice(2)+' (later years omitted while filings are still coming in). For the real spend split by development sector, see the <b>By domain</b> tab; for per-district ₹, see <b>By district</b>.</div>';
  h+='<div class="spark" style="height:70px">';
  yrs.forEach((y,i)=>{h+='<div class="bar" style="height:'+(vals[i]/mx*100)+'%;background:#d1702f" title="'+y+': ₹'+vals[i]+' Cr"></div>';});
- h+='</div><div class="sparkx"><span>'+(yrs[0]||'')+'</span><span>'+(yrs[yrs.length-1]||'')+'</span></div>';
- const sc=CSR.sectorCounts||{}; const ent=Object.entries(sc).sort((a,b)=>b[1]-a[1]); const smx=Math.max(...ent.map(e=>e[1]),1);
- h+='<div class="t" style="margin-top:14px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink2);font-weight:600">CSR projects by sector (statewide, all years, project count)</div>';
- ent.forEach(([k,v])=>{h+='<div style="display:grid;grid-template-columns:150px 1fr 62px;gap:8px;align-items:center;padding:3px 0"><span class="mini">'+k+'</span><span class="track" style="height:8px;background:var(--line2);border-radius:5px;overflow:hidden"><i style="display:block;height:100%;width:'+(v/smx*100)+'%;background:#e89b63"></i></span><span class="num mini">'+v.toLocaleString()+'</span></div>';});
+ h+='</div><div class="sparkx"><span>'+(yrs[0]||'')+'</span><span>'+lastY+'</span></div>';
  h+='</div>';
  return h;
 }
@@ -1133,7 +1145,7 @@ tabbar.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)ret
 });
 
 /* ---------- indicative-org toggle: recompute everything on the wider org set ---------- */
-function recompute(){refreshScales();renderStrip();paint();buildHealth();buildPlaceHealth();buildDir();buildDisTbl();updateFoot();}
+function recompute(){refreshScales();buildLensButtons();renderStrip();paint();buildHealth();buildPlaceHealth();buildDir();buildDisTbl();updateFoot();}
 
 /* initial render */
 refreshScales(); renderStrip(); paint(); buildHealth(); buildMatrix(); buildPlaceHealth(); buildDir(); buildDisTbl(); updateFoot(); buildGovt(); buildSchemes(); buildCsrState(); buildFunders(); /* buildCatalytic() runs inside buildAlignment (2036 Alignment tab) */
@@ -1147,7 +1159,10 @@ if(extCb){extCb.addEventListener('change',()=>{INCLUDE_EXT=extCb.checked;recompu
 
 /* deep-links: #vision opens Vision 2036 · #ext turns on indicative scoring · #lens=<key> selects a map lens */
 if(location.hash.includes('ext')&&extCb){extCb.checked=true;INCLUDE_EXT=true;recompute();}
-const hl=location.hash.match(/lens=(\w+)/); if(hl&&lenses[hl[1]]){curLens=hl[1];paint();}
+const hl=location.hash.match(/lens=(\w+)/); if(hl&&lenses[hl[1]]){
+ // honour a deep-link to a gated lens by turning on the ✳ toggle that reveals it
+ if(GATED_LENSES.includes(hl[1])&&!INCLUDE_EXT&&extCb){extCb.checked=true;INCLUDE_EXT=true;recompute();}
+ curLens=hl[1];buildLensButtons();paint();}
 if(location.hash.includes('vision')){const vb=document.querySelector('#tabbar button[data-view=vision]');if(vb)vb.click();}
 if(location.hash.includes('align')){const ab=document.querySelector('#tabbar button[data-view=align]');if(ab)ab.click();}
 </script></body></html>'''
