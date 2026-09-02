@@ -1877,6 +1877,394 @@
   "source": "csr.odisha.gov.in (GO CARE, Govt of Odisha CSR portal; MCA-fed)",
   "note": "Statewide totals + sector counts + company (funder) list + geocoded flagship projects are openly served. District-wise TOTAL spend is login-gated on GO CARE and CAPTCHA-gated on csr.gov.in, so it is NOT included. Amounts in Rupees Lakh (amountCr = /100)."
  },
+ "csrDistrict": {
+  "years": [
+   "2020-21",
+   "2021-22",
+   "2022-23",
+   "2023-24",
+   "2024-25"
+  ],
+  "districtTotal": 3920.02,
+  "nec": {
+   "years": {
+    "2020-21": 345.38,
+    "2021-22": 292.75,
+    "2022-23": 255.02,
+    "2023-24": 407.51,
+    "2024-25": 0.32
+   },
+   "total": 1300.98
+  },
+  "grandTotal": 5221.01,
+  "meta": {
+   "source": "csr.gov.in district-wise CSR export (Odisha_DistrictwiseCSR.xlsx)",
+   "unit": "INR crore",
+   "span": "FY2020-21 to FY2024-25",
+   "note": "District-level CSR spend. DIFFERENT source/methodology from the GO CARE statewide series (csrState); the two do not reconcile (this series runs ~1.5-3x higher in later years). Kept as its own layer, not merged into the GO CARE trend."
+  }
+ },
+ "catalytic": {
+  "meta": {
+   "title": "Catalytic Unlock: a nature-at-the-centre, commons-first landscape read",
+   "kind": "indicative strategy layer (editorial)",
+   "note": "This is a sense-making STRATEGY layer, not fetched data. Districts are grouped into six nature/commons landscapes; each carries a catalytic tier and a leverage read computed from the real DMF, CSR and partner-capacity fields. The tiers, nature-weights, theses and the top-10 projects are an editorial design proposal (indicative), built ON TOP of the real money/capacity data to show where small, risk-tolerant catalytic capital can unblock much larger committed public+private pools. Project ₹ figures are illustrative catalytic sizing, not committed pipelines.",
+   "framing": "Catalytic capital is tiny next to ~₹1,575 Cr/yr of CSR and ~₹27,000 Cr of DMF. Its job is not to add money but to unblock money already committed but not converting, with nature and the commons as the organising unit (forests, water, coasts, mine-land, agrobiodiversity) rather than the administrative district."
+  },
+  "tiers": {
+   "convert": {
+    "label": "Convert",
+    "color": "#a8500f",
+    "strategy": "Redirect money-rich, capacity-thin mining districts (DMF+CSR) into mine-land, forest and water-commons restoration."
+   },
+   "seed": {
+    "label": "Seed",
+    "color": "#2b8a3e",
+    "strategy": "Nature-rich, money-poor tribal highlands and thin districts: seed commons, NTFP, millet and springs regeneration; crowd CSR in from outside the plant-gate."
+   },
+   "protect": {
+    "label": "Protect",
+    "color": "#2f8fae",
+    "strategy": "Coastal and wetland commons under pressure: protect mangrove, lagoon and estuarine-fisheries commons as living cyclone infrastructure."
+   },
+   "crowdin": {
+    "label": "Crowd-in",
+    "color": "#6b2fa0",
+    "strategy": "Capital/urban region with money present: crowd corporate CSR into peri-urban nature and river commons to close the urbanisation-with-nature gap."
+   },
+   "anchor": {
+    "label": "Anchor",
+    "color": "#6b7a58",
+    "strategy": "Steady forest and agrobiodiversity mosaics: hold and deepen the anchor landscape, protect what works."
+   }
+  },
+  "landscapes": [
+   {
+    "key": "mining",
+    "name": "Central Mining & Brahmani Belt",
+    "color": "#8a6d3b",
+    "districts": [
+     "Anugul",
+     "Jharsuguda",
+     "Sundargarh",
+     "Kendujhar",
+     "Deogarh"
+    ],
+    "nature": "Coal, aluminium and iron country: degraded forest, mine-spoil and overburden, stressed water tables along the Brahmani.",
+    "commons": [
+     "Reclaimable mine-land & overburden",
+     "Degraded sal & scrub forest",
+     "Groundwater / Brahmani flows",
+     "Grazing commons"
+    ],
+    "thesis": "Odisha's money mountain: ~₹25,850 Cr DMF + ~₹1,952 Cr CSR against only ~19 partners. The bottleneck is absorptive capacity, not money. Highest ₹-mobilised-per-₹ of catalytic capital anywhere in the state."
+   },
+   {
+    "key": "eghats",
+    "name": "Eastern Ghats Adivasi Highlands",
+    "color": "#b8742a",
+    "districts": [
+     "Koraput",
+     "Rayagada",
+     "Kalahandi",
+     "Kandhamal",
+     "Nabarangpur",
+     "Malkangiri",
+     "Gajapati"
+    ],
+    "nature": "Eastern Ghats hill-and-valley: the Jeypore tract's global rice & millet diversity, springs, shifting-cultivation mosaics, dense NTFP.",
+    "commons": [
+     "Seed & agrobiodiversity (millets, landraces)",
+     "Springs & hill streams",
+     "Podu / shifting-cultivation land",
+     "NTFP forests (mahua, tamarind, siali)",
+     "FRA / CFR community forests"
+    ],
+    "thesis": "Nature-rich and capacity-present (48 partners) but money-poor (tiny DMF, only ~15% of tagged CSR). The place to redistribute and blend CSR + Odisha Millet Mission + FPO + Gates ADAPT around a commons/agrobiodiversity core."
+   },
+   {
+    "key": "delta",
+    "name": "Mahanadi Delta & Mangrove Coast",
+    "color": "#1f9e8a",
+    "districts": [
+     "Kendrapara",
+     "Jagatsinghapur",
+     "Bhadrak",
+     "Baleshwar",
+     "Cuttack",
+     "Jajapur"
+    ],
+    "nature": "Bhitarkanika mangroves, the Mahanadi delta and a cyclone-exposed coast; estuarine fisheries and blue-carbon stores.",
+    "commons": [
+     "Mangrove & estuarine forest",
+     "Estuarine & near-shore fisheries",
+     "Delta wetlands & floodplains",
+     "Blue carbon"
+    ],
+    "thesis": "Carries real money (₹2,760 Cr DMF via Jajapur + ₹499 Cr CSR) but only ~13 partners on a climate-frontline coast. Protect the mangrove-fisher commons as living cyclone infrastructure and unlock blue-carbon finance."
+   },
+   {
+    "key": "chilika",
+    "name": "Chilika & South-Central Catchment",
+    "color": "#2f8fae",
+    "districts": [
+     "Ganjam",
+     "Puri",
+     "Khordha",
+     "Nayagarh"
+    ],
+    "nature": "Chilika, Asia's largest brackish lagoon (Irrawaddy dolphin, migratory birds), the capital region and the lower Mahanadi/Daya/Kathajodi.",
+    "commons": [
+     "Chilika lagoon & fisheries",
+     "Urban & peri-urban wetlands",
+     "River commons (Daya, Kathajodi)",
+     "City forests / blue-green"
+    ],
+    "thesis": "Where the capital region's CSR money (₹733 Cr) and 27 partners sit next to a lagoon and rivers. Crowd corporate CSR into peri-urban nature to answer the 17%-to-40% urbanisation target WITH nature, not against it."
+   },
+   {
+    "key": "western",
+    "name": "Western Tableland (KBK / Hirakud)",
+    "color": "#c19a2e",
+    "districts": [
+     "Bargarh",
+     "Sambalpur",
+     "Balangir",
+     "Sonepur",
+     "Boudh",
+     "Nuapada",
+     "Dhenkanal"
+    ],
+    "nature": "Drought-prone tableland and the upper Mahanadi/Hirakud command: tanks, forest-farm mosaics, distress-migration country (KBK).",
+    "commons": [
+     "Tanks & traditional water-harvesting",
+     "Groundwater & drought commons",
+     "Forest-farm mosaic",
+     "Grazing / pasture commons"
+    ],
+    "thesis": "Money-poor (₹32 Cr DMF, ₹247 Cr CSR) and thinly served (15 partners), with Boudh & Sonepur near-zero on everything. Seed water-commons revival and MGNREGA convergence to hold people and land against distress migration."
+   },
+   {
+    "key": "similipal",
+    "name": "Similipal & Mayurbhanj",
+    "color": "#2f7d4f",
+    "districts": [
+     "Mayurbhanj"
+    ],
+    "nature": "The Similipal biosphere reserve: sal forests, an elephant and tiger landscape, dense kendu and mahua NTFP, adivasi commons.",
+    "commons": [
+     "Sal forest & biosphere core",
+     "Elephant / tiger corridor",
+     "Kendu & mahua NTFP",
+     "FRA / CFR community forests"
+    ],
+    "thesis": "A standalone biosphere anchor with 6 partners but modest money. Anchor and deepen: NTFP value, corridor protection and community forest rights as the template for the northern sal belt."
+   }
+  ],
+  "projects": [
+   {
+    "rank": 1,
+    "name": "Mine-Land to Commons Restoration Fund",
+    "domain": "Land & forest restoration",
+    "landscape": "mining",
+    "geographies": [
+     "Anugul",
+     "Kendujhar",
+     "Sundargarh",
+     "Jharsuguda"
+    ],
+    "unlock": "Convert mining money (DMF+CSR) to nature/commons restoration",
+    "instrument": "DMF + CSR blended first-loss pool + community forest management + mine-spoil ecological restoration",
+    "catalyticCr": 8,
+    "mobilises": "Steers ₹200+ Cr of DMF/CSR already committed in these districts",
+    "commons": [
+     "Reclaimed mine-land",
+     "Sal forest",
+     "Brahmani water table"
+    ]
+   },
+   {
+    "rank": 2,
+    "name": "Eastern Ghats Millet & Agrobiodiversity Commons",
+    "domain": "Agrobiodiversity & NTFP",
+    "landscape": "eghats",
+    "geographies": [
+     "Koraput",
+     "Rayagada",
+     "Kalahandi",
+     "Kandhamal"
+    ],
+    "unlock": "Redistribute CSR to the aspirational highlands + blend agri schemes to productivity",
+    "instrument": "Catalytic grant + Odisha Millet Mission + FPO match + Gates ADAPT; seed-commons & custodian-farmer network",
+    "catalyticCr": 6,
+    "mobilises": "Blends with OMM + FPO + scheme money already flowing to the highlands",
+    "commons": [
+     "Millet landraces & seed sovereignty",
+     "Springs",
+     "Podu land"
+    ]
+   },
+   {
+    "rank": 3,
+    "name": "Bhitarkanika-Mahanadi Mangrove & Fisher Shield",
+    "domain": "Coastal / blue carbon",
+    "landscape": "delta",
+    "geographies": [
+     "Kendrapara",
+     "Jagatsinghapur",
+     "Bhadrak"
+    ],
+    "unlock": "Protect coastal & wetland commons",
+    "instrument": "CSR + blue-carbon finance + community-managed fisheries + mangrove restoration",
+    "catalyticCr": 5,
+    "mobilises": "Unlocks carbon finance + cyclone-resilience CSR on a climate-frontline coast",
+    "commons": [
+     "Mangrove forest",
+     "Estuarine fisheries",
+     "Blue carbon"
+    ]
+   },
+   {
+    "rank": 4,
+    "name": "Chilika Lagoon Commons & Dolphin-Fisher Livelihoods",
+    "domain": "Wetland & fisheries",
+    "landscape": "chilika",
+    "geographies": [
+     "Puri",
+     "Ganjam",
+     "Khordha"
+    ],
+    "unlock": "Protect coastal & wetland commons",
+    "instrument": "CSR + Chilika Development Authority convergence + fisher cooperatives + ecotourism revenue-share",
+    "catalyticCr": 4,
+    "mobilises": "Aligns capital-region CSR with lagoon governance & fisher incomes",
+    "commons": [
+     "Brackish lagoon",
+     "Irrawaddy dolphin habitat",
+     "Migratory-bird wetlands"
+    ]
+   },
+   {
+    "rank": 5,
+    "name": "Similipal Elephant Corridor & Sal-Forest NTFP",
+    "domain": "Wildlife corridor & NTFP",
+    "landscape": "similipal",
+    "geographies": [
+     "Mayurbhanj",
+     "Kendujhar"
+    ],
+    "unlock": "Activate the anchor landscape + redistribute to tribal districts",
+    "instrument": "CSR + FRA/CFR titling + eco-development committees + NTFP value-addition (mahua, kendu, siali)",
+    "catalyticCr": 5,
+    "mobilises": "Anchors corridor protection + NTFP enterprise across the northern sal belt",
+    "commons": [
+     "Sal forest & biosphere core",
+     "Elephant corridor",
+     "NTFP commons"
+    ]
+   },
+   {
+    "rank": 6,
+    "name": "Western Odisha Water-Commons & Tank Revival (KBK)",
+    "domain": "Water & watershed",
+    "landscape": "western",
+    "geographies": [
+     "Balangir",
+     "Nuapada",
+     "Bargarh",
+     "Boudh",
+     "Sonepur"
+    ],
+    "unlock": "Activate the thin, money-poor districts",
+    "instrument": "Catalytic grant + MGNREGA convergence + watershed + spring-shed & tank restoration",
+    "catalyticCr": 6,
+    "mobilises": "Converges MGNREGA + watershed funds against distress migration",
+    "commons": [
+     "Tanks & traditional harvesting",
+     "Groundwater",
+     "Drought commons"
+    ]
+   },
+   {
+    "rank": 7,
+    "name": "Community Forest Rights (FRA/CFR) Acceleration Cell",
+    "domain": "Rights & governance of commons",
+    "landscape": "eghats",
+    "geographies": [
+     "Koraput",
+     "Rayagada",
+     "Kandhamal",
+     "Mayurbhanj",
+     "Nabarangpur",
+     "Malkangiri"
+    ],
+    "unlock": "Open the enabling layer for community control of forest commons",
+    "instrument": "Catalytic legal-tech + FRA/CFR titling drive + satellite monitoring + community forest MEL",
+    "catalyticCr": 4,
+    "mobilises": "Unlocks community governance over 1,000s of Cr of forest commons value; enabling layer for projects 2, 5, 6",
+    "commons": [
+     "CFR community-forest titles",
+     "NTFP tenure",
+     "Podu-land security"
+    ]
+   },
+   {
+    "rank": 8,
+    "name": "Odisha Nature-Commons Intelligence Layer",
+    "domain": "Open data & MEL",
+    "landscape": "all",
+    "geographies": [
+     "Statewide (all 6 landscapes)"
+    ],
+    "unlock": "Open district CSR/DMF/scheme + forest/commons data",
+    "instrument": "Fund an open, offline dashboard (this tool) + district CSR/DMF, forest cover, FRA & commons data as a public good",
+    "catalyticCr": 2,
+    "mobilises": "Raises allocative efficiency of ~₹1,575 Cr/yr CSR + ~₹27,000 Cr DMF by letting all funders target the weakest districts/pillars",
+    "commons": [
+     "Data as commons"
+    ]
+   },
+   {
+    "rank": 9,
+    "name": "Peri-Urban Nature & River Commons (Bhubaneswar-Cuttack-Puri)",
+    "domain": "Urban nature / blue-green",
+    "landscape": "chilika",
+    "geographies": [
+     "Khordha",
+     "Cuttack",
+     "Nayagarh"
+    ],
+    "unlock": "Fill the near-zero philanthropic presence on urbanisation (the Lagging pillar), with nature",
+    "instrument": "Crowd-in capital-region corporate CSR into urban wetlands, city forests and the Daya/Kathajodi river commons",
+    "catalyticCr": 7,
+    "mobilises": "Directs the capital region's ₹700+ Cr CSR toward nature-based urban infrastructure",
+    "commons": [
+     "Urban wetlands",
+     "River commons (Daya, Kathajodi)",
+     "City forests"
+    ]
+   },
+   {
+    "rank": 10,
+    "name": "Distributed Solar on Degraded Commons + FPO Cold-Chain",
+    "domain": "Clean energy & agri value",
+    "landscape": "all",
+    "geographies": [
+     "Highlands",
+     "Western tableland",
+     "Mining fringe"
+    ],
+    "unlock": "Blend agri productivity + convert idle/degraded commons to clean-energy value",
+    "instrument": "Agrivoltaics / community solar on wasteland & grazing commons + FPO cold-chain, DMF+CSR blend",
+    "catalyticCr": 6,
+    "mobilises": "Turns degraded commons into community-owned energy + farm-income assets",
+    "commons": [
+     "Wasteland & grazing commons",
+     "Agrivoltaic land-sharing"
+    ]
+   }
+  ]
+ },
  "districts": {
   "Anugul": {
    "partners": [
@@ -2040,6 +2428,23 @@
       "agencyType": "Company on its own"
      }
     ]
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 1.13,
+     "2021-22": 15.19,
+     "2022-23": 44.41,
+     "2023-24": 213.39,
+     "2024-25": 392.4
+    },
+    "total": 666.52
+   },
+   "catalytic": {
+    "landscape": "mining",
+    "landscapeName": "Central Mining & Brahmani Belt",
+    "tier": "convert",
+    "nature": 0.85,
+    "note": "Coal/aluminium; huge CSR surge (₹1→392 Cr) + ₹1,926 Cr DMF, 3 partners. Mine-land & Brahmani water restoration."
    },
    "anchor": {
     "present": false,
@@ -2242,6 +2647,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 10.06,
+     "2021-22": 3.69,
+     "2022-23": 7.74,
+     "2023-24": 15.21,
+     "2024-25": 17.74
+    },
+    "total": 54.43
+   },
+   "catalytic": {
+    "landscape": "western",
+    "landscapeName": "Western Tableland (KBK / Hirakud)",
+    "tier": "seed",
+    "nature": 0.8,
+    "note": "KBK, distress migration, 3 partners. Water commons + livelihoods."
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -2393,6 +2815,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.91,
+     "2021-22": 10.85,
+     "2022-23": 6.02,
+     "2023-24": 8.8,
+     "2024-25": 26.73
+    },
+    "total": 53.31
+   },
+   "catalytic": {
+    "landscape": "delta",
+    "landscapeName": "Mahanadi Delta & Mangrove Coast",
+    "tier": "protect",
+    "nature": 0.85,
+    "note": "Chandipur coast, 2 partners. Shore & fisheries commons."
    },
    "anchor": {
     "present": false,
@@ -2549,6 +2988,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 11.43,
+     "2022-23": 5.54,
+     "2023-24": 1.08,
+     "2024-25": 6.69
+    },
+    "total": 24.74
+   },
+   "catalytic": {
+    "landscape": "western",
+    "landscapeName": "Western Tableland (KBK / Hirakud)",
+    "tier": "seed",
+    "nature": 0.75,
+    "note": "Hirakud command; paddy monoculture, 2 partners. Diversify + water."
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -2663,6 +3119,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 8.4,
+     "2021-22": 3.07,
+     "2022-23": 7.77,
+     "2023-24": 12.35,
+     "2024-25": 16.4
+    },
+    "total": 47.98
+   },
+   "catalytic": {
+    "landscape": "delta",
+    "landscapeName": "Mahanadi Delta & Mangrove Coast",
+    "tier": "protect",
+    "nature": 0.9,
+    "note": "Estuarine coast, 2 partners. Mangrove + fisheries."
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -2739,6 +3212,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.25,
+     "2021-22": 0.38,
+     "2022-23": 0.31,
+     "2023-24": 1.05,
+     "2024-25": 0.2
+    },
+    "total": 2.19
+   },
+   "catalytic": {
+    "landscape": "western",
+    "landscapeName": "Western Tableland (KBK / Hirakud)",
+    "tier": "seed",
+    "nature": 0.8,
+    "note": "Near-zero on everything (₹2.2 Cr CSR, 1 partner). First-mover whitespace."
    },
    "anchor": {
     "present": false,
@@ -2911,6 +3401,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 5.67,
+     "2021-22": 42.73,
+     "2022-23": 37.23,
+     "2023-24": 41.38,
+     "2024-25": 56.02
+    },
+    "total": 183.03
+   },
+   "catalytic": {
+    "landscape": "delta",
+    "landscapeName": "Mahanadi Delta & Mangrove Coast",
+    "tier": "crowdin",
+    "nature": 0.6,
+    "note": "River-island city (Mahanadi/Kathajodi), 2 partners. River commons."
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -3006,6 +3513,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 7.14,
+     "2022-23": 1.42,
+     "2023-24": 0.38,
+     "2024-25": 1.11
+    },
+    "total": 10.05
+   },
+   "catalytic": {
+    "landscape": "mining",
+    "landscapeName": "Central Mining & Brahmani Belt",
+    "tier": "convert",
+    "nature": 0.75,
+    "note": "Forested, low money (5 partners). Bridge mining-belt restoration into the northern forest."
    },
    "anchor": {
     "present": false,
@@ -3129,6 +3653,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 3.37,
+     "2021-22": 9.0,
+     "2022-23": 9.22,
+     "2023-24": 8.73,
+     "2024-25": 30.33
+    },
+    "total": 60.65
+   },
+   "catalytic": {
+    "landscape": "western",
+    "landscapeName": "Western Tableland (KBK / Hirakud)",
+    "tier": "anchor",
+    "nature": 0.7,
+    "note": "Forest-farm central, 2 partners. Agrobiodiversity + elephant edges."
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -3234,6 +3775,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 7.76,
+     "2022-23": 1.15,
+     "2023-24": 0.29,
+     "2024-25": 5.27
+    },
+    "total": 14.47
+   },
+   "catalytic": {
+    "landscape": "eghats",
+    "landscapeName": "Eastern Ghats Adivasi Highlands",
+    "tier": "seed",
+    "nature": 0.9,
+    "note": "Eastern Ghats forest, 2 partners. NTFP + shifting-cultivation transition."
    },
    "anchor": {
     "present": false,
@@ -3486,6 +4044,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 13.23,
+     "2021-22": 11.65,
+     "2022-23": 6.03,
+     "2023-24": 5.27,
+     "2024-25": 28.22
+    },
+    "total": 64.41
+   },
+   "catalytic": {
+    "landscape": "chilika",
+    "landscapeName": "Chilika & South-Central Catchment",
+    "tier": "protect",
+    "nature": 0.85,
+    "note": "Chilika south + Rushikulya, 7 partners. Olive-ridley & lagoon."
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -3633,6 +4208,23 @@
       "agencyType": "Independently registered non-profit organisations"
      }
     ]
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 5.41,
+     "2021-22": 11.55,
+     "2022-23": 6.28,
+     "2023-24": 8.83,
+     "2024-25": 23.37
+    },
+    "total": 55.43
+   },
+   "catalytic": {
+    "landscape": "delta",
+    "landscapeName": "Mahanadi Delta & Mangrove Coast",
+    "tier": "protect",
+    "nature": 0.9,
+    "note": "Cyclone coast, mangrove fringe, 2 partners."
    },
    "anchor": {
     "present": false,
@@ -3783,6 +4375,23 @@
      }
     ]
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 6.81,
+     "2021-22": 11.3,
+     "2022-23": 30.07,
+     "2023-24": 37.81,
+     "2024-25": 60.45
+    },
+    "total": 146.44
+   },
+   "catalytic": {
+    "landscape": "delta",
+    "landscapeName": "Mahanadi Delta & Mangrove Coast",
+    "tier": "convert",
+    "nature": 0.75,
+    "note": "₹2,752 Cr DMF (chromite/steel) + ₹146 Cr CSR, 2 partners. Delta-edge water & land."
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -3915,6 +4524,23 @@
       "agencyType": "Independently registered non-profit organisations"
      }
     ]
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 6.82,
+     "2021-22": 22.13,
+     "2022-23": 223.41,
+     "2023-24": 303.11,
+     "2024-25": 97.1
+    },
+    "total": 652.57
+   },
+   "catalytic": {
+    "landscape": "mining",
+    "landscapeName": "Central Mining & Brahmani Belt",
+    "tier": "convert",
+    "nature": 0.7,
+    "note": "₹653 Cr CSR (2nd highest) + ₹466 Cr DMF, 2 partners. Coal-belt water & land commons."
    },
    "anchor": {
     "present": false,
@@ -4162,6 +4788,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 8.12,
+     "2021-22": 24.84,
+     "2022-23": 20.84,
+     "2023-24": 21.63,
+     "2024-25": 53.62
+    },
+    "total": 129.04
+   },
+   "catalytic": {
+    "landscape": "eghats",
+    "landscapeName": "Eastern Ghats Adivasi Highlands",
+    "tier": "seed",
+    "nature": 0.9,
+    "note": "10 partners; millets + forest-farm; KBK legacy."
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -4339,6 +4982,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.04,
+     "2021-22": 2.86,
+     "2022-23": 6.16,
+     "2023-24": 3.25,
+     "2024-25": 16.45
+    },
+    "total": 28.76
+   },
+   "catalytic": {
+    "landscape": "eghats",
+    "landscapeName": "Eastern Ghats Adivasi Highlands",
+    "tier": "seed",
+    "nature": 0.95,
+    "note": "Turmeric & forest commons, 8 partners. NTFP value + FRA."
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -4479,6 +5139,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.44,
+     "2021-22": 2.11,
+     "2022-23": 3.45,
+     "2023-24": 3.9,
+     "2024-25": 3.09
+    },
+    "total": 12.98
+   },
+   "catalytic": {
+    "landscape": "delta",
+    "landscapeName": "Mahanadi Delta & Mangrove Coast",
+    "tier": "protect",
+    "nature": 1.0,
+    "note": "Bhitarkanika mangroves, 3 partners. Blue carbon + fisher commons."
    },
    "anchor": {
     "present": false,
@@ -4708,6 +5385,23 @@
      }
     ]
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 5.8,
+     "2021-22": 21.19,
+     "2022-23": 54.51,
+     "2023-24": 90.55,
+     "2024-25": 186.39
+    },
+    "total": 358.44
+   },
+   "catalytic": {
+    "landscape": "mining",
+    "landscapeName": "Central Mining & Brahmani Belt",
+    "tier": "convert",
+    "nature": 0.9,
+    "note": "₹14,248 Cr DMF (state's largest) + ₹358 Cr CSR, 3 partners. Iron-ore overburden & sal-forest restoration."
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -4866,6 +5560,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 112.17,
+     "2021-22": 70.19,
+     "2022-23": 63.14,
+     "2023-24": 102.0,
+     "2024-25": 211.65
+    },
+    "total": 559.15
+   },
+   "catalytic": {
+    "landscape": "chilika",
+    "landscapeName": "Chilika & South-Central Catchment",
+    "tier": "crowdin",
+    "nature": 0.55,
+    "note": "Capital region, most partners (9) + ₹559 Cr CSR. Urban wetlands & city forests."
    },
    "anchor": {
     "present": true,
@@ -5087,6 +5798,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 15.52,
+     "2021-22": 17.56,
+     "2022-23": 24.77,
+     "2023-24": 33.0,
+     "2024-25": 59.99
+    },
+    "total": 150.83
+   },
+   "catalytic": {
+    "landscape": "eghats",
+    "landscapeName": "Eastern Ghats Adivasi Highlands",
+    "tier": "seed",
+    "nature": 1.0,
+    "note": "Jeypore tract agrobiodiversity, 11 partners. Millet & seed commons core."
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -5205,6 +5933,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 0.23,
+     "2022-23": 0.12,
+     "2023-24": 1.3,
+     "2024-25": 9.57
+    },
+    "total": 11.22
+   },
+   "catalytic": {
+    "landscape": "eghats",
+    "landscapeName": "Eastern Ghats Adivasi Highlands",
+    "tier": "seed",
+    "nature": 0.9,
+    "note": "Remote, forest & water commons, 3 partners. Springs + NTFP."
    },
    "anchor": {
     "present": true,
@@ -5512,6 +6257,23 @@
      }
     ]
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 1.27,
+     "2021-22": 5.06,
+     "2022-23": 8.55,
+     "2023-24": 8.73,
+     "2024-25": 16.75
+    },
+    "total": 40.35
+   },
+   "catalytic": {
+    "landscape": "similipal",
+    "landscapeName": "Similipal & Mayurbhanj",
+    "tier": "anchor",
+    "nature": 1.0,
+    "note": "Similipal biosphere, 6 partners. NTFP + corridor + CFR anchor."
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -5657,6 +6419,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.47,
+     "2021-22": 2.52,
+     "2022-23": 1.71,
+     "2023-24": 2.09,
+     "2024-25": 8.59
+    },
+    "total": 15.37
+   },
+   "catalytic": {
+    "landscape": "eghats",
+    "landscapeName": "Eastern Ghats Adivasi Highlands",
+    "tier": "seed",
+    "nature": 0.9,
+    "note": "Aspirational, thin money, 4 partners. Millets & tanks."
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -5801,6 +6580,23 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 1.69,
+     "2021-22": 2.26,
+     "2022-23": 0.62,
+     "2023-24": 0.55,
+     "2024-25": 0.71
+    },
+    "total": 5.84
+   },
+   "catalytic": {
+    "landscape": "chilika",
+    "landscapeName": "Chilika & South-Central Catchment",
+    "tier": "crowdin",
+    "nature": 0.7,
+    "note": "Forested, elephant, low money (4 partners). Community-forest + river."
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -5910,6 +6706,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.44,
+     "2021-22": 3.32,
+     "2022-23": 0.6,
+     "2023-24": 0.51,
+     "2024-25": 2.89
+    },
+    "total": 7.76
+   },
+   "catalytic": {
+    "landscape": "western",
+    "landscapeName": "Western Tableland (KBK / Hirakud)",
+    "tier": "seed",
+    "nature": 0.85,
+    "note": "Aspirational, near-zero money, 4 partners. Tanks + forest-farm."
    },
    "anchor": {
     "present": false,
@@ -6065,6 +6878,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 10.54,
+     "2021-22": 8.4,
+     "2022-23": 12.43,
+     "2023-24": 10.91,
+     "2024-25": 61.59
+    },
+    "total": 103.87
+   },
+   "catalytic": {
+    "landscape": "chilika",
+    "landscapeName": "Chilika & South-Central Catchment",
+    "tier": "protect",
+    "nature": 0.85,
+    "note": "Chilika edge + coast, 7 partners. Lagoon fisheries + dunes."
    },
    "anchor": {
     "present": true,
@@ -6254,6 +7084,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 5.39,
+     "2021-22": 11.86,
+     "2022-23": 9.5,
+     "2023-24": 14.03,
+     "2024-25": 57.62
+    },
+    "total": 98.41
+   },
+   "catalytic": {
+    "landscape": "eghats",
+    "landscapeName": "Eastern Ghats Adivasi Highlands",
+    "tier": "seed",
+    "nature": 0.95,
+    "note": "Niyamgiri/Dongria commons, 10 partners. Springs, NTFP, land rights."
    },
    "anchor": {
     "present": true,
@@ -6447,6 +7294,23 @@
      }
     ]
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.39,
+     "2021-22": 14.52,
+     "2022-23": 33.08,
+     "2023-24": 8.77,
+     "2024-25": 38.89
+    },
+    "total": 95.64
+   },
+   "catalytic": {
+    "landscape": "western",
+    "landscapeName": "Western Tableland (KBK / Hirakud)",
+    "tier": "anchor",
+    "nature": 0.7,
+    "note": "Hirakud + forest, 2 partners. Reservoir fisheries + forest mosaic."
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -6551,6 +7415,23 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 0.19,
+     "2022-23": 0.02,
+     "2023-24": 0.75,
+     "2024-25": 0.44
+    },
+    "total": 1.4
+   },
+   "catalytic": {
+    "landscape": "western",
+    "landscapeName": "Western Tableland (KBK / Hirakud)",
+    "tier": "seed",
+    "nature": 0.8,
+    "note": "Lowest CSR in state (₹1.4 Cr), 1 partner. First-mover whitespace."
    },
    "anchor": {
     "present": false,
@@ -6925,6 +7806,23 @@
       "agencyType": "Company on its own"
      }
     ]
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 8.42,
+     "2021-22": 21.06,
+     "2022-23": 113.72,
+     "2023-24": 37.13,
+     "2024-25": 84.41
+    },
+    "total": 264.74
+   },
+   "catalytic": {
+    "landscape": "mining",
+    "landscapeName": "Central Mining & Brahmani Belt",
+    "tier": "convert",
+    "nature": 0.85,
+    "note": "₹9,209 Cr DMF + ₹265 Cr CSR, 6 partners. Mine-land + tribal forest commons."
    },
    "anchor": {
     "present": false,

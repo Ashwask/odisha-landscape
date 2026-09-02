@@ -281,6 +281,52 @@ def build():
         "note": csr_raw.get("meta", {}).get("note", ""),
     }
 
+    # -- District-level CSR spend (₹ Cr, FY21->FY25) from parse_csr_district.py --
+    # A DIFFERENT source from GO CARE (csrState) that does NOT reconcile with it, so it
+    # rides as its own layer: per-district csrSpend {years, total} + a top-level
+    # csrDistrict summary the front-end reads for the "CSR spend ₹" lens and its note.
+    csr_dist = json.load(open("../data/odisha_csr_district.json"))
+    for canon, entry in csr_dist["districts"].items():
+        if canon not in districts:
+            print(f"WARNING: unmapped CSR-spend district {canon!r}")
+            continue
+        years = {y: entry[y] for y in csr_dist["years"]}
+        districts[canon]["csrSpend"] = {"years": years, "total": entry["total"]}
+    for d in districts.values():
+        d.setdefault("csrSpend", {"years": {}, "total": 0.0})
+    csr_district = {
+        "years": csr_dist["years"],
+        "districtTotal": csr_dist["districtTotal"],
+        "nec": csr_dist.get("nec"),
+        "grandTotal": csr_dist.get("grandTotal"),
+        "meta": csr_dist.get("meta", {}),
+    }
+
+    # -- Catalytic Unlock layer (editorial nature/commons landscape strategy) --
+    # Groups districts into nature/commons landscapes + a catalytic tier; the leverage
+    # read itself is computed front-end from the real DMF/CSR/partner fields (see build.py).
+    # Everything here is indicative strategy built ON TOP of the real data, not fetched.
+    cat = json.load(open("../data/odisha_catalytic.json"))
+    land_of = {}
+    for ls in cat["landscapes"]:
+        for d in ls["districts"]:
+            land_of[d] = {"key": ls["key"], "name": ls["name"], "color": ls["color"]}
+    for d, meta in cat["districtMeta"].items():
+        if d not in districts:
+            print(f"WARNING: unmapped catalytic district {d!r}")
+            continue
+        ls = land_of.get(d, {})
+        districts[d]["catalytic"] = {
+            "landscape": ls.get("key", ""), "landscapeName": ls.get("name", ""),
+            "tier": meta["tier"], "nature": meta["nature"], "note": meta.get("note", ""),
+        }
+    for d in districts.values():
+        d.setdefault("catalytic", {"landscape": "", "landscapeName": "", "tier": "", "nature": 0.0, "note": ""})
+    catalytic = {
+        "meta": cat.get("meta", {}), "tiers": cat.get("tiers", {}),
+        "landscapes": cat.get("landscapes", []), "projects": cat.get("projects", []),
+    }
+
     # -- Ecosystem layers: anchors (TRI-equivalent), funders, schemes, indicative orgs --
     layers = json.load(open("../data/odisha_ecosystem_layers.json"))
     anchor_orgs = layers["anchors"]["orgs"]
@@ -317,6 +363,8 @@ def build():
         "schemes": layers.get("schemes", {}),
         "vision2036": layers.get("vision2036", {}),
         "csrState": csr_state,
+        "csrDistrict": csr_district,
+        "catalytic": catalytic,
         "districts": districts,
     }
     json.dump(model, open("../model.json", "w"), ensure_ascii=False, indent=1)
@@ -334,7 +382,9 @@ def build():
           f"anchor ({primary_anchor}) in {anchor_n} districts; "
           f"{len(indicative)} indicative orgs; {len(model['funders'])} funders; "
           f"{len(model['schemes'].get('items', []))} schemes; "
-          f"CSR state total ~₹{csr_state['totalCr']} Cr, {csr_state['companies']} companies")
+          f"CSR state total ~₹{csr_state['totalCr']} Cr, {csr_state['companies']} companies; "
+          f"district CSR spend ~₹{csr_district['districtTotal']} Cr across 30 districts "
+          f"(+₹{(csr_district['nec'] or {}).get('total', 0)} Cr untagged), FY21->FY25")
 
 
 if __name__ == "__main__":
