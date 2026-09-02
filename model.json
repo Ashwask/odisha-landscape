@@ -1877,6 +1877,33 @@
   "source": "csr.odisha.gov.in (GO CARE, Govt of Odisha CSR portal; MCA-fed)",
   "note": "Statewide totals + sector counts + company (funder) list + geocoded flagship projects are openly served. District-wise TOTAL spend is login-gated on GO CARE and CAPTCHA-gated on csr.gov.in, so it is NOT included. Amounts in Rupees Lakh (amountCr = /100)."
  },
+ "csrDistrict": {
+  "years": [
+   "2020-21",
+   "2021-22",
+   "2022-23",
+   "2023-24",
+   "2024-25"
+  ],
+  "districtTotal": 3920.02,
+  "nec": {
+   "years": {
+    "2020-21": 345.38,
+    "2021-22": 292.75,
+    "2022-23": 255.02,
+    "2023-24": 407.51,
+    "2024-25": 0.32
+   },
+   "total": 1300.98
+  },
+  "grandTotal": 5221.01,
+  "meta": {
+   "source": "csr.gov.in district-wise CSR export (Odisha_DistrictwiseCSR.xlsx)",
+   "unit": "INR crore",
+   "span": "FY2020-21 to FY2024-25",
+   "note": "District-level CSR spend. DIFFERENT source/methodology from the GO CARE statewide series (csrState); the two do not reconcile (this series runs ~1.5-3x higher in later years). Kept as its own layer, not merged into the GO CARE trend."
+  }
+ },
  "districts": {
   "Anugul": {
    "partners": [
@@ -2040,6 +2067,16 @@
       "agencyType": "Company on its own"
      }
     ]
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 1.13,
+     "2021-22": 15.19,
+     "2022-23": 44.41,
+     "2023-24": 213.39,
+     "2024-25": 392.4
+    },
+    "total": 666.52
    },
    "anchor": {
     "present": false,
@@ -2242,6 +2279,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 10.06,
+     "2021-22": 3.69,
+     "2022-23": 7.74,
+     "2023-24": 15.21,
+     "2024-25": 17.74
+    },
+    "total": 54.43
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -2393,6 +2440,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.91,
+     "2021-22": 10.85,
+     "2022-23": 6.02,
+     "2023-24": 8.8,
+     "2024-25": 26.73
+    },
+    "total": 53.31
    },
    "anchor": {
     "present": false,
@@ -2549,6 +2606,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 11.43,
+     "2022-23": 5.54,
+     "2023-24": 1.08,
+     "2024-25": 6.69
+    },
+    "total": 24.74
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -2663,6 +2730,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 8.4,
+     "2021-22": 3.07,
+     "2022-23": 7.77,
+     "2023-24": 12.35,
+     "2024-25": 16.4
+    },
+    "total": 47.98
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -2739,6 +2816,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.25,
+     "2021-22": 0.38,
+     "2022-23": 0.31,
+     "2023-24": 1.05,
+     "2024-25": 0.2
+    },
+    "total": 2.19
    },
    "anchor": {
     "present": false,
@@ -2911,6 +2998,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 5.67,
+     "2021-22": 42.73,
+     "2022-23": 37.23,
+     "2023-24": 41.38,
+     "2024-25": 56.02
+    },
+    "total": 183.03
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -3006,6 +3103,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 7.14,
+     "2022-23": 1.42,
+     "2023-24": 0.38,
+     "2024-25": 1.11
+    },
+    "total": 10.05
    },
    "anchor": {
     "present": false,
@@ -3129,6 +3236,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 3.37,
+     "2021-22": 9.0,
+     "2022-23": 9.22,
+     "2023-24": 8.73,
+     "2024-25": 30.33
+    },
+    "total": 60.65
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -3234,6 +3351,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 7.76,
+     "2022-23": 1.15,
+     "2023-24": 0.29,
+     "2024-25": 5.27
+    },
+    "total": 14.47
    },
    "anchor": {
     "present": false,
@@ -3486,6 +3613,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 13.23,
+     "2021-22": 11.65,
+     "2022-23": 6.03,
+     "2023-24": 5.27,
+     "2024-25": 28.22
+    },
+    "total": 64.41
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -3633,6 +3770,16 @@
       "agencyType": "Independently registered non-profit organisations"
      }
     ]
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 5.41,
+     "2021-22": 11.55,
+     "2022-23": 6.28,
+     "2023-24": 8.83,
+     "2024-25": 23.37
+    },
+    "total": 55.43
    },
    "anchor": {
     "present": false,
@@ -3783,6 +3930,16 @@
      }
     ]
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 6.81,
+     "2021-22": 11.3,
+     "2022-23": 30.07,
+     "2023-24": 37.81,
+     "2024-25": 60.45
+    },
+    "total": 146.44
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -3915,6 +4072,16 @@
       "agencyType": "Independently registered non-profit organisations"
      }
     ]
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 6.82,
+     "2021-22": 22.13,
+     "2022-23": 223.41,
+     "2023-24": 303.11,
+     "2024-25": 97.1
+    },
+    "total": 652.57
    },
    "anchor": {
     "present": false,
@@ -4162,6 +4329,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 8.12,
+     "2021-22": 24.84,
+     "2022-23": 20.84,
+     "2023-24": 21.63,
+     "2024-25": 53.62
+    },
+    "total": 129.04
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -4339,6 +4516,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.04,
+     "2021-22": 2.86,
+     "2022-23": 6.16,
+     "2023-24": 3.25,
+     "2024-25": 16.45
+    },
+    "total": 28.76
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -4479,6 +4666,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.44,
+     "2021-22": 2.11,
+     "2022-23": 3.45,
+     "2023-24": 3.9,
+     "2024-25": 3.09
+    },
+    "total": 12.98
    },
    "anchor": {
     "present": false,
@@ -4708,6 +4905,16 @@
      }
     ]
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 5.8,
+     "2021-22": 21.19,
+     "2022-23": 54.51,
+     "2023-24": 90.55,
+     "2024-25": 186.39
+    },
+    "total": 358.44
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -4866,6 +5073,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 112.17,
+     "2021-22": 70.19,
+     "2022-23": 63.14,
+     "2023-24": 102.0,
+     "2024-25": 211.65
+    },
+    "total": 559.15
    },
    "anchor": {
     "present": true,
@@ -5087,6 +5304,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 15.52,
+     "2021-22": 17.56,
+     "2022-23": 24.77,
+     "2023-24": 33.0,
+     "2024-25": 59.99
+    },
+    "total": 150.83
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -5205,6 +5432,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 0.23,
+     "2022-23": 0.12,
+     "2023-24": 1.3,
+     "2024-25": 9.57
+    },
+    "total": 11.22
    },
    "anchor": {
     "present": true,
@@ -5512,6 +5749,16 @@
      }
     ]
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 1.27,
+     "2021-22": 5.06,
+     "2022-23": 8.55,
+     "2023-24": 8.73,
+     "2024-25": 16.75
+    },
+    "total": 40.35
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -5657,6 +5904,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.47,
+     "2021-22": 2.52,
+     "2022-23": 1.71,
+     "2023-24": 2.09,
+     "2024-25": 8.59
+    },
+    "total": 15.37
+   },
    "anchor": {
     "present": true,
     "orgs": [
@@ -5801,6 +6058,16 @@
     "amountLakh": 0.0,
     "projects": []
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 1.69,
+     "2021-22": 2.26,
+     "2022-23": 0.62,
+     "2023-24": 0.55,
+     "2024-25": 0.71
+    },
+    "total": 5.84
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -5910,6 +6177,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.44,
+     "2021-22": 3.32,
+     "2022-23": 0.6,
+     "2023-24": 0.51,
+     "2024-25": 2.89
+    },
+    "total": 7.76
    },
    "anchor": {
     "present": false,
@@ -6065,6 +6342,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 10.54,
+     "2021-22": 8.4,
+     "2022-23": 12.43,
+     "2023-24": 10.91,
+     "2024-25": 61.59
+    },
+    "total": 103.87
    },
    "anchor": {
     "present": true,
@@ -6254,6 +6541,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 5.39,
+     "2021-22": 11.86,
+     "2022-23": 9.5,
+     "2023-24": 14.03,
+     "2024-25": 57.62
+    },
+    "total": 98.41
    },
    "anchor": {
     "present": true,
@@ -6447,6 +6744,16 @@
      }
     ]
    },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.39,
+     "2021-22": 14.52,
+     "2022-23": 33.08,
+     "2023-24": 8.77,
+     "2024-25": 38.89
+    },
+    "total": 95.64
+   },
    "anchor": {
     "present": false,
     "orgs": []
@@ -6551,6 +6858,16 @@
     "count": 0,
     "amountLakh": 0.0,
     "projects": []
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 0.0,
+     "2021-22": 0.19,
+     "2022-23": 0.02,
+     "2023-24": 0.75,
+     "2024-25": 0.44
+    },
+    "total": 1.4
    },
    "anchor": {
     "present": false,
@@ -6925,6 +7242,16 @@
       "agencyType": "Company on its own"
      }
     ]
+   },
+   "csrSpend": {
+    "years": {
+     "2020-21": 8.42,
+     "2021-22": 21.06,
+     "2022-23": 113.72,
+     "2023-24": 37.13,
+     "2024-25": 84.41
+    },
+    "total": 264.74
    },
    "anchor": {
     "present": false,

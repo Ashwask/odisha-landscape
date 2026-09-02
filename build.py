@@ -247,7 +247,7 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 
 <div class="section-title collapser" data-wrap="csrwrap">CSR &amp; funders <span class="caret">▾</span></div>
 <div id="csrwrap">
-<p class="section-sub">Who funds development work in Odisha. <b>Statewide CSR</b> and the <b>funder universe</b> come from Odisha's GO CARE portal (MCA-fed) — <b>district-total CSR is login/captcha-gated, so there is no CSR choropleth</b>; the "CSR flagship ✳" map lens shows only the portal's geocoded flagship projects (a subset, not total spend). The Funders table links each funder to the org(s) it backs in Odisha where public; amounts are org-wide unless noted, and rows carry a confidence flag.</p>
+<p class="section-sub">Who funds development work in Odisha. <b>Statewide CSR</b> and the <b>funder universe</b> come from Odisha's GO CARE portal (MCA-fed). District-level CSR spend now rides as its own map lens, <b>"CSR spend ₹"</b>, sourced from a csr.gov.in district export (₹ Cr, FY21 to FY25); it is a <b>different source that does not reconcile with the GO CARE trend</b>, so the two are never merged (see the reconciliation note under Sources). The older "CSR flagship ✳" lens still shows the portal's geocoded flagship projects (a subset, count not spend). The Funders table links each funder to the org(s) it backs in Odisha where public; amounts are org-wide unless noted, and rows carry a confidence flag.</p>
 <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">
  <div class="card"><h2>CSR filed in Odisha — statewide trend &amp; sectors (GO CARE / MCA)</h2><div id="csrstate"></div></div>
  <div class="card"><h2>Funders &amp; philanthropies → who they back in Odisha</h2><div class="tbl" id="funders"></div></div>
@@ -279,7 +279,7 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 <div id="srcwrap" class="collapsed">
 <p class="section-sub">Everything above is traceable. See the repo README for the full provenance note per field.</p>
 <div class="card cardpad srcs">
- <div class="warnbox"><b>District-total CSR is still gated.</b> The national CSR portal (csr.gov.in) gates every export behind a CAPTCHA, and Odisha's GO CARE district page needs a login (HTTP 401). So there is <b>no district CSR choropleth</b>. What <i>is</i> open and shown here: statewide CSR-by-year, sector mix, the 300-company funder universe, and the portal's geocoded flagship projects (the "CSR flagship ✳" lens) — a subset, not total spend.</div>
+ <div class="warnbox"><b>Two CSR sources that do not reconcile.</b> The <b>"CSR spend ₹"</b> lens uses a district-wise csr.gov.in export (<code>Odisha_DistrictwiseCSR.xlsx</code>): ₹3,920 Cr across the 30 districts over FY21 to FY25, plus ₹1,301 Cr filed against no district ("NEC / Not Mentioned", ~25%), ₹5,221 Cr in all. The <b>GO CARE</b> statewide series shown in the trend card is a <i>different</i> source (Odisha's own MCA-fed portal) and runs much flatter, roughly ₹400 to 600 Cr/yr, so the two series are <b>~1.5 to 3× apart in the later years and are never merged</b>. Treat the district lens as one funder's-eye estimate of where CSR lands, not a reconciled total. Odisha's GO CARE <i>district</i> page itself is still login-gated (HTTP 401); the flagship "CSR flagship ✳" lens remains a geocoded project subset (count, not spend).</div>
  <div class="srcgrid">
   <div><div class="srch">Boundaries</div>
    <ul><li><a href="https://bharatlas.com" target="_blank" rel="noopener">Bharatlas</a> — district boundaries, LGD 2024 (CC0-1.0 / CC-BY-4.0)</li></ul></div>
@@ -292,7 +292,8 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
   <div><div class="srch">Aspirational districts</div>
    <ul><li><a href="https://www.niti.gov.in/" target="_blank" rel="noopener">NITI Aayog</a> — Aspirational Districts Programme, official list</li></ul></div>
   <div><div class="srch">CSR &amp; funders</div>
-   <ul><li><a href="https://csr.odisha.gov.in/" target="_blank" rel="noopener">GO CARE — Odisha CSR portal</a> (MCA-fed) — statewide CSR-by-year, sectors, 300 companies, flagship projects · funder→org links from org sites &amp; CSR filings (see the Funders table)</li></ul></div>
+   <ul><li><a href="https://csr.odisha.gov.in/" target="_blank" rel="noopener">GO CARE — Odisha CSR portal</a> (MCA-fed) — statewide CSR-by-year, sectors, 300 companies, flagship projects · funder→org links from org sites &amp; CSR filings (see the Funders table)</li>
+   <li><a href="https://www.csr.gov.in/" target="_blank" rel="noopener">csr.gov.in</a>: district-wise CSR spend, FY21 to FY25 (<code>Odisha_DistrictwiseCSR.xlsx</code> in the repo), drives the "CSR spend ₹" lens · <b>separate source, does not reconcile with GO CARE</b> (see note above)</li></ul></div>
   <div><div class="srch">Government schemes</div>
    <ul><li><a href="https://finance.odisha.gov.in/" target="_blank" rel="noopener">Odisha Finance Dept</a> — Budget 2025-26 (People Budget / Highlights) &amp; press</li></ul></div>
   <div><div class="srch">Anchor / indicative orgs</div>
@@ -343,6 +344,13 @@ const DMF_TOTAL={}; CANON.forEach(d=>{DMF_TOTAL[d]=YEARS.reduce((s,y)=>s+(D[d].d
 const maxDMF=Math.max(1,...Object.values(DMF_TOTAL));
 const stateDMF=Object.values(DMF_TOTAL).reduce((a,b)=>a+b,0);
 const fmtDmf=v=>'₹'+v.toLocaleString('en-IN',{maximumFractionDigits:0})+' Cr'; // values already in ₹ Cr
+
+/* ---------- District CSR spend (₹ Cr, FY21->FY25; csr.gov.in, own layer) ---------- */
+const CSRD=MODEL.csrDistrict||{years:[],districtTotal:0,nec:null,grandTotal:0,meta:{}};
+const CSR_YEARS=CSRD.years||[];
+const csrSpendN=d=>((D[d].csrSpend||{}).total)||0;
+const maxCSRS=Math.max(1,...CANON.map(csrSpendN));
+const fmtCr=v=>'₹'+(+v).toLocaleString('en-IN',{maximumFractionDigits:v>=100?0:1})+' Cr';
 
 /* ---------- theme frequency (for matrix shading + dominant) ---------- */
 const themeFreq={}; THEMES.forEach(t=>themeFreq[t]=0);
@@ -419,6 +427,8 @@ const lenses={
    legend:()=>gradLegendC('DMF collected, FY16→FY26 (₹ Cr)',['#e7dcf0','#c9b0e0','#a97fce','#8a4fbf','#6b2fa0'],'0 → '+fmtDmf(Math.round(maxDMF)))},
  csr:{label:'CSR flagship ✳',fill:d=>{const n=csrN(d);if(!n)return '#f1f5fa';const p=['#fbeee6','#f4c9a8','#e89b63','#d1702f','#a8500f'];return p[Math.min(p.length-1,Math.ceil(n/Math.max(maxCSR,1)*(p.length-1)))];},
    legend:()=>gradLegendC('Mapped flagship CSR projects (GO CARE) — count, not total spend',['#f1f5fa','#f4c9a8','#e89b63','#d1702f','#a8500f'],'0 → '+maxCSR)},
+ csrspend:{label:'CSR spend ₹',fill:d=>{const v=csrSpendN(d);if(!v)return '#f1f5fa';const p=['#fbeee6','#f4c9a8','#e89b63','#d1702f','#a8500f'];return p[Math.min(p.length-1,Math.ceil(v/Math.max(maxCSRS,1)*(p.length-1)))];},
+   legend:()=>gradLegendC('District CSR spend, FY21 to FY25 (₹ Cr, csr.gov.in): actual ₹, not GO CARE',['#f1f5fa','#f4c9a8','#e89b63','#d1702f','#a8500f'],'0 → '+fmtCr(maxCSRS))},
  anchor:{label:'Anchor org ✳',fill:d=>{const a=D[d].anchor||{};return a.present?'#0e8074':((a.orgs&&a.orgs.length)?'#a6ddc4':'#f1f5fa');},
    legend:()=>anchorLegend()}
 };
@@ -571,6 +581,16 @@ function selectDist(name){selD=name;
   cf.projects.forEach(pr=>{h+='<li><b>'+pr.company+'</b>'+(pr.amountLakh?' <span class="mini">₹'+pr.amountLakh+' L</span>':'')+'<br><span class="mini">'+pr.project+(pr.location?' · '+pr.location:'')+'</span></li>';});
   h+='</ul></details></div>';
  }
+ // District CSR spend (₹ Cr, csr.gov.in): its own layer, distinct from GO CARE flagship
+ const cs=v.csrSpend||{years:{},total:0};
+ if(cs.total){
+  const cvals=CSR_YEARS.map(y=>cs.years[y]||0); const cmx=Math.max(...cvals,0.001);
+  h+='<div class="sec"><div class="t">CSR spend · FY21→FY25 (₹ Cr)</div>'
+   +'<div class="blk"><b>'+fmtCr(cs.total)+'</b> total <span class="mini">(csr.gov.in district export, a different source from the GO CARE trend; the two don’t reconcile)</span></div>'
+   +'<div class="spark" style="margin-top:6px">';
+  cvals.forEach((val,i)=>{h+='<div class="bar" style="height:'+(val/cmx*100)+'%" title="'+CSR_YEARS[i]+': '+fmtCr(val)+'"></div>';});
+  h+='</div><div class="sparkx"><span>'+CSR_YEARS[0].slice(2,4)+'</span><span>'+CSR_YEARS[CSR_YEARS.length-1].slice(2,4)+'</span></div></div>';
+ }
  // DMF trend sparkline (year-wise, real data)
  const yr=[...YEARS].reverse(); const vals=yr.map(y=>v.dmf[y]||0); const mx=Math.max(...vals,1);
  h+='<div class="sec"><div class="t">DMF collection trend (₹ Cr / FY)</div><div class="spark">';
@@ -628,10 +648,10 @@ let disSort={k:'partners',asc:false};
 function buildDisTbl(){
  const box=document.getElementById('distbl');
  let rows=CANON.map(d=>({d,partners:effP(d),themes:effT(d),
-   asp:D[d].aspirational?1:0,anchor:(D[d].anchor||{}).present?1:0,csr:csrN(d),
+   asp:D[d].aspirational?1:0,anchor:(D[d].anchor||{}).present?1:0,csr:csrN(d),csrcr:csrSpendN(d),
    shg:shgN(d),fpo:fpoN(d),plist:effPList(d)}));
  rows.sort((a,b)=>{let x=a[disSort.k],y=b[disSort.k];if(typeof x==='string')return disSort.asc?x.localeCompare(y):y.localeCompare(x);return disSort.asc?x-y:y-x;});
- const cols=[['d','District'],['partners','Partners'],['themes','Themes'],['asp','Asp.'],['anchor','Anchor'],['csr','CSR ✳'],['shg','SHGs'],['fpo','FPOs']];
+ const cols=[['d','District'],['partners','Partners'],['themes','Themes'],['asp','Asp.'],['anchor','Anchor'],['csr','CSR ✳'],['csrcr','CSR ₹Cr'],['shg','SHGs'],['fpo','FPOs']];
  let h='<table><thead><tr>';cols.forEach(c=>h+='<th data-k="'+c[0]+'"'+(c[0]!=='d'?' class="num"':'')+'>'+c[1]+(disSort.k===c[0]?(disSort.asc?' ▲':' ▼'):'')+'</th>');h+='<th>Who</th></tr></thead><tbody>';
  rows.forEach(r=>{const bg=r.partners===0?'background:#fdf3ee':'';
    h+='<tr style="'+bg+'"><td><span class="dot" style="background:'+seqColor(r.partners,maxP)+'"></span><b class="pill" data-d="'+r.d+'">'+r.d+'</b></td>'
@@ -639,6 +659,7 @@ function buildDisTbl(){
     +'<td class="num">'+(r.asp?'<span style="color:#c2410c">●</span>':'–')+'</td>'
     +'<td class="num">'+(r.anchor?'<span style="color:#0e8074" title="CYSD present">●</span>':'–')+'</td>'
     +'<td class="num">'+(r.csr||'–')+'</td>'
+    +'<td class="num">'+(r.csrcr?r.csrcr.toLocaleString('en-IN',{maximumFractionDigits:0}):'–')+'</td>'
     +'<td class="num">'+r.shg.toLocaleString()+'</td>'
     +'<td class="num">'+r.fpo.toLocaleString()+'</td>'
     +'<td class="mini">'+(r.plist.join(', ')||'—')+'</td></tr>';});

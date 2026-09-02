@@ -31,12 +31,13 @@ not independently field-verified — see the honesty notes below.
   current drift), headline target-vs-today, geographic priority gaps, and an **unlocks**
   table (lever → what it unblocks → who holds the key).
 
-## Map lenses (11)
+## Map lenses (12)
 
 Place health · Partner density · Theme breadth · Dominant theme · Coverage gap ·
 Block presence (beta) · SHG density · FPO density · DMF mining fund ·
-**CSR flagship ✳** · **Anchor org ✳**. Click a district for partners, themes, block
-coverage, anchor orgs, CSR flagship projects, SHG/FPO and a DMF trend; hover for a readout.
+**CSR flagship ✳** · **CSR spend ₹** · **Anchor org ✳**. Click a district for partners,
+themes, block coverage, anchor orgs, CSR flagship projects, CSR spend, SHG/FPO and a DMF
+trend; hover for a readout.
 Deep-links: `#vision`, `#align`, `#ext` (indicative scoring on), `#lens=<key>`.
 
 ## What's in `model.json`
@@ -53,21 +54,32 @@ Deep-links: `#vision`, `#align`, `#ext` (indicative scoring on), `#lens=<key>`.
 | `partners` / `blockcov` | ⚠️ Research pass — 46 orgs, all 30 districts; 49 blocks / 14 districts | See "Partner research pass" |
 | `anchor` (multi-district anchor presence) | ⚠️ Sourced leads | CYSD's named field-office districts paint the anchor layer; Gram Vikas / Harsha Trust / Niyatee listed without per-district paint |
 | `csrFlagship` (per-district flagship CSR projects) | ⚠️ Subset, not total | GO CARE portal geocoded projects (company → amount → sector) |
-| top-level `csrState`, `funders`, `schemes`, `indicative`, `vision2036` | ⚠️ Sourced | see below |
+| `csrSpend` (per-district CSR spend, FY21→FY25) | ⚠️ Separate source, doesn't reconcile w/ `csrState` | csr.gov.in district export (`Odisha_DistrictwiseCSR.xlsx`) → "CSR spend ₹" lens |
+| top-level `csrState`, `csrDistrict`, `funders`, `schemes`, `indicative`, `vision2036` | ⚠️ Sourced | see below |
 
 ## CSR & funders — what's open, what's gated
 
-**District-total CSR spend is not openly available.** The national MCA portal
-([csr.gov.in](https://www.csr.gov.in)) gates every export behind a CAPTCHA, and Odisha's
-own [GO CARE portal](https://csr.odisha.gov.in)'s district page requires a login (HTTP
-401). So **there is no CSR choropleth**. What `scripts/fetch_csr.py` *does* pull from GO
-CARE's open endpoints (it is MCA-fed) and what the dashboard shows:
+There are **two CSR sources here and they do not reconcile**, so they ride as separate
+layers and are never merged:
 
-- **Statewide CSR by year** (FY2014-15 → FY2026-27) — ~₹5,333 Cr cumulative — as a trend.
-- **Sector mix** (project counts across 13 CSR sectors).
-- The **300-company funder universe** filing CSR in Odisha.
-- **Geocoded flagship projects** (company → district → amount → sector), shown in district
-  detail and the "CSR flagship ✳" lens — a **curated subset, not total spend**.
+1. **GO CARE (statewide, `csrState`).** `scripts/fetch_csr.py` pulls Odisha's own MCA-fed
+   [GO CARE portal](https://csr.odisha.gov.in) open endpoints:
+   - **Statewide CSR by year** (FY2014-15 → FY2026-27), ~₹5,333 Cr cumulative, as a trend.
+   - **Sector mix** (project counts across 13 CSR sectors).
+   - The **300-company funder universe** filing CSR in Odisha.
+   - **Geocoded flagship projects** (company → district → amount → sector), shown in district
+     detail and the "CSR flagship ✳" lens: a **curated subset, not total spend**.
+   GO CARE's *district* page still requires a login (HTTP 401).
+
+2. **csr.gov.in district export (`csrDistrict` / `csrSpend`).** A district-wise CSR-spend
+   export (`Odisha_DistrictwiseCSR.xlsx` in the repo root, parsed by
+   `scripts/parse_csr_district.py`) drives the **"CSR spend ₹" lens** and per-district CSR
+   figures: **₹3,920 Cr across the 30 districts, FY21→FY25**, plus **₹1,301 Cr** filed
+   against no district ("NEC / Not Mentioned", ~25%), ₹5,221 Cr in all. This is a
+   *different* source and methodology (it runs roughly **1.5 to 3× above** the GO CARE
+   statewide series in the later years), so treat the lens as one funder's-eye estimate of
+   where CSR lands, **not a reconciled total**. Because of this, the resource-alignment
+   dimension still uses **DMF** (not CSR) as its money proxy.
 
 **Funders & Philanthropies** (`data/odisha_ecosystem_layers.json` → rendered as a table):
 27 funders with **domain-wise and district-wise** focus and a confidence flag, linking each
@@ -113,9 +125,11 @@ they're listed without per-district paint.
 ## Ecosystem Health
 
 A 7-dimension composite: coverage, aspirational reach,
-resilience, thematic balance, network depth, SHG reach and **resource alignment**. Because
-Odisha has no open district CSR, the resource-alignment dimension uses **DMF** (share of
-the state's place-based public money sitting in partner-covered districts) instead of CSR.
+resilience, thematic balance, network depth, SHG reach and **resource alignment**. The
+resource-alignment dimension uses **DMF** (share of the state's place-based public money
+sitting in partner-covered districts) rather than CSR: the district CSR-spend figures (see
+"CSR spend ₹" lens) come from a source that doesn't reconcile with the GO CARE statewide
+series, so DMF stays the money proxy for scoring.
 
 ## Partner research pass
 
@@ -169,6 +183,7 @@ odisha-landscape/
 │   ├── odisha_dmf_data.json            # raw DMF fetch, district × FY, 2015-16 to 2025-26
 │   ├── odisha_fpo_data.json            # raw FPO fetch, district-level count + farmers
 │   ├── odisha_csr_data.json            # GO CARE CSR: year totals, sectors, 300 companies, flagship projects
+│   ├── odisha_csr_district.json        # district CSR spend FY21-FY25 (parsed from Odisha_DistrictwiseCSR.xlsx; separate source, doesn't reconcile w/ GO CARE)
 │   ├── odisha_partners_seed.csv        # 46-org partner research pass
 │   ├── odisha_ecosystem_layers.json    # 27 funders, anchors, 25 schemes, 14 indicative orgs, Vision 2036 (pillars/trajectory/velocity/unlocks)
 │   └── odisha_research_funders.csv     # earlier 5-lead funders list (superseded by ecosystem_layers)
@@ -178,6 +193,7 @@ odisha-landscape/
 │   ├── fetch_dmf.py                    # dmf.odisha.gov.in -> data/odisha_dmf_data.json
 │   ├── fetch_fpo.py                    # fpoplatform.com -> data/odisha_fpo_data.json
 │   ├── fetch_csr.py                    # csr.odisha.gov.in (GO CARE) -> data/odisha_csr_data.json
+│   ├── parse_csr_district.py           # ../Odisha_DistrictwiseCSR.xlsx -> data/odisha_csr_district.json
 │   ├── enrich_geojson.py               # data/odisha_districts.geojson -> ../odisha_enriched.geojson
 │   └── build_model.py                  # merges all fetches + layers -> ../model.json
 └── lotf-workshop/
