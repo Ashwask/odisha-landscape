@@ -36,27 +36,30 @@ not independently field-verified — see the honesty notes below.
 
 Place health · Partner density · Theme breadth · Dominant theme · Coverage gap ·
 Block presence (beta) · SHG density · FPO density · DMF mining fund ·
-**CSR flagship ✳** · **CSR spend ₹** · **Catalytic Unlock ✳** · **Anchor org ✳**. Click a
-district for partners, themes, block coverage, anchor orgs, CSR flagship projects, CSR
-spend, **funders & CSR companies active there**, a **catalytic landscape read**, SHG/FPO
-and a DMF trend; hover for a readout.
+**CSR flagship ✳** · **CSR spend (real ₹)** · **Catalytic Unlock ✳** · **Anchor org ✳**. The
+**CSR spend** lens colors districts by real CSR total and has its own domain filter (a
+`<select>` next to the lens bar) to recolor by any one of the 10 development sectors. Click
+a district for partners, themes, block coverage, anchor orgs, CSR flagship projects, real
+CSR spend by domain, **funders & CSR companies active there**, a **catalytic landscape
+read**, SHG/FPO and a DMF trend; hover for a readout.
 
 ### Catalytic Unlock (nature-first landscape strategy, indicative ✳)
 
 An editorial strategy layer, **not fetched data**, built on top of the real DMF/CSR/partner
-fields. It groups the 30 districts into **six nature/commons landscapes** (Central Mining &
-Brahmani · Eastern Ghats Adivasi Highlands · Mahanadi Delta & Mangrove Coast · Chilika &
-South-Central · Western Tableland/KBK · Similipal & Mayurbhanj) and assigns each a catalytic
-**tier** (Convert / Seed / Protect / Crowd-in / Anchor). The "Catalytic Unlock ✳" lens
-paints the map by landscape; the detail card shows the tier plus a **leverage read** per
-district computed as `0.35·money-pool + 0.25·capacity-gap + 0.40·nature/commons-stake`
-(nature carries the highest weight, by design). The **"Catalytic Unlock"** section lists the
-six landscapes (with their real money/capacity readout) and a **top-10 projects** table
-spanning domains (restoration, agrobiodiversity, mangrove/blue-carbon, wetland fisheries,
-wildlife corridor, water commons, FRA/CFR rights, open data, urban-nature, energy-on-commons)
-and geographies, each tagged as a subset of one unlock/unblock. Project ₹ figures are
-indicative catalytic sizing (a design proposal), not committed pipelines. Data:
-`data/odisha_catalytic.json`.
+fields — CSR here is the same real per-district total as the "CSR spend" lens (all domains,
+FY15→FY25). It groups the 30 districts into **six nature/commons landscapes** (Central
+Mining & Brahmani · Eastern Ghats Adivasi Highlands · Mahanadi Delta & Mangrove Coast ·
+Chilika & South-Central · Western Tableland/KBK · Similipal & Mayurbhanj) and assigns each a
+catalytic **tier** (Convert / Seed / Protect / Crowd-in / Anchor). The "Catalytic Unlock ✳"
+lens paints the map by landscape; the detail card shows the tier plus a **leverage read**
+per district computed as `0.35·money-pool + 0.25·capacity-gap + 0.40·nature/commons-stake`
+(nature carries the highest weight, by design). The **"Catalytic Unlock"** section (on the
+2036 Alignment tab, as the project-level subset of the Unlocks) lists the six landscapes
+(with their real money/capacity readout) and a **top-10 projects** table spanning domains
+(restoration, agrobiodiversity, mangrove/blue-carbon, wetland fisheries, wildlife corridor,
+water commons, FRA/CFR rights, open data, urban-nature, energy-on-commons) and geographies,
+each tagged as a subset of one unlock/unblock. Project ₹ figures are indicative catalytic
+sizing (a design proposal), not committed pipelines. Data: `data/odisha_catalytic.json`.
 Deep-links: `#vision`, `#align`, `#ext` (indicative scoring on), `#lens=<key>`.
 
 ## What's in `model.json`
@@ -73,32 +76,42 @@ Deep-links: `#vision`, `#align`, `#ext` (indicative scoring on), `#lens=<key>`.
 | `partners` / `blockcov` | ⚠️ Research pass — 46 orgs, all 30 districts; 49 blocks / 14 districts | See "Partner research pass" |
 | `anchor` (multi-district anchor presence) | ⚠️ Sourced leads | CYSD's named field-office districts paint the anchor layer; Gram Vikas / Harsha Trust / Niyatee listed without per-district paint |
 | `csrFlagship` (per-district flagship CSR projects) | ⚠️ Subset, not total | GO CARE portal geocoded projects (company → amount → sector) |
-| `csrSpend` (per-district CSR spend, FY21→FY25) | ⚠️ Separate source, doesn't reconcile w/ `csrState` | csr.gov.in district export (`Odisha_DistrictwiseCSR.xlsx`) → "CSR spend ₹" lens |
-| top-level `csrState`, `csrDistrict`, `funders`, `schemes`, `indicative`, `vision2036` | ⚠️ Sourced | see below |
+| `csr` (per-district: total + by-domain + by-year, real ₹) | ✅ Real — all 30 districts × 10 domains | GO CARE "Dynamic CSR Report", district × sector export (manual, see below) |
+| top-level `csrState`, `csrDomain`, `catalytic`, `funders`, `schemes`, `indicative`, `vision2036` | ⚠️ Sourced | see below |
 
 ## CSR & funders — what's open, what's gated
 
-There are **two CSR sources here and they do not reconcile**, so they ride as separate
-layers and are never merged:
+**District-total CSR was gated — it's now included, via a different GO CARE export.** The
+national CSR portal (csr.gov.in) still gates every district export behind a CAPTCHA, and
+GO CARE's own district-total page still needs a login (HTTP 401). But GO CARE's **"Dynamic
+CSR Report"** tool exports a **district × development-sector** cut that is open — manually
+exported (no scriptable API for this specific cut) to
+`data/odisha_csr_district_domain.csv` and loaded by `load_csr_district_domain()` in
+`scripts/build_model.py`. This is what powers the **"CSR spend" map lens** (+ its domain
+filter), the CSR & funders section's **"By district"** / **"By domain"** tabs (each with a
+FY filter), and the Catalytic Unlock money readouts. Three honesty notes:
 
-1. **GO CARE (statewide, `csrState`).** `scripts/fetch_csr.py` pulls Odisha's own MCA-fed
-   [GO CARE portal](https://csr.odisha.gov.in) open endpoints:
-   - **Statewide CSR by year** (FY2014-15 → FY2026-27), ~₹5,333 Cr cumulative, as a trend.
-   - **Sector mix** (project counts across 13 CSR sectors).
-   - The **300-company funder universe** filing CSR in Odisha.
-   - **Geocoded flagship projects** (company → district → amount → sector), shown in district
-     detail and the "CSR flagship ✳" lens: a **curated subset, not total spend**.
-   GO CARE's *district* page still requires a login (HTTP 401).
+- **~46% of statewide CSR (FY15→FY25) is filed under "District Not Classified Elsewhere"**
+  — typically statewide/multi-district projects GO CARE itself doesn't attribute to one
+  district. That slice is folded into the statewide domain totals (`csrDomain`) but
+  excluded from the per-district map/table/`csr` field, since it isn't attributable to one.
+- Cross-checked against the repo's own `Odisha_DistrictwiseCSR.xlsx` (FY20-21→FY24-25 only,
+  no domain split, parsed by `scripts/parse_csr_district.py` into
+  `data/odisha_csr_district.json` — no longer wired into the build, superseded by the export
+  above) and against the National CSR Portal's separate state-wise export: both agree with
+  this file's totals to the nearest ₹0.1 Cr — e.g. Anugul FY20-25 = ₹666.5 Cr in both, and
+  the statewide FY14-15→FY24-25 total (₹8,453.5 Cr) matches exactly.
+- Resource-alignment scoring (Ecosystem Health) still uses **DMF**, not CSR, as its money
+  proxy — see "Ecosystem Health" below for why that's deliberate, not an oversight.
 
-2. **csr.gov.in district export (`csrDistrict` / `csrSpend`).** A district-wise CSR-spend
-   export (`Odisha_DistrictwiseCSR.xlsx` in the repo root, parsed by
-   `scripts/parse_csr_district.py`) drives the **"CSR spend ₹" lens** and per-district CSR
-   figures: **₹3,920 Cr across the 30 districts, FY21→FY25**, plus **₹1,301 Cr** filed
-   against no district ("NEC / Not Mentioned", ~25%), ₹5,221 Cr in all. This is a
-   *different* source and methodology (it runs roughly **1.5 to 3× above** the GO CARE
-   statewide series in the later years), so treat the lens as one funder's-eye estimate of
-   where CSR lands, **not a reconciled total**. Because of this, the resource-alignment
-   dimension still uses **DMF** (not CSR) as its money proxy.
+`scripts/fetch_csr.py` separately pulls Odisha's own MCA-fed
+[GO CARE portal](https://csr.odisha.gov.in)'s other open endpoints (`csrState`):
+- **Statewide CSR by year** (FY2014-15 → FY2026-27), ~₹5,333 Cr cumulative, as a trend.
+- **Sector mix** (project counts across 13 CSR sectors — counts, not the ₹ domain split above).
+- The **300-company funder universe** filing CSR in Odisha.
+- **Geocoded flagship projects** (company → district → amount → sector), shown in district
+  detail and the "CSR flagship ✳" lens: a **curated subset, not total spend**, and unrelated
+  to the real district × domain totals above.
 
 **Funders & Philanthropies** (`data/odisha_ecosystem_layers.json` → rendered as a table):
 27 funders with **domain-wise and district-wise** focus and a confidence flag, linking each
@@ -144,11 +157,12 @@ they're listed without per-district paint.
 ## Ecosystem Health
 
 A 7-dimension composite: coverage, aspirational reach,
-resilience, thematic balance, network depth, SHG reach and **resource alignment**. The
-resource-alignment dimension uses **DMF** (share of the state's place-based public money
-sitting in partner-covered districts) rather than CSR: the district CSR-spend figures (see
-"CSR spend ₹" lens) come from a source that doesn't reconcile with the GO CARE statewide
-series, so DMF stays the money proxy for scoring.
+resilience, thematic balance, network depth, SHG reach and **resource alignment**. This
+dimension still uses **DMF** (share of the state's place-based public money sitting in
+partner-covered districts), not real district CSR — real CSR spend is now in `model.json`
+(see "CSR & funders" above, and it already feeds Catalytic Unlock's leverage read), but
+folding it into a scoring dimension that's already live would silently move the headline
+Ecosystem Health Index; left as a deliberate follow-up rather than done in passing.
 
 ## Partner research pass
 
@@ -202,7 +216,8 @@ odisha-landscape/
 │   ├── odisha_dmf_data.json            # raw DMF fetch, district × FY, 2015-16 to 2025-26
 │   ├── odisha_fpo_data.json            # raw FPO fetch, district-level count + farmers
 │   ├── odisha_csr_data.json            # GO CARE CSR: year totals, sectors, 300 companies, flagship projects
-│   ├── odisha_csr_district.json        # district CSR spend FY21-FY25 (parsed from Odisha_DistrictwiseCSR.xlsx; separate source, doesn't reconcile w/ GO CARE)
+│   ├── odisha_csr_district_domain.csv  # GO CARE "Dynamic CSR Report": district x sector, real ₹, FY15->FY25 (manual export, no fetch script)
+│   ├── odisha_csr_district.json        # district CSR spend FY21-FY25 (parsed from Odisha_DistrictwiseCSR.xlsx) -- superseded by the CSV above, no longer wired into build_model.py
 │   ├── odisha_catalytic.json           # Catalytic Unlock: 6 nature/commons landscapes + tiers + top-10 projects (editorial strategy, indicative)
 │   ├── odisha_partners_seed.csv        # 46-org partner research pass
 │   ├── odisha_ecosystem_layers.json    # 27 funders, anchors, 25 schemes, 14 indicative orgs, Vision 2036 (pillars/trajectory/velocity/unlocks)
@@ -213,7 +228,7 @@ odisha-landscape/
 │   ├── fetch_dmf.py                    # dmf.odisha.gov.in -> data/odisha_dmf_data.json
 │   ├── fetch_fpo.py                    # fpoplatform.com -> data/odisha_fpo_data.json
 │   ├── fetch_csr.py                    # csr.odisha.gov.in (GO CARE) -> data/odisha_csr_data.json
-│   ├── parse_csr_district.py           # ../Odisha_DistrictwiseCSR.xlsx -> data/odisha_csr_district.json
+│   ├── parse_csr_district.py           # ../Odisha_DistrictwiseCSR.xlsx -> data/odisha_csr_district.json (superseded cut, see above)
 │   ├── enrich_geojson.py               # data/odisha_districts.geojson -> ../odisha_enriched.geojson
 │   └── build_model.py                  # merges all fetches + layers -> ../model.json
 └── lotf-workshop/
@@ -235,8 +250,12 @@ cd .. && python3 build.py     # model.json + odisha_enriched.geojson -> index.ht
 ```
 
 Only Python 3 stdlib + `curl` on PATH are needed. `data/odisha_ecosystem_layers.json`
-(funders, anchors, schemes, Vision 2036) is hand-compiled from public sources and edited
-directly, not fetched.
+(funders, anchors, schemes, Vision 2036) and `data/odisha_catalytic.json` (Catalytic Unlock
+landscapes/tiers/projects) are hand-compiled from public sources and edited directly, not
+fetched. `data/odisha_csr_district_domain.csv` (real district × domain CSR) is likewise a
+manual export — GO CARE's "Dynamic CSR Report" tool has no scriptable API for this cut, so
+there's no `fetch_*` script for it; `build_model.py`'s `load_csr_district_domain()` reads
+the CSV directly.
 
 ## District name normalisation
 
@@ -251,13 +270,16 @@ a source renamed a district and the map needs a new entry.
 (SHG) · [Odisha DMF portal](https://dmf.odisha.gov.in) (DMF) · [FPO Platform](https://www.fpoplatform.com) /
 Cornell TCI (FPO) · [NITI Aayog](https://www.niti.gov.in/) (aspirational districts) ·
 [GO CARE — Odisha CSR portal](https://csr.odisha.gov.in) (statewide CSR, sectors, companies,
-flagship projects; MCA-fed) · [Odisha Finance Dept](https://finance.odisha.gov.in/) (budget
-schemes) · org sites for funders & anchors (CYSD, Gram Vikas, Harsha Trust, Socratus,
-Rainmatter, Gates, Piramal, Tata Steel, HDFC, Axis, UNICEF, WFP, …) · Odisha Vision 2036
-document & press · 46 org websites/reports/directories for the partner pass.
+flagship projects, and the district × development-sector "Dynamic CSR Report" export;
+MCA-fed) · [Odisha Finance Dept](https://finance.odisha.gov.in/) (budget schemes) · org
+sites for funders & anchors (CYSD, Gram Vikas, Harsha Trust, Socratus, Rainmatter, Gates,
+Piramal, Tata Steel, HDFC, Axis, UNICEF, WFP, …) · Odisha Vision 2036 document & press · 46
+org websites/reports/directories for the partner pass.
 
-CSR **district totals** would come from [MCA's National CSR Portal](https://www.csr.gov.in)
-once someone manually clears its CAPTCHA, or from a GO CARE login export.
+CSR **district-total** spend (not split by domain) would additionally come from
+[MCA's National CSR Portal](https://www.csr.gov.in) once someone manually clears its
+CAPTCHA, or from a GO CARE district-page login export — neither is needed now that the
+Dynamic CSR Report cut above covers both district totals and the domain split.
 
 ## License
 
