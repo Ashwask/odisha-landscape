@@ -302,6 +302,31 @@ def build():
         "meta": csr_dist.get("meta", {}),
     }
 
+    # -- Catalytic Unlock layer (editorial nature/commons landscape strategy) --
+    # Groups districts into nature/commons landscapes + a catalytic tier; the leverage
+    # read itself is computed front-end from the real DMF/CSR/partner fields (see build.py).
+    # Everything here is indicative strategy built ON TOP of the real data, not fetched.
+    cat = json.load(open("../data/odisha_catalytic.json"))
+    land_of = {}
+    for ls in cat["landscapes"]:
+        for d in ls["districts"]:
+            land_of[d] = {"key": ls["key"], "name": ls["name"], "color": ls["color"]}
+    for d, meta in cat["districtMeta"].items():
+        if d not in districts:
+            print(f"WARNING: unmapped catalytic district {d!r}")
+            continue
+        ls = land_of.get(d, {})
+        districts[d]["catalytic"] = {
+            "landscape": ls.get("key", ""), "landscapeName": ls.get("name", ""),
+            "tier": meta["tier"], "nature": meta["nature"], "note": meta.get("note", ""),
+        }
+    for d in districts.values():
+        d.setdefault("catalytic", {"landscape": "", "landscapeName": "", "tier": "", "nature": 0.0, "note": ""})
+    catalytic = {
+        "meta": cat.get("meta", {}), "tiers": cat.get("tiers", {}),
+        "landscapes": cat.get("landscapes", []), "projects": cat.get("projects", []),
+    }
+
     # -- Ecosystem layers: anchors (TRI-equivalent), funders, schemes, indicative orgs --
     layers = json.load(open("../data/odisha_ecosystem_layers.json"))
     anchor_orgs = layers["anchors"]["orgs"]
@@ -339,6 +364,7 @@ def build():
         "vision2036": layers.get("vision2036", {}),
         "csrState": csr_state,
         "csrDistrict": csr_district,
+        "catalytic": catalytic,
         "districts": districts,
     }
     json.dump(model, open("../model.json", "w"), ensure_ascii=False, indent=1)

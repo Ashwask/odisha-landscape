@@ -254,6 +254,13 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 </div>
 </div>
 
+<div class="section-title collapser closed" data-wrap="catwrap">Catalytic Unlock ✳ · nature-first landscapes &amp; top 10 projects <span class="caret">▾</span></div>
+<div id="catwrap" class="collapsed">
+<p class="section-sub" id="catintro"></p>
+<div class="card cardpad"><div id="catland"></div></div>
+<div class="card tbl" id="catproj" style="margin-top:14px"></div>
+</div>
+
 <div class="section-title collapser closed" id="dirToggle" data-wrap="dirwrap">Partner directory <span class="caret">▾</span> <span class="mini" style="font-weight:400" id="dircount"></span></div>
 <div id="dirwrap" class="collapsed">
 <p class="section-sub">All 46 researched partner organisations. Click a column header to sort; click a district tag to focus the map. Each row's source URL and confidence notes live in <code>data/odisha_partners_seed.csv</code> in the repo — a few rows are flagged low-confidence there and worth independent verification before relying on them.</p>
@@ -352,6 +359,22 @@ const csrSpendN=d=>((D[d].csrSpend||{}).total)||0;
 const maxCSRS=Math.max(1,...CANON.map(csrSpendN));
 const fmtCr=v=>'₹'+(+v).toLocaleString('en-IN',{maximumFractionDigits:v>=100?0:1})+' Cr';
 
+/* ---------- Catalytic Unlock (nature/commons landscape strategy, indicative) ---------- */
+const CAT=MODEL.catalytic||{tiers:{},landscapes:[],projects:[],meta:{}};
+const CAT_TIERS=CAT.tiers||{}, CAT_LAND=CAT.landscapes||[], CAT_PROJ=CAT.projects||[];
+const landById={}; CAT_LAND.forEach(l=>landById[l.key]=l);
+const catOf=d=>D[d].catalytic||{landscape:'',tier:'',nature:0,note:''};
+// Leverage read = where small catalytic ₹ unblocks the most: committed money (pool) x
+// capacity gap x nature/commons stake (nature carries the highest weight, by design).
+const maxPart=Math.max(1,...CANON.map(d=>(D[d].partners||[]).length));
+function catLeverage(d){
+ const pool=(( (DMF_TOTAL[d]||0)/maxDMF )+( csrSpendN(d)/maxCSRS ))/2;   // committed money to steer/crowd-in
+ const gap=1-((D[d].partners||[]).length/maxPart);                       // capacity bottleneck
+ const nature=catOf(d).nature||0;                                        // nature/commons stake
+ return Math.round(100*(0.35*pool+0.25*gap+0.40*nature));
+}
+const maxLev=Math.max(1,...CANON.map(catLeverage));
+
 /* ---------- theme frequency (for matrix shading + dominant) ---------- */
 const themeFreq={}; THEMES.forEach(t=>themeFreq[t]=0);
 PARTNERS.forEach(p=>p.themes.forEach(t=>{if(t in themeFreq)themeFreq[t]++;}));
@@ -429,6 +452,8 @@ const lenses={
    legend:()=>gradLegendC('Mapped flagship CSR projects (GO CARE) — count, not total spend',['#f1f5fa','#f4c9a8','#e89b63','#d1702f','#a8500f'],'0 → '+maxCSR)},
  csrspend:{label:'CSR spend ₹',fill:d=>{const v=csrSpendN(d);if(!v)return '#f1f5fa';const p=['#fbeee6','#f4c9a8','#e89b63','#d1702f','#a8500f'];return p[Math.min(p.length-1,Math.ceil(v/Math.max(maxCSRS,1)*(p.length-1)))];},
    legend:()=>gradLegendC('District CSR spend, FY21 to FY25 (₹ Cr, csr.gov.in): actual ₹, not GO CARE',['#f1f5fa','#f4c9a8','#e89b63','#d1702f','#a8500f'],'0 → '+fmtCr(maxCSRS))},
+ catalytic:{label:'Catalytic Unlock ✳',fill:d=>{const l=catOf(d).landscape;return (landById[l]||{}).color||'#f1f5fa';},
+   legend:()=>catLandLegend()},
  anchor:{label:'Anchor org ✳',fill:d=>{const a=D[d].anchor||{};return a.present?'#0e8074':((a.orgs&&a.orgs.length)?'#a6ddc4':'#f1f5fa');},
    legend:()=>anchorLegend()}
 };
@@ -467,6 +492,9 @@ function anchorLegend(){const items=[['#0e8074','CYSD (primary anchor) present']
  const w=el('div');w.style.cssText='display:flex;gap:12px;flex-wrap:wrap';
  w.appendChild(el('span','legtitle','Multi-district anchor orgs'));
  items.forEach(i=>{const s=el('span','sw');const b=el('span','box');b.style.background=i[0];s.appendChild(b);s.appendChild(el('span','',i[1]));w.appendChild(s);});return w;}
+function catLandLegend(){const w=el('div');w.style.cssText='display:flex;gap:12px;flex-wrap:wrap;align-items:center';
+ w.appendChild(el('span','legtitle','Nature/commons landscapes ✳ (indicative)'));
+ CAT_LAND.forEach(l=>{const s=el('span','sw');const b=el('span','box');b.style.background=l.color;s.appendChild(b);s.appendChild(el('span','',l.name));w.appendChild(s);});return w;}
 
 /* build map */
 const mapbox=document.getElementById('mapbox');
@@ -590,6 +618,34 @@ function selectDist(name){selD=name;
    +'<div class="spark" style="margin-top:6px">';
   cvals.forEach((val,i)=>{h+='<div class="bar" style="height:'+(val/cmx*100)+'%" title="'+CSR_YEARS[i]+': '+fmtCr(val)+'"></div>';});
   h+='</div><div class="sparkx"><span>'+CSR_YEARS[0].slice(2,4)+'</span><span>'+CSR_YEARS[CSR_YEARS.length-1].slice(2,4)+'</span></div></div>';
+ }
+ // Funders / philanthropies mapped to this district + CSR companies seen here
+ const dFund=FUNDERS.filter(f=>(f.districts||[]).includes(name));
+ const dComp=[...new Set((cf.projects||[]).map(p=>p.company))];
+ if(dFund.length||dComp.length){
+  h+='<div class="sec"><div class="t">Funders &amp; CSR active here</div>';
+  if(dFund.length){
+   h+='<div class="mini" style="margin-bottom:4px">Funders / philanthropies with a mapped presence in '+name+':</div><ul class="blist">';
+   dFund.forEach(f=>{h+='<li><b>'+f.name+'</b>'+(f.confidence?' <span class="mini">('+f.confidence+' conf.)</span>':'')+(f.source?' <a href="'+f.source+'" target="_blank" rel="noopener" class="mini">src</a>':'')+'<br><span class="mini">'+(f.supports||'')+'</span></li>';});
+   h+='</ul>';
+  }
+  if(dComp.length){
+   h+='<div class="mini" style="margin:6px 0 4px">CSR companies with flagship projects here ✳ <span class="mini">(GO CARE geocoded subset, not all CSR)</span>:</div><div class="chips">'
+    +dComp.map(c=>'<span class="chip" style="border-left:3px solid #d1702f">'+c+'</span>').join('')+'</div>';
+  }
+  h+='</div>';
+ }
+ // Catalytic Unlock: nature/commons landscape read (indicative strategy)
+ const ct=catOf(name), ls=landById[ct.landscape]||{}, ti=CAT_TIERS[ct.tier]||{};
+ if(ct.landscape){
+  h+='<div class="sec"><div class="t">Catalytic Unlock ✳ <span class="mini" style="font-weight:400">(indicative)</span></div>'
+   +'<div class="blk" style="border-left:3px solid '+(ls.color||'#ccc')+';padding-left:8px">'
+   +'<b>'+(ls.name||'')+'</b><br>'
+   +'<span class="chip" style="background:'+(ti.color||'#666')+';color:#fff;border:0">'+(ti.label||'')+'</span> '
+   +'<span class="mini">leverage read '+catLeverage(name)+'/100</span>'
+   +(ti.strategy?'<div class="mini" style="margin-top:5px">'+ti.strategy+'</div>':'')
+   +(ct.note?'<div class="mini" style="margin-top:4px"><b>Here:</b> '+ct.note+'</div>':'')
+   +'</div></div>';
  }
  // DMF trend sparkline (year-wise, real data)
  const yr=[...YEARS].reverse(); const vals=yr.map(y=>v.dmf[y]||0); const mx=Math.max(...vals,1);
@@ -779,6 +835,46 @@ function buildFunders(){
  document.getElementById('funders').innerHTML=h;
  document.querySelectorAll('#funders .pill').forEach(s=>s.onclick=()=>{const b=document.querySelector('#tabbar button[data-view=main]');if(b)b.click();selectDist(s.dataset.d);document.getElementById('mapbox').scrollIntoView({behavior:'smooth',block:'center'});});
 }
+/* ---------- Catalytic Unlock: nature/commons landscapes + top 10 projects ---------- */
+function buildCatalytic(){
+ const intro=document.getElementById('catintro');
+ if(intro)intro.innerHTML=(CAT.meta&&CAT.meta.framing?CAT.meta.framing+' ':'')
+  +'<b>Indicative strategy ✳</b>, not fetched data: districts are grouped into six nature/commons landscapes, each with a catalytic tier; the leverage read per district is computed from the real DMF, CSR and partner-capacity fields (nature/commons carries the highest weight). Use the "Catalytic Unlock ✳" map lens to see the landscapes. Click a district chip to focus the map.';
+ // landscape cards: money + capacity readout per landscape, from the real data
+ let h='';
+ CAT_LAND.forEach(l=>{
+  let dmf=0,csr=0,pn=0; l.districts.forEach(d=>{dmf+=DMF_TOTAL[d]||0;csr+=csrSpendN(d);pn+=(D[d].partners||[]).length;});
+  const tiers=[...new Set(l.districts.map(d=>catOf(d).tier))].map(t=>(CAT_TIERS[t]||{}).label).filter(Boolean);
+  h+='<div style="border-left:4px solid '+l.color+';padding:8px 0 10px 12px;margin-bottom:10px">'
+   +'<div style="font-weight:700;color:var(--ink)">'+l.name+' <span class="mini" style="font-weight:400">'+l.districts.length+' districts · '+tiers.join(' / ')+'</span></div>'
+   +'<div class="mini" style="margin:3px 0 5px">'+l.thesis+'</div>'
+   +'<div class="mini"><b>Money in place:</b> '+fmtDmf(Math.round(dmf))+' DMF · '+fmtCr(csr)+' CSR (FY21→FY25) · <b>capacity:</b> '+pn+' partner-links</div>'
+   +'<div style="margin-top:4px">'+l.districts.map(d=>'<span class="tag pill" data-d="'+d+'">'+d+'</span>').join('')+'</div>'
+   +'<div class="mini" style="margin-top:4px"><b>Commons at stake:</b> '+(l.commons||[]).join(' · ')+'</div>'
+   +'</div>';
+ });
+ const cl=document.getElementById('catland'); if(cl){cl.innerHTML=h;
+  cl.querySelectorAll('.pill').forEach(s=>s.onclick=()=>{const b=document.querySelector('#tabbar button[data-view=main]');if(b)b.click();curLens='catalytic';paint();selectDist(s.dataset.d);document.getElementById('mapbox').scrollIntoView({behavior:'smooth',block:'center'});});}
+ // top 10 projects table
+ let p='<div class="mini" style="margin-bottom:6px"><b>Top 10 catalytic projects</b> ✳ : a cross-domain, cross-landscape subset of the unlock/unblock. ₹ figures are indicative catalytic sizing (design proposal), not committed pipelines.</div>';
+ p+='<table><thead><tr><th>#</th><th>Project · domain</th><th>Landscape / geography</th><th>Subset of unlock</th><th>Catalytic instrument</th><th class="num">₹Cr</th><th>Unblocks</th></tr></thead><tbody>';
+ CAT_PROJ.forEach(pr=>{
+  const geos=(pr.geographies||[]).map(g=>CANON.includes(g)?'<span class="tag pill" data-d="'+g+'">'+g+'</span>':'<span class="tag">'+g+'</span>').join('');
+  const lname=(landById[pr.landscape]||{}).name||(pr.landscape==='all'?'Statewide':pr.landscape);
+  p+='<tr><td class="num"><b>'+pr.rank+'</b></td>'
+   +'<td><b>'+pr.name+'</b><div class="mini">'+pr.domain+'</div>'+(pr.commons?'<div class="mini"><b>Commons:</b> '+pr.commons.join(' · ')+'</div>':'')+'</td>'
+   +'<td class="mini"><b>'+lname+'</b><div style="margin-top:3px">'+geos+'</div></td>'
+   +'<td class="mini">'+pr.unlock+'</td>'
+   +'<td class="mini">'+pr.instrument+'</td>'
+   +'<td class="num">'+(pr.catalyticCr||'–')+'</td>'
+   +'<td class="mini">'+(pr.mobilises||'')+'</td></tr>';
+ });
+ const totCat=CAT_PROJ.reduce((s,pr)=>s+(pr.catalyticCr||0),0);
+ p+='<tr><td></td><td class="mini" colspan="4" style="font-weight:700">Total indicative catalytic capital</td><td class="num" style="font-weight:700">'+totCat+'</td><td class="mini">unblocks far larger committed DMF + CSR + scheme pools</td></tr>';
+ p+='</tbody></table>';
+ const cp=document.getElementById('catproj'); if(cp){cp.innerHTML=p;
+  cp.querySelectorAll('.pill').forEach(s=>s.onclick=()=>{const b=document.querySelector('#tabbar button[data-view=main]');if(b)b.click();curLens='catalytic';paint();selectDist(s.dataset.d);document.getElementById('mapbox').scrollIntoView({behavior:'smooth',block:'center'});});}
+}
 /* ---------- government schemes table ---------- */
 function buildSchemes(){
  const items=(SCHEMES.items||[]).slice().sort((a,b)=>b.outlayCr-a.outlayCr);
@@ -962,7 +1058,7 @@ tabbar.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)ret
 function recompute(){refreshScales();renderStrip();paint();buildHealth();buildPlaceHealth();buildDir();buildDisTbl();updateFoot();}
 
 /* initial render */
-refreshScales(); renderStrip(); paint(); buildHealth(); buildMatrix(); buildPlaceHealth(); buildDir(); buildDisTbl(); updateFoot(); buildGovt(); buildSchemes(); buildCsrState(); buildFunders();
+refreshScales(); renderStrip(); paint(); buildHealth(); buildMatrix(); buildPlaceHealth(); buildDir(); buildDisTbl(); updateFoot(); buildGovt(); buildSchemes(); buildCsrState(); buildFunders(); buildCatalytic();
 document.getElementById('dircount').textContent='('+PARTNERS.length+' organisations)';
 document.querySelectorAll('.collapser[data-wrap]').forEach(tg=>{const wrap=document.getElementById(tg.dataset.wrap);
  tg.addEventListener('click',()=>{const hidden=wrap.classList.toggle('collapsed'); tg.classList.toggle('closed',hidden);});});

@@ -18,9 +18,10 @@ not independently field-verified — see the honesty notes below.
 
 ## Three tabs
 
-- **Ecosystem landscape** — the district map is the hero (11 lenses), then Ecosystem &
+- **Ecosystem landscape** — the district map is the hero (13 lenses), then Ecosystem &
   Place Health scorecards, partner × theme matrix, government spend (DMF + 25 schemes),
-  CSR & funders, and the partner / district tables. Major sections are collapsible.
+  CSR & funders, the Catalytic Unlock landscapes, and the partner / district tables. Major
+  sections are collapsible.
 - **Odisha Vision 2036** — the state government's official centenary vision (with a 2047
   horizon), as seven pillar cards (economy, skills, urban/infra, agriculture, education &
   health, women, governance) with stated targets and flagship programmes, each mapped to
@@ -31,13 +32,31 @@ not independently field-verified — see the honesty notes below.
   current drift), headline target-vs-today, geographic priority gaps, and an **unlocks**
   table (lever → what it unblocks → who holds the key).
 
-## Map lenses (12)
+## Map lenses (13)
 
 Place health · Partner density · Theme breadth · Dominant theme · Coverage gap ·
 Block presence (beta) · SHG density · FPO density · DMF mining fund ·
-**CSR flagship ✳** · **CSR spend ₹** · **Anchor org ✳**. Click a district for partners,
-themes, block coverage, anchor orgs, CSR flagship projects, CSR spend, SHG/FPO and a DMF
-trend; hover for a readout.
+**CSR flagship ✳** · **CSR spend ₹** · **Catalytic Unlock ✳** · **Anchor org ✳**. Click a
+district for partners, themes, block coverage, anchor orgs, CSR flagship projects, CSR
+spend, **funders & CSR companies active there**, a **catalytic landscape read**, SHG/FPO
+and a DMF trend; hover for a readout.
+
+### Catalytic Unlock (nature-first landscape strategy, indicative ✳)
+
+An editorial strategy layer, **not fetched data**, built on top of the real DMF/CSR/partner
+fields. It groups the 30 districts into **six nature/commons landscapes** (Central Mining &
+Brahmani · Eastern Ghats Adivasi Highlands · Mahanadi Delta & Mangrove Coast · Chilika &
+South-Central · Western Tableland/KBK · Similipal & Mayurbhanj) and assigns each a catalytic
+**tier** (Convert / Seed / Protect / Crowd-in / Anchor). The "Catalytic Unlock ✳" lens
+paints the map by landscape; the detail card shows the tier plus a **leverage read** per
+district computed as `0.35·money-pool + 0.25·capacity-gap + 0.40·nature/commons-stake`
+(nature carries the highest weight, by design). The **"Catalytic Unlock"** section lists the
+six landscapes (with their real money/capacity readout) and a **top-10 projects** table
+spanning domains (restoration, agrobiodiversity, mangrove/blue-carbon, wetland fisheries,
+wildlife corridor, water commons, FRA/CFR rights, open data, urban-nature, energy-on-commons)
+and geographies, each tagged as a subset of one unlock/unblock. Project ₹ figures are
+indicative catalytic sizing (a design proposal), not committed pipelines. Data:
+`data/odisha_catalytic.json`.
 Deep-links: `#vision`, `#align`, `#ext` (indicative scoring on), `#lens=<key>`.
 
 ## What's in `model.json`
@@ -184,6 +203,7 @@ odisha-landscape/
 │   ├── odisha_fpo_data.json            # raw FPO fetch, district-level count + farmers
 │   ├── odisha_csr_data.json            # GO CARE CSR: year totals, sectors, 300 companies, flagship projects
 │   ├── odisha_csr_district.json        # district CSR spend FY21-FY25 (parsed from Odisha_DistrictwiseCSR.xlsx; separate source, doesn't reconcile w/ GO CARE)
+│   ├── odisha_catalytic.json           # Catalytic Unlock: 6 nature/commons landscapes + tiers + top-10 projects (editorial strategy, indicative)
 │   ├── odisha_partners_seed.csv        # 46-org partner research pass
 │   ├── odisha_ecosystem_layers.json    # 27 funders, anchors, 25 schemes, 14 indicative orgs, Vision 2036 (pillars/trajectory/velocity/unlocks)
 │   └── odisha_research_funders.csv     # earlier 5-lead funders list (superseded by ecosystem_layers)
