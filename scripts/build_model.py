@@ -187,6 +187,86 @@ def load_partners_seed():
     return list(partners_by_name.values()), blockcov_by_district
 
 
+def _csr_canon(name):
+    """CSR_DIST_MAP lookup with an identity fallback for names already spelled like CANON
+    (the district x sector export below uses a few spellings -- e.g. "Sonepur",
+    "Jagatsinghapur" -- that CSR_DIST_MAP doesn't need an entry for since they already
+    match CANON)."""
+    if name in CSR_DIST_MAP:
+        return CSR_DIST_MAP[name]
+    if name in CANON:
+        return name
+    return None
+
+
+def load_csr_district_domain():
+    """Read data/odisha_csr_district_domain.csv -- Odisha GO CARE's "Dynamic CSR Report"
+    (district x development-sector export), FY2014-15->FY2024-25, real spend in Rupees
+    Crore -- not project counts. This is the cut that unblocks the district CSR choropleth
+    and a domain/sector split: csr.gov.in's national portal and GO CARE's own district page
+    are both gated (see README's "District-total CSR" note), but this district x sector
+    cut was obtained as a manual export and has no fetch script.
+
+    It supersedes the FY21->FY25, no-domain-split `Odisha_DistrictwiseCSR.xlsx` cut also in
+    this repo (see parse_csr_district.py): more years, a domain breakdown, and its FY21-25
+    totals cross-validate closely against that file's (e.g. Anugul ~₹666.5 Cr both ways).
+
+    Returns per-district totals (folded into districts[d]["csr"]) plus a statewide
+    domain rollup (the new top-level "csrDomain" model key) for the "by domain" CSR view
+    and the CSR-spend map lens's domain filter.
+    """
+    rows = list(csv.DictReader(open("../data/odisha_csr_district_domain.csv")))
+    years = [k for k in rows[0].keys() if k not in ("district", "district_type", "domain", "all")]
+
+    per_district = {d: {"total": 0.0, "byDomain": {}, "byYear": {y: 0.0 for y in years}} for d in CANON}
+    unclassified = {"total": 0.0, "byDomain": {}, "byYear": {y: 0.0 for y in years}}
+    domain_state = {}  # domain -> {"total": .., "byYear": {y: amt}}
+
+    for r in rows:
+        canon = _csr_canon(r["district"])
+        domain = r["domain"]
+        total_all = float(r["all"])
+        by_year = {y: float(r[y]) for y in years}
+
+        ds = domain_state.setdefault(domain, {"total": 0.0, "byYear": {y: 0.0 for y in years}})
+        ds["total"] += total_all
+        for y in years:
+            ds["byYear"][y] += by_year[y]
+
+        if canon is None:
+            unclassified["total"] += total_all
+            unclassified["byDomain"][domain] = unclassified["byDomain"].get(domain, 0.0) + total_all
+            for y in years:
+                unclassified["byYear"][y] += by_year[y]
+            continue
+
+        pd = per_district[canon]
+        pd["total"] += total_all
+        pd["byDomain"][domain] = pd["byDomain"].get(domain, 0.0) + total_all
+        for y in years:
+            pd["byYear"][y] += by_year[y]
+
+    domains_ordered = sorted(domain_state.keys(), key=lambda k: -domain_state[k]["total"])
+    state_total = sum(v["total"] for v in domain_state.values())
+
+    return {
+        "per_district": per_district,
+        "domains": domains_ordered,
+        "byDomain": {k: round(v["total"], 2) for k, v in domain_state.items()},
+        "byYear": {
+            y: {k: round(domain_state[k]["byYear"][y], 2) for k in domains_ordered}
+            for y in years
+        },
+        "total": round(state_total, 2),
+        "unclassified": {
+            "total": round(unclassified["total"], 2),
+            "byDomain": {k: round(v, 2) for k, v in unclassified["byDomain"].items()},
+            "byYear": {y: round(v, 2) for y, v in unclassified["byYear"].items()},
+        },
+        "years": years,
+    }
+
+
 def build():
     shg_raw = json.load(open("../data/odisha_shg_data.json"))
     dmf_raw = json.load(open("../data/odisha_dmf_data.json"))
@@ -281,25 +361,35 @@ def build():
         "note": csr_raw.get("meta", {}).get("note", ""),
     }
 
-    # -- District-level CSR spend (₹ Cr, FY21->FY25) from parse_csr_district.py --
-    # A DIFFERENT source from GO CARE (csrState) that does NOT reconcile with it, so it
-    # rides as its own layer: per-district csrSpend {years, total} + a top-level
-    # csrDistrict summary the front-end reads for the "CSR spend ₹" lens and its note.
-    csr_dist = json.load(open("../data/odisha_csr_district.json"))
-    for canon, entry in csr_dist["districts"].items():
-        if canon not in districts:
-            print(f"WARNING: unmapped CSR-spend district {canon!r}")
-            continue
-        years = {y: entry[y] for y in csr_dist["years"]}
-        districts[canon]["csrSpend"] = {"years": years, "total": entry["total"]}
-    for d in districts.values():
-        d.setdefault("csrSpend", {"years": {}, "total": 0.0})
-    csr_district = {
-        "years": csr_dist["years"],
-        "districtTotal": csr_dist["districtTotal"],
-        "nec": csr_dist.get("nec"),
-        "grandTotal": csr_dist.get("grandTotal"),
-        "meta": csr_dist.get("meta", {}),
+    # -- CSR (real district x sector spend, GO CARE "Dynamic CSR Report") --
+    # Supersedes the older parse_csr_district.py cut (FY21->FY25, no domain split, still in
+    # the repo as Odisha_DistrictwiseCSR.xlsx / data/odisha_csr_district.json but no longer
+    # wired in): this is a strict superset -- more years, plus a domain breakdown -- and its
+    # FY21-25 totals cross-validate closely against that file's. Feeds districts[d]["csr"]
+    # (total/byDomain/byYear) and Catalytic Unlock's money-pool leverage calc (see build.py).
+    csr_dd = load_csr_district_domain()
+    for d in CANON:
+        pd = csr_dd["per_district"][d]
+        districts[d]["csr"] = {
+            "total": round(pd["total"], 2),
+            "byDomain": {k: round(v, 2) for k, v in pd["byDomain"].items()},
+            "byYear": {y: round(v, 2) for y, v in pd["byYear"].items()},
+        }
+    csr_domain = {
+        "domains": csr_dd["domains"],
+        "byDomain": csr_dd["byDomain"],
+        "byYear": csr_dd["byYear"],
+        "total": csr_dd["total"],
+        "years": csr_dd["years"],
+        "unclassified": csr_dd["unclassified"],
+        "source": "csr.odisha.gov.in (GO CARE, Govt of Odisha CSR portal) — \"Dynamic CSR Report\", district x development-sector export",
+        "note": ("Real district-level CSR spend by development sector, FY2014-15→FY2024-25, "
+                 "₹ Cr — unlike csrState above (statewide-only, project counts by sector), "
+                 "this is the real per-district total, finally unblocking the CSR choropleth. "
+                 "Manually exported (no scriptable API for this cut); see "
+                 "data/odisha_csr_district_domain.csv. Rows GO CARE files under \"District Not "
+                 "Classified Elsewhere\" are excluded from the district map/table and rolled into "
+                 "the statewide domain totals here only, under unclassified."),
     }
 
     # -- Catalytic Unlock layer (editorial nature/commons landscape strategy) --
@@ -363,7 +453,7 @@ def build():
         "schemes": layers.get("schemes", {}),
         "vision2036": layers.get("vision2036", {}),
         "csrState": csr_state,
-        "csrDistrict": csr_district,
+        "csrDomain": csr_domain,
         "catalytic": catalytic,
         "districts": districts,
     }
@@ -382,9 +472,10 @@ def build():
           f"anchor ({primary_anchor}) in {anchor_n} districts; "
           f"{len(indicative)} indicative orgs; {len(model['funders'])} funders; "
           f"{len(model['schemes'].get('items', []))} schemes; "
-          f"CSR state total ~₹{csr_state['totalCr']} Cr, {csr_state['companies']} companies; "
-          f"district CSR spend ~₹{csr_district['districtTotal']} Cr across 30 districts "
-          f"(+₹{(csr_district['nec'] or {}).get('total', 0)} Cr untagged), FY21->FY25")
+          f"CSR state total ~₹{csr_state['totalCr']} Cr, {csr_state['companies']} companies")
+    tot_csr_real = sum(d["csr"]["total"] for d in districts.values())
+    print(f"  CSR district x domain: ₹{round(tot_csr_real)} Cr mapped across {len(CANON)} districts "
+          f"x {len(csr_domain['domains'])} domains (+ ₹{round(csr_dd['unclassified']['total'])} Cr unclassified)")
 
 
 if __name__ == "__main__":

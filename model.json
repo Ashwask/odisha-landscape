@@ -1877,32 +1877,209 @@
   "source": "csr.odisha.gov.in (GO CARE, Govt of Odisha CSR portal; MCA-fed)",
   "note": "Statewide totals + sector counts + company (funder) list + geocoded flagship projects are openly served. District-wise TOTAL spend is login-gated on GO CARE and CAPTCHA-gated on csr.gov.in, so it is NOT included. Amounts in Rupees Lakh (amountCr = /100)."
  },
- "csrDistrict": {
+ "csrDomain": {
+  "domains": [
+   "Education, Differently Abled, livelihood",
+   "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation",
+   "Rural Development",
+   "Environment, Animal Welfare, Conservation of Resources",
+   "Encouraging Sports",
+   "Heritage Art And Culture",
+   "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities",
+   "Slum Area Development",
+   "Others",
+   "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)"
+  ],
+  "byDomain": {
+   "Education, Differently Abled, livelihood": 3560.74,
+   "Encouraging Sports": 295.85,
+   "Environment, Animal Welfare, Conservation of Resources": 501.59,
+   "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 153.76,
+   "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 2210.13,
+   "Heritage Art And Culture": 239.39,
+   "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 4.91,
+   "Others": 15.7,
+   "Rural Development": 1428.89,
+   "Slum Area Development": 42.57
+  },
+  "byYear": {
+   "2014-15": {
+    "Education, Differently Abled, livelihood": 61.42,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 52.48,
+    "Rural Development": 97.02,
+    "Environment, Animal Welfare, Conservation of Resources": 11.58,
+    "Encouraging Sports": 9.11,
+    "Heritage Art And Culture": 9.84,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 4.61,
+    "Slum Area Development": 0.22,
+    "Others": 5.64,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.26
+   },
+   "2015-16": {
+    "Education, Differently Abled, livelihood": 152.17,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 300.92,
+    "Rural Development": 113.99,
+    "Environment, Animal Welfare, Conservation of Resources": 24.92,
+    "Encouraging Sports": 8.3,
+    "Heritage Art And Culture": 9.75,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 2.25,
+    "Slum Area Development": 1.73,
+    "Others": 4.64,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.02
+   },
+   "2016-17": {
+    "Education, Differently Abled, livelihood": 172.13,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 50.92,
+    "Rural Development": 79.64,
+    "Environment, Animal Welfare, Conservation of Resources": 9.22,
+    "Encouraging Sports": 6.51,
+    "Heritage Art And Culture": 1.86,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 24.91,
+    "Slum Area Development": 4.7,
+    "Others": 5.42,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.02
+   },
+   "2017-18": {
+    "Education, Differently Abled, livelihood": 296.01,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 69.68,
+    "Rural Development": 90.87,
+    "Environment, Animal Welfare, Conservation of Resources": 6.87,
+    "Encouraging Sports": 28.8,
+    "Heritage Art And Culture": 7.79,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 4.0,
+    "Slum Area Development": 0.17,
+    "Others": 0.0,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.01
+   },
+   "2018-19": {
+    "Education, Differently Abled, livelihood": 362.42,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 163.33,
+    "Rural Development": 116.32,
+    "Environment, Animal Welfare, Conservation of Resources": 20.02,
+    "Encouraging Sports": 19.49,
+    "Heritage Art And Culture": 9.64,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 6.47,
+    "Slum Area Development": 0.09,
+    "Others": 0.0,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.12
+   },
+   "2019-20": {
+    "Education, Differently Abled, livelihood": 400.8,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 130.6,
+    "Rural Development": 67.89,
+    "Environment, Animal Welfare, Conservation of Resources": 78.18,
+    "Encouraging Sports": 9.94,
+    "Heritage Art And Culture": 15.94,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 13.17,
+    "Slum Area Development": 0.77,
+    "Others": 0.0,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.13
+   },
+   "2020-21": {
+    "Education, Differently Abled, livelihood": 173.34,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 99.28,
+    "Rural Development": 245.95,
+    "Environment, Animal Welfare, Conservation of Resources": 17.29,
+    "Encouraging Sports": 15.33,
+    "Heritage Art And Culture": 4.23,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 8.59,
+    "Slum Area Development": 14.14,
+    "Others": 0.0,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.01
+   },
+   "2021-22": {
+    "Education, Differently Abled, livelihood": 252.03,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 150.76,
+    "Rural Development": 229.13,
+    "Environment, Animal Welfare, Conservation of Resources": 87.91,
+    "Encouraging Sports": 12.33,
+    "Heritage Art And Culture": 3.93,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 10.94,
+    "Slum Area Development": 1.3,
+    "Others": 0.0,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 4.12
+   },
+   "2022-23": {
+    "Education, Differently Abled, livelihood": 431.03,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 354.08,
+    "Rural Development": 76.06,
+    "Environment, Animal Welfare, Conservation of Resources": 55.65,
+    "Encouraging Sports": 53.3,
+    "Heritage Art And Culture": 8.01,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 17.25,
+    "Slum Area Development": 2.67,
+    "Others": 0.0,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.05
+   },
+   "2023-24": {
+    "Education, Differently Abled, livelihood": 603.22,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 420.76,
+    "Rural Development": 121.22,
+    "Environment, Animal Welfare, Conservation of Resources": 62.03,
+    "Encouraging Sports": 44.89,
+    "Heritage Art And Culture": 124.2,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 17.49,
+    "Slum Area Development": 10.37,
+    "Others": 0.0,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.05
+   },
+   "2024-25": {
+    "Education, Differently Abled, livelihood": 656.2,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 417.36,
+    "Rural Development": 190.81,
+    "Environment, Animal Welfare, Conservation of Resources": 127.94,
+    "Encouraging Sports": 87.81,
+    "Heritage Art And Culture": 44.24,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 44.08,
+    "Slum Area Development": 6.41,
+    "Others": 0.0,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.11
+   }
+  },
+  "total": 8453.53,
   "years": [
+   "2014-15",
+   "2015-16",
+   "2016-17",
+   "2017-18",
+   "2018-19",
+   "2019-20",
    "2020-21",
    "2021-22",
    "2022-23",
    "2023-24",
    "2024-25"
   ],
-  "districtTotal": 3920.02,
-  "nec": {
-   "years": {
-    "2020-21": 345.38,
-    "2021-22": 292.75,
-    "2022-23": 255.02,
-    "2023-24": 407.51,
-    "2024-25": 0.32
+  "unclassified": {
+   "total": 3862.87,
+   "byDomain": {
+    "Education, Differently Abled, livelihood": 1515.73,
+    "Encouraging Sports": 125.82,
+    "Environment, Animal Welfare, Conservation of Resources": 188.42,
+    "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 66.6,
+    "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 848.89,
+    "Heritage Art And Culture": 159.51,
+    "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.34,
+    "Others": 4.57,
+    "Rural Development": 922.27,
+    "Slum Area Development": 30.72
    },
-   "total": 1300.98
+   "byYear": {
+    "2014-15": 193.16,
+    "2015-16": 564.57,
+    "2016-17": 320.96,
+    "2017-18": 456.47,
+    "2018-19": 634.23,
+    "2019-20": 379.55,
+    "2020-21": 345.39,
+    "2021-22": 302.65,
+    "2022-23": 258.24,
+    "2023-24": 407.37,
+    "2024-25": 0.32
+   }
   },
-  "grandTotal": 5221.01,
-  "meta": {
-   "source": "csr.gov.in district-wise CSR export (Odisha_DistrictwiseCSR.xlsx)",
-   "unit": "INR crore",
-   "span": "FY2020-21 to FY2024-25",
-   "note": "District-level CSR spend. DIFFERENT source/methodology from the GO CARE statewide series (csrState); the two do not reconcile (this series runs ~1.5-3x higher in later years). Kept as its own layer, not merged into the GO CARE trend."
-  }
+  "source": "csr.odisha.gov.in (GO CARE, Govt of Odisha CSR portal) — \"Dynamic CSR Report\", district x development-sector export",
+  "note": "Real district-level CSR spend by development sector, FY2014-15→FY2024-25, ₹ Cr — unlike csrState above (statewide-only, project counts by sector), this is the real per-district total, finally unblocking the CSR choropleth. Manually exported (no scriptable API for this cut); see data/odisha_csr_district_domain.csv. Rows GO CARE files under \"District Not Classified Elsewhere\" are excluded from the district map/table and rolled into the statewide domain totals here only, under unclassified."
  },
  "catalytic": {
   "meta": {
@@ -2290,7 +2467,33 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 704.53,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 427.21,
+     "Encouraging Sports": 11.03,
+     "Environment, Animal Welfare, Conservation of Resources": 25.13,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 5.3,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 160.5,
+     "Heritage Art And Culture": 9.84,
+     "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.03,
+     "Others": 3.41,
+     "Rural Development": 62.08
+    },
+    "byYear": {
+     "2014-15": 25.84,
+     "2015-16": 0.84,
+     "2016-17": 3.41,
+     "2017-18": 4.55,
+     "2018-19": 0.85,
+     "2019-20": 2.45,
+     "2020-21": 1.13,
+     "2021-22": 15.26,
+     "2022-23": 44.4,
+     "2023-24": 213.38,
+     "2024-25": 392.39
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -2429,16 +2632,6 @@
      }
     ]
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 1.13,
-     "2021-22": 15.19,
-     "2022-23": 44.41,
-     "2023-24": 213.39,
-     "2024-25": 392.4
-    },
-    "total": 666.52
-   },
    "catalytic": {
     "landscape": "mining",
     "landscapeName": "Central Mining & Brahmani Belt",
@@ -2472,7 +2665,30 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 58.04,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 34.75,
+     "Encouraging Sports": 0.39,
+     "Environment, Animal Welfare, Conservation of Resources": 2.57,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 2.41,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 8.66,
+     "Rural Development": 9.26
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.0,
+     "2016-17": 0.0,
+     "2017-18": 2.58,
+     "2018-19": 0.96,
+     "2019-20": 0.05,
+     "2020-21": 10.05,
+     "2021-22": 3.69,
+     "2022-23": 7.75,
+     "2023-24": 15.21,
+     "2024-25": 17.74
+    }
+   },
    "aspirational": true,
    "blockcov": [
     {
@@ -2647,16 +2863,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 10.06,
-     "2021-22": 3.69,
-     "2022-23": 7.74,
-     "2023-24": 15.21,
-     "2024-25": 17.74
-    },
-    "total": 54.43
-   },
    "catalytic": {
     "landscape": "western",
     "landscapeName": "Western Tableland (KBK / Hirakud)",
@@ -2686,7 +2892,32 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 56.27,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 13.88,
+     "Encouraging Sports": 0.84,
+     "Environment, Animal Welfare, Conservation of Resources": 18.92,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 7.38,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 10.7,
+     "Heritage Art And Culture": 0.66,
+     "Rural Development": 3.79,
+     "Slum Area Development": 0.1
+    },
+    "byYear": {
+     "2014-15": 1.01,
+     "2015-16": 0.63,
+     "2016-17": 0.41,
+     "2017-18": 0.01,
+     "2018-19": 0.44,
+     "2019-20": 0.35,
+     "2020-21": 0.9,
+     "2021-22": 10.85,
+     "2022-23": 6.02,
+     "2023-24": 8.89,
+     "2024-25": 26.72
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -2816,16 +3047,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.91,
-     "2021-22": 10.85,
-     "2022-23": 6.02,
-     "2023-24": 8.8,
-     "2024-25": 26.73
-    },
-    "total": 53.31
-   },
    "catalytic": {
     "landscape": "delta",
     "landscapeName": "Mahanadi Delta & Mangrove Coast",
@@ -2858,7 +3079,31 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 24.86,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 6.89,
+     "Encouraging Sports": 0.02,
+     "Environment, Animal Welfare, Conservation of Resources": 12.86,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 0.0,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 0.73,
+     "Heritage Art And Culture": 0.23,
+     "Rural Development": 4.13
+    },
+    "byYear": {
+     "2014-15": 0.07,
+     "2015-16": 0.0,
+     "2016-17": 0.0,
+     "2017-18": 0.02,
+     "2018-19": 0.04,
+     "2019-20": 0.0,
+     "2020-21": 0.0,
+     "2021-22": 11.43,
+     "2022-23": 5.53,
+     "2023-24": 1.07,
+     "2024-25": 6.69
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -2988,16 +3233,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.0,
-     "2021-22": 11.43,
-     "2022-23": 5.54,
-     "2023-24": 1.08,
-     "2024-25": 6.69
-    },
-    "total": 24.74
-   },
    "catalytic": {
     "landscape": "western",
     "landscapeName": "Western Tableland (KBK / Hirakud)",
@@ -3029,7 +3264,31 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 52.09,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 26.39,
+     "Encouraging Sports": 0.58,
+     "Environment, Animal Welfare, Conservation of Resources": 4.87,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 0.47,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 8.48,
+     "Heritage Art And Culture": 0.02,
+     "Rural Development": 11.28
+    },
+    "byYear": {
+     "2014-15": 0.01,
+     "2015-16": 0.72,
+     "2016-17": 0.46,
+     "2017-18": 0.18,
+     "2018-19": 0.06,
+     "2019-20": 2.68,
+     "2020-21": 8.4,
+     "2021-22": 3.07,
+     "2022-23": 7.77,
+     "2023-24": 12.35,
+     "2024-25": 16.4
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -3119,16 +3378,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 8.4,
-     "2021-22": 3.07,
-     "2022-23": 7.77,
-     "2023-24": 12.35,
-     "2024-25": 16.4
-    },
-    "total": 47.98
-   },
    "catalytic": {
     "landscape": "delta",
     "landscapeName": "Mahanadi Delta & Mangrove Coast",
@@ -3155,7 +3404,31 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 2.18,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 0.7,
+     "Encouraging Sports": 0.0,
+     "Environment, Animal Welfare, Conservation of Resources": 0.09,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 0.42,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 0.44,
+     "Heritage Art And Culture": 0.47,
+     "Rural Development": 0.06
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.0,
+     "2016-17": 0.0,
+     "2017-18": 0.0,
+     "2018-19": 0.0,
+     "2019-20": 0.0,
+     "2020-21": 0.25,
+     "2021-22": 0.38,
+     "2022-23": 0.31,
+     "2023-24": 1.06,
+     "2024-25": 0.19
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -3213,16 +3486,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.25,
-     "2021-22": 0.38,
-     "2022-23": 0.31,
-     "2023-24": 1.05,
-     "2024-25": 0.2
-    },
-    "total": 2.19
-   },
    "catalytic": {
     "landscape": "western",
     "landscapeName": "Western Tableland (KBK / Hirakud)",
@@ -3255,7 +3518,33 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 210.27,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 103.4,
+     "Encouraging Sports": 23.95,
+     "Environment, Animal Welfare, Conservation of Resources": 20.12,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 2.56,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 46.2,
+     "Heritage Art And Culture": 1.42,
+     "Others": 2.45,
+     "Rural Development": 9.7,
+     "Slum Area Development": 0.47
+    },
+    "byYear": {
+     "2014-15": 2.82,
+     "2015-16": 12.79,
+     "2016-17": 2.36,
+     "2017-18": 0.45,
+     "2018-19": 2.91,
+     "2019-20": 5.87,
+     "2020-21": 5.68,
+     "2021-22": 42.75,
+     "2022-23": 37.22,
+     "2023-24": 41.39,
+     "2024-25": 56.02
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -3401,16 +3690,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 5.67,
-     "2021-22": 42.73,
-     "2022-23": 37.23,
-     "2023-24": 41.38,
-     "2024-25": 56.02
-    },
-    "total": 183.03
-   },
    "catalytic": {
     "landscape": "delta",
     "landscapeName": "Mahanadi Delta & Mangrove Coast",
@@ -3448,7 +3727,29 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 12.76,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 4.69,
+     "Environment, Animal Welfare, Conservation of Resources": 0.08,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 3.72,
+     "Heritage Art And Culture": 2.64,
+     "Rural Development": 1.63
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.0,
+     "2016-17": 0.0,
+     "2017-18": 0.0,
+     "2018-19": 0.0,
+     "2019-20": 2.71,
+     "2020-21": 0.0,
+     "2021-22": 7.15,
+     "2022-23": 1.42,
+     "2023-24": 0.38,
+     "2024-25": 1.12
+    }
+   },
    "aspirational": false,
    "blockcov": [
     {
@@ -3514,16 +3815,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.0,
-     "2021-22": 7.14,
-     "2022-23": 1.42,
-     "2023-24": 0.38,
-     "2024-25": 1.11
-    },
-    "total": 10.05
-   },
    "catalytic": {
     "landscape": "mining",
     "landscapeName": "Central Mining & Brahmani Belt",
@@ -3555,7 +3846,34 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 75.33,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 39.13,
+     "Encouraging Sports": 0.33,
+     "Environment, Animal Welfare, Conservation of Resources": 3.78,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 0.35,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 18.29,
+     "Heritage Art And Culture": 0.55,
+     "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.0,
+     "Others": 0.71,
+     "Rural Development": 12.08,
+     "Slum Area Development": 0.11
+    },
+    "byYear": {
+     "2014-15": 0.66,
+     "2015-16": 1.68,
+     "2016-17": 0.2,
+     "2017-18": 4.29,
+     "2018-19": 3.8,
+     "2019-20": 3.9,
+     "2020-21": 3.36,
+     "2021-22": 9.11,
+     "2022-23": 9.27,
+     "2023-24": 8.73,
+     "2024-25": 30.33
+    }
+   },
    "aspirational": true,
    "blockcov": [],
    "shg": {
@@ -3653,16 +3971,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 3.37,
-     "2021-22": 9.0,
-     "2022-23": 9.22,
-     "2023-24": 8.73,
-     "2024-25": 30.33
-    },
-    "total": 60.65
-   },
    "catalytic": {
     "landscape": "western",
     "landscapeName": "Western Tableland (KBK / Hirakud)",
@@ -3686,7 +3994,30 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 14.52,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 6.61,
+     "Environment, Animal Welfare, Conservation of Resources": 6.17,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 0.73,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 0.34,
+     "Rural Development": 0.67,
+     "Slum Area Development": 0.0
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.0,
+     "2016-17": 0.0,
+     "2017-18": 0.0,
+     "2018-19": 0.06,
+     "2019-20": 0.0,
+     "2020-21": 0.0,
+     "2021-22": 7.76,
+     "2022-23": 1.15,
+     "2023-24": 0.28,
+     "2024-25": 5.27
+    }
+   },
    "aspirational": true,
    "blockcov": [],
    "shg": {
@@ -3776,16 +4107,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.0,
-     "2021-22": 7.76,
-     "2022-23": 1.15,
-     "2023-24": 0.29,
-     "2024-25": 5.27
-    },
-    "total": 14.47
-   },
    "catalytic": {
     "landscape": "eghats",
     "landscapeName": "Eastern Ghats Adivasi Highlands",
@@ -3826,7 +4147,32 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 68.73,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 29.12,
+     "Encouraging Sports": 0.05,
+     "Environment, Animal Welfare, Conservation of Resources": 7.76,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 0.36,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 29.17,
+     "Others": 0.0,
+     "Rural Development": 1.83,
+     "Slum Area Development": 0.44
+    },
+    "byYear": {
+     "2014-15": 0.6,
+     "2015-16": 0.15,
+     "2016-17": 0.13,
+     "2017-18": 0.14,
+     "2018-19": 0.83,
+     "2019-20": 0.73,
+     "2020-21": 13.22,
+     "2021-22": 13.39,
+     "2022-23": 6.04,
+     "2023-24": 5.27,
+     "2024-25": 28.21
+    }
+   },
    "aspirational": false,
    "blockcov": [
     {
@@ -4044,16 +4390,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 13.23,
-     "2021-22": 11.65,
-     "2022-23": 6.03,
-     "2023-24": 5.27,
-     "2024-25": 28.22
-    },
-    "total": 64.41
-   },
    "catalytic": {
     "landscape": "chilika",
     "landscapeName": "Chilika & South-Central Catchment",
@@ -4086,7 +4422,34 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 67.39,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 23.72,
+     "Encouraging Sports": 1.33,
+     "Environment, Animal Welfare, Conservation of Resources": 4.63,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 1.84,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 26.14,
+     "Heritage Art And Culture": 0.01,
+     "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.24,
+     "Others": 0.73,
+     "Rural Development": 8.6,
+     "Slum Area Development": 0.15
+    },
+    "byYear": {
+     "2014-15": 1.34,
+     "2015-16": 2.83,
+     "2016-17": 0.0,
+     "2017-18": 0.0,
+     "2018-19": 2.18,
+     "2019-20": 5.59,
+     "2020-21": 5.41,
+     "2021-22": 11.54,
+     "2022-23": 6.28,
+     "2023-24": 8.83,
+     "2024-25": 23.36
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -4209,16 +4572,6 @@
      }
     ]
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 5.41,
-     "2021-22": 11.55,
-     "2022-23": 6.28,
-     "2023-24": 8.83,
-     "2024-25": 23.37
-    },
-    "total": 55.43
-   },
    "catalytic": {
     "landscape": "delta",
     "landscapeName": "Mahanadi Delta & Mangrove Coast",
@@ -4252,7 +4605,33 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 178.16,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 40.04,
+     "Encouraging Sports": 10.69,
+     "Environment, Animal Welfare, Conservation of Resources": 15.53,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 7.26,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 46.41,
+     "Heritage Art And Culture": 7.5,
+     "Others": 0.5,
+     "Rural Development": 50.17,
+     "Slum Area Development": 0.06
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 1.29,
+     "2016-17": 0.66,
+     "2017-18": 1.98,
+     "2018-19": 14.02,
+     "2019-20": 13.77,
+     "2020-21": 6.83,
+     "2021-22": 11.32,
+     "2022-23": 30.07,
+     "2023-24": 37.8,
+     "2024-25": 60.46
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -4375,16 +4754,6 @@
      }
     ]
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 6.81,
-     "2021-22": 11.3,
-     "2022-23": 30.07,
-     "2023-24": 37.81,
-     "2024-25": 60.45
-    },
-    "total": 146.44
-   },
    "catalytic": {
     "landscape": "delta",
     "landscapeName": "Mahanadi Delta & Mangrove Coast",
@@ -4418,7 +4787,33 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 680.83,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 91.91,
+     "Encouraging Sports": 3.72,
+     "Environment, Animal Welfare, Conservation of Resources": 33.33,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 1.79,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 503.03,
+     "Heritage Art And Culture": 0.44,
+     "Others": 0.7,
+     "Rural Development": 45.84,
+     "Slum Area Development": 0.07
+    },
+    "byYear": {
+     "2014-15": 1.48,
+     "2015-16": 5.19,
+     "2016-17": 4.58,
+     "2017-18": 6.99,
+     "2018-19": 6.0,
+     "2019-20": 3.98,
+     "2020-21": 6.82,
+     "2021-22": 22.16,
+     "2022-23": 223.41,
+     "2023-24": 303.11,
+     "2024-25": 97.1
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -4525,16 +4920,6 @@
      }
     ]
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 6.82,
-     "2021-22": 22.13,
-     "2022-23": 223.41,
-     "2023-24": 303.11,
-     "2024-25": 97.1
-    },
-    "total": 652.57
-   },
    "catalytic": {
     "landscape": "mining",
     "landscapeName": "Central Mining & Brahmani Belt",
@@ -4577,7 +4962,32 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 165.53,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 55.63,
+     "Encouraging Sports": 1.69,
+     "Environment, Animal Welfare, Conservation of Resources": 3.07,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 3.0,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 65.62,
+     "Heritage Art And Culture": 3.83,
+     "Others": 0.05,
+     "Rural Development": 32.64
+    },
+    "byYear": {
+     "2014-15": 0.02,
+     "2015-16": 5.59,
+     "2016-17": 4.32,
+     "2017-18": 5.63,
+     "2018-19": 10.25,
+     "2019-20": 10.67,
+     "2020-21": 8.12,
+     "2021-22": 24.84,
+     "2022-23": 20.84,
+     "2023-24": 21.64,
+     "2024-25": 53.61
+    }
+   },
    "aspirational": true,
    "blockcov": [
     {
@@ -4788,16 +5198,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 8.12,
-     "2021-22": 24.84,
-     "2022-23": 20.84,
-     "2023-24": 21.63,
-     "2024-25": 53.62
-    },
-    "total": 129.04
-   },
    "catalytic": {
     "landscape": "eghats",
     "landscapeName": "Eastern Ghats Adivasi Highlands",
@@ -4837,7 +5237,29 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 30.69,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 11.68,
+     "Environment, Animal Welfare, Conservation of Resources": 8.18,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 2.59,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 7.22,
+     "Rural Development": 1.02
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.0,
+     "2016-17": 0.8,
+     "2017-18": 0.01,
+     "2018-19": 0.0,
+     "2019-20": 1.11,
+     "2020-21": 0.04,
+     "2021-22": 2.87,
+     "2022-23": 6.16,
+     "2023-24": 3.25,
+     "2024-25": 16.45
+    }
+   },
    "aspirational": true,
    "blockcov": [
     {
@@ -4982,16 +5404,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.04,
-     "2021-22": 2.86,
-     "2022-23": 6.16,
-     "2023-24": 3.25,
-     "2024-25": 16.45
-    },
-    "total": 28.76
-   },
    "catalytic": {
     "landscape": "eghats",
     "landscapeName": "Eastern Ghats Adivasi Highlands",
@@ -5026,7 +5438,28 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 13.64,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 4.78,
+     "Environment, Animal Welfare, Conservation of Resources": 0.47,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 4.25,
+     "Rural Development": 4.14
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.24,
+     "2016-17": 0.0,
+     "2017-18": 0.03,
+     "2018-19": 0.24,
+     "2019-20": 0.15,
+     "2020-21": 0.44,
+     "2021-22": 2.12,
+     "2022-23": 3.44,
+     "2023-24": 3.9,
+     "2024-25": 3.09
+    }
+   },
    "aspirational": false,
    "blockcov": [
     {
@@ -5140,16 +5573,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.44,
-     "2021-22": 2.11,
-     "2022-23": 3.45,
-     "2023-24": 3.9,
-     "2024-25": 3.09
-    },
-    "total": 12.98
-   },
    "catalytic": {
     "landscape": "delta",
     "landscapeName": "Mahanadi Delta & Mangrove Coast",
@@ -5181,7 +5604,32 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 383.64,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 172.63,
+     "Encouraging Sports": 18.93,
+     "Environment, Animal Welfare, Conservation of Resources": 30.27,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 2.35,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 48.37,
+     "Heritage Art And Culture": 3.11,
+     "Rural Development": 105.56,
+     "Slum Area Development": 2.42
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.0,
+     "2016-17": 0.0,
+     "2017-18": 0.27,
+     "2018-19": 0.17,
+     "2019-20": 10.45,
+     "2020-21": 5.8,
+     "2021-22": 35.52,
+     "2022-23": 54.52,
+     "2023-24": 90.55,
+     "2024-25": 186.38
+    }
+   },
    "aspirational": false,
    "blockcov": [
     {
@@ -5385,16 +5833,6 @@
      }
     ]
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 5.8,
-     "2021-22": 21.19,
-     "2022-23": 54.51,
-     "2023-24": 90.55,
-     "2024-25": 186.39
-    },
-    "total": 358.44
-   },
    "catalytic": {
     "landscape": "mining",
     "landscapeName": "Central Mining & Brahmani Belt",
@@ -5439,7 +5877,34 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 803.9,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 505.12,
+     "Encouraging Sports": 44.02,
+     "Environment, Animal Welfare, Conservation of Resources": 48.55,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 15.28,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 147.83,
+     "Heritage Art And Culture": 10.11,
+     "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 4.2,
+     "Others": 0.08,
+     "Rural Development": 24.41,
+     "Slum Area Development": 4.3
+    },
+    "byYear": {
+     "2014-15": 0.85,
+     "2015-16": 6.25,
+     "2016-17": 2.9,
+     "2017-18": 8.17,
+     "2018-19": 4.93,
+     "2019-20": 221.4,
+     "2020-21": 112.17,
+     "2021-22": 70.44,
+     "2022-23": 63.13,
+     "2023-24": 102.0,
+     "2024-25": 211.65
+    }
+   },
    "aspirational": false,
    "blockcov": [
     {
@@ -5561,16 +6026,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 112.17,
-     "2021-22": 70.19,
-     "2022-23": 63.14,
-     "2023-24": 102.0,
-     "2024-25": 211.65
-    },
-    "total": 559.15
-   },
    "catalytic": {
     "landscape": "chilika",
     "landscapeName": "Chilika & South-Central Catchment",
@@ -5616,7 +6071,32 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 196.88,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 94.41,
+     "Encouraging Sports": 10.57,
+     "Environment, Animal Welfare, Conservation of Resources": 9.66,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 5.45,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 58.11,
+     "Heritage Art And Culture": 1.58,
+     "Others": 0.7,
+     "Rural Development": 16.4
+    },
+    "byYear": {
+     "2014-15": 4.88,
+     "2015-16": 10.76,
+     "2016-17": 11.87,
+     "2017-18": 1.19,
+     "2018-19": 2.23,
+     "2019-20": 15.14,
+     "2020-21": 15.53,
+     "2021-22": 17.56,
+     "2022-23": 24.78,
+     "2023-24": 33.0,
+     "2024-25": 59.99
+    }
+   },
    "aspirational": true,
    "blockcov": [
     {
@@ -5798,16 +6278,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 15.52,
-     "2021-22": 17.56,
-     "2022-23": 24.77,
-     "2023-24": 33.0,
-     "2024-25": 59.99
-    },
-    "total": 150.83
-   },
    "catalytic": {
     "landscape": "eghats",
     "landscapeName": "Eastern Ghats Adivasi Highlands",
@@ -5844,7 +6314,29 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 11.5,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 7.38,
+     "Encouraging Sports": 0.21,
+     "Environment, Animal Welfare, Conservation of Resources": 0.24,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 3.26,
+     "Rural Development": 0.41
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.01,
+     "2016-17": 0.0,
+     "2017-18": 0.21,
+     "2018-19": 0.04,
+     "2019-20": 0.02,
+     "2020-21": 0.0,
+     "2021-22": 0.23,
+     "2022-23": 0.12,
+     "2023-24": 1.3,
+     "2024-25": 9.58
+    }
+   },
    "aspirational": true,
    "blockcov": [],
    "shg": {
@@ -5934,16 +6426,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.0,
-     "2021-22": 0.23,
-     "2022-23": 0.12,
-     "2023-24": 1.3,
-     "2024-25": 9.57
-    },
-    "total": 11.22
-   },
    "catalytic": {
     "landscape": "eghats",
     "landscapeName": "Eastern Ghats Adivasi Highlands",
@@ -5983,7 +6465,33 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 45.25,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 15.62,
+     "Encouraging Sports": 4.54,
+     "Environment, Animal Welfare, Conservation of Resources": 7.07,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 1.38,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 8.14,
+     "Heritage Art And Culture": 0.85,
+     "Others": 0.0,
+     "Rural Development": 5.15,
+     "Slum Area Development": 2.5
+    },
+    "byYear": {
+     "2014-15": 0.41,
+     "2015-16": 0.57,
+     "2016-17": 0.0,
+     "2017-18": 0.31,
+     "2018-19": 0.82,
+     "2019-20": 2.31,
+     "2020-21": 1.27,
+     "2021-22": 5.53,
+     "2022-23": 8.55,
+     "2023-24": 8.73,
+     "2024-25": 16.74
+    }
+   },
    "aspirational": false,
    "blockcov": [
     {
@@ -6257,16 +6765,6 @@
      }
     ]
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 1.27,
-     "2021-22": 5.06,
-     "2022-23": 8.55,
-     "2023-24": 8.73,
-     "2024-25": 16.75
-    },
-    "total": 40.35
-   },
    "catalytic": {
     "landscape": "similipal",
     "landscapeName": "Similipal & Mayurbhanj",
@@ -6305,7 +6803,28 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 18.83,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 8.38,
+     "Environment, Animal Welfare, Conservation of Resources": 0.36,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 5.36,
+     "Rural Development": 4.73
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.0,
+     "2016-17": 0.0,
+     "2017-18": 1.46,
+     "2018-19": 1.99,
+     "2019-20": 0.01,
+     "2020-21": 0.47,
+     "2021-22": 2.52,
+     "2022-23": 1.72,
+     "2023-24": 2.1,
+     "2024-25": 8.59
+    }
+   },
    "aspirational": true,
    "blockcov": [],
    "shg": {
@@ -6419,16 +6938,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.47,
-     "2021-22": 2.52,
-     "2022-23": 1.71,
-     "2023-24": 2.09,
-     "2024-25": 8.59
-    },
-    "total": 15.37
-   },
    "catalytic": {
     "landscape": "eghats",
     "landscapeName": "Eastern Ghats Adivasi Highlands",
@@ -6467,7 +6976,30 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 6.99,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 1.11,
+     "Encouraging Sports": 0.03,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 0.05,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 0.93,
+     "Others": 0.58,
+     "Rural Development": 4.29
+    },
+    "byYear": {
+     "2014-15": 0.58,
+     "2015-16": 0.0,
+     "2016-17": 0.25,
+     "2017-18": 0.02,
+     "2018-19": 0.0,
+     "2019-20": 0.0,
+     "2020-21": 1.69,
+     "2021-22": 2.56,
+     "2022-23": 0.62,
+     "2023-24": 0.55,
+     "2024-25": 0.71
+    }
+   },
    "aspirational": false,
    "blockcov": [
     {
@@ -6580,16 +7112,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 1.69,
-     "2021-22": 2.26,
-     "2022-23": 0.62,
-     "2023-24": 0.55,
-     "2024-25": 0.71
-    },
-    "total": 5.84
-   },
    "catalytic": {
     "landscape": "chilika",
     "landscapeName": "Chilika & South-Central Catchment",
@@ -6625,7 +7147,28 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 8.94,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 5.23,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 0.88,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 2.68,
+     "Rural Development": 0.15
+    },
+    "byYear": {
+     "2014-15": 0.88,
+     "2015-16": 0.0,
+     "2016-17": 0.0,
+     "2017-18": 0.0,
+     "2018-19": 0.0,
+     "2019-20": 0.3,
+     "2020-21": 0.44,
+     "2021-22": 3.32,
+     "2022-23": 0.6,
+     "2023-24": 0.51,
+     "2024-25": 2.88
+    }
+   },
    "aspirational": true,
    "blockcov": [
     {
@@ -6707,16 +7250,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.44,
-     "2021-22": 3.32,
-     "2022-23": 0.6,
-     "2023-24": 0.51,
-     "2024-25": 2.89
-    },
-    "total": 7.76
-   },
    "catalytic": {
     "landscape": "western",
     "landscapeName": "Western Tableland (KBK / Hirakud)",
@@ -6757,7 +7290,33 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 129.57,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 16.39,
+     "Encouraging Sports": 2.88,
+     "Environment, Animal Welfare, Conservation of Resources": 6.37,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 16.73,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 40.93,
+     "Heritage Art And Culture": 32.24,
+     "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.05,
+     "Others": 1.09,
+     "Rural Development": 12.89
+    },
+    "byYear": {
+     "2014-15": 0.27,
+     "2015-16": 2.35,
+     "2016-17": 0.55,
+     "2017-18": 7.01,
+     "2018-19": 2.99,
+     "2019-20": 12.54,
+     "2020-21": 10.54,
+     "2021-22": 8.4,
+     "2022-23": 12.43,
+     "2023-24": 10.91,
+     "2024-25": 61.6
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -6879,16 +7438,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 10.54,
-     "2021-22": 8.4,
-     "2022-23": 12.43,
-     "2023-24": 10.91,
-     "2024-25": 61.59
-    },
-    "total": 103.87
-   },
    "catalytic": {
     "landscape": "chilika",
     "landscapeName": "Chilika & South-Central Catchment",
@@ -6933,7 +7482,31 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 109.32,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 24.2,
+     "Encouraging Sports": 2.8,
+     "Environment, Animal Welfare, Conservation of Resources": 19.23,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 3.62,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 34.01,
+     "Heritage Art And Culture": 1.53,
+     "Rural Development": 23.93
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.2,
+     "2016-17": 0.79,
+     "2017-18": 1.57,
+     "2018-19": 2.26,
+     "2019-20": 6.09,
+     "2020-21": 5.39,
+     "2021-22": 11.86,
+     "2022-23": 9.5,
+     "2023-24": 14.03,
+     "2024-25": 57.61
+    }
+   },
    "aspirational": true,
    "blockcov": [
     {
@@ -7085,16 +7658,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 5.39,
-     "2021-22": 11.86,
-     "2022-23": 9.5,
-     "2023-24": 14.03,
-     "2024-25": 57.62
-    },
-    "total": 98.41
-   },
    "catalytic": {
     "landscape": "eghats",
     "landscapeName": "Eastern Ghats Adivasi Highlands",
@@ -7131,7 +7694,33 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 115.26,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 48.13,
+     "Encouraging Sports": 2.03,
+     "Environment, Animal Welfare, Conservation of Resources": 5.22,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 2.81,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 25.93,
+     "Heritage Art And Culture": 1.11,
+     "Others": 0.1,
+     "Rural Development": 29.41,
+     "Slum Area Development": 0.52
+    },
+    "byYear": {
+     "2014-15": 16.2,
+     "2015-16": 2.02,
+     "2016-17": 0.22,
+     "2017-18": 0.33,
+     "2018-19": 0.44,
+     "2019-20": 0.42,
+     "2020-21": 0.4,
+     "2021-22": 14.52,
+     "2022-23": 33.07,
+     "2023-24": 8.76,
+     "2024-25": 38.89
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -7294,16 +7883,6 @@
      }
     ]
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.39,
-     "2021-22": 14.52,
-     "2022-23": 33.08,
-     "2023-24": 8.77,
-     "2024-25": 38.89
-    },
-    "total": 95.64
-   },
    "catalytic": {
     "landscape": "western",
     "landscapeName": "Western Tableland (KBK / Hirakud)",
@@ -7334,7 +7913,29 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 1.41,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 0.3,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 0.46,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 0.33,
+     "Heritage Art And Culture": 0.01,
+     "Rural Development": 0.31
+    },
+    "byYear": {
+     "2014-15": 0.0,
+     "2015-16": 0.01,
+     "2016-17": 0.0,
+     "2017-18": 0.0,
+     "2018-19": 0.0,
+     "2019-20": 0.0,
+     "2020-21": 0.0,
+     "2021-22": 0.19,
+     "2022-23": 0.02,
+     "2023-24": 0.75,
+     "2024-25": 0.45
+    }
+   },
    "aspirational": false,
    "blockcov": [],
    "shg": {
@@ -7416,16 +8017,6 @@
     "amountLakh": 0.0,
     "projects": []
    },
-   "csrSpend": {
-    "years": {
-     "2020-21": 0.0,
-     "2021-22": 0.19,
-     "2022-23": 0.02,
-     "2023-24": 0.75,
-     "2024-25": 0.44
-    },
-    "total": 1.4
-   },
    "catalytic": {
     "landscape": "western",
     "landscapeName": "Western Tableland (KBK / Hirakud)",
@@ -7465,7 +8056,34 @@
     "aspirational": false
    },
    "cg": null,
-   "csr": {},
+   "csr": {
+    "total": 343.35,
+    "byDomain": {
+     "Education, Differently Abled, livelihood": 225.58,
+     "Encouraging Sports": 29.4,
+     "Environment, Animal Welfare, Conservation of Resources": 18.64,
+     "Gender Equality, Women Empowerment, Old Age Homes, Reducing Inequalities": 1.69,
+     "Health, Eradicating Hunger, Poverty and Malnutrition, Safe Drinking water, Sanitation": 45.46,
+     "Heritage Art And Culture": 1.73,
+     "Other Sectors (Technology Incubator And benefits To Armed Forces And Admin Overheads)": 0.05,
+     "Others": 0.03,
+     "Rural Development": 20.06,
+     "Slum Area Development": 0.71
+    },
+    "byYear": {
+     "2014-15": 1.1,
+     "2015-16": 0.0,
+     "2016-17": 0.46,
+     "2017-18": 0.33,
+     "2018-19": 5.16,
+     "2019-20": 15.18,
+     "2020-21": 8.42,
+     "2021-22": 77.46,
+     "2022-23": 113.72,
+     "2023-24": 37.13,
+     "2024-25": 84.42
+    }
+   },
    "aspirational": false,
    "blockcov": [
     {
@@ -7806,16 +8424,6 @@
       "agencyType": "Company on its own"
      }
     ]
-   },
-   "csrSpend": {
-    "years": {
-     "2020-21": 8.42,
-     "2021-22": 21.06,
-     "2022-23": 113.72,
-     "2023-24": 37.13,
-     "2024-25": 84.41
-    },
-    "total": 264.74
    },
    "catalytic": {
     "landscape": "mining",
