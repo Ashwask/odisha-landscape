@@ -248,13 +248,6 @@ table{border-collapse:collapse; width:100%; font-size:12.5px}
 </div>
 </div>
 
-<div class="section-title collapser closed" data-wrap="catwrap">Catalytic Unlock ✳ · nature-first landscapes &amp; top 10 projects <span class="caret">▾</span></div>
-<div id="catwrap" class="collapsed">
-<p class="section-sub" id="catintro"></p>
-<div class="card cardpad"><div id="catland"></div></div>
-<div class="card tbl" id="catproj" style="margin-top:14px"></div>
-</div>
-
 <div class="section-title collapser closed" id="dirToggle" data-wrap="dirwrap">Partner directory <span class="caret">▾</span> <span class="mini" style="font-weight:400" id="dircount"></span></div>
 <div id="dirwrap" class="collapsed">
 <p class="section-sub">All 46 researched partner organisations. Click a column header to sort; click a district tag to focus the map. Each row's source URL and confidence notes live in <code>data/odisha_partners_seed.csv</code> in the repo — a few rows are flagged low-confidence there and worth independent verification before relying on them.</p>
@@ -833,7 +826,7 @@ function buildFunders(){
 function buildCatalytic(){
  const intro=document.getElementById('catintro');
  if(intro)intro.innerHTML=(CAT.meta&&CAT.meta.framing?CAT.meta.framing+' ':'')
-  +'<b>Indicative strategy ✳</b>, not fetched data: districts are grouped into six nature/commons landscapes, each with a catalytic tier; the leverage read per district is computed from the real DMF, CSR and partner-capacity fields (nature/commons carries the highest weight). Use the "Catalytic Unlock ✳" map lens to see the landscapes. Click a district chip to focus the map.';
+  +'<b>Indicative strategy ✳</b>, not fetched data: this is the project-level subset of the unlocks above. Districts are grouped into six nature/commons landscapes, each with a catalytic tier; the leverage read per district is computed from the real DMF, CSR and partner-capacity fields (nature/commons carries the highest weight). On the Ecosystem landscape tab, the "Catalytic Unlock ✳" map lens paints these landscapes; click a district chip to jump there.';
  // landscape cards: money + capacity readout per landscape, from the real data
  let h='';
  CAT_LAND.forEach(l=>{
@@ -1032,9 +1025,16 @@ function buildAlignment(){
   h+='</tbody></table></div>';
  }
 
+ // --- Catalytic Unlock: nature-first landscapes + top 10 projects (project-level subset of the unlocks) ---
+ h+='<div class="section-title">Catalytic Unlock ✳ · nature-first landscapes &amp; top 10 projects</div>';
+ h+='<p class="section-sub" id="catintro"></p>';
+ h+='<div class="card cardpad"><div id="catland"></div></div>';
+ h+='<div class="card tbl" id="catproj" style="margin-top:14px"></div>';
+
  h+='<p class="vnote">Trajectory, velocity and unlocks are a planning read inferred by cross-referencing the mapped ecosystem with the Vision 2036 pillars; both sides are sourced but not independently audited. Not a scorecard of government performance.</p>';
  const box=document.getElementById('viewAlign'); box.innerHTML=h;
  box.querySelectorAll('.pn[data-d]').forEach(s=>s.onclick=()=>{const b=document.querySelector('#tabbar button[data-view=main]');if(b)b.click();selectDist(s.dataset.d);document.getElementById('mapbox').scrollIntoView({behavior:'smooth',block:'center'});});
+ buildCatalytic(); // fills #catintro / #catland / #catproj now that they exist in the alignment view
 }
 
 const VIEWS={main:'viewMain',vision:'viewVision',align:'viewAlign'};
@@ -1052,7 +1052,7 @@ tabbar.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)ret
 function recompute(){refreshScales();renderStrip();paint();buildHealth();buildPlaceHealth();buildDir();buildDisTbl();updateFoot();}
 
 /* initial render */
-refreshScales(); renderStrip(); paint(); buildHealth(); buildMatrix(); buildPlaceHealth(); buildDir(); buildDisTbl(); updateFoot(); buildGovt(); buildSchemes(); buildCsrState(); buildFunders(); buildCatalytic();
+refreshScales(); renderStrip(); paint(); buildHealth(); buildMatrix(); buildPlaceHealth(); buildDir(); buildDisTbl(); updateFoot(); buildGovt(); buildSchemes(); buildCsrState(); buildFunders(); /* buildCatalytic() runs inside buildAlignment (2036 Alignment tab) */
 document.getElementById('dircount').textContent='('+PARTNERS.length+' organisations)';
 document.querySelectorAll('.collapser[data-wrap]').forEach(tg=>{const wrap=document.getElementById(tg.dataset.wrap);
  tg.addEventListener('click',()=>{const hidden=wrap.classList.toggle('collapsed'); tg.classList.toggle('closed',hidden);});});
